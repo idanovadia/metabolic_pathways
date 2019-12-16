@@ -1,0 +1,12 @@
+"","L-alanine","2-oxoglutarate","beta;-alanine","fumarate","galactose","glucose_6_phosphate","L-glutamate","inositol","L-leucine","maltose","sucrose"
+"L-alanine",0,0,0,0,0,1,0,0,0,0,0
+"2-oxoglutarate",0,0,0,0,0,0,0,0,1,0,0
+"beta;-alanine",0,0,0,0,0,0,0,0,1,0,1
+"fumarate",0,0,0,0,0,0,0,0,1,0,0
+"galactose",0,0,0,0,0,0,0,0,0,1,1
+"glucose_6_phosphate",1,0,0,0,0,0,0,0,0,0,0
+"L-glutamate",0,0,0,0,0,0,0,0,1,0,0
+"inositol",0,0,0,0,0,0,0,0,0,0,0
+"L-leucine",0,1,1,1,0,0,1,0,0,0,0
+"maltose",0,0,0,0,1,0,0,0,0,0,1
+"sucrose",0,0,1,0,1,0,0,0,0,1,0

@@ -1,0 +1,6 @@
+"","L-aspartate","L-cysteine","L-methionine","phosphate","succinate"
+"L-aspartate",0,0,0,1,0
+"L-cysteine",0,0,1,0,1
+"L-methionine",0,1,0,1,0
+"phosphate",1,0,1,0,0
+"succinate",0,1,0,0,0

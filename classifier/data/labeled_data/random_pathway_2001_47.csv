@@ -1,0 +1,12 @@
+"","L-aspartate","fructose","glucose","glucose_6_phosphate","L-glutamate","glycerate_3_Phosphate","inositol","maltitol","maltose","GDP-alpha;-D-mannose","sucrose"
+"L-aspartate",0,0,0,0,1,0,0,0,0,0,0
+"fructose",0,0,1,0,0,0,0,0,1,1,1
+"glucose",0,1,0,0,0,0,0,0,1,1,1
+"glucose_6_phosphate",0,0,0,0,0,0,0,0,0,0,0
+"L-glutamate",1,0,0,0,0,0,0,0,0,0,0
+"glycerate_3_Phosphate",0,0,0,0,0,0,0,0,0,1,0
+"inositol",0,0,0,0,0,0,0,0,0,0,0
+"maltitol",0,0,0,0,0,0,0,0,0,0,0
+"maltose",0,1,1,0,0,0,0,0,0,1,1
+"GDP-alpha;-D-mannose",0,1,1,0,0,1,0,0,1,0,1
+"sucrose",0,1,1,0,0,0,0,0,1,1,0

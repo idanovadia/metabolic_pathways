@@ -1,0 +1,6 @@
+"","galactose","L-glutamate","L-glutamine","phosphate","alpha;,alpha;-trehalose"
+"galactose",0,0,0,0,1
+"L-glutamate",0,0,1,1,0
+"L-glutamine",0,1,0,1,0
+"phosphate",0,1,1,0,1
+"alpha;,alpha;-trehalose",1,0,0,1,0

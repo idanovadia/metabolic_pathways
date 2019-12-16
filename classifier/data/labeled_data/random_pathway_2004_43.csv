@@ -1,0 +1,11 @@
+"","gaba","fumarate","L-glutamine","2-oxoglutarate","glycine","L-phenylalanine","phosphate","L-serine","succinate","L-threonine"
+"gaba",0,0,1,0,1,1,0,1,0,1
+"fumarate",0,0,0,0,0,0,0,0,1,0
+"L-glutamine",1,0,0,0,0,0,0,0,0,0
+"2-oxoglutarate",0,0,0,0,0,0,1,0,0,0
+"glycine",1,0,0,0,0,0,1,1,0,1
+"L-phenylalanine",1,0,0,0,0,0,1,1,0,1
+"phosphate",0,0,0,1,1,1,0,1,0,1
+"L-serine",1,0,0,0,1,1,1,0,0,1
+"succinate",0,1,0,0,0,0,0,0,0,0
+"L-threonine",1,0,0,0,1,1,1,1,0,0

@@ -1,0 +1,15 @@
+"","L-arginine","L-aspartate","beta;-alanine","fructose","fumarate","glucose","L-glutamine","inositol","L-isoleucine","maltose","GDP-alpha;-D-mannose","L-methionine","L-phenylalanine","L-serine"
+"L-arginine",0,0,1,0,0,0,1,0,1,0,0,1,1,1
+"L-aspartate",0,0,0,0,0,0,0,0,1,0,0,0,1,0
+"beta;-alanine",1,0,0,0,0,0,1,0,1,0,0,1,1,1
+"fructose",0,0,0,0,0,1,0,0,0,1,1,0,0,0
+"fumarate",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"glucose",0,0,0,1,0,0,0,0,0,1,1,0,0,0
+"L-glutamine",1,0,1,0,0,0,0,0,1,0,0,1,0,0
+"inositol",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"L-isoleucine",1,1,1,0,0,0,1,0,0,0,0,1,1,1
+"maltose",0,0,0,1,0,1,0,0,0,0,1,0,0,0
+"GDP-alpha;-D-mannose",0,0,0,1,0,1,0,0,0,1,0,0,0,0
+"L-methionine",1,0,1,0,0,0,1,0,1,0,0,0,1,1
+"L-phenylalanine",1,1,1,0,0,0,0,0,1,0,0,1,0,1
+"L-serine",1,0,1,0,0,0,0,0,1,0,0,1,1,0

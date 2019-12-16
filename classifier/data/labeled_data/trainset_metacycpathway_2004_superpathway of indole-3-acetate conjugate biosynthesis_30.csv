@@ -1,0 +1,9 @@
+"","L-alanine","L-aspartate","glucose","L-glutamate","L-glutamine","L-leucine","L-phenylalanine","L-valine"
+"L-alanine",0,0,0,0,0,0,0,0
+"L-aspartate",0,0,0,1,0,0,1,0
+"glucose",0,0,0,0,0,1,0,0
+"L-glutamate",0,1,0,0,0,0,1,0
+"L-glutamine",0,0,0,0,0,0,0,0
+"L-leucine",0,0,1,0,0,0,1,1
+"L-phenylalanine",0,1,0,1,0,1,0,1
+"L-valine",0,0,0,0,0,1,1,0
