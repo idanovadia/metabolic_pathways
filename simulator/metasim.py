@@ -16,7 +16,7 @@ class Enzyme:
     
     def collectall(self, substrate):
         missing = self._substrate_def - self._substrate
-        missing &= substrate #האם אני יכול להשלים את זה עם מה שיש בבית
+        missing &= substrate #Can I complete it with what I have in my "home"
         self._substrate += missing
         substrate.difference_update(missing)
 
