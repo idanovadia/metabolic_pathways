@@ -1,0 +1,8 @@
+"","2-oxoglutarate","L-cysteine","L-methionine","succinate","L-aspartate","L-glutamate","phosphate"
+"2-oxoglutarate",0,0,1,0,0,1,1
+"L-cysteine",0,0,1,0,0,1,1
+"L-methionine",1,1,0,0,1,1,1
+"succinate",0,0,0,0,0,0,0
+"L-aspartate",0,0,1,0,0,1,1
+"L-glutamate",1,1,1,0,1,0,1
+"phosphate",1,1,1,0,1,1,0

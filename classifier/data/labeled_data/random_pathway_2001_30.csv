@@ -1,0 +1,8 @@
+"","L-alanine","L-aspartate","alpha;-tocopherol","beta;-alanine","fructose","glycerate_3_Phosphate","alpha;,alpha;-trehalose"
+"L-alanine",0,0,0,0,0,0,0
+"L-aspartate",0,0,0,0,0,0,0
+"alpha;-tocopherol",0,0,0,1,1,0,1
+"beta;-alanine",0,0,1,0,0,0,0
+"fructose",0,0,1,0,0,0,1
+"glycerate_3_Phosphate",0,0,0,0,0,0,0
+"alpha;,alpha;-trehalose",0,0,1,0,1,0,0

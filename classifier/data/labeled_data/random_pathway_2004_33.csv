@@ -1,0 +1,9 @@
+"","L-arginine","benzoate","L-cysteine","L-glutamate","maltitol","phosphate","succinate","sucrose"
+"L-arginine",0,0,0,0,0,0,0,0
+"benzoate",0,0,0,0,0,0,1,0
+"L-cysteine",0,0,0,0,0,0,1,0
+"L-glutamate",0,0,0,0,0,1,0,0
+"maltitol",0,0,0,0,0,0,1,0
+"phosphate",0,0,0,1,0,0,0,0
+"succinate",0,1,1,0,1,0,0,0
+"sucrose",0,0,0,0,0,0,0,0

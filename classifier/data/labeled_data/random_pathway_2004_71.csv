@@ -1,0 +1,17 @@
+"","dehydroascorbate (bicyclic form)","fructose","GDP-beta;-L-fucose","L-glutamate","glycerate_3_phosphate","inositol","D-threo-isocitrate","L-leucine","L-lysine","maltitol","maltose","GDP-alpha;-D-mannose","L-methionine","shikimate","threonate","L-valine"
+"dehydroascorbate (bicyclic form)",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"fructose",0,0,0,0,0,1,0,1,0,1,0,1,0,0,0,0
+"GDP-beta;-L-fucose",0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0
+"L-glutamate",0,0,1,0,1,1,0,0,1,0,0,0,0,0,1,0
+"glycerate_3_phosphate",0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0
+"inositol",0,1,0,1,0,0,0,1,0,1,0,1,1,0,1,1
+"D-threo-isocitrate",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"L-leucine",0,1,0,0,1,1,0,0,1,0,0,0,1,0,0,1
+"L-lysine",0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,1
+"maltitol",0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+"maltose",0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"GDP-alpha;-D-mannose",0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0
+"L-methionine",0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,1
+"shikimate",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"threonate",0,0,1,1,0,1,0,0,0,0,0,0,1,0,0,0
+"L-valine",0,0,0,0,0,1,0,1,1,0,0,0,1,0,0,0

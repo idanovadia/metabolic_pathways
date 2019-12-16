@@ -1,0 +1,9 @@
+"","benzoate","beta;-alanine","glucose_6_phosphate","2-oxoglutarate","glycerol","L-isoleucine","L-leucine","alpha;,alpha;-trehalose"
+"benzoate",0,0,0,0,0,0,0,0
+"beta;-alanine",0,0,0,0,0,1,1,0
+"glucose_6_phosphate",0,0,0,0,0,0,0,0
+"2-oxoglutarate",0,0,0,0,0,0,0,0
+"glycerol",0,0,0,0,0,0,0,0
+"L-isoleucine",0,1,0,0,0,0,1,0
+"L-leucine",0,1,0,0,0,1,0,0
+"alpha;,alpha;-trehalose",0,0,0,0,0,0,0,0

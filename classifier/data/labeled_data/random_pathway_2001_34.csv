@@ -1,0 +1,9 @@
+"","galactose","glucose","glucose_6_phosphate","sucrose","threonate","alpha;,alpha;-trehalose","L-tryptophan","L-valine"
+"galactose",0,1,0,1,0,1,0,0
+"glucose",1,0,0,1,0,1,1,0
+"glucose_6_phosphate",0,0,0,0,0,0,0,0
+"sucrose",1,1,0,0,0,1,0,0
+"threonate",0,0,0,0,0,0,0,0
+"alpha;,alpha;-trehalose",1,1,0,1,0,0,0,0
+"L-tryptophan",0,1,0,0,0,0,0,1
+"L-valine",0,0,0,0,0,0,1,0

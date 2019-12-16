@@ -1,0 +1,11 @@
+"","L-asparagine","citrate","glycerate_3_phosphate","L-leucine","L-methionine","putrescine","saccharate","L-serine","sucrose","L-tyrosine"
+"L-asparagine",0,0,0,0,0,0,0,0,0,0
+"citrate",0,0,0,1,1,0,0,1,1,1
+"glycerate_3_phosphate",0,0,0,1,0,0,1,0,0,1
+"L-leucine",0,1,1,0,1,0,1,1,0,1
+"L-methionine",0,1,0,1,0,0,0,1,0,1
+"putrescine",0,0,0,0,0,0,0,0,0,0
+"saccharate",0,0,1,1,0,0,0,0,0,0
+"L-serine",0,1,0,1,1,0,0,0,0,1
+"sucrose",0,1,0,0,0,0,0,0,0,0
+"L-tyrosine",0,1,1,1,1,0,0,1,0,0

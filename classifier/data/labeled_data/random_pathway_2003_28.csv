@@ -1,0 +1,8 @@
+"","D-gluconate","glucose_6_phosphate","glycerol","maltitol","L-tryptophan","L-tyrosine","glucose"
+"D-gluconate",0,0,0,0,0,0,0
+"glucose_6_phosphate",0,0,0,1,1,0,0
+"glycerol",0,0,0,1,0,1,0
+"maltitol",0,1,1,0,0,1,0
+"L-tryptophan",0,1,0,0,0,1,0
+"L-tyrosine",0,0,1,1,1,0,0
+"glucose",0,0,0,0,0,0,0

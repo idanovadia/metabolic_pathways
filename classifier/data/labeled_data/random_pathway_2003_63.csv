@@ -1,0 +1,15 @@
+"","2-oxoglutarate","alpha;-tocopherol","beta;-alanine","dehydroascorbate (bicyclic form)","L-leucine","maltose","L-methionine","L-threonine","alpha;,alpha;-trehalose","uracil","fructose","L-glutamine","GDP-alpha;-D-mannose","phosphate"
+"2-oxoglutarate",0,0,0,0,0,0,1,0,0,0,0,0,0,1
+"alpha;-tocopherol",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"beta;-alanine",0,0,0,0,1,0,1,1,0,0,0,1,0,1
+"dehydroascorbate (bicyclic form)",0,0,0,0,0,0,1,0,0,0,0,0,1,0
+"L-leucine",0,0,1,0,0,0,1,1,0,0,0,1,0,1
+"maltose",0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"L-methionine",1,0,1,1,1,0,0,1,0,0,0,1,0,1
+"L-threonine",0,0,1,0,1,0,1,0,0,1,0,1,0,1
+"alpha;,alpha;-trehalose",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"uracil",0,0,0,0,0,1,0,1,0,0,1,0,0,0
+"fructose",0,0,0,0,0,1,0,0,0,1,0,0,1,0
+"L-glutamine",0,0,1,0,1,0,1,1,0,0,0,0,0,1
+"GDP-alpha;-D-mannose",0,0,0,1,0,0,0,0,0,0,1,0,0,1
+"phosphate",1,0,1,0,1,0,1,1,0,0,0,1,1,0

@@ -1,0 +1,15 @@
+"","alpha;-tocopherol","dehydroascorbate (bicyclic form)","fumarate","UDP-alpha;-D-galacturonate","D-gluconate","glucose","L-glutamate","D-threo-isocitrate","(S)-malate","phosphate","L-serine","sucrose","L-tyrosine","L-valine"
+"alpha;-tocopherol",0,1,0,0,0,1,0,0,0,1,0,1,0,0
+"dehydroascorbate (bicyclic form)",1,0,0,0,0,1,0,0,0,0,0,1,0,0
+"fumarate",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"UDP-alpha;-D-galacturonate",0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"D-gluconate",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"glucose",1,1,0,0,0,0,0,0,0,0,0,1,0,0
+"L-glutamate",0,0,0,0,0,0,0,1,0,1,0,0,0,0
+"D-threo-isocitrate",0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"(S)-malate",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"phosphate",1,0,0,0,0,0,1,0,0,0,1,1,1,1
+"L-serine",0,0,0,0,0,0,0,0,0,1,0,1,1,1
+"sucrose",1,1,0,0,0,1,0,0,0,1,1,0,0,0
+"L-tyrosine",0,0,0,0,0,0,0,0,0,1,1,0,0,1
+"L-valine",0,0,0,1,0,0,0,0,0,1,1,0,1,0

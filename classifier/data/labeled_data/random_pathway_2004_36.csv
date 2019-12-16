@@ -1,0 +1,10 @@
+"","L-cysteine","erythritol","GDP-beta;-L-fucose","glucose","2-oxoglutarate","D-glycerate","L-phenylalanine","shikimate","succinate"
+"L-cysteine",0,0,0,0,0,0,1,0,1
+"erythritol",0,0,1,0,0,1,0,0,0
+"GDP-beta;-L-fucose",0,1,0,0,0,0,1,0,0
+"glucose",0,0,0,0,0,0,0,0,0
+"2-oxoglutarate",0,0,0,0,0,0,0,0,0
+"D-glycerate",0,1,0,0,0,0,1,0,0
+"L-phenylalanine",1,0,1,0,0,1,0,0,0
+"shikimate",0,0,0,0,0,0,0,0,0
+"succinate",1,0,0,0,0,0,0,0,0

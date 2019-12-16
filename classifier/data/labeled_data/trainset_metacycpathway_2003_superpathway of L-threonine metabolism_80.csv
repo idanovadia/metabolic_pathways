@@ -1,0 +1,7 @@
+"","2-oxoglutarate","glycine","L-isoleucine","L-threonine","L-glutamate","phosphate"
+"2-oxoglutarate",0,1,1,0,1,1
+"glycine",1,0,1,1,0,1
+"L-isoleucine",1,1,0,1,1,1
+"L-threonine",0,1,1,0,0,1
+"L-glutamate",1,0,1,0,0,1
+"phosphate",1,1,1,1,1,0

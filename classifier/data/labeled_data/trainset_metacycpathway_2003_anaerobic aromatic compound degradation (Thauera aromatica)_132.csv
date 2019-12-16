@@ -1,0 +1,8 @@
+"","2-oxoglutarate","benzoate","fumarate","L-phenylalanine","succinate","L-glutamate","phosphate"
+"2-oxoglutarate",0,0,0,1,0,1,1
+"benzoate",0,0,0,0,1,0,0
+"fumarate",0,0,0,0,1,0,0
+"L-phenylalanine",1,0,0,0,0,1,1
+"succinate",0,1,1,0,0,0,0
+"L-glutamate",1,0,0,1,0,0,1
+"phosphate",1,0,0,1,0,1,0

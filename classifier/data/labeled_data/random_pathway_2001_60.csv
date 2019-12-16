@@ -1,0 +1,14 @@
+"","L-alanine","L-asparagine","benzoate","dehydroascorbate (bicyclic form)","glucose_6_phosphate","L-glutamate","inositol","D-threo-isocitrate","L-phenylalanine","phosphate","L-serine","succinate","uracil"
+"L-alanine",0,0,0,0,1,0,0,0,0,0,0,0,0
+"L-asparagine",0,0,0,0,0,0,0,0,1,0,0,0,0
+"benzoate",0,0,0,0,0,0,0,0,0,0,0,0,0
+"dehydroascorbate (bicyclic form)",0,0,0,0,0,0,0,0,0,0,0,0,0
+"glucose_6_phosphate",1,0,0,0,0,0,0,0,0,0,0,1,0
+"L-glutamate",0,0,0,0,0,0,0,1,0,1,0,0,0
+"inositol",0,0,0,0,0,0,0,0,0,0,0,0,1
+"D-threo-isocitrate",0,0,0,0,0,1,0,0,0,0,0,0,0
+"L-phenylalanine",0,1,0,0,0,0,0,0,0,1,1,0,0
+"phosphate",0,0,0,0,0,1,0,0,1,0,1,0,0
+"L-serine",0,0,0,0,0,0,0,0,1,1,0,0,0
+"succinate",0,0,0,0,1,0,0,0,0,0,0,0,0
+"uracil",0,0,0,0,0,0,1,0,0,0,0,0,0

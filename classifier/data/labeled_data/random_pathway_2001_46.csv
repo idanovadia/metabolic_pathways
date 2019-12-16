@@ -1,0 +1,12 @@
+"","L-alanine","benzoate","dehydroascorbate (bicyclic form)","erythritol","gaba","D-glycerate","L-lysine","maltose","threonate","L-tyrosine","L-valine"
+"L-alanine",0,0,0,1,0,0,0,0,0,0,0
+"benzoate",0,0,0,0,1,0,0,0,0,0,0
+"dehydroascorbate (bicyclic form)",0,0,0,0,0,0,0,1,0,0,0
+"erythritol",1,0,0,0,0,0,0,0,0,0,0
+"gaba",0,1,0,0,0,0,0,1,0,0,1
+"D-glycerate",0,0,0,0,0,0,1,0,1,0,0
+"L-lysine",0,0,0,0,0,1,0,0,1,1,1
+"maltose",0,0,1,0,1,0,0,0,0,0,0
+"threonate",0,0,0,0,0,1,1,0,0,1,0
+"L-tyrosine",0,0,0,0,0,0,1,0,1,0,1
+"L-valine",0,0,0,0,1,0,1,0,0,1,0
