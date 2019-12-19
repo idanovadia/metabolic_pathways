@@ -1,0 +1,9 @@
+"","2-oxoglutarate","citrate","fumarate","L-glutamate","D-threo-isocitrate","(S)-malate","phosphate","succinate"
+"2-oxoglutarate",0,0,0,0,0,0,0,0
+"citrate",0,0,0,0,1,0,1,0
+"fumarate",0,0,0,0,0,0,0,1
+"L-glutamate",0,0,0,0,1,0,1,0
+"D-threo-isocitrate",0,1,0,1,0,0,0,0
+"(S)-malate",0,0,0,0,0,0,0,0
+"phosphate",0,1,0,1,0,0,0,0
+"succinate",0,0,1,0,0,0,0,0

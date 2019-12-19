@@ -1,0 +1,15 @@
+"","L-alanine","alpha;-tocopherol","dehydroascorbate (bicyclic form)","gaba","D-gluconate","glucose_6_phosphate","L-glutamate","L-glutamine","glycine","GDP-alpha;-D-mannose","phosphate","putrescine","alpha;,alpha;-trehalose","L-tyrosine"
+"L-alanine",0,0,0,0,0,1,0,0,0,0,0,0,0,0
+"alpha;-tocopherol",0,0,1,0,0,0,0,0,0,1,1,0,1,0
+"dehydroascorbate (bicyclic form)",0,1,0,0,0,0,0,0,0,1,0,0,1,0
+"gaba",0,0,0,0,0,0,0,0,1,1,1,1,1,0
+"D-gluconate",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"glucose_6_phosphate",1,0,0,0,0,0,0,0,0,0,0,0,0,0
+"L-glutamate",0,0,0,0,0,0,0,1,0,0,1,0,0,0
+"L-glutamine",0,0,0,0,0,0,1,0,1,0,1,0,0,1
+"glycine",0,0,0,1,0,0,0,1,0,0,1,0,0,1
+"GDP-alpha;-D-mannose",0,1,1,1,0,0,0,0,0,0,1,1,1,0
+"phosphate",0,1,0,1,0,0,1,1,1,1,0,0,1,1
+"putrescine",0,0,0,1,0,0,0,0,0,1,0,0,0,0
+"alpha;,alpha;-trehalose",0,1,1,1,0,0,0,0,0,1,1,0,0,0
+"L-tyrosine",0,0,0,0,0,0,0,1,1,0,1,0,0,0

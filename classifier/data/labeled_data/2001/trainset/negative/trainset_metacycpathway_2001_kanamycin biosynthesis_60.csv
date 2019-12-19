@@ -1,0 +1,7 @@
+"","2-oxoglutarate","glucose","L-glutamate","L-glutamine","phosphate","succinate"
+"2-oxoglutarate",0,0,0,0,0,0
+"glucose",0,0,0,0,0,0
+"L-glutamate",0,0,0,1,1,0
+"L-glutamine",0,0,1,0,1,0
+"phosphate",0,0,1,1,0,0
+"succinate",0,0,0,0,0,0

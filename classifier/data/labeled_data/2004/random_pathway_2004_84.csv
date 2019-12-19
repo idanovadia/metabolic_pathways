@@ -1,0 +1,19 @@
+"","L-alanine","L-asparagine","alpha;-tocopherol","L-cysteine","dehydroascorbate (bicyclic form)","erythritol","fructose","L-glutamine","glycerol","glycine","D-threo-isocitrate","L-methionine","L-phenylalanine","shikimate","succinate","threonate","alpha;,alpha;-trehalose","L-tyrosine"
+"L-alanine",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"L-asparagine",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"alpha;-tocopherol",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0
+"L-cysteine",0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,1
+"dehydroascorbate (bicyclic form)",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"erythritol",0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"fructose",0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+"L-glutamine",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"glycerol",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"glycine",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"D-threo-isocitrate",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"L-methionine",0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,1,0,1
+"L-phenylalanine",0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,1,0,1
+"shikimate",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"succinate",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"threonate",0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1
+"alpha;,alpha;-trehalose",0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+"L-tyrosine",0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,1,0,0

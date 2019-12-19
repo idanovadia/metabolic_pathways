@@ -1,0 +1,16 @@
+"","L-alanine","L-aspartate","2-oxoglutarate","beta;-alanine","citrate","glucose_6_phosphate","L-glutamine","inositol","maltose","GDP-alpha;-D-mannose","L-phenylalanine","shikimate","sucrose","uracil","L-valine"
+"L-alanine",0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+"L-aspartate",0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+"2-oxoglutarate",0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"beta;-alanine",0,0,0,0,1,0,1,0,0,0,1,0,1,0,1
+"citrate",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"glucose_6_phosphate",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"L-glutamine",0,0,0,1,0,0,0,0,0,0,0,0,0,0,1
+"inositol",0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+"maltose",0,0,0,0,0,0,0,0,0,1,0,1,1,0,0
+"GDP-alpha;-D-mannose",0,0,0,0,0,0,0,0,1,0,0,0,1,0,0
+"L-phenylalanine",0,1,0,1,0,0,0,0,0,0,0,0,0,0,1
+"shikimate",0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+"sucrose",0,0,0,1,0,0,0,0,1,1,0,0,0,0,0
+"uracil",0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"L-valine",0,0,1,1,0,0,1,0,0,0,1,0,0,0,0

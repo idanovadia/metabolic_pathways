@@ -1,0 +1,15 @@
+"","L-aspartate","beta;-alanine","glucose","glucose_6_phosphate","D-glycerate","inositol","L-isoleucine","(S)-malate","maltitol","putrescine","shikimate","succinate","L-tyrosine","L-valine"
+"L-aspartate",0,0,0,0,0,0,1,0,0,0,0,0,0,0
+"beta;-alanine",0,0,0,0,0,0,1,0,0,0,0,0,1,1
+"glucose",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"glucose_6_phosphate",0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"D-glycerate",0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"inositol",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"L-isoleucine",1,1,0,0,0,0,0,0,0,0,0,0,1,1
+"(S)-malate",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"maltitol",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"putrescine",0,0,0,0,0,0,0,0,0,0,0,1,0,0
+"shikimate",0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"succinate",0,0,0,1,1,0,0,0,0,1,0,0,0,0
+"L-tyrosine",0,1,0,0,0,0,1,0,0,0,0,0,0,1
+"L-valine",0,1,0,0,0,0,1,0,0,0,0,0,1,0

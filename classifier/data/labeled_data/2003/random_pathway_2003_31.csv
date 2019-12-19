@@ -1,0 +1,9 @@
+"","gaba","inositol","L-leucine","maltitol","L-phenylalanine","sucrose","alpha;,alpha;-trehalose","citrate"
+"gaba",0,1,1,0,1,1,0,1
+"inositol",1,0,0,1,0,1,0,0
+"L-leucine",1,0,0,0,1,0,0,0
+"maltitol",0,1,0,0,0,0,0,0
+"L-phenylalanine",1,0,1,0,0,0,0,1
+"sucrose",1,1,0,0,0,0,0,0
+"alpha;,alpha;-trehalose",0,0,0,0,0,0,0,0
+"citrate",1,0,0,0,1,0,0,0

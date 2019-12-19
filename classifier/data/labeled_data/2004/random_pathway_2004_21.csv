@@ -1,0 +1,7 @@
+"","L-asparagine","citrate","erythritol","fructose","glycerate_3_phosphate","L-leucine"
+"L-asparagine",0,0,0,0,0,0
+"citrate",0,0,0,1,0,1
+"erythritol",0,0,0,0,0,0
+"fructose",0,1,0,0,0,1
+"glycerate_3_phosphate",0,0,0,0,0,1
+"L-leucine",0,1,0,1,1,0
