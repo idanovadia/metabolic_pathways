@@ -30,7 +30,7 @@ class graph_creator:
             csv_pd = pd.read_csv(self.file_path, index_col=0, header=0)
             return list(csv_pd.columns)
 
-    def crete(self):
+    def create(self):
         self.subGraphsCreator()
         # self.creteSetNodes()
         self.createMainGraph()

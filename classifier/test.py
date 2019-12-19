@@ -21,4 +21,4 @@ gc_obj = gc.graph_creator(corr_matrix_path="C:\\Users\\idanf\\PycharmProjects\\m
                                            "\\data\\CorrMaxtrix\\CorrMatrix_out_2001_fruit_pericarp_metabolite.xlsx",
                           subGraphs_dir_path= "C:\\Users\\idanf\\PycharmProjects\\metabolic_pathways_new\\classifier"
                                               "\\data\\labeled_data\\2001\\trainset")
-gc_obj.crete()
+gc_obj.create()
