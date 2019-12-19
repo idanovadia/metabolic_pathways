@@ -18,4 +18,4 @@ class CorrMaxtrix:
         self.pearsonCorr = profile.corr(method='pearson')
 
     def saveFile(self):
-        self.pearsonCorr.to_excel(self.dir_out_path + "\\CorrMaxtrix" + self.out_name)
+        self.pearsonCorr.to_excel(self.dir_out_path + "\\CorrMatrix_" + self.out_name)
