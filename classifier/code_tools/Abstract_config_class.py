@@ -1,8 +1,10 @@
+from configuration.config_class import getConfig
+
 ## Abstract class for classes that support config files operations and needs setUp and exec functions
 class AbstractConfigClass:
 
     def __init__(self):
-        pass
+        self.config_parser=getConfig()
 
 
     def setup(self):
