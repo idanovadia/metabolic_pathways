@@ -1,1 +1,4 @@
 /.idea/*
+classifier/code_tools/__pycache__/*
+classifier/config_class_example/__pycache__/*
+classifier/configuration/__pycache__/*
