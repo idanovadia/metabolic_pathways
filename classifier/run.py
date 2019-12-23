@@ -1,10 +1,11 @@
-from configuration.config_class import getConfig
-from config_class_example.example_config_class import Example1
-from config_class_example.example2_config_class import Example2
-
+from classifier.configuration.config_class import getConfig
+from classifier.config_class_example.example_config_class import Example1
+from classifier.config_class_example.example2_config_class import Example2
+from classifier.preprocessing.preprocessing import Preprocessing
 modules_dict={}
 modules_dict['Example1']=Example1
 modules_dict['Example2']=Example2
+modules_dict['Preprocessing']=Preprocessing
 
 
 pipeline=[]

@@ -6,8 +6,6 @@ class Example1(AbstractConfigClass):
 
     def __init__(self):
         AbstractConfigClass.__init__(self)
-        self.example1_parameter1=''
-        self.example1_parameter2=''
 
 
     def setup(self):
