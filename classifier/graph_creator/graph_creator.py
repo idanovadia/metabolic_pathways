@@ -4,20 +4,27 @@ import sklearn
 import matplotlib.pyplot as plt
 import networkx as nx
 import os
-
+from classifier.code_tools.Abstract_config_class import AbstractConfigClass
+from configparser import ConfigParser
 from distributed.worker import weight
 
 ''' Using to create the main graph from the correlation matrix and the sub graph lists  '''
 
 
-class graph_creator:
+class GraphCreator(AbstractConfigClass):
 
-    def __init__(self, subGraphs_dir_path=None, corr_matrix_path=None):
-        self.corr_matrix_path = corr_matrix_path
-        self.subGraphs_dir_path = subGraphs_dir_path
+    def __init__(self):
+        AbstractConfigClass.__init__(self)
+
+    def setup(self):
+        self.corr_matrix_path = self.getPath(self.config_parser.eval(self.__class__.__name__,"corr_matrix_path"))
+        self.subGraphs_dir_path = self.getPath(self.config_parser.eval(self.__class__.__name__,"subGraphs_dir_path"))
         self.subGraphs_list = []
         self.main_graph = nx.Graph()
         self.set_nodes = set()
+
+    def exec(self):
+        self.create()
 
     '''
      Object of sub graph.  
