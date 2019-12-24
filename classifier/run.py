@@ -2,13 +2,17 @@ from classifier.configuration.config_class import getConfig
 from classifier.config_class_example.example_config_class import Example1
 from classifier.config_class_example.example2_config_class import Example2
 from classifier.preprocessing.preprocessing import Preprocessing
-modules_dict={}
-modules_dict['Example1']=Example1
-modules_dict['Example2']=Example2
-modules_dict['Preprocessing']=Preprocessing
+from classifier.correlation_matrix_creator.correlation_matrix_creator import CorrMaxtrix
+from classifier.graph_creator.graph_creator import GraphCreator
 
+modules_dict = {}
+modules_dict['Example1'] = Example1
+modules_dict['Example2'] = Example2
+modules_dict['Preprocessing'] = Preprocessing
+modules_dict['CorrMaxtrix'] = CorrMaxtrix
+modules_dict['GraphCreator'] = GraphCreator
 
-pipeline=[]
+pipeline = []
 
 for module in getConfig().sections():
     if modules_dict.get(module):

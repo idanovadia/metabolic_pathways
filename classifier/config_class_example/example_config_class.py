@@ -1,4 +1,4 @@
-from code_tools.Abstract_config_class import AbstractConfigClass
+from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 from configparser import ConfigParser
 
 

@@ -9,16 +9,16 @@ This class using for preprocessing xls files
 '''
 class Preprocessing(AbstractConfigClass):
 
-    def _init__(self):
+    def __init__(self):
         AbstractConfigClass.__init__(self)
 
     def setup(self):
         '''
           put mean in each na's cells use the mean of the row.
           '''
-        self.input_file_path = self.config_parser.eval(self.__class__.__name__,"input_file_path")
-        self.output_path_folder = self.config_parser.eval(self.__class__.__name__,"output_path_folder")
-        self.output_file_name = str(self.input_file_path).split(sep="\\")[-1]
+        self.input_file_path = self.getPath(relative_path=self.config_parser.eval(self.__class__.__name__,"input_file_path"))
+        self.output_path_folder = self.getPath((self.config_parser.eval(self.__class__.__name__,"output_path_folder")))
+        self.output_file_name = str(self.input_file_path).split(sep="/")[-1]
 
     def exec(self):
         self.fillNaToMean()
@@ -39,4 +39,4 @@ class Preprocessing(AbstractConfigClass):
     save xls file to specific dir. 
     '''
     def saveFile(self):
-        self.csv_pd_out.to_excel(self.output_path_folder+"\\out_" + self.output_file_name)
+        self.csv_pd_out.to_excel(self.output_path_folder+"/" + self.output_file_name)
