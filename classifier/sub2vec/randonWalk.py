@@ -1,5 +1,5 @@
 from random import randint
-
+import networkx as nx
 
 class RandomWalk():
 
@@ -8,30 +8,30 @@ class RandomWalk():
         self.number_of_graphs = number_of_graphs
 
     def graphComparator(self, graph_1, graph_2):
-        if list(graph_1.nodes).sort() == list(graph_2.nodes).sort():
+        if sorted(list(graph_1.nodes)) == sorted(list(graph_2.nodes)):
             return True
         return False
 
-    def insertGraphToSet(self, set_of_graphs, graph):
-        if len(set_of_graphs != 0):
-            for g in set_of_graphs:
+    def insertGraphToSet(self, list_of_graphs, graph):
+        if len(list_of_graphs) != 0:
+            for g in list_of_graphs:
                 if self.graphComparator(g, graph):
-                    return set_of_graphs
-        set_of_graphs.add(graph)
-        return set_of_graphs
+                    return list_of_graphs
+        list_of_graphs.append(graph)
+        return list_of_graphs
 
     # Get sub-graph in nx format
     def randomWalk(self, sub_graph):
         self.empty_nodes_list = False
         rw_nodes_list = []
         count = 0
-        threshold = self.randomWalk_threshold
+        threshold = self.threshold
         nodes = list(sub_graph.nodes)
         count, node = self.getNextNode(count, nodes, nodes, rw_nodes_list)
         while count < threshold and not self.empty_nodes_list:
             neighbors = self.getNeighbors(node, sub_graph)
             count, node = self.getNextNode(count, neighbors, nodes, rw_nodes_list)
-        return rw_nodes_list
+        return sub_graph.subgraph(rw_nodes_list)
 
     def getNextNode(self, count, nodes, left_nodes, rw_nodes_list):
         node = self.randomNode(nodes, left_nodes)
