@@ -30,7 +30,7 @@ class Sub2Vec(AbstractConfigClass):
         random_walk_object = rw.RandomWalk(threshold=self.randomWalk_threshold, number_of_graphs=self.random_walk_graphs_to_create)
         for g in self.subGraphs_list:
             for i in range(self.random_walk_graphs_to_create):
-                list_of_graphs = random_walk_object.insertGraphToSet(list_of_graphs=list_of_graphs, graph=random_walk_object.randomWalk(g))
+                self.list_of_graphs = random_walk_object.insertGraphToSet(list_of_graphs=self.list_of_graphs, graph=random_walk_object.randomWalk(g))
 
     # use directory path and read all the saved sab graphs there
     def generateSubGraphs(self):
