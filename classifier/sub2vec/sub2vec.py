@@ -4,6 +4,7 @@ from random import randint
 import networkx as nx
 import os
 import classifier.sub2vec.randonWalk as rw
+import classifier.sub2vec.doc2vec as d2v
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 
 
@@ -22,19 +23,30 @@ class Sub2Vec(AbstractConfigClass):
         self.random_walk_graphs_to_create = self.config_parser.eval(self.__class__.__name__, 'random_walk_graphs_to_create')
         self.subGraphs_directory_path = self.getPath(relative_path=self.config_parser.eval(self.__class__.__name__, 'subGraphs_directory_path'))
         self.subGraphs_list = []
-        self.list_of_graphs = []
+        self.rw_list_of_graphs = []
         pass
 
     def exec(self):
         self.generateSubGraphs()
-        random_walk_object = rw.RandomWalk(threshold=self.randomWalk_threshold, number_of_graphs=self.random_walk_graphs_to_create)
+        self.randomWalk()
+        self.doc2vec()
+
+    def randomWalk(self):
+        random_walk_object = rw.RandomWalk(threshold=self.randomWalk_threshold,
+                                           number_of_graphs=self.random_walk_graphs_to_create)
         for g in self.subGraphs_list:
             for i in range(self.random_walk_graphs_to_create):
-                self.list_of_graphs = random_walk_object.insertGraphToSet(list_of_graphs=self.list_of_graphs, graph=random_walk_object.randomWalk(g))
+                self.rw_list_of_graphs = random_walk_object.insertGraphToSet(list_of_graphs=self.rw_list_of_graphs,
+                                                                             graph=random_walk_object.randomWalk(g))
 
     # use directory path and read all the saved sab graphs there
     def generateSubGraphs(self):
         for filename in os.listdir(self.subGraphs_directory_path):
-            self.subGraphs_list.append(nx.read_gml(os.path.join(self.subGraphs_directory_path,filename)))
+            self.subGraphs_list.append(nx.read_gml(os.path.join(self.subGraphs_directory_path, filename)))
+
+    def doc2vec(self):
+        doc2vec_obj = d2v.Doc2Vec(self.rw_list_of_graphs)
+        doc2vec_obj.Doc2Vec()
+
 
 

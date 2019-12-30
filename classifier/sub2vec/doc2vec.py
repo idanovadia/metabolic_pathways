@@ -12,6 +12,6 @@ class Doc2Vec:
         self.list_of_RW = list_of_RW
 
     def Doc2Vec(self):
-        documents = [TaggedDocument(doc, [i]) for i, doc in enumerate(self.list_of_RW)]
+        documents = [TaggedDocument(doc.nodes, [i]) for i, doc in enumerate(self.list_of_RW)]
         model = d2v(documents, vector_size=4, window=2, min_count=1, workers=4)
         return model.docvecs
