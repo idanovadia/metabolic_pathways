@@ -1,6 +1,7 @@
 import random
 import itertools
 
+import math
 from multiset import Multiset
 from scipy.stats import pearsonr
 import networkx as nx
@@ -8,6 +9,35 @@ import matplotlib.pyplot as plt
 import copy
 import time
 
+from simulator.gan_metasim import Generator
+
+
+#Function to get results from the generator network
+def get_values_from_generator(j, i, enzyme_size, result):
+    offset = i * enzyme_size * 2
+    input_value = result[offset + j]
+    input_value = floor_or_ceil_value(get_value_from_rage(input_value))
+    out_value = result[offset + j + enzyme_size]
+    out_value = floor_or_ceil_value(get_value_from_rage(out_value))
+    return input_value, out_value
+
+#Function to get result from sigmoid function to metabolic
+def get_value_from_rage(OldValue):
+    NewMax = len(m_types)
+    NewMin = 0
+    OldMax = 1
+    OldMin = 0
+    OldRange = (OldMax - OldMin)
+    NewRange = (NewMax - NewMin)
+    NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin
+    return NewValue
+
+#get the value to be "int"
+def floor_or_ceil_value(value):
+    if(value - math.floor(value) > 0.5):
+        return math.ceil(value)
+    else:
+        return math.floor(value)
 
 class Enzyme: 
     def __init__(self,inp,output):
@@ -88,15 +118,30 @@ def z():
 mtype_count = 200
 enzyme_size = 5
 enzyme_count = 100
-enzymes_per_species = 80
+enzymes_per_species = enzyme_count #used to be 80, in recording 24/12/19 38:00
 substrate_size = 10000
 number_of_samples = 1
-number_of_species = 100
+number_of_species = 5#1 #100
 max_age = 10000
 
-m_types = range(mtype_count)
+m_types = range(mtype_count) #m_typs is all the metabolics
 m_generator = make_random_sequence_generator(m_types)
-enzymes = [Enzyme(Multiset(m_generator(enzyme_size)),Multiset(m_generator(enzyme_size))) for i in range(enzyme_count)]
+#todo: call the generator here
+enzymes = []
+generator_out_layer_size = 2*enzyme_size*enzyme_count
+gan_generator = Generator(generator_out_layer_size)
+result = gan_generator(gan_generator.get_random_input_layer()).detach()
+
+for i in range(enzyme_count):
+    input = []
+    output = []
+    for j in range(enzyme_size):
+        input.append(-1)
+        output.append(-1)
+        input[j], output[j] = get_values_from_generator(j, i, enzyme_size, result[0])
+    enzymes.append(Enzyme(input, output))
+
+#enzymes = [Enzyme(Multiset(m_generator(enzyme_size)),Multiset(m_generator(enzyme_size))) for i in range(enzyme_count)]
 e_generator = make_random_sequence_generator(enzymes)
 
 sim_id = time.time()
@@ -134,7 +179,7 @@ reactions = [s.develop(random.randint(0,max_age)) for s in samples]
 print("average number of reactions", sum(reactions)/len(reactions))
 
 ## analysis of the results
-corr = itertools.product(m_types,m_types)
+corr = itertools.product(m_types,m_types) #corrleation matrix
 corr = [((m1,m2),pearsonr([s.measure_metabolite_level(m1) for s in samples],[s.measure_metabolite_level(m2) for s in samples])) for m1,m2 in corr]
 strong = list(filter(lambda x: x[1][1]<0.000001, corr))
 print("strong correlations ",len(strong))
@@ -252,341 +297,3 @@ nx.draw_networkx_edges(Gp,pos,
 plt.axis('off')
 plt.savefig("out/%s_vis.png"%(sim_id), bbox_inches="tight")
 plt.show()
-
-###############################################################################################################
-
-# import tensorflow as tf
-# import numpy as np
-#
-# def generator(z, out_channel_dim, is_train=True):
-#     """
-#     Create the generator network
-#     """
-#     alpha = 0.2
-#
-#     with tf.variable_scope('generator', reuse=False if is_train == True else True):
-#         # First fully connected layer
-#         x_1 = tf.layers.dense(z, 2 * 2 * 512)
-#
-#         # Reshape it to start the convolutional stack
-#         deconv_2 = tf.reshape(x_1, (-1, 2, 2, 512))
-#         batch_norm2 = tf.layers.batch_normalization(deconv_2, training=is_train)
-#         lrelu2 = tf.maximum(alpha * batch_norm2, batch_norm2)
-#
-#         # Deconv 1
-#         deconv3 = tf.layers.conv2d_transpose(lrelu2, 256, 5, 2, padding='VALID')
-#         batch_norm3 = tf.layers.batch_normalization(deconv3, training=is_train)
-#         lrelu3 = tf.maximum(alpha * batch_norm3, batch_norm3)
-#
-#         # Deconv 2
-#         deconv4 = tf.layers.conv2d_transpose(lrelu3, 128, 5, 2, padding='SAME')
-#         batch_norm4 = tf.layers.batch_normalization(deconv4, training=is_train)
-#         lrelu4 = tf.maximum(alpha * batch_norm4, batch_norm4)
-#
-#         # Output layer
-#         logits = tf.layers.conv2d_transpose(lrelu4, out_channel_dim, 5, 2, padding='SAME')
-#
-#         out = tf.tanh(logits)
-#
-#         return out
-#
-#
-# def discriminator(images, reuse=False):
-#     """
-#     Create the discriminator network
-#     """
-#     alpha = 0.2
-#
-#     with tf.variable_scope('discriminator', reuse=reuse):
-#         # using 4 layer network as in DCGAN Paper
-#
-#         # Conv 1
-#         conv1 = tf.layers.conv2d(images, 64, 5, 2, 'SAME')
-#         lrelu1 = tf.maximum(alpha * conv1, conv1)
-#
-#         # Conv 2
-#         conv2 = tf.layers.conv2d(lrelu1, 128, 5, 2, 'SAME')
-#         batch_norm2 = tf.layers.batch_normalization(conv2, training=True)
-#         lrelu2 = tf.maximum(alpha * batch_norm2, batch_norm2)
-#
-#         # Conv 3
-#         conv3 = tf.layers.conv2d(lrelu2, 256, 5, 1, 'SAME')
-#         batch_norm3 = tf.layers.batch_normalization(conv3, training=True)
-#         lrelu3 = tf.maximum(alpha * batch_norm3, batch_norm3)
-#
-#         # Flatten
-#         flat = tf.reshape(lrelu3, (-1, 4 * 4 * 256))
-#
-#         # Logits
-#         logits = tf.layers.dense(flat, 1)
-#
-#         # Output
-#         out = tf.sigmoid(logits)
-#
-#         return out, logits
-#
-#
-# def model_inputs(image_width, image_height, image_channels, z_dim):
-#     """
-#     Create the model inputs
-#     """
-#     inputs_real = tf.placeholder(tf.float32, shape=(None, image_width, image_height, image_channels), name='input_real')
-#     inputs_z = tf.placeholder(tf.float32, (None, z_dim), name='input_z')
-#     learning_rate = tf.placeholder(tf.float32, name='learning_rate')
-#
-#     return inputs_real, inputs_z, learning_rate
-#
-#
-# def model_loss(input_real, input_z, out_channel_dim):
-#     """
-#     Get the loss for the discriminator and generator
-#     """
-#
-#     label_smoothing = 0.9
-#
-#     g_model = generator(input_z, out_channel_dim)
-#     d_model_real, d_logits_real = discriminator(input_real)
-#     d_model_fake, d_logits_fake = discriminator(g_model, reuse=True)
-#
-#     d_loss_real = tf.reduce_mean(
-#         tf.nn.sigmoid_cross_entropy_with_logits(logits=d_logits_real,
-#                                                 labels=tf.ones_like(d_model_real) * label_smoothing))
-#     d_loss_fake = tf.reduce_mean(
-#         tf.nn.sigmoid_cross_entropy_with_logits(logits=d_logits_fake,
-#                                                 labels=tf.zeros_like(d_model_fake)))
-#
-#     d_loss = d_loss_real + d_loss_fake
-#
-#     g_loss = tf.reduce_mean(
-#         tf.nn.sigmoid_cross_entropy_with_logits(logits=d_logits_fake,
-#                                                 labels=tf.ones_like(d_model_fake) * label_smoothing))
-#
-#     return d_loss, g_loss
-#
-# def model_opt(d_loss, g_loss, learning_rate, beta1):
-#     """
-#     Get optimization operations
-#     """
-#     t_vars = tf.trainable_variables()
-#     d_vars = [var for var in t_vars if var.name.startswith('discriminator')]
-#     g_vars = [var for var in t_vars if var.name.startswith('generator')]
-#
-#     # Optimize
-#     with tf.control_dependencies(tf.get_collection(tf.GraphKeys.UPDATE_OPS)):
-#         d_train_opt = tf.train.AdamOptimizer(learning_rate, beta1=beta1).minimize(d_loss, var_list=d_vars)
-#         g_train_opt = tf.train.AdamOptimizer(learning_rate, beta1=beta1).minimize(g_loss, var_list=g_vars)
-#
-#     return d_train_opt, g_train_opt
-#
-# def show_generator_output(sess, n_images, input_z, out_channel_dim):
-#     """
-#     Show example output for the generator
-#     """
-#     z_dim = input_z.get_shape().as_list()[-1]
-#     example_z = np.random.uniform(-1, 1, size=[n_images, z_dim])
-#
-#     samples = sess.run(
-#         generator(input_z, out_channel_dim, False),
-#         feed_dict={input_z: example_z})
-#
-#     #pyplot.imshow(helper.images_square_grid(samples))
-#     #pyplot.show()
-#
-# def train(epoch_count, batch_size, z_dim, learning_rate, beta1, get_batches, data_shape):
-#     """
-#     Train the GAN
-#     """
-#     input_real, input_z, _ = model_inputs(data_shape[1], data_shape[2], data_shape[3], z_dim)
-#     d_loss, g_loss = model_loss(input_real, input_z, data_shape[3])
-#     d_opt, g_opt = model_opt(d_loss, g_loss, learning_rate, beta1)
-#
-#     steps = 0
-#
-#     with tf.Session() as sess:
-#         sess.run(tf.global_variables_initializer())
-#         for epoch_i in range(epoch_count):
-#             for batch_images in get_batches(batch_size):
-#
-#                 # values range from -0.5 to 0.5, therefore scale to range -1, 1
-#                 batch_images = batch_images * 2
-#                 steps += 1
-#
-#                 batch_z = np.random.uniform(-1, 1, size=(batch_size, z_dim))
-#
-#                 _ = sess.run(d_opt, feed_dict={input_real: batch_images, input_z: batch_z})
-#                 _ = sess.run(g_opt, feed_dict={input_real: batch_images, input_z: batch_z})
-#
-#                 if steps % 400 == 0:
-#                     # At the end of every 10 epochs, get the losses and print them out
-#                     train_loss_d = d_loss.eval({input_z: batch_z, input_real: batch_images})
-#                     train_loss_g = g_loss.eval({input_z: batch_z})
-#
-#                     print("Epoch {}/{}...".format(epoch_i + 1, epoch_count), #epoch_count was just epochs, there was an error
-#                           "Discriminator Loss: {:.4f}...".format(train_loss_d),
-#                           "Generator Loss: {:.4f}".format(train_loss_g))
-#
-#                     _ = show_generator_output(sess, 1, input_z, data_shape[3])
-
-############################################################################################
-# from keras import Input
-# from keras.datasets import mnist
-# from keras.layers import Input, Dense, Reshape, Flatten, Dropout
-# from keras.layers import BatchNormalization, Activation, ZeroPadding2D
-# from keras.layers.advanced_activations import LeakyReLU
-# from keras.layers.convolutional import UpSampling2D, Conv2D
-# from keras.models import Sequential, Model
-# from keras.optimizers import Adam
-# import numpy as np
-#
-# class GAN():
-#     def __init__(self):
-#         self.img_rows = 28
-#         self.img_cols = 28
-#         self.channels = 1
-#         self.img_shape = (self.img_rows, self.img_cols, self.channels)
-#
-#         optimizer = Adam(0.0002, 0.5)
-#
-#         # Build and compile the discriminator
-#         self.discriminator = self.build_discriminator()
-#         self.discriminator.compile(loss='binary_crossentropy',
-#             optimizer=optimizer,
-#             metrics=['accuracy'])
-#
-#         # Build and compile the generator
-#         self.generator = self.build_generator()
-#         self.generator.compile(loss='binary_crossentropy', optimizer=optimizer)
-#
-#         # The generator takes noise as input and generated imgs
-#         z = Input(shape=(100,))
-#         img = self.generator(z)
-#
-#         # For the combined model we will only train the generator
-#         self.discriminator.trainable = False
-#
-#         # The valid takes generated images as input and determines validity
-#         valid = self.discriminator(img)
-#
-#         # The combined model  (stacked generator and discriminator) takes
-#         # noise as input => generates images => determines validity
-#         self.combined = Model(z, valid)
-#         self.combined.compile(loss='binary_crossentropy', optimizer=optimizer)
-#
-#     def build_generator(self):
-#
-#         noise_shape = (100,)
-#
-#         model = Sequential()
-#
-#         model.add(Dense(256, input_shape=noise_shape))
-#         model.add(LeakyReLU(alpha=0.2))
-#         model.add(BatchNormalization(momentum=0.8))
-#         model.add(Dense(512))
-#         model.add(LeakyReLU(alpha=0.2))
-#         model.add(BatchNormalization(momentum=0.8))
-#         model.add(Dense(1024))
-#         model.add(LeakyReLU(alpha=0.2))
-#         model.add(BatchNormalization(momentum=0.8))
-#         model.add(Dense(np.prod(self.img_shape), activation='tanh'))
-#         model.add(Reshape(self.img_shape))
-#
-#         model.summary()
-#
-#         noise = Input(shape=noise_shape)
-#         img = model(noise)
-#
-#         return Model(noise, img)
-#
-#     def build_discriminator(self):
-#
-#         img_shape = (self.img_rows, self.img_cols, self.channels)
-#
-#         model = Sequential()
-#
-#         model.add(Flatten(input_shape=img_shape))
-#         model.add(Dense(512))
-#         model.add(LeakyReLU(alpha=0.2))
-#         model.add(Dense(256))
-#         model.add(LeakyReLU(alpha=0.2))
-#         model.add(Dense(1, activation='sigmoid'))
-#         model.summary()
-#
-#         img = Input(shape=img_shape)
-#         validity = model(img)
-#
-#         return Model(img, validity)
-#
-#     def train(self, epochs, batch_size=128, save_interval=50):
-#
-#         # Load the dataset
-#         (X_train, _), (_, _) = mnist.load_data()
-#
-#         # Rescale -1 to 1
-#         X_train = (X_train.astype(np.float32) - 127.5) / 127.5
-#         X_train = np.expand_dims(X_train, axis=3)
-#
-#         half_batch = int(batch_size / 2)
-#
-#         for epoch in range(epochs):
-#
-#             # ---------------------
-#             #  Train Discriminator
-#             # ---------------------
-#
-#             # Select a random half batch of images
-#             idx = np.random.randint(0, X_train.shape[0], half_batch)
-#             imgs = X_train[idx]
-#
-#             noise = np.random.normal(0, 1, (half_batch, 100))
-#
-#             # Generate a half batch of new images
-#             gen_imgs = self.generator.predict(noise)
-#
-#             # Train the discriminator
-#             d_loss_real = self.discriminator.train_on_batch(imgs, np.ones((half_batch, 1)))
-#             d_loss_fake = self.discriminator.train_on_batch(gen_imgs, np.zeros((half_batch, 1)))
-#             d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
-#
-#
-#             # ---------------------
-#             #  Train Generator
-#             # ---------------------
-#
-#             noise = np.random.normal(0, 1, (batch_size, 100))
-#
-#             # The generator wants the discriminator to label the generated samples
-#             # as valid (ones)
-#             valid_y = np.array([1] * batch_size)
-#
-#             # Train the generator
-#             g_loss = self.combined.train_on_batch(noise, valid_y)
-#
-#             # Plot the progress
-#             print ("%d [D loss: %f, acc.: %.2f%%] [G loss: %f]" % (epoch, d_loss[0], 100*d_loss[1], g_loss))
-#
-#             # If at save interval => save generated image samples
-#             if epoch % save_interval == 0:
-#                 self.save_imgs(epoch)
-#
-#     def save_imgs(self, epoch):
-#         r, c = 5, 5
-#         noise = np.random.normal(0, 1, (r * c, 100))
-#         gen_imgs = self.generator.predict(noise)
-#
-#         # Rescale images 0 - 1
-#         gen_imgs = 0.5 * gen_imgs + 0.5
-#
-#         fig, axs = plt.subplots(r, c)
-#         cnt = 0
-#         for i in range(r):
-#             for j in range(c):
-#                 axs[i,j].imshow(gen_imgs[cnt, :,:,0], cmap='gray')
-#                 axs[i,j].axis('off')
-#                 cnt += 1
-#         fig.savefig("gan/images/mnist_%d.png" % epoch)
-#         plt.close()
-#
-#
-# if __name__ == '__main__':
-#     gan = GAN()
-#     gan.train(epochs=30000, batch_size=32, save_interval=200)
