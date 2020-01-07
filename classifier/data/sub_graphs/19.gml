@@ -2,7 +2,7 @@ graph [
   label "random"
   node [
     id 0
-    label "l-arginine"
+    label "l-leucine"
   ]
   node [
     id 1
@@ -10,7 +10,7 @@ graph [
   ]
   node [
     id 2
-    label "l-leucine"
+    label "l-arginine"
   ]
   edge [
     source 0

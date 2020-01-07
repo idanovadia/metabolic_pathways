@@ -2,10 +2,10 @@ graph [
   label "random"
   node [
     id 0
-    label "citrate"
+    label "succinate"
   ]
   node [
     id 1
-    label "succinate"
+    label "citrate"
   ]
 ]

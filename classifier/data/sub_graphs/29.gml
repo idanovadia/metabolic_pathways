@@ -2,11 +2,11 @@ graph [
   label "random"
   node [
     id 0
-    label "succinate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "2-oxoglutarate"
+    label "l-arginine"
   ]
   node [
     id 2
@@ -14,14 +14,39 @@ graph [
   ]
   node [
     id 3
-    label "phosphate"
+    label "succinate"
   ]
   node [
     id 4
-    label "l-arginine"
+    label "2-oxoglutarate"
+  ]
+  edge [
+    source 1
+    target 4
+    weight 1
+  ]
+  edge [
+    source 1
+    target 2
+    weight 1
+  ]
+  edge [
+    source 1
+    target 3
+    weight 1
   ]
   edge [
     source 2
+    target 4
+    weight 1
+  ]
+  edge [
+    source 2
+    target 3
+    weight 1
+  ]
+  edge [
+    source 3
     target 4
     weight 1
   ]

@@ -2,10 +2,10 @@ graph [
   label "random"
   node [
     id 0
-    label "l-tryptophan"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
+    label "l-tryptophan"
   ]
 ]

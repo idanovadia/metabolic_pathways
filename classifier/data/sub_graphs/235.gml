@@ -2,11 +2,11 @@ graph [
   label "random"
   node [
     id 0
-    label "l-leucine"
+    label "l-isoleucine"
   ]
   node [
     id 1
-    label "l-isoleucine"
+    label "l-leucine"
   ]
   node [
     id 2

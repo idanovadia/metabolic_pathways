@@ -16,6 +16,16 @@ class GraphCreator(AbstractConfigClass):
     def __init__(self):
         AbstractConfigClass.__init__(self)
 
+    '''
+    corr_matrix_path - path to directory of corr matrix.
+    subGraphs_dir_path - path to directory of label graphs.
+    threshold_weights - make weight edge that  bigger or equal of threshold to 1 and less to 0.
+    sub_graphs_output_directory_path - path to directory  to save the subgraphs with new weight.
+    subGraphs_list - 
+    main_graph - the complete graph.
+    set_nodes
+    removeEdges - edges that got weight 0 - to remove from main graph.
+    '''
     def setup(self):
         self.corr_matrix_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "corr_matrix_path"))
         self.subGraphs_dir_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "subGraphs_dir_path"))
@@ -113,12 +123,12 @@ class GraphCreator(AbstractConfigClass):
             v = self.removeEdges[i][1]
             self.main_graph.remove_edge(u=u, v=v)
 
-    ''' Right graphs to gml graph format'''
+    ''' write all graphs to gml graph format'''
     def WriteAll(self):
         for id, graph in enumerate(self.subGraphs_list):
             self.writeFile(graph, id)
 
-    ''' Right graphs to gml graph format'''
+    ''' write a graph to gml graph format'''
     def writeFile(self, G, id):
         nx.write_gml(G=G, path=os.path.join(self.sub_graphs_output_directory_path, str(id) + ".gml"))
 

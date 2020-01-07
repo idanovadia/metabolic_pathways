@@ -2,27 +2,27 @@ graph [
   label "random"
   node [
     id 0
-    label "fumarate"
+    label "l-glutamine"
   ]
   node [
     id 1
-    label "putrescine"
-  ]
-  node [
-    id 2
-    label "2-oxoglutarate"
-  ]
-  node [
-    id 3
-    label "l-lysine"
-  ]
-  node [
-    id 4
     label "phosphate"
   ]
   node [
-    id 5
+    id 2
+    label "l-glutamate"
+  ]
+  node [
+    id 3
     label "l-arginine"
+  ]
+  node [
+    id 4
+    label "fumarate"
+  ]
+  node [
+    id 5
+    label "l-lysine"
   ]
   node [
     id 6
@@ -30,15 +30,50 @@ graph [
   ]
   node [
     id 7
-    label "l-glutamate"
+    label "putrescine"
   ]
   node [
     id 8
-    label "l-glutamine"
+    label "2-oxoglutarate"
+  ]
+  edge [
+    source 0
+    target 6
+    weight 1
+  ]
+  edge [
+    source 0
+    target 2
+    weight 1
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
   edge [
     source 1
-    target 3
+    target 6
+    weight 1
+  ]
+  edge [
+    source 1
+    target 2
+    weight 1
+  ]
+  edge [
+    source 2
+    target 6
+    weight 1
+  ]
+  edge [
+    source 3
+    target 8
+    weight 1
+  ]
+  edge [
+    source 3
+    target 4
     weight 1
   ]
   edge [
@@ -47,8 +82,18 @@ graph [
     weight 1
   ]
   edge [
+    source 3
+    target 7
+    weight 1
+  ]
+  edge [
     source 4
-    target 6
+    target 8
+    weight 1
+  ]
+  edge [
+    source 4
+    target 5
     weight 1
   ]
   edge [
@@ -57,8 +102,18 @@ graph [
     weight 1
   ]
   edge [
-    source 6
+    source 5
+    target 8
+    weight 1
+  ]
+  edge [
+    source 5
     target 7
+    weight 1
+  ]
+  edge [
+    source 7
+    target 8
     weight 1
   ]
 ]

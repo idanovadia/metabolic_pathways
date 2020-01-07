@@ -2,7 +2,7 @@ graph [
   label "random"
   node [
     id 0
-    label "succinate"
+    label "phosphate"
   ]
   node [
     id 1
@@ -10,11 +10,11 @@ graph [
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "l-glutamate"
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-methionine"
   ]
   node [
     id 4
@@ -22,11 +22,21 @@ graph [
   ]
   node [
     id 5
-    label "l-glutamate"
+    label "succinate"
   ]
   node [
     id 6
-    label "l-methionine"
+    label "2-oxoglutarate"
+  ]
+  edge [
+    source 0
+    target 4
+    weight 1
+  ]
+  edge [
+    source 0
+    target 2
+    weight 1
   ]
   edge [
     source 1
@@ -34,18 +44,33 @@ graph [
     weight 1
   ]
   edge [
-    source 3
+    source 1
+    target 3
+    weight 1
+  ]
+  edge [
+    source 1
+    target 5
+    weight 1
+  ]
+  edge [
+    source 2
     target 4
     weight 1
   ]
   edge [
     source 3
+    target 6
+    weight 1
+  ]
+  edge [
+    source 3
     target 5
     weight 1
   ]
   edge [
-    source 4
-    target 5
+    source 5
+    target 6
     weight 1
   ]
 ]

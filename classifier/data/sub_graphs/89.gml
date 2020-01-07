@@ -2,7 +2,7 @@ graph [
   label "random"
   node [
     id 0
-    label "l-aspartate"
+    label "beta;-alanine"
   ]
   node [
     id 1
@@ -10,6 +10,11 @@ graph [
   ]
   node [
     id 2
-    label "beta;-alanine"
+    label "l-aspartate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
 ]

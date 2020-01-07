@@ -2,11 +2,11 @@ graph [
   label "random"
   node [
     id 0
-    label "l-threonine"
+    label "l-alanine"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-threonine"
   ]
   edge [
     source 0

@@ -2,18 +2,18 @@ graph [
   label "random"
   node [
     id 0
-    label "l-isoleucine"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
+    label "l-isoleucine"
   ]
   node [
     id 2
     label "l-valine"
   ]
   edge [
-    source 0
+    source 1
     target 2
     weight 1
   ]

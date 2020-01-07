@@ -12,4 +12,9 @@ graph [
     id 2
     label "fructose"
   ]
+  edge [
+    source 0
+    target 1
+    weight 1
+  ]
 ]

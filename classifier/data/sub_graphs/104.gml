@@ -2,7 +2,7 @@ graph [
   label "random"
   node [
     id 0
-    label "glycine"
+    label "l-tyrosine"
   ]
   node [
     id 1
@@ -10,7 +10,7 @@ graph [
   ]
   node [
     id 2
-    label "l-tyrosine"
+    label "glycine"
   ]
   edge [
     source 0
@@ -19,6 +19,11 @@ graph [
   ]
   edge [
     source 0
+    target 2
+    weight 1
+  ]
+  edge [
+    source 1
     target 2
     weight 1
   ]

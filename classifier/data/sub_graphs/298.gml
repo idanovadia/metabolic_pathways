@@ -2,18 +2,18 @@ graph [
   label "random"
   node [
     id 0
-    label "l-aspartate"
-  ]
-  node [
-    id 1
     label "putrescine"
   ]
   node [
-    id 2
+    id 1
     label "phosphate"
   ]
+  node [
+    id 2
+    label "l-aspartate"
+  ]
   edge [
-    source 0
+    source 1
     target 2
     weight 1
   ]

@@ -2,7 +2,7 @@ graph [
   label "random"
   node [
     id 0
-    label "l-aspartate"
+    label "udp-alpha;-d-galacturonate"
   ]
   node [
     id 1
@@ -10,6 +10,11 @@ graph [
   ]
   node [
     id 2
-    label "udp-alpha;-d-galacturonate"
+    label "l-aspartate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
 ]

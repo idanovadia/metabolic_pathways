@@ -2,41 +2,56 @@ graph [
   label "random"
   node [
     id 0
-    label "glycine"
-  ]
-  node [
-    id 1
-    label "2-oxoglutarate"
-  ]
-  node [
-    id 2
     label "l-isoleucine"
   ]
   node [
-    id 3
-    label "l-threonine"
-  ]
-  node [
-    id 4
+    id 1
     label "phosphate"
   ]
   node [
-    id 5
+    id 2
     label "l-glutamate"
+  ]
+  node [
+    id 3
+    label "glycine"
+  ]
+  node [
+    id 4
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 5
+    label "l-threonine"
   ]
   edge [
     source 0
+    target 4
+    weight 1
+  ]
+  edge [
+    source 0
+    target 3
+    weight 1
+  ]
+  edge [
+    source 0
+    target 5
+    weight 1
+  ]
+  edge [
+    source 1
     target 2
     weight 1
   ]
   edge [
-    source 0
-    target 3
+    source 3
+    target 4
     weight 1
   ]
   edge [
-    source 2
-    target 3
+    source 3
+    target 5
     weight 1
   ]
   edge [

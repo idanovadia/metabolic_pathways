@@ -6,19 +6,24 @@ graph [
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-aspartate"
   ]
   node [
     id 3
-    label "2-oxoglutarate"
+    label "l-glutamate"
   ]
   edge [
-    source 1
-    target 2
+    source 0
+    target 1
+    weight 1
+  ]
+  edge [
+    source 2
+    target 3
     weight 1
   ]
 ]

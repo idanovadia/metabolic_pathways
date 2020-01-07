@@ -2,19 +2,19 @@ graph [
   label "random"
   node [
     id 0
-    label "l-leucine"
+    label "l-glutamine"
   ]
   node [
     id 1
-    label "benzoate"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "erythritol"
+    label "l-leucine"
   ]
   node [
     id 3
-    label "glycerol"
+    label "benzoate"
   ]
   node [
     id 4
@@ -22,11 +22,11 @@ graph [
   ]
   node [
     id 5
-    label "l-glutamate"
+    label "glycerol"
   ]
   node [
     id 6
-    label "l-glutamine"
+    label "erythritol"
   ]
   edge [
     source 0
@@ -34,28 +34,53 @@ graph [
     weight 1
   ]
   edge [
-    source 0
-    target 4
-    weight 1
-  ]
-  edge [
-    source 0
-    target 2
-    weight 1
-  ]
-  edge [
-    source 1
-    target 4
-    weight 1
-  ]
-  edge [
-    source 1
-    target 2
+    source 2
+    target 3
     weight 1
   ]
   edge [
     source 2
     target 4
+    weight 1
+  ]
+  edge [
+    source 2
+    target 6
+    weight 1
+  ]
+  edge [
+    source 2
+    target 5
+    weight 1
+  ]
+  edge [
+    source 3
+    target 4
+    weight 1
+  ]
+  edge [
+    source 3
+    target 6
+    weight 1
+  ]
+  edge [
+    source 3
+    target 5
+    weight 1
+  ]
+  edge [
+    source 4
+    target 6
+    weight 1
+  ]
+  edge [
+    source 4
+    target 5
+    weight 1
+  ]
+  edge [
+    source 5
+    target 6
     weight 1
   ]
 ]

@@ -2,14 +2,19 @@ graph [
   label "random"
   node [
     id 0
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "l-valine"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "l-valine"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 1
   ]
 ]

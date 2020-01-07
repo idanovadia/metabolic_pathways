@@ -2,11 +2,11 @@ graph [
   label "random"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "l-serine"
+    label "l-arginine"
   ]
   node [
     id 2
@@ -14,7 +14,7 @@ graph [
   ]
   node [
     id 3
-    label "l-threonine"
+    label "l-serine"
   ]
   node [
     id 4
@@ -22,11 +22,11 @@ graph [
   ]
   node [
     id 5
-    label "l-arginine"
+    label "2-oxoglutarate"
   ]
   node [
     id 6
-    label "l-glutamate"
+    label "l-threonine"
   ]
   edge [
     source 1
@@ -45,6 +45,11 @@ graph [
   ]
   edge [
     source 1
+    target 6
+    weight 1
+  ]
+  edge [
+    source 1
     target 4
     weight 1
   ]
@@ -60,12 +65,22 @@ graph [
   ]
   edge [
     source 2
+    target 6
+    weight 1
+  ]
+  edge [
+    source 2
     target 4
     weight 1
   ]
   edge [
     source 3
     target 5
+    weight 1
+  ]
+  edge [
+    source 3
+    target 6
     weight 1
   ]
   edge [
@@ -76,6 +91,16 @@ graph [
   edge [
     source 4
     target 5
+    weight 1
+  ]
+  edge [
+    source 4
+    target 6
+    weight 1
+  ]
+  edge [
+    source 5
+    target 6
     weight 1
   ]
 ]

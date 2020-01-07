@@ -2,14 +2,19 @@ graph [
   label "random"
   node [
     id 0
-    label "l-tryptophan"
+    label "glucose"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-tryptophan"
   ]
   node [
     id 2
-    label "glucose"
+    label "l-glutamate"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 1
   ]
 ]

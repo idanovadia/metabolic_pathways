@@ -2,10 +2,15 @@ graph [
   label "random"
   node [
     id 0
-    label "l-arginine"
+    label "putrescine"
   ]
   node [
     id 1
-    label "putrescine"
+    label "l-arginine"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
 ]

@@ -2,10 +2,15 @@ graph [
   label "random"
   node [
     id 0
-    label "d-glycerate"
+    label "(s)-malate"
   ]
   node [
     id 1
-    label "(s)-malate"
+    label "d-glycerate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
 ]

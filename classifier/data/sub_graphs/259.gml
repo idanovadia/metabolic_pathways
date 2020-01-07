@@ -2,11 +2,11 @@ graph [
   label "random"
   node [
     id 0
-    label "l-phenylalanine"
+    label "l-tyrosine"
   ]
   node [
     id 1
-    label "l-tyrosine"
+    label "l-phenylalanine"
   ]
   edge [
     source 0

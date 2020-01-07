@@ -6,27 +6,27 @@ graph [
   ]
   node [
     id 1
-    label "succinate"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "2-oxoglutarate"
-  ]
-  node [
-    id 3
-    label "l-serine"
-  ]
-  node [
-    id 4
-    label "l-alanine"
-  ]
-  node [
-    id 5
     label "(s)-malate"
   ]
   node [
-    id 6
+    id 3
+    label "l-alanine"
+  ]
+  node [
+    id 4
     label "fumarate"
+  ]
+  node [
+    id 5
+    label "l-serine"
+  ]
+  node [
+    id 6
+    label "succinate"
   ]
   node [
     id 7
@@ -34,7 +34,7 @@ graph [
   ]
   node [
     id 8
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   edge [
     source 0
@@ -43,7 +43,47 @@ graph [
   ]
   edge [
     source 0
+    target 1
+    weight 1
+  ]
+  edge [
+    source 1
+    target 7
+    weight 1
+  ]
+  edge [
+    source 2
+    target 3
+    weight 1
+  ]
+  edge [
+    source 2
     target 8
+    weight 1
+  ]
+  edge [
+    source 2
+    target 4
+    weight 1
+  ]
+  edge [
+    source 2
+    target 5
+    weight 1
+  ]
+  edge [
+    source 2
+    target 6
+    weight 1
+  ]
+  edge [
+    source 3
+    target 8
+    weight 1
+  ]
+  edge [
+    source 3
+    target 4
     weight 1
   ]
   edge [
@@ -52,7 +92,37 @@ graph [
     weight 1
   ]
   edge [
-    source 7
+    source 3
+    target 6
+    weight 1
+  ]
+  edge [
+    source 4
+    target 8
+    weight 1
+  ]
+  edge [
+    source 4
+    target 5
+    weight 1
+  ]
+  edge [
+    source 4
+    target 6
+    weight 1
+  ]
+  edge [
+    source 5
+    target 8
+    weight 1
+  ]
+  edge [
+    source 5
+    target 6
+    weight 1
+  ]
+  edge [
+    source 6
     target 8
     weight 1
   ]

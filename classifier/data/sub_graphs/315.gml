@@ -2,11 +2,11 @@ graph [
   label "random"
   node [
     id 0
-    label "l-glutamate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-glutamate"
   ]
   edge [
     source 0

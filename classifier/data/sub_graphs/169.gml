@@ -2,11 +2,11 @@ graph [
   label "random"
   node [
     id 0
-    label "citrate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "citrate"
   ]
   edge [
     source 0

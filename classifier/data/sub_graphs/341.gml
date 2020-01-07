@@ -2,19 +2,19 @@ graph [
   label "random"
   node [
     id 0
-    label "(s)-malate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-lysine"
+    label "(s)-malate"
   ]
   node [
     id 2
-    label "l-valine"
+    label "l-lysine"
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-valine"
   ]
   node [
     id 4
@@ -22,7 +22,7 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 4
     weight 1
   ]
   edge [
@@ -31,8 +31,13 @@ graph [
     weight 1
   ]
   edge [
-    source 3
-    target 4
+    source 1
+    target 3
+    weight 1
+  ]
+  edge [
+    source 2
+    target 3
     weight 1
   ]
 ]

@@ -2,15 +2,15 @@ graph [
   label "random"
   node [
     id 0
-    label "glycine"
+    label "l-alanine"
   ]
   node [
     id 1
-    label "l-cysteine"
+    label "glycine"
   ]
   node [
     id 2
-    label "l-alanine"
+    label "l-cysteine"
   ]
   edge [
     source 0

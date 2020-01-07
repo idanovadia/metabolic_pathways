@@ -2,7 +2,7 @@ graph [
   label "random"
   node [
     id 0
-    label "succinate"
+    label "phosphate"
   ]
   node [
     id 1
@@ -10,7 +10,7 @@ graph [
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-methionine"
   ]
   node [
     id 3
@@ -18,7 +18,17 @@ graph [
   ]
   node [
     id 4
-    label "l-methionine"
+    label "succinate"
+  ]
+  edge [
+    source 0
+    target 3
+    weight 1
+  ]
+  edge [
+    source 1
+    target 2
+    weight 1
   ]
   edge [
     source 1
@@ -27,7 +37,7 @@ graph [
   ]
   edge [
     source 2
-    target 3
+    target 4
     weight 1
   ]
 ]

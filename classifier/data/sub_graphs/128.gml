@@ -2,7 +2,7 @@ graph [
   label "random"
   node [
     id 0
-    label "l-serine"
+    label "l-methionine"
   ]
   node [
     id 1
@@ -10,11 +10,11 @@ graph [
   ]
   node [
     id 2
-    label "l-methionine"
+    label "phosphate"
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-serine"
   ]
   edge [
     source 0
@@ -23,12 +23,12 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 3
     weight 1
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 1
   ]
 ]

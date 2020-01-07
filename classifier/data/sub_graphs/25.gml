@@ -2,11 +2,11 @@ graph [
   label "random"
   node [
     id 0
-    label "glucose"
+    label "l-glutamine"
   ]
   node [
     id 1
-    label "alpha;,alpha;-trehalose"
+    label "glucose"
   ]
   node [
     id 2
@@ -18,7 +18,32 @@ graph [
   ]
   node [
     id 4
-    label "l-glutamine"
+    label "alpha;,alpha;-trehalose"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
+  ]
+  edge [
+    source 0
+    target 3
+    weight 1
+  ]
+  edge [
+    source 0
+    target 2
+    weight 1
+  ]
+  edge [
+    source 1
+    target 3
+    weight 1
+  ]
+  edge [
+    source 1
+    target 2
+    weight 1
   ]
   edge [
     source 2

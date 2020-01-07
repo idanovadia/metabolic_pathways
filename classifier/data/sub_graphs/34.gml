@@ -2,7 +2,7 @@ graph [
   label "random"
   node [
     id 0
-    label "glycine"
+    label "phosphate"
   ]
   node [
     id 1
@@ -14,25 +14,40 @@ graph [
   ]
   node [
     id 3
-    label "phosphate"
+    label "glycine"
   ]
   node [
     id 4
     label "d-glycerate"
   ]
   edge [
-    source 0
-    target 1
+    source 1
+    target 4
     weight 1
   ]
   edge [
-    source 0
-    target 2
+    source 1
+    target 3
     weight 1
   ]
   edge [
     source 1
     target 2
+    weight 1
+  ]
+  edge [
+    source 2
+    target 4
+    weight 1
+  ]
+  edge [
+    source 2
+    target 3
+    weight 1
+  ]
+  edge [
+    source 3
+    target 4
     weight 1
   ]
 ]

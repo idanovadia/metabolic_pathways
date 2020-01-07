@@ -2,15 +2,15 @@ graph [
   label "random"
   node [
     id 0
-    label "sucrose"
+    label "glucose"
   ]
   node [
     id 1
-    label "glycerate_3_phosphate"
+    label "sucrose"
   ]
   node [
     id 2
-    label "gdp-alpha;-d-mannose"
+    label "l-glutamate"
   ]
   node [
     id 3
@@ -18,15 +18,15 @@ graph [
   ]
   node [
     id 4
-    label "glucose"
+    label "glycerate_3_phosphate"
   ]
   node [
     id 5
-    label "glucose_6_phosphate"
+    label "fructose"
   ]
   node [
     id 6
-    label "inositol"
+    label "gdp-alpha;-d-mannose"
   ]
   node [
     id 7
@@ -34,7 +34,7 @@ graph [
   ]
   node [
     id 8
-    label "l-glutamate"
+    label "inositol"
   ]
   node [
     id 9
@@ -42,26 +42,86 @@ graph [
   ]
   node [
     id 10
-    label "fructose"
+    label "glucose_6_phosphate"
   ]
   edge [
     source 0
+    target 7
+    weight 1
+  ]
+  edge [
+    source 0
+    target 5
+    weight 1
+  ]
+  edge [
+    source 0
+    target 2
+    weight 1
+  ]
+  edge [
+    source 0
+    target 6
+    weight 1
+  ]
+  edge [
+    source 1
+    target 10
+    weight 1
+  ]
+  edge [
+    source 1
+    target 4
+    weight 1
+  ]
+  edge [
+    source 1
+    target 8
+    weight 1
+  ]
+  edge [
+    source 1
+    target 9
+    weight 1
+  ]
+  edge [
+    source 1
     target 3
     weight 1
   ]
   edge [
     source 2
-    target 10
+    target 7
     weight 1
   ]
   edge [
     source 2
+    target 5
+    weight 1
+  ]
+  edge [
+    source 2
+    target 6
+    weight 1
+  ]
+  edge [
+    source 3
+    target 10
+    weight 1
+  ]
+  edge [
+    source 3
     target 4
     weight 1
   ]
   edge [
     source 3
-    target 5
+    target 8
+    weight 1
+  ]
+  edge [
+    source 3
+    target 9
     weight 1
   ]
   edge [
@@ -70,8 +130,38 @@ graph [
     weight 1
   ]
   edge [
-    source 7
+    source 4
     target 8
+    weight 1
+  ]
+  edge [
+    source 4
+    target 9
+    weight 1
+  ]
+  edge [
+    source 5
+    target 7
+    weight 1
+  ]
+  edge [
+    source 5
+    target 6
+    weight 1
+  ]
+  edge [
+    source 6
+    target 7
+    weight 1
+  ]
+  edge [
+    source 8
+    target 10
+    weight 1
+  ]
+  edge [
+    source 9
+    target 10
     weight 1
   ]
 ]

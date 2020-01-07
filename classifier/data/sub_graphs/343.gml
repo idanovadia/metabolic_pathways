@@ -2,10 +2,10 @@ graph [
   label "random"
   node [
     id 0
-    label "saccharate"
+    label "fructose"
   ]
   node [
     id 1
-    label "fructose"
+    label "saccharate"
   ]
 ]

@@ -2,11 +2,11 @@ graph [
   label "random"
   node [
     id 0
-    label "galactose"
+    label "phosphate"
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "galactose"
   ]
   node [
     id 2
@@ -14,11 +14,16 @@ graph [
   ]
   node [
     id 3
-    label "phosphate"
+    label "gdp-alpha;-d-mannose"
   ]
   edge [
     source 0
     target 1
+    weight 1
+  ]
+  edge [
+    source 0
+    target 3
     weight 1
   ]
   edge [

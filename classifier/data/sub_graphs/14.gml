@@ -6,15 +6,15 @@ graph [
   ]
   node [
     id 1
-    label "l-phenylalanine"
+    label "phosphate"
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-phenylalanine"
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 1
   ]
 ]

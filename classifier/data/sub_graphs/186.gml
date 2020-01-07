@@ -2,10 +2,10 @@ graph [
   label "random"
   node [
     id 0
-    label "glucose"
+    label "benzoate"
   ]
   node [
     id 1
-    label "benzoate"
+    label "glucose"
   ]
 ]

@@ -2,39 +2,39 @@ graph [
   label "random"
   node [
     id 0
-    label "glycerate_3_phosphate"
+    label "l-asparagine"
   ]
   node [
     id 1
-    label "benzoate"
-  ]
-  node [
-    id 2
-    label "threonate"
-  ]
-  node [
-    id 3
     label "gaba"
   ]
   node [
-    id 4
-    label "glucose_6_phosphate"
-  ]
-  node [
-    id 5
-    label "galactose"
-  ]
-  node [
-    id 6
+    id 2
     label "(s)-malate"
   ]
   node [
-    id 7
+    id 3
+    label "l-tryptophan"
+  ]
+  node [
+    id 4
+    label "glycerate_3_phosphate"
+  ]
+  node [
+    id 5
     label "shikimate"
   ]
   node [
+    id 6
+    label "benzoate"
+  ]
+  node [
+    id 7
+    label "galactose"
+  ]
+  node [
     id 8
-    label "l-tryptophan"
+    label "inositol"
   ]
   node [
     id 9
@@ -42,11 +42,101 @@ graph [
   ]
   node [
     id 10
-    label "inositol"
+    label "threonate"
   ]
   node [
     id 11
-    label "l-asparagine"
+    label "glucose_6_phosphate"
+  ]
+  edge [
+    source 0
+    target 6
+    weight 1
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
+  ]
+  edge [
+    source 0
+    target 9
+    weight 1
+  ]
+  edge [
+    source 0
+    target 11
+    weight 1
+  ]
+  edge [
+    source 0
+    target 4
+    weight 1
+  ]
+  edge [
+    source 0
+    target 8
+    weight 1
+  ]
+  edge [
+    source 0
+    target 2
+    weight 1
+  ]
+  edge [
+    source 0
+    target 5
+    weight 1
+  ]
+  edge [
+    source 0
+    target 10
+    weight 1
+  ]
+  edge [
+    source 0
+    target 3
+    weight 1
+  ]
+  edge [
+    source 1
+    target 6
+    weight 1
+  ]
+  edge [
+    source 1
+    target 9
+    weight 1
+  ]
+  edge [
+    source 1
+    target 11
+    weight 1
+  ]
+  edge [
+    source 1
+    target 4
+    weight 1
+  ]
+  edge [
+    source 1
+    target 8
+    weight 1
+  ]
+  edge [
+    source 1
+    target 2
+    weight 1
+  ]
+  edge [
+    source 1
+    target 5
+    weight 1
+  ]
+  edge [
+    source 1
+    target 10
+    weight 1
   ]
   edge [
     source 1
@@ -54,17 +144,7 @@ graph [
     weight 1
   ]
   edge [
-    source 1
-    target 9
-    weight 1
-  ]
-  edge [
-    source 1
-    target 4
-    weight 1
-  ]
-  edge [
-    source 1
+    source 2
     target 6
     weight 1
   ]
@@ -75,12 +155,42 @@ graph [
   ]
   edge [
     source 2
+    target 11
+    weight 1
+  ]
+  edge [
+    source 2
     target 4
     weight 1
   ]
   edge [
     source 2
+    target 8
+    weight 1
+  ]
+  edge [
+    source 2
+    target 5
+    weight 1
+  ]
+  edge [
+    source 2
+    target 10
+    weight 1
+  ]
+  edge [
+    source 2
+    target 3
+    weight 1
+  ]
+  edge [
+    source 3
     target 6
+    weight 1
+  ]
+  edge [
+    source 3
+    target 9
     weight 1
   ]
   edge [
@@ -95,7 +205,27 @@ graph [
   ]
   edge [
     source 3
+    target 8
+    weight 1
+  ]
+  edge [
+    source 3
+    target 5
+    weight 1
+  ]
+  edge [
+    source 3
+    target 10
+    weight 1
+  ]
+  edge [
+    source 4
     target 6
+    weight 1
+  ]
+  edge [
+    source 4
+    target 9
     weight 1
   ]
   edge [
@@ -105,11 +235,86 @@ graph [
   ]
   edge [
     source 4
+    target 8
+    weight 1
+  ]
+  edge [
+    source 4
+    target 5
+    weight 1
+  ]
+  edge [
+    source 4
+    target 10
+    weight 1
+  ]
+  edge [
+    source 5
+    target 6
+    weight 1
+  ]
+  edge [
+    source 5
+    target 9
+    weight 1
+  ]
+  edge [
+    source 5
+    target 11
+    weight 1
+  ]
+  edge [
+    source 5
+    target 10
+    weight 1
+  ]
+  edge [
+    source 6
+    target 9
+    weight 1
+  ]
+  edge [
+    source 6
+    target 11
+    weight 1
+  ]
+  edge [
+    source 6
+    target 8
+    weight 1
+  ]
+  edge [
+    source 6
+    target 10
+    weight 1
+  ]
+  edge [
+    source 8
     target 9
     weight 1
   ]
   edge [
     source 8
+    target 11
+    weight 1
+  ]
+  edge [
+    source 8
+    target 10
+    weight 1
+  ]
+  edge [
+    source 9
+    target 11
+    weight 1
+  ]
+  edge [
+    source 9
+    target 10
+    weight 1
+  ]
+  edge [
+    source 10
     target 11
     weight 1
   ]

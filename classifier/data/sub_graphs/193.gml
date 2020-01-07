@@ -2,18 +2,18 @@ graph [
   label "random"
   node [
     id 0
-    label "gdp-beta;-l-fucose"
+    label "galactose"
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 2
-    label "galactose"
+    label "gdp-alpha;-d-mannose"
   ]
   edge [
-    source 1
+    source 0
     target 2
     weight 1
   ]

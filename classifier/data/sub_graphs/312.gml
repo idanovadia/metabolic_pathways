@@ -6,40 +6,45 @@ graph [
   ]
   node [
     id 1
-    label "succinate"
-  ]
-  node [
-    id 2
     label "d-threo-isocitrate"
   ]
   node [
-    id 3
-    label "2-oxoglutarate"
-  ]
-  node [
-    id 4
-    label "citrate"
-  ]
-  node [
-    id 5
-    label "cis-aconitate"
-  ]
-  node [
-    id 6
+    id 2
     label "(s)-malate"
   ]
   node [
-    id 7
+    id 3
     label "fumarate"
+  ]
+  node [
+    id 4
+    label "cis-aconitate"
+  ]
+  node [
+    id 5
+    label "succinate"
+  ]
+  node [
+    id 6
+    label "citrate"
+  ]
+  node [
+    id 7
+    label "2-oxoglutarate"
   ]
   edge [
     source 0
-    target 4
+    target 6
     weight 1
   ]
   edge [
     source 0
-    target 2
+    target 1
+    weight 1
+  ]
+  edge [
+    source 1
+    target 6
     weight 1
   ]
   edge [
@@ -48,13 +53,48 @@ graph [
     weight 1
   ]
   edge [
-    source 5
+    source 2
     target 7
     weight 1
   ]
   edge [
+    source 2
+    target 3
+    weight 1
+  ]
+  edge [
+    source 2
+    target 5
+    weight 1
+  ]
+  edge [
+    source 3
+    target 4
+    weight 1
+  ]
+  edge [
+    source 3
+    target 7
+    weight 1
+  ]
+  edge [
+    source 3
+    target 5
+    weight 1
+  ]
+  edge [
+    source 4
+    target 7
+    weight 1
+  ]
+  edge [
+    source 4
+    target 5
+    weight 1
+  ]
+  edge [
     source 5
-    target 6
+    target 7
     weight 1
   ]
 ]

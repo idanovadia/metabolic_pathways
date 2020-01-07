@@ -2,7 +2,7 @@ graph [
   label "random"
   node [
     id 0
-    label "l-proline"
+    label "phosphate"
   ]
   node [
     id 1
@@ -10,11 +10,11 @@ graph [
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-proline"
   ]
   edge [
-    source 1
-    target 2
+    source 0
+    target 1
     weight 1
   ]
 ]
