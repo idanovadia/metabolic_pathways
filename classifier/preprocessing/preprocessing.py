@@ -29,10 +29,11 @@ class Preprocessing(AbstractConfigClass):
         csv_pd = pd.read_excel(self.input_file_path, index_col=0, header=0)
         print(csv_pd.head())
         csv_pd_T = csv_pd.T
-        for index, row in enumerate(csv_pd_T):
-            if index == 0:
-                continue
-            csv_pd_T[row] = csv_pd_T[row].fillna(csv_pd_T[row].mean())
+        csv_pd_T = csv_pd_T.fillna(0)
+        # for index, row in enumerate(csv_pd_T):
+        #     if index == 0:
+        #         continue
+        #     csv_pd_T[row] = csv_pd_T[row].fillna(csv_pd_T[row].mean())
         self.csv_pd_out = csv_pd_T.T
 
     '''
