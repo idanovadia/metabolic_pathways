@@ -1,5 +1,7 @@
 from random import randint
 import networkx as nx
+import random
+
 
 class RandomWalk():
 
@@ -27,14 +29,17 @@ class RandomWalk():
         count = 0
         threshold = self.threshold
         nodes = list(sub_graph.nodes)
-        count, node = self.getNextNode(count, nodes, nodes, rw_nodes_list)
-        while count < threshold and not self.empty_nodes_list:
-            neighbors = self.getNeighbors(node, sub_graph)
-            count, node = self.getNextNode(count, neighbors, nodes, rw_nodes_list)
+        count, node = self.getNextNode(count, nodes, rw_nodes_list)
+        while count < threshold and len(nodes) > 0:
+            nodes = self.getNeighbors(node, sub_graph)
+            if len(nodes) == 0:
+                break
+            count, node = self.getNextNode(count, nodes, rw_nodes_list)
         return sub_graph.subgraph(rw_nodes_list)
 
-    def getNextNode(self, count, nodes, left_nodes, rw_nodes_list):
-        node = self.randomNode(nodes, left_nodes)
+    def getNextNode(self, count, nodes, rw_nodes_list):
+        # node = self.randomNode(nodes, left_nodes)
+        node = random.choice(nodes)
         rw_nodes_list.append(node)
         nodes.remove(node)
         count += 1

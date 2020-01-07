@@ -42,7 +42,7 @@ class Sub2Vec(AbstractConfigClass):
     # use directory path and read all the saved sab graphs there
     def generateSubGraphs(self):
         for filename in os.listdir(self.subGraphs_directory_path):
-            self.subGraphs_list.append(nx.read_gml(os.path.join(self.subGraphs_directory_path, filename)))
+            self.subGraphs_list.append((nx.read_gml(os.path.join(self.subGraphs_directory_path, filename))))
 
     def doc2vec(self):
         doc2vec_obj = d2v.Doc2Vec(self.rw_list_of_graphs)
