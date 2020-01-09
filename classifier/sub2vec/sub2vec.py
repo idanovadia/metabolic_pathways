@@ -44,8 +44,8 @@ class Sub2Vec(AbstractConfigClass):
         self.doc2vec()
         self.generateTrain()
         self.generateLabel("train_label.xlsx",self.rw_list_of_graphs_train)
-        self.generateTest()
-        self.generateLabel("train_label.xlsx",self.rw_list_of_graphs_test)
+        # self.generateTest()
+        # self.generateLabel("test_label.xlsx",self.rw_list_of_graphs_test)
 
     '''Use directory path and read all the saved sab graphs there'''
 
@@ -59,23 +59,23 @@ class Sub2Vec(AbstractConfigClass):
         random_walk_object = rw.RandomWalk(threshold=self.randomWalk_threshold,
                                            number_of_graphs=self.random_walk_graphs_to_create)
         for g in self.subGraphs_list:
-            if g.graph['type'] is "testset":
+            if g.graph['type'] is "trainset":
+                self.rw_list_of_graphs_train = random_walk_object.insertGraphToSet(
+                    list_of_graphs=self.rw_list_of_graphs_train,
+                    graph=random_walk_object.randomWalk(g))
+            else:
                 for i in range(self.random_walk_graphs_to_create):
                     self.rw_list_of_graphs_test = random_walk_object.insertGraphToSet(
                         list_of_graphs=self.rw_list_of_graphs_test,
                         graph=random_walk_object.randomWalk(g))
-            else:
-                self.rw_list_of_graphs_train = random_walk_object.insertGraphToSet(
-                    list_of_graphs=self.rw_list_of_graphs_train,
-                    graph=random_walk_object.randomWalk(g))
 
     '''Using Doc2vec to get embedding'''
 
     def doc2vec(self):
         doc2vec_obj_train = d2v.Doc2Vec(self.rw_list_of_graphs_train)
-        self.vectors_train = doc2vec_obj_train.Doc2Vec()
-        doc2vec_obj_test = d2v.Doc2Vec(self.rw_list_of_graphs_test)
-        self.vectors_test = doc2vec_obj_test.Doc2Vec()
+        self.vectors_train = doc2vec_obj_train.fit()
+        # doc2vec_obj_test = d2v.Doc2Vec(self.rw_list_of_graphs_test)
+        # self.vectors_test = doc2vec_obj_test.fit()
 
     '''Create train data'''
     def generateTrain(self):
