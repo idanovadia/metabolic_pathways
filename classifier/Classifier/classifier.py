@@ -22,11 +22,10 @@ class Classifier(AbstractConfigClass):
             relative_path=self.config_parser.eval(self.__class__.__name__, 'csv_output_directory'))
         self.train_directory_path = self.getPath(
             relative_path=self.config_parser.eval(self.__class__.__name__, "train_directory_path"))
-        self.output_file_name = self.getPath(
-            relative_path=self.config_parser.eval(self.__class__.__name__, "output_file_name"))
+        self.output_file_name = self.config_parser.eval(self.__class__.__name__, "output_file_name")
         self.label_directory_path = self.getPath(
             relative_path=self.config_parser.eval(self.__class__.__name__, "train_label_directory_path"))
-        self.df_results = pd.DataFrame(["Id", "Classifier", "Validation", "Result", "Runtime"])
+        self.df_results = pd.DataFrame(columns=["Id", "Classifier", "Validation", "Result", "Runtime"])
         self.data = pd.read_excel(self.train_directory_path)
         self.label = pd.read_excel(self.label_directory_path)[0]
         self.id_counter = 1
@@ -58,9 +57,9 @@ class Classifier(AbstractConfigClass):
         self.appendToDfResults(Random_Forest.__class__.__name__, loo.__class__.__name__, sum / count, time_run)
 
     def appendToDfResults(self, classifier, validation_method, result, runtime):
-        self.df_results.append([self.id_counter,classifier,validation_method,result,runtime])
+        self.df_results.loc[self.id_counter] = [self.id_counter]+[classifier]+[validation_method]+[result]+[runtime]
 
     def saveFile(self):
-        self.df_results.to_excel(self.csv_output_directory+os.sep+self.output_file_name+str(timeit.timeit()))
+        self.df_results.to_excel(self.csv_output_directory+"/"+self.output_file_name+"_"+str(timeit.timeit())+".xlsx")
 
 
