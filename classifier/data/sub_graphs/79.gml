@@ -1,11 +1,17 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "d-glycerate"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "l-valine"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
 ]

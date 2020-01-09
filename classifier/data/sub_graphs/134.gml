@@ -1,33 +1,21 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "l-isoleucine"
-  ]
-  node [
-    id 1
-    label "phosphate"
-  ]
-  node [
-    id 2
     label "l-glutamate"
   ]
   node [
-    id 3
-    label "glycine"
-  ]
-  node [
-    id 4
+    id 1
     label "2-oxoglutarate"
   ]
   node [
-    id 5
-    label "l-threonine"
+    id 2
+    label "l-alanine"
   ]
-  edge [
-    source 0
-    target 4
-    weight 1
+  node [
+    id 3
+    label "phosphate"
   ]
   edge [
     source 0
@@ -35,28 +23,8 @@ graph [
     weight 1
   ]
   edge [
-    source 0
-    target 5
-    weight 1
-  ]
-  edge [
     source 1
     target 2
-    weight 1
-  ]
-  edge [
-    source 3
-    target 4
-    weight 1
-  ]
-  edge [
-    source 3
-    target 5
-    weight 1
-  ]
-  edge [
-    source 4
-    target 5
     weight 1
   ]
 ]

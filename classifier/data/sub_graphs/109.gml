@@ -1,5 +1,6 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
     label "benzoate"

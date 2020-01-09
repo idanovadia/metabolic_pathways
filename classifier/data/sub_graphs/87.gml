@@ -1,25 +1,26 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "beta;-alanine"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "succinate"
   ]
   node [
     id 2
-    label "l-cysteine"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 1
+    label "glycine"
   ]
   edge [
     source 0
     target 2
+    weight 1
+  ]
+  edge [
+    source 0
+    target 1
     weight 1
   ]
   edge [

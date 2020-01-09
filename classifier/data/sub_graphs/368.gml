@@ -1,49 +1,21 @@
 graph [
   label "random"
+  type "trainset"
   node [
     id 0
-    label "l-cysteine"
+    label "(s)-malate"
   ]
   node [
     id 1
-    label "gaba"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 3
-    label "shikimate"
-  ]
-  node [
-    id 4
-    label "fructose"
-  ]
-  node [
-    id 5
-    label "l-serine"
-  ]
-  node [
-    id 6
-    label "galactose"
-  ]
-  node [
-    id 7
-    label "inositol"
-  ]
-  node [
-    id 8
-    label "udp-alpha;-d-galacturonate"
-  ]
-  node [
-    id 9
-    label "erythritol"
-  ]
-  edge [
-    source 0
-    target 9
-    weight 1
+    label "dehydroascorbate (bicyclic form)"
   ]
   edge [
     source 0
@@ -52,42 +24,12 @@ graph [
   ]
   edge [
     source 0
-    target 8
-    weight 1
-  ]
-  edge [
-    source 0
-    target 7
-    weight 1
-  ]
-  edge [
-    source 0
-    target 5
-    weight 1
-  ]
-  edge [
-    source 0
     target 3
     weight 1
   ]
   edge [
-    source 1
-    target 9
-    weight 1
-  ]
-  edge [
-    source 1
-    target 8
-    weight 1
-  ]
-  edge [
-    source 1
-    target 7
-    weight 1
-  ]
-  edge [
-    source 1
-    target 5
+    source 0
+    target 2
     weight 1
   ]
   edge [
@@ -96,63 +38,13 @@ graph [
     weight 1
   ]
   edge [
-    source 2
-    target 4
+    source 1
+    target 2
     weight 1
   ]
   edge [
     source 2
-    target 6
-    weight 1
-  ]
-  edge [
-    source 3
-    target 9
-    weight 1
-  ]
-  edge [
-    source 3
-    target 8
-    weight 1
-  ]
-  edge [
-    source 3
-    target 5
-    weight 1
-  ]
-  edge [
-    source 4
-    target 6
-    weight 1
-  ]
-  edge [
-    source 5
-    target 9
-    weight 1
-  ]
-  edge [
-    source 5
-    target 8
-    weight 1
-  ]
-  edge [
-    source 5
-    target 7
-    weight 1
-  ]
-  edge [
-    source 7
-    target 9
-    weight 1
-  ]
-  edge [
-    source 7
-    target 8
-    weight 1
-  ]
-  edge [
-    source 8
-    target 9
+    target 3
     weight 1
   ]
 ]

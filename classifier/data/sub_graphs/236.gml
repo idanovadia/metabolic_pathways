@@ -1,25 +1,21 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-serine"
   ]
   node [
     id 1
-    label "galactose"
+    label "phosphate"
   ]
   node [
     id 2
-    label "l-ascorbate"
+    label "l-methionine"
   ]
   node [
     id 3
-    label "gdp-alpha;-d-mannose"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 1
+    label "glycine"
   ]
   edge [
     source 0
@@ -27,7 +23,12 @@ graph [
     weight 1
   ]
   edge [
-    source 1
+    source 0
+    target 2
+    weight 1
+  ]
+  edge [
+    source 2
     target 3
     weight 1
   ]

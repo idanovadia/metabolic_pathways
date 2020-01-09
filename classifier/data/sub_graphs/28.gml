@@ -1,12 +1,13 @@
 graph [
-  label "random"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "glycine"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "l-arginine"
+    label "beta;-alanine"
   ]
   edge [
     source 0

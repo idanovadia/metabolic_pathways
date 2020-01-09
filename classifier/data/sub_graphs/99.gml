@@ -1,16 +1,21 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "l-alanine"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "putrescine"
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 2
+    label "l-tryptophan"
   ]
   edge [
-    source 0
-    target 1
+    source 1
+    target 2
     weight 1
   ]
 ]

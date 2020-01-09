@@ -1,20 +1,34 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "l-methionine"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "l-tyrosine"
+    label "phosphate"
   ]
   node [
     id 2
-    label "l-alanine"
+    label "putrescine"
   ]
   node [
     id 3
-    label "l-cysteine"
+    label "l-glutamate"
+  ]
+  node [
+    id 4
+    label "l-arginine"
+  ]
+  node [
+    id 5
+    label "succinate"
+  ]
+  edge [
+    source 0
+    target 4
+    weight 1
   ]
   edge [
     source 0
@@ -23,17 +37,7 @@ graph [
   ]
   edge [
     source 0
-    target 3
-    weight 1
-  ]
-  edge [
-    source 0
-    target 1
-    weight 1
-  ]
-  edge [
-    source 1
-    target 2
+    target 5
     weight 1
   ]
   edge [
@@ -43,7 +47,17 @@ graph [
   ]
   edge [
     source 2
-    target 3
+    target 4
+    weight 1
+  ]
+  edge [
+    source 2
+    target 5
+    weight 1
+  ]
+  edge [
+    source 4
+    target 5
     weight 1
   ]
 ]

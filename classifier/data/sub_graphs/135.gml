@@ -1,28 +1,26 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "l-glutamine"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-alanine"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "beta;-alanine"
   ]
   node [
     id 3
-    label "l-tryptophan"
+    label "glycine"
   ]
-  node [
-    id 4
-    label "shikimate"
-  ]
-  node [
-    id 5
-    label "l-serine"
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
   edge [
     source 0
@@ -31,7 +29,7 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 3
     weight 1
   ]
   edge [
@@ -40,18 +38,13 @@ graph [
     weight 1
   ]
   edge [
-    source 3
-    target 5
+    source 1
+    target 3
     weight 1
   ]
   edge [
-    source 3
-    target 4
-    weight 1
-  ]
-  edge [
-    source 4
-    target 5
+    source 2
+    target 3
     weight 1
   ]
 ]

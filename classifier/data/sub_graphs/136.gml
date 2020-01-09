@@ -1,38 +1,21 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "phosphate"
   ]
   node [
     id 2
-    label "shikimate"
-  ]
-  node [
-    id 3
-    label "l-tyrosine"
-  ]
-  node [
-    id 4
-    label "2-oxoglutarate"
+    label "l-valine"
   ]
   edge [
     source 0
-    target 1
-    weight 1
-  ]
-  edge [
-    source 2
-    target 3
-    weight 1
-  ]
-  edge [
-    source 3
-    target 4
+    target 2
     weight 1
   ]
 ]

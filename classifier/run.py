@@ -1,3 +1,4 @@
+from classifier.Classifier.classifier import Classifier
 from classifier.configuration.config_class import getConfig
 from classifier.config_class_example.example_config_class import Example1
 from classifier.config_class_example.example2_config_class import Example2
@@ -13,6 +14,7 @@ modules_dict['Preprocessing'] = Preprocessing
 modules_dict['CorrMaxtrix'] = CorrMaxtrix
 modules_dict['GraphCreator'] = GraphCreator
 modules_dict['Sub2Vec'] = Sub2Vec
+modules_dict['Classifier'] = Classifier
 
 pipeline = []
 

@@ -1,8 +1,9 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "d-ribofuranose"
+    label "l-methionine"
   ]
   node [
     id 1

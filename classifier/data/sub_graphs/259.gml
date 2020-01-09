@@ -1,12 +1,13 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "l-tyrosine"
+    label "l-leucine"
   ]
   node [
     id 1
-    label "l-phenylalanine"
+    label "l-alanine"
   ]
   edge [
     source 0

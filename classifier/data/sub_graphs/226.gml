@@ -1,12 +1,17 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "l-leucine"
+    label "galactose"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "gdp-alpha;-d-mannose"
+  ]
+  node [
+    id 2
+    label "gdp-beta;-l-fucose"
   ]
   edge [
     source 0

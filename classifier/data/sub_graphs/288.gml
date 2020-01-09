@@ -1,19 +1,20 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "fumarate"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
     label "phosphate"
   ]
   edge [
-    source 1
+    source 0
     target 2
     weight 1
   ]

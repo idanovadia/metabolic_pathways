@@ -1,11 +1,12 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "fructose"
+    label "galactose"
   ]
   node [
     id 1
-    label "saccharate"
+    label "udp-alpha;-d-galacturonate"
   ]
 ]

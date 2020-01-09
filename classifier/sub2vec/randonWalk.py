@@ -15,10 +15,10 @@ class RandomWalk():
         return False
 
     def insertGraphToSet(self, list_of_graphs, graph):
-        if len(list_of_graphs) != 0:
-            for g in list_of_graphs:
-                if self.graphComparator(g, graph):
-                    return list_of_graphs
+        # if len(list_of_graphs) != 0:
+        #     for g in list_of_graphs:
+        #         if self.graphComparator(g, graph):
+        #             return list_of_graphs
         list_of_graphs.append(graph)
         return list_of_graphs
 

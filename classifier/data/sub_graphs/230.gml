@@ -1,12 +1,13 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "glucose"
   ]
   node [
     id 1
-    label "succinate"
+    label "gdp-alpha;-d-mannose"
   ]
   edge [
     source 0

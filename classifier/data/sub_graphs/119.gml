@@ -1,20 +1,22 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "l-tryptophan"
+    label "galactose"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "l-glutamine"
   ]
-  node [
-    id 3
-    label "succinate"
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
   edge [
     source 0
@@ -22,13 +24,8 @@ graph [
     weight 1
   ]
   edge [
-    source 0
-    target 3
-    weight 1
-  ]
-  edge [
-    source 2
-    target 3
+    source 1
+    target 2
     weight 1
   ]
 ]

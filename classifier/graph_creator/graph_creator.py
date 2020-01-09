@@ -43,12 +43,19 @@ class GraphCreator(AbstractConfigClass):
      Object of sub graph.  
     '''
 
-    class sub_graph():
-
-        def __init__(self, file_path, classify, main_graph):
+    class sub_graph:
+        '''
+        file_path - path to label graph
+        nodes_list - list of the nodes in the label graph
+        classify - the class: positive/negative
+        type - train/test sub graph
+        graph - nx graph that has been created
+        '''
+        def __init__(self, file_path, classify, type_graph, main_graph):
             self.file_path = file_path
             self.nodes_list = self.createNodeList()
             self.classify = classify
+            self.type = type_graph
             self.graph = self.getGraph(main_graph)
 
 
@@ -59,9 +66,11 @@ class GraphCreator(AbstractConfigClass):
             l = [x.lower() for x in csv_pd.columns]
             return l
 
+        '''generate sub graph and return it'''
         def getGraph(self, main_graph):
-            subGraph = main_graph.subgraph(self.nodes_list)
+            subGraph = main_graph.subgraph(self.nodes_list).copy()
             subGraph.graph['label'] = self.classify
+            subGraph.graph['type'] = self.type
             return subGraph
 
     ''' main function '''
@@ -81,11 +90,17 @@ class GraphCreator(AbstractConfigClass):
 
     def subGraphsCreator(self):
         list_of_dirs = os.listdir(self.subGraphs_dir_path)
-        for dir in list_of_dirs:
-            dir_path = os.path.join(self.subGraphs_dir_path, dir)
-            sub_graph_dir_list = os.listdir(dir_path)
-            for file in sub_graph_dir_list:
-                self.subGraphs_list.append((self.sub_graph(os.path.join(dir_path, file), dir, self.main_graph)).graph)
+        for dirpath, dirnames, filenames in os.walk(self.subGraphs_dir_path):
+            if not dirnames:
+        # for dir in list_of_dirs:
+        #         dir_path = os.path.join(self.subGraphs_dir_path, dir)
+        #         sub_graph_dir_list = os.listdir(dir_path)
+                sub_graph_dir_list = os.listdir(dirpath)
+                label = dirpath.split(sep="\\")[-1]
+                type = dirpath.split(sep="\\")[-2]
+                for file in sub_graph_dir_list:
+                    new_graph = self.sub_graph(os.path.join(dirpath, file), label, type, self.main_graph)
+                    self.subGraphs_list.append(new_graph.graph)
 
     ''' create set on nodes from the lists of sub graphs '''
 

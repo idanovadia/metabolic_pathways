@@ -1,11 +1,12 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "l-methionine"
+    label "2-oxoglutarate"
   ]
 ]

@@ -1,11 +1,17 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "glucose"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "l-tyrosine"
+    label "succinate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
 ]
