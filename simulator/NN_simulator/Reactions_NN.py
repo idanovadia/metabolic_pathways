@@ -35,14 +35,16 @@ def generate_reaction_def(sub_count, prod_count, metabolites, low=0, high=1):
 class Reaction(torch.nn.Module):
     def __init__(self,sub,prod,eps=1e-20,step=0.0001):
         super(Reaction,self).__init__()
-        self._sub = torch.nn.Parameter(sub.clone())
-        self._prod = torch.nn.Parameter(prod.clone())
+        #self._sub = torch.nn.Parameter(sub.clone())
+        #self._prod = torch.nn.Parameter(prod.clone())
         self._step = step
         self._eps = eps
 
     def forward(self, x, sub_gen, prod_gen):
-        sub_gen = torch.nn.Parameter(torch.FloatTensor(sub_gen))
-        prod_gen = torch.nn.Parameter(torch.FloatTensor(prod_gen))
+        #sub_gen = torch.nn.Parameter(torch.FloatTensor(sub_gen))
+        #prod_gen = torch.nn.Parameter(torch.FloatTensor(prod_gen))
+        sub_gen = torch.FloatTensor(sub_gen)
+        prod_gen = torch.FloatTensor(prod_gen)
 
         y = x
         x = x / sub_gen#self._sub #required sub
@@ -80,7 +82,7 @@ class MultiReaction(torch.nn.Module):
 
     def forward(self, x, gan_generator):
         #random.shuffle(self._reactions)
-        result = gan_generator(gan_generator.get_random_input_layer()).detach()
+        result = gan_generator(gan_generator.get_random_input_layer())#.detach() #remove detach
         result = gan_generator.turn_to_one_or_zero(result)
         for i in range(len(self._reactions)):
             sub_gen, prod_gen = gan_generator.get_part_of_output(i, result)
@@ -180,7 +182,7 @@ sub_min = 2.0001
 sub_max = 10.0
 epochs = 500
 step = 0.01
-iterations = 20
+iterations = 20 #may need to be randomized
 s_count=10
 p_count=10
 

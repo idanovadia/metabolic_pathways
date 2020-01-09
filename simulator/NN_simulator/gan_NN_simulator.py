@@ -44,4 +44,3 @@ if __name__ == '__main__':
     result = gan_generator.turn_to_one_or_zero(result)
     result = list(range(1000))
     sub, prod = gan_generator.get_part_of_output(9,result)
-
