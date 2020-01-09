@@ -96,8 +96,8 @@ class GraphCreator(AbstractConfigClass):
         #         dir_path = os.path.join(self.subGraphs_dir_path, dir)
         #         sub_graph_dir_list = os.listdir(dir_path)
                 sub_graph_dir_list = os.listdir(dirpath)
-                label = dirpath.split(sep="\\")[-1]
-                type = dirpath.split(sep="\\")[-2]
+                label = dirpath.split(sep=os.sep)[-1]
+                type = dirpath.split(sep=os.sep)[-2]
                 for file in sub_graph_dir_list:
                     new_graph = self.sub_graph(os.path.join(dirpath, file), label, type, self.main_graph)
                     self.subGraphs_list.append(new_graph.graph)

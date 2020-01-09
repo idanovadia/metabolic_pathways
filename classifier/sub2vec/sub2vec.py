@@ -59,7 +59,7 @@ class Sub2Vec(AbstractConfigClass):
         random_walk_object = rw.RandomWalk(threshold=self.randomWalk_threshold,
                                            number_of_graphs=self.random_walk_graphs_to_create)
         for g in self.subGraphs_list:
-            if g.graph['type'] is "trainset":
+            if g.graph['type'] == "trainset":
                 self.rw_list_of_graphs_train = random_walk_object.insertGraphToSet(
                     list_of_graphs=self.rw_list_of_graphs_train,
                     graph=random_walk_object.randomWalk(g))
@@ -90,7 +90,7 @@ class Sub2Vec(AbstractConfigClass):
     '''Create label data'''
     def generateLabel(self, file, list):
         labels = []
-        [labels.append("positive") if g.graph['label'] is "positive" else labels.append("negative") for g in list]
+        [labels.append("positive") if g.graph['label'] == "positive" else labels.append("negative") for g in list]
         csv = pd.DataFrame(labels)
         self.saveFile(csv, self.classifier_files_directory, file)
 
