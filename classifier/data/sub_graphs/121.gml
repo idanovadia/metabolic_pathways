@@ -1,12 +1,13 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "(s)-malate"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "d-glycerate"
+    label "beta;-alanine"
   ]
   edge [
     source 0

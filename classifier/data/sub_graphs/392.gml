@@ -1,24 +1,25 @@
 graph [
   label "random"
+  type "trainset"
   node [
     id 0
-    label "beta;-alanine"
+    label "galactose"
   ]
   node [
     id 1
-    label "glucose"
+    label "sucrose"
   ]
   node [
     id 2
-    label "l-isoleucine"
+    label "l-tryptophan"
   ]
   node [
     id 3
-    label "(s)-malate"
+    label "glucose_6_phosphate"
   ]
   node [
     id 4
-    label "shikimate"
+    label "alpha;,alpha;-trehalose"
   ]
   node [
     id 5
@@ -26,109 +27,40 @@ graph [
   ]
   node [
     id 6
-    label "l-tyrosine"
+    label "glucose"
   ]
   node [
     id 7
-    label "succinate"
-  ]
-  node [
-    id 8
-    label "l-aspartate"
-  ]
-  node [
-    id 9
-    label "inositol"
-  ]
-  node [
-    id 10
-    label "putrescine"
-  ]
-  node [
-    id 11
-    label "d-glycerate"
-  ]
-  node [
-    id 12
-    label "maltitol"
-  ]
-  node [
-    id 13
-    label "glucose_6_phosphate"
-  ]
-  edge [
-    source 0
-    target 13
-    weight 1
-  ]
-  edge [
-    source 0
-    target 11
-    weight 1
-  ]
-  edge [
-    source 0
-    target 9
-    weight 1
-  ]
-  edge [
-    source 0
-    target 2
-    weight 1
-  ]
-  edge [
-    source 0
-    target 3
-    weight 1
-  ]
-  edge [
-    source 0
-    target 12
-    weight 1
-  ]
-  edge [
-    source 0
-    target 10
-    weight 1
-  ]
-  edge [
-    source 0
-    target 4
-    weight 1
-  ]
-  edge [
-    source 0
-    target 7
-    weight 1
+    label "threonate"
   ]
   edge [
     source 0
     target 6
-    weight 1
-  ]
-  edge [
-    source 0
-    target 5
     weight 1
   ]
   edge [
     source 1
-    target 8
+    target 3
     weight 1
   ]
   edge [
-    source 2
-    target 13
+    source 1
+    target 7
     weight 1
   ]
   edge [
-    source 2
-    target 11
+    source 1
+    target 4
     weight 1
   ]
   edge [
-    source 2
-    target 9
+    source 1
+    target 2
+    weight 1
+  ]
+  edge [
+    source 1
+    target 5
     weight 1
   ]
   edge [
@@ -138,12 +70,7 @@ graph [
   ]
   edge [
     source 2
-    target 12
-    weight 1
-  ]
-  edge [
-    source 2
-    target 10
+    target 7
     weight 1
   ]
   edge [
@@ -153,42 +80,12 @@ graph [
   ]
   edge [
     source 2
-    target 7
-    weight 1
-  ]
-  edge [
-    source 2
-    target 6
-    weight 1
-  ]
-  edge [
-    source 2
     target 5
     weight 1
   ]
   edge [
     source 3
-    target 13
-    weight 1
-  ]
-  edge [
-    source 3
-    target 11
-    weight 1
-  ]
-  edge [
-    source 3
-    target 9
-    weight 1
-  ]
-  edge [
-    source 3
-    target 12
-    weight 1
-  ]
-  edge [
-    source 3
-    target 10
+    target 7
     weight 1
   ]
   edge [
@@ -198,42 +95,12 @@ graph [
   ]
   edge [
     source 3
-    target 7
-    weight 1
-  ]
-  edge [
-    source 3
-    target 6
-    weight 1
-  ]
-  edge [
-    source 3
     target 5
     weight 1
   ]
   edge [
     source 4
-    target 13
-    weight 1
-  ]
-  edge [
-    source 4
-    target 11
-    weight 1
-  ]
-  edge [
-    source 4
-    target 10
-    weight 1
-  ]
-  edge [
-    source 4
     target 7
-    weight 1
-  ]
-  edge [
-    source 4
-    target 6
     weight 1
   ]
   edge [
@@ -243,137 +110,7 @@ graph [
   ]
   edge [
     source 5
-    target 13
-    weight 1
-  ]
-  edge [
-    source 5
-    target 11
-    weight 1
-  ]
-  edge [
-    source 5
-    target 9
-    weight 1
-  ]
-  edge [
-    source 5
-    target 12
-    weight 1
-  ]
-  edge [
-    source 5
-    target 10
-    weight 1
-  ]
-  edge [
-    source 5
     target 7
-    weight 1
-  ]
-  edge [
-    source 5
-    target 6
-    weight 1
-  ]
-  edge [
-    source 6
-    target 13
-    weight 1
-  ]
-  edge [
-    source 6
-    target 11
-    weight 1
-  ]
-  edge [
-    source 6
-    target 9
-    weight 1
-  ]
-  edge [
-    source 6
-    target 12
-    weight 1
-  ]
-  edge [
-    source 6
-    target 10
-    weight 1
-  ]
-  edge [
-    source 6
-    target 7
-    weight 1
-  ]
-  edge [
-    source 7
-    target 13
-    weight 1
-  ]
-  edge [
-    source 7
-    target 11
-    weight 1
-  ]
-  edge [
-    source 7
-    target 9
-    weight 1
-  ]
-  edge [
-    source 7
-    target 12
-    weight 1
-  ]
-  edge [
-    source 7
-    target 10
-    weight 1
-  ]
-  edge [
-    source 9
-    target 13
-    weight 1
-  ]
-  edge [
-    source 9
-    target 11
-    weight 1
-  ]
-  edge [
-    source 9
-    target 10
-    weight 1
-  ]
-  edge [
-    source 10
-    target 13
-    weight 1
-  ]
-  edge [
-    source 10
-    target 11
-    weight 1
-  ]
-  edge [
-    source 10
-    target 12
-    weight 1
-  ]
-  edge [
-    source 11
-    target 13
-    weight 1
-  ]
-  edge [
-    source 11
-    target 12
-    weight 1
-  ]
-  edge [
-    source 12
-    target 13
     weight 1
   ]
 ]

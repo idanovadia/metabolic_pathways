@@ -1,11 +1,17 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "glucose"
+    label "l-serine"
   ]
   node [
     id 1
-    label "l-tryptophan"
+    label "uracil"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
 ]

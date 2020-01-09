@@ -1,20 +1,30 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "fructose 1,6-bisphosphate"
   ]
   node [
     id 1
-    label "l-threonine"
+    label "glucose"
   ]
   node [
     id 2
-    label "l-homoserine"
+    label "sucrose"
+  ]
+  node [
+    id 3
+    label "phosphate"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 1
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 1
   ]
 ]

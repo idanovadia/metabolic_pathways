@@ -1,20 +1,17 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "putrescine"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "phosphate"
-  ]
-  node [
-    id 2
-    label "l-aspartate"
+    label "putrescine"
   ]
   edge [
-    source 1
-    target 2
+    source 0
+    target 1
     weight 1
   ]
 ]

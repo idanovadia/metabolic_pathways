@@ -1,21 +1,21 @@
 graph [
-  label "random"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "l-tryptophan"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "l-isoleucine"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "l-lysine"
+    label "beta;-alanine"
   ]
-  edge [
-    source 0
-    target 1
-    weight 1
+  node [
+    id 3
+    label "phosphate"
   ]
   edge [
     source 0
@@ -24,7 +24,7 @@ graph [
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 1
   ]
 ]

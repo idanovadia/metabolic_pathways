@@ -1,11 +1,12 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "glucose"
+    label "d-glycerate"
   ]
   node [
     id 1
-    label "l-isoleucine"
+    label "glucose"
   ]
 ]

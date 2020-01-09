@@ -1,12 +1,13 @@
 graph [
   label "random"
+  type "trainset"
   node [
     id 0
-    label "glycerol"
+    label "l-threonine"
   ]
   node [
     id 1
-    label "d-glycerate"
+    label "glycerol"
   ]
   edge [
     source 0

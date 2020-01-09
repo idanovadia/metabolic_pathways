@@ -1,20 +1,26 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-serine"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-cysteine"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-methionine"
   ]
   node [
     id 3
-    label "l-lysine"
+    label "phosphate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 1
   ]
   edge [
     source 0
@@ -23,7 +29,7 @@ graph [
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight 1
   ]
 ]

@@ -1,11 +1,12 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "glucose"
+    label "l-methionine"
   ]
   node [
     id 1
-    label "l-serine"
+    label "phosphate"
   ]
 ]

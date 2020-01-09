@@ -1,100 +1,30 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-serine"
   ]
   node [
     id 1
-    label "d-threo-isocitrate"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "(s)-malate"
+    label "2-oxoglutarate"
   ]
   node [
     id 3
-    label "fumarate"
-  ]
-  node [
-    id 4
-    label "cis-aconitate"
-  ]
-  node [
-    id 5
-    label "succinate"
-  ]
-  node [
-    id 6
-    label "citrate"
-  ]
-  node [
-    id 7
-    label "2-oxoglutarate"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 6
-    weight 1
-  ]
-  edge [
-    source 0
-    target 1
+    target 2
     weight 1
   ]
   edge [
     source 1
-    target 6
-    weight 1
-  ]
-  edge [
-    source 2
-    target 4
-    weight 1
-  ]
-  edge [
-    source 2
-    target 7
-    weight 1
-  ]
-  edge [
-    source 2
     target 3
-    weight 1
-  ]
-  edge [
-    source 2
-    target 5
-    weight 1
-  ]
-  edge [
-    source 3
-    target 4
-    weight 1
-  ]
-  edge [
-    source 3
-    target 7
-    weight 1
-  ]
-  edge [
-    source 3
-    target 5
-    weight 1
-  ]
-  edge [
-    source 4
-    target 7
-    weight 1
-  ]
-  edge [
-    source 4
-    target 5
-    weight 1
-  ]
-  edge [
-    source 5
-    target 7
     weight 1
   ]
 ]

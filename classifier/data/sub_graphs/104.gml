@@ -1,21 +1,21 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
     label "l-tyrosine"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "glycine"
+    label "2-oxoglutarate"
   ]
-  edge [
-    source 0
-    target 1
-    weight 1
+  node [
+    id 3
+    label "fumarate"
   ]
   edge [
     source 0
@@ -23,8 +23,13 @@ graph [
     weight 1
   ]
   edge [
-    source 1
-    target 2
+    source 0
+    target 3
+    weight 1
+  ]
+  edge [
+    source 2
+    target 3
     weight 1
   ]
 ]

@@ -1,8 +1,9 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "l-cysteine"
+    label "l-tyrosine"
   ]
   node [
     id 1
@@ -10,44 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "threonate"
-  ]
-  node [
-    id 3
-    label "d-glycerate"
-  ]
-  node [
-    id 4
-    label "erythritol"
-  ]
-  edge [
-    source 0
-    target 4
-    weight 1
-  ]
-  edge [
-    source 0
-    target 3
-    weight 1
+    label "2-oxoglutarate"
   ]
   edge [
     source 0
     target 2
-    weight 1
-  ]
-  edge [
-    source 2
-    target 4
-    weight 1
-  ]
-  edge [
-    source 2
-    target 3
-    weight 1
-  ]
-  edge [
-    source 3
-    target 4
     weight 1
   ]
 ]

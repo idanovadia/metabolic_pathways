@@ -1,12 +1,17 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "uracil"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "l-serine"
+    label "glucose"
+  ]
+  node [
+    id 2
+    label "l-phenylalanine"
   ]
   edge [
     source 0

@@ -1,12 +1,13 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "glucose"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "l-glutamine"
   ]
   edge [
     source 0

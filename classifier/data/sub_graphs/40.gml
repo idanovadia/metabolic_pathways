@@ -1,16 +1,17 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "glucose"
+    label "citrate"
   ]
   node [
     id 1
-    label "l-tryptophan"
+    label "l-lysine"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "phosphate"
   ]
   edge [
     source 0

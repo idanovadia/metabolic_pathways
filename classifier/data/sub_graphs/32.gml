@@ -1,8 +1,9 @@
 graph [
-  label "random"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "l-tyrosine"
   ]
   node [
     id 1
@@ -10,20 +11,20 @@ graph [
   ]
   node [
     id 2
-    label "succinate"
+    label "2-oxoglutarate"
   ]
   node [
     id 3
-    label "l-arginine"
-  ]
-  edge [
-    source 0
-    target 3
-    weight 1
+    label "fumarate"
   ]
   edge [
     source 0
     target 2
+    weight 1
+  ]
+  edge [
+    source 0
+    target 3
     weight 1
   ]
   edge [

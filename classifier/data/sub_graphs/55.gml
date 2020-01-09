@@ -1,30 +1,17 @@
 graph [
-  label "random"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "(s)-malate"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "fumarate"
+    label "glycine"
   ]
   node [
     id 2
-    label "succinate"
-  ]
-  node [
-    id 3
-    label "l-glutamate"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 1
-  ]
-  edge [
-    source 0
-    target 2
-    weight 1
+    label "l-tryptophan"
   ]
   edge [
     source 1

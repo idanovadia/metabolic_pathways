@@ -1,37 +1,30 @@
 graph [
-  label "random"
+  label "positive"
+  type "trainset"
   node [
     id 0
-    label "l-isoleucine"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "maltose"
+    label "glucose"
   ]
   node [
     id 2
-    label "(s)-malate"
+    label "l-glutamine"
   ]
   node [
     id 3
-    label "uracil"
-  ]
-  node [
-    id 4
-    label "galactose"
-  ]
-  node [
-    id 5
-    label "citrate"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 1
+    label "phosphate"
   ]
   edge [
     source 0
     target 1
+    weight 1
+  ]
+  edge [
+    source 0
+    target 2
     weight 1
   ]
   edge [
@@ -52,11 +45,6 @@ graph [
   edge [
     source 2
     target 3
-    weight 1
-  ]
-  edge [
-    source 4
-    target 5
     weight 1
   ]
 ]
