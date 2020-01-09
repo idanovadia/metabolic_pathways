@@ -3,7 +3,6 @@ from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
-from keras.utils import to_categorical
 import numpy as np
 import sklearn
 import matplotlib.pyplot as plt
