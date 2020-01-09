@@ -28,7 +28,7 @@ class GraphCreator(AbstractConfigClass):
     '''
     def setup(self):
         self.corr_matrix_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "corr_matrix_path"))
-        self.subGraphs_dir_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "subGraphs_dir_path"))
+        self.labels_dir_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "labels_dir_path"))
         self.threshold_weights = self.config_parser.eval(self.__class__.__name__, "threshold")
         self.sub_graphs_output_directory_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "sub_graphs_output_directory"))
         self.subGraphs_list = []
@@ -56,7 +56,7 @@ class GraphCreator(AbstractConfigClass):
             self.nodes_list = self.createNodeList()
             self.classify = classify
             self.type = type_graph
-            self.graph = self.getGraph(main_graph)
+            self.graph = self.CreateSubGraph(main_graph)
 
 
         ''' csv file '''
@@ -67,7 +67,7 @@ class GraphCreator(AbstractConfigClass):
             return l
 
         '''generate sub graph and return it'''
-        def getGraph(self, main_graph):
+        def CreateSubGraph(self, main_graph):
             subGraph = main_graph.subgraph(self.nodes_list).copy()
             subGraph.graph['label'] = self.classify
             subGraph.graph['type'] = self.type
@@ -89,8 +89,8 @@ class GraphCreator(AbstractConfigClass):
     ''' create list of sub graphs  '''
 
     def subGraphsCreator(self):
-        list_of_dirs = os.listdir(self.subGraphs_dir_path)
-        for dirpath, dirnames, filenames in os.walk(self.subGraphs_dir_path):
+        list_of_dirs = os.listdir(self.labels_dir_path)
+        for dirpath, dirnames, filenames in os.walk(self.labels_dir_path):
             if not dirnames:
         # for dir in list_of_dirs:
         #         dir_path = os.path.join(self.subGraphs_dir_path, dir)
