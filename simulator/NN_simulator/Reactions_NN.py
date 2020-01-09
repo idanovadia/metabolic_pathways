@@ -40,14 +40,17 @@ class Reaction(torch.nn.Module):
         self._step = step
         self._eps = eps
 
-    def forward(self, x):
+    def forward(self, x, sub_gen, prod_gen):
+        sub_gen = torch.nn.Parameter(torch.FloatTensor(sub_gen))
+        prod_gen = torch.nn.Parameter(torch.FloatTensor(prod_gen))
+
         y = x
-        x = x / self._sub #required sub
+        x = x / sub_gen#self._sub #required sub
         x = 1-1/x         #the chance to collect all required substrates
         x = F.relu(x)     #nullify negative prob
         x = x.prod(dim=1,keepdim=True) #total prob to collect all required substrates
         x = x * self._step
-        x = y + x*(self._prod - self._sub)
+        x = y + x*(prod_gen - sub_gen)
         return x
     
     def get_def_tensor(self):
@@ -75,10 +78,16 @@ class MultiReaction(torch.nn.Module):
             r = Reaction(sub,prod,step=step)
             self._reactions.append(r)
 
-    def forward(self, x):
+    def forward(self, x, gan_generator):
         #random.shuffle(self._reactions)
-        for m in self._reactions:
-            x = m(x)
+        result = gan_generator(gan_generator.get_random_input_layer()).detach()
+        result = gan_generator.turn_to_one_or_zero(result)
+        for i in range(len(self._reactions)):
+            sub_gen, prod_gen = gan_generator.get_part_of_output(i, result)
+            m = self._reactions[i]
+            x = m(x, sub_gen, prod_gen)
+        # for m in self._reactions:
+        #     x = m(x, sub_gen, prod_gen)
         return x
     
     def get_reactions_tensor(self):        
@@ -113,14 +122,15 @@ def correlation_matrix(b):
 
 #rcount is like enzyme_count in the metasim file
 class Process(torch.nn.Module): #model
-    def __init__(self,rcount,metabolites,scount=2,pcount=2,step=0.0001,iterations=100,low=0.0,high=1.0):
+    def __init__(self,rcount,metabolites, generator ,scount=2,pcount=2,step=0.0001,iterations=100,low=0.0,high=1.0):
         super(Process,self).__init__()
         self._mr = MultiReaction(rcount,metabolites,scount=scount,pcount=pcount,step=step,low=low,high=high)
         self._iterations = iterations
+        self._generator = generator
         
     def forward(self, x):
         for i in range(self._iterations):
-            x = self._mr(x) 
+            x = self._mr(x, gan_generator)
         
         #x = correlation_matrix(x)
         
@@ -162,9 +172,9 @@ def compare_tensor_sets(s1,s2):
 # In[7]:
 
 
-m_count = 50 #number of metabolis
+m_count = 50 #number of metabolis. Also added this parameter in gan_nn_simulator file. if we change the value here you must change the value there as well
 reactions_count = 10
-dataset_size = 1#500 #generated x,y
+dataset_size = 10#500 #generated x,y
 minibatch_size = 10000
 sub_min = 2.0001
 sub_max = 10.0
@@ -180,9 +190,12 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # In[8]:
 
+gan_generator = Generator( (2*m_count) * reactions_count)
+#result = gan_generator(gan_generator.get_random_input_layer()).detach()
+#result = gan_generator.turn_to_one_or_zero(result)
 
 metabolites = range(m_count)
-reactions = Process(reactions_count, metabolites, 
+reactions = Process(reactions_count, metabolites, gan_generator,
                     scount=s_count, pcount=p_count, 
                     step=step, iterations=iterations,
                     low=1.0,high=1.0
@@ -206,13 +219,10 @@ with torch.no_grad():
 
 # In[10]:
 
-gan_generator = Generator( (2*m_count) * reactions_count)
-result = gan_generator(gan_generator.get_random_input_layer()).detach()
-result = gan_generator.turn_to_one_or_zero(result)
-model = Process(reactions_count, metabolites,scount=m_count, pcount=m_count, step=step,iterations=iterations).to(device)
+
+model = Process(reactions_count, metabolites, gan_generator, scount=m_count, pcount=m_count, step=step,iterations=iterations).to(device)
 
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
-g_optimizer = torch.optim.Adam(gan_generator.parameters(), lr=1e-3)
 ##optimizer = torch.optim.Adadelta(model.parameters(), lr=1.0, rho=0.9, eps=1e-06, weight_decay=1.0)
 ##optimizer = torch.optim.Adagrad(model.parameters(), lr=0.01, lr_decay=0, weight_decay=0, initial_accumulator_value=0)
 #optimizer = torch.optim.Adamax(model.parameters(), lr=0.002, betas=(0.9, 0.999), eps=1e-08, weight_decay=0)
