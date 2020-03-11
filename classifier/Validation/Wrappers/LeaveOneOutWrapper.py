@@ -4,9 +4,10 @@ from ..ValidationMethodAbstract import ValidationMethodAbstract
 
 class LeaveOneOutWrapper(ValidationMethodAbstract):
 
-    def __init__(self,x_train,y_train):
+    def __init__(self,x_train,y_train,**kwargs):
         self.x_train=x_train
         self.y_train=y_train
+        self.name='Leave One Out'
 
     def split(self):
         loo = LeaveOneOut()
