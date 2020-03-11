@@ -1,5 +1,5 @@
 from sklearn.model_selection import LeaveOneOut
-from ..ValidationMethodAbstract import ValidationMethodAbstract
+from ..validationMethodAbstract import ValidationMethodAbstract
 
 
 class LeaveOneOutWrapper(ValidationMethodAbstract):

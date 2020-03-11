@@ -1,5 +1,5 @@
 from sklearn.model_selection import KFold
-from ..ValidationMethodAbstract import ValidationMethodAbstract
+from ..validationMethodAbstract import ValidationMethodAbstract
 
 
 class KFoldWrapper(ValidationMethodAbstract):
