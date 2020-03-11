@@ -7,7 +7,7 @@ from classifier.Validation.validationMethodAbstract import ValidationMethodAbstr
 from classifier.Validation.Wrappers.LeaveOneOutWrapper import LeaveOneOutWrapper
 from classifier.Validation.Wrappers.KFoldWrapper import KFoldWrapper
 
-class Validation(AbstractConfigClass):
+class validation(AbstractConfigClass):
 
     def __init__(self):
         pass

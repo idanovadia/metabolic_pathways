@@ -1,5 +1,8 @@
-from classifier.Validation.Validation import Validation
+from classifier.Validation.validation import validation
+from classifier.Classification.classification import classifier
 
 
-Validation([1,1,1,1], [1,2,2,2])
+c = classifier()
+c.setup()
+c.exec()
 

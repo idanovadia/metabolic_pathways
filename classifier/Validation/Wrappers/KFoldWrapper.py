@@ -14,8 +14,8 @@ class KFoldWrapper(ValidationMethodAbstract):
     def split(self):
         kf= KFold(self.splits, shuffle=True)
         for train_index, test_index in kf.split(self.x_train):
-            x_train, x_test = self.x_train[train_index], self.x_train[test_index]
-            y_train, y_test = self.y_train[train_index], self.y_train[test_index]
+            x_train, x_test = self.x_train.iloc[train_index], self.x_train.iloc[test_index]
+            y_train, y_test = self.y_train.iloc[train_index], self.y_train.iloc[test_index]
             yield x_train , y_train , x_test ,y_test
 
 
