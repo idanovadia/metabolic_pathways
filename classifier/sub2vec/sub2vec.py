@@ -43,7 +43,7 @@ class Sub2Vec(AbstractConfigClass):
         self.WriteAll()
         self.doc2vec()
         self.generateTrain()
-        self.generateLabel("train_label.xlsx",self.rw_list_of_graphs_train)
+        self.generateLabel("train_label.xlsx", self.rw_list_of_graphs_train)
         # self.generateTest()
         # self.generateLabel("test_label.xlsx",self.rw_list_of_graphs_test)
 
@@ -51,14 +51,20 @@ class Sub2Vec(AbstractConfigClass):
 
     def generateSubGraphs(self):
         for filename in os.listdir(self.subGraphs_directory_path):
-            self.subGraphs_list.append((nx.read_gml(os.path.join(self.subGraphs_directory_path, filename))))
+            try:
+                self.subGraphs_list.append(
+                    (filename, (nx.read_gml(os.path.join(self.subGraphs_directory_path, filename)))))
+            except:
+                continue
 
     '''Doing Random Walk on the sub graphs'''
 
     def randomWalk(self):
         random_walk_object = rw.RandomWalk(threshold=self.randomWalk_threshold,
                                            number_of_graphs=self.random_walk_graphs_to_create)
-        for g in self.subGraphs_list:
+        for k in self.subGraphs_list:
+            g = k[1]
+            g.graph["name"] = k[0]
             if g.graph['type'] == "trainset":
                 self.rw_list_of_graphs_train = random_walk_object.insertGraphToSet(
                     list_of_graphs=self.rw_list_of_graphs_train,
@@ -78,16 +84,19 @@ class Sub2Vec(AbstractConfigClass):
         # self.vectors_test = doc2vec_obj_test.fit()
 
     '''Create train data'''
+
     def generateTrain(self):
         csv = pd.DataFrame(self.vectors_train.doctag_syn0)
         self.saveFile(csv, self.classifier_files_directory, "train.xlsx")
 
     '''Create test data'''
+
     def generateTest(self):
         csv = pd.DataFrame(self.vectors_test.doctag_syn0)
         self.saveFile(csv, self.classifier_files_directory, "test.xlsx")
 
     '''Create label data'''
+
     def generateLabel(self, file, list):
         labels = []
         [labels.append("positive") if g.graph['label'] == "positive" else labels.append("negative") for g in list]
@@ -105,9 +114,10 @@ class Sub2Vec(AbstractConfigClass):
 
     def WriteAll(self):
         for id, graph in enumerate(self.rw_list_of_graphs_train):
-            self.writeFile(graph, id)
+            self.writeFile(graph)
 
     ''' write a graph to gml graph format'''
 
-    def writeFile(self, G, id):
-        nx.write_gml(G=G, path=os.path.join(self.random_walk_directory_path_output, str(id) + ".gml"))
+    def writeFile(self, G):
+        nx.write_gml(G=G, path=os.path.join(self.random_walk_directory_path_output, G.name))
+        # nx.write_gml(G=G, path=os.path.join(self.random_walk_directory_path_output, str(id) + ".gml"))
