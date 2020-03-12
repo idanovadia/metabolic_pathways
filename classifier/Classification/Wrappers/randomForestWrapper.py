@@ -9,6 +9,7 @@ class RandomForestWrapper(ClassifierAbstract):
         self.verbose=kwargs['random_forest_verbose']
         self.max_depth=['random_forest_max_depth']
         self.random_state=['random_forest_random_state']
+        self.name='RandomForest'
         self.model=RandomForestClassifier(max_depth=50,
                                           verbose=int(self.verbose),
                                           min_samples_split=int(self.min_samples_split),
