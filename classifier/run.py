@@ -1,4 +1,4 @@
-from classifier.Classifier.classifier import Classifier
+from classifier.Classification.classification import classifier
 from classifier.configuration.config_class import getConfig
 from classifier.preprocessing.preprocessing import Preprocessing
 from classifier.correlation_matrix_creator.correlation_matrix_creator import CorrMaxtrix
@@ -10,7 +10,7 @@ modules_dict['Preprocessing'] = Preprocessing
 modules_dict['CorrMaxtrix'] = CorrMaxtrix
 modules_dict['GraphCreator'] = GraphCreator
 modules_dict['Sub2Vec'] = Sub2Vec
-modules_dict['Classifier'] = Classifier
+modules_dict['Classifier'] = classifier
 
 pipeline = []
 

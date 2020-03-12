@@ -1,6 +1,9 @@
 from classifier.Classification.Wrappers.randomForestWrapper import RandomForestWrapper
 from classifier.Classification.Wrappers.xgboostWrapper import xgboostWrapper
+from classifier.Classification.Wrappers.lightgbmWrapper import lightgbmWrapper
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
 from classifier.Validation.validation import validation
 import json
 
@@ -18,6 +21,7 @@ class classifier(AbstractConfigClass):
         self.valid.setup()
         self.initClassifiersnDict()
         self.fillClassifiersDirectory()
+        self.resultdict={}
 
 
 
@@ -25,11 +29,13 @@ class classifier(AbstractConfigClass):
     def exec(self):
         self.valid.exec()
         self.classify()
+        self.printdict()
 
 
     def initClassifiersnDict(self):
         self.classifiers_dict['RandomForest']=RandomForestWrapper
         self.classifiers_dict['xgboost'] = xgboostWrapper
+        self.classifiers_dict['lightgbm'] =lightgbmWrapper
 
 
     def fillClassifiersDirectory(self):
@@ -39,10 +45,30 @@ class classifier(AbstractConfigClass):
 
     def classify(self):
         validations= getattr(self.valid,'val_dir')
+
         for val in validations :
-            val_gen=val.split()
-            for x_train , y_train , x_test , y_test in val_gen:
-                for cls in self.classifiers_dir:
-                    cls.fit(x_train,y_train)
+            for cls in self.classifiers_dir:
+                val_gen = val.split()
+                trainsum = 0
+                testsum = 0
+                count = 0
+                for x_train , y_train , x_test , y_test in val_gen:
+                    cls.fit(x_train, y_train)
                     # print(cls.predict(x_test))
-                    print(cls.evaluate(x_test,y_test))
+                    # print("Train Score : {} , Test Score : {} ".format(cls.evaluate(x_train, y_train),
+                    #                                                    cls.evaluate(x_test, y_test)))
+                    count += 1
+                    trainsum += cls.evaluate(x_train, y_train)
+                    testsum += cls.evaluate(x_test, y_test)
+                print((cls.name,val.name,count))
+                self.resultdict[(cls.name,val.name)]={'train':trainsum/count,'test':testsum/count}
+
+
+
+
+    def printdict(self):
+        print(self.resultdict)
+
+    def calculateScore(self):
+        f1_score()
+        accuracy_score()
