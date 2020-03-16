@@ -1,3 +1,5 @@
+import random
+
 import pandas as pd
 import numpy as np
 import sklearn
@@ -35,6 +37,7 @@ class GraphCreator(AbstractConfigClass):
             self.config_parser.eval(self.__class__.__name__, "main_graph_output_directory"))
         self.sub_graphs_output_directory_path = self.getPath(
             self.config_parser.eval(self.__class__.__name__, "sub_graphs_output_directory"))
+        self.number_of_neighbors = int(self.config_parser.eval(self.__class__.__name__, "number_Of_neighbors"))
         self.subGraphs_list = []
         self.main_graph = nx.Graph()
         self.set_nodes = set()
@@ -83,12 +86,12 @@ class GraphCreator(AbstractConfigClass):
     def create(self):
         # self.creteSetNodes()
         self.createMainGraph()
-        self.generateWightsByThreshold()
-        self.removeEdgesByList()
+        # self.generateWightsByThreshold()
+        # self.removeEdgesByList()
         self.writeMainGraph()
         self.subGraphsCreator()
-        self.WriteAll()
-
+        self.addRandomNeighbors()
+        # self.WriteAll()
 
         # nx.draw(self.main_graph,with_labels=True)
         # plt.savefig("filename.png")
@@ -125,8 +128,9 @@ class GraphCreator(AbstractConfigClass):
         i, j = 0, 1
         for _, row in csv_pd.iterrows():
             for i in range(j, len(row)):
-                self.main_graph.add_edge(u_of_edge=str(row.name).lower(), v_of_edge=str(columns_headers[i]).lower(),
-                                         weight=row[i])
+                if row[i] >= float(self.threshold_weights):
+                    self.main_graph.add_edge(u_of_edge=str(row.name).lower(), v_of_edge=str(columns_headers[i]).lower(),
+                                             weight=row[i])
             j += 1
 
     '''
@@ -148,6 +152,46 @@ class GraphCreator(AbstractConfigClass):
             u = self.removeEdges[i][0]
             v = self.removeEdges[i][1]
             self.main_graph.remove_edge(u=u, v=v)
+
+    ''' Adding neighbors to each sub graph  '''
+
+    def addRandomNeighbors(self):
+        subgraphs_with_neighbors = []
+        for i in self.subGraphs_list:
+            subgraphs_with_neighbors.append(self.addNeighborsByThreshold(i))
+        self.subGraphs_list = subgraphs_with_neighbors
+
+    ''' add neighbors to sub graph'''
+
+    def addNeighborsByThreshold(self, g):
+        new_g = g
+        for count in range(self.number_of_neighbors):
+            neighbors = self.addNeighbors(new_g)
+            if len(neighbors) == 0:
+                break
+            new_g = self.generateNweGraph(list(new_g.nodes), random.choice(tuple(neighbors)))
+        return new_g
+
+    ''' create the new graph from main graph and the neighbors '''
+
+    def generateNweGraph(self, nodes, node):
+        nodes.append(node)
+        return self.main_graph.subgraph(nodes)
+
+    ''' find all the neighbors in sub graph '''
+
+    def addNeighbors(self, g):
+        neighbors = set()
+        for vertex in g.nodes:
+            neighbors.update(self.getNeighbors(vertex, self.main_graph))
+        # neighbors.remove(g.nodes)
+        neighbors.difference_update(list(g.nodes))
+        return neighbors
+
+    ''' get neighbors of node '''
+
+    def getNeighbors(self, node, _graph):
+        return list(_graph.adj[node].keys())
 
     ''' write all graphs to gml graph format'''
 
@@ -180,4 +224,3 @@ class GraphCreator(AbstractConfigClass):
 
     def writeMainGraph(self):
         nx.write_gml(G=self.main_graph, path=os.path.join(self.main_graph_output_directory_path, "main_graph.gml"))
-
