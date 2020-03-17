@@ -4,6 +4,7 @@ from classifier.Classification.Wrappers.lightgbmWrapper import lightgbmWrapper
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 from classifier.Classification.result import Result
 from classifier.Metrics.metrics import Metrics
+import timeit
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
 from classifier.Validation.validation import validation
@@ -16,6 +17,9 @@ class classifier(AbstractConfigClass):
         AbstractConfigClass.__init__(self)
 
     def setup(self):
+        self.csv_output_directory = self.getPath(
+            relative_path=self.config_parser.eval(self.__class__.__name__, 'csv_output_directory'))
+        self.output_file_name = self.config_parser.eval(self.__class__.__name__, "output_file_name")
         self.classifiers_list = self.config_parser.eval(self.__class__.__name__, 'classifiers_list').split(',')
         self.classifiers_args = json.loads(self.config_parser.get(self.__class__.__name__, 'classifiers_args'))
         self.classifiers_dict = {}
@@ -98,8 +102,12 @@ class classifier(AbstractConfigClass):
         return result
 
     def outputResult(self):
-        df = pd.DataFrame(columns=['classifier', 'validation', 'train'])
+        df = pd.DataFrame(columns=['classifier','validation','train','test'])
+        for result in self.resultdict:
+            df=result.getPandas(df)
+
         df=df.T
-        i=44
+        df.to_excel(self.csv_output_directory + "/" + self.output_file_name + "_" + str(timeit.timeit()) + ".xlsx")
+
 
 

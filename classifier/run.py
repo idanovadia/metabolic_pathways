@@ -10,7 +10,7 @@ modules_dict['Preprocessing'] = Preprocessing
 modules_dict['CorrMaxtrix'] = CorrMaxtrix
 modules_dict['GraphCreator'] = GraphCreator
 modules_dict['Sub2Vec'] = Sub2Vec
-modules_dict['Classifier'] = classifier
+modules_dict['classifier'] = classifier
 
 pipeline = []
 
