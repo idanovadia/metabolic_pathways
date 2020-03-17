@@ -1,5 +1,6 @@
 from classifier.Classification.classification import classifier
 from classifier.configuration.config_class import getConfig
+from classifier.graphPresentation.graphPresentation import GraphPresentation
 from classifier.preprocessing.preprocessing import Preprocessing
 from classifier.correlation_matrix_creator.correlation_matrix_creator import CorrMaxtrix
 from classifier.graph_creator.graph_creator import GraphCreator

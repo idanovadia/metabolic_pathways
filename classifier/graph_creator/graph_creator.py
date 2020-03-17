@@ -1,3 +1,5 @@
+import random
+
 import pandas as pd
 import numpy as np
 import sklearn
@@ -26,11 +28,16 @@ class GraphCreator(AbstractConfigClass):
     set_nodes
     removeEdges - edges that got weight 0 - to remove from main graph.
     '''
+
     def setup(self):
         self.corr_matrix_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "corr_matrix_path"))
         self.labels_dir_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "labels_dir_path"))
         self.threshold_weights = self.config_parser.eval(self.__class__.__name__, "threshold")
-        self.sub_graphs_output_directory_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "sub_graphs_output_directory"))
+        self.main_graph_output_directory_path = self.getPath(
+            self.config_parser.eval(self.__class__.__name__, "main_graph_output_directory"))
+        self.sub_graphs_output_directory_path = self.getPath(
+            self.config_parser.eval(self.__class__.__name__, "sub_graphs_output_directory"))
+        self.number_of_neighbors = int(self.config_parser.eval(self.__class__.__name__, "number_Of_neighbors"))
         self.subGraphs_list = []
         self.main_graph = nx.Graph()
         self.set_nodes = set()
@@ -51,13 +58,13 @@ class GraphCreator(AbstractConfigClass):
         type - train/test sub graph
         graph - nx graph that has been created
         '''
+
         def __init__(self, file_path, classify, type_graph, main_graph):
             self.file_path = file_path
             self.nodes_list = self.createNodeList()
             self.classify = classify
             self.type = type_graph
             self.graph = self.CreateSubGraph(main_graph)
-
 
         ''' csv file '''
 
@@ -67,6 +74,7 @@ class GraphCreator(AbstractConfigClass):
             return l
 
         '''generate sub graph and return it'''
+
         def CreateSubGraph(self, main_graph):
             subGraph = main_graph.subgraph(self.nodes_list).copy()
             subGraph.graph['label'] = self.classify
@@ -78,10 +86,13 @@ class GraphCreator(AbstractConfigClass):
     def create(self):
         # self.creteSetNodes()
         self.createMainGraph()
-        self.generateWightsByThreshold()
-        self.removeEdgesByList()
+        # self.generateWightsByThreshold()
+        # self.removeEdgesByList()
+        self.writeMainGraph()
         self.subGraphsCreator()
-        self.WriteAll()
+        self.addRandomNeighbors()
+        # self.WriteAll()
+
         # nx.draw(self.main_graph,with_labels=True)
         # plt.savefig("filename.png")
         # self.plotGraph()
@@ -92,9 +103,9 @@ class GraphCreator(AbstractConfigClass):
         list_of_dirs = os.listdir(self.labels_dir_path)
         for dirpath, dirnames, filenames in os.walk(self.labels_dir_path):
             if not dirnames:
-        # for dir in list_of_dirs:
-        #         dir_path = os.path.join(self.subGraphs_dir_path, dir)
-        #         sub_graph_dir_list = os.listdir(dir_path)
+                # for dir in list_of_dirs:
+                #         dir_path = os.path.join(self.subGraphs_dir_path, dir)
+                #         sub_graph_dir_list = os.listdir(dir_path)
                 sub_graph_dir_list = os.listdir(dirpath)
                 label = dirpath.split(sep=os.sep)[-1]
                 type = dirpath.split(sep=os.sep)[-2]
@@ -117,12 +128,15 @@ class GraphCreator(AbstractConfigClass):
         i, j = 0, 1
         for _, row in csv_pd.iterrows():
             for i in range(j, len(row)):
-                self.main_graph.add_edge(u_of_edge=str(row.name).lower(), v_of_edge=str(columns_headers[i]).lower(), weight=row[i])
+                if row[i] >= float(self.threshold_weights):
+                    self.main_graph.add_edge(u_of_edge=str(row.name).lower(), v_of_edge=str(columns_headers[i]).lower(),
+                                             weight=row[i])
             j += 1
 
     '''
     Generate new weight 0 or 1 by threshold
     '''
+
     def generateWightsByThreshold(self):
         for (u, v, d) in self.main_graph.edges(data=True):
             if d['weight'] >= float(self.threshold_weights):
@@ -132,22 +146,66 @@ class GraphCreator(AbstractConfigClass):
                 self.removeEdges.append((u, v))
 
     ''' Remove edges from main graph that have weights = 0'''
+
     def removeEdgesByList(self):
         for i in range(len(self.removeEdges)):
             u = self.removeEdges[i][0]
             v = self.removeEdges[i][1]
             self.main_graph.remove_edge(u=u, v=v)
 
+    ''' Adding neighbors to each sub graph  '''
+
+    def addRandomNeighbors(self):
+        subgraphs_with_neighbors = []
+        for i in self.subGraphs_list:
+            subgraphs_with_neighbors.append(self.addNeighborsByThreshold(i))
+        self.subGraphs_list = subgraphs_with_neighbors
+
+    ''' add neighbors to sub graph'''
+
+    def addNeighborsByThreshold(self, g):
+        new_g = g
+        for count in range(self.number_of_neighbors):
+            neighbors = self.addNeighbors(new_g)
+            if len(neighbors) == 0:
+                break
+            new_g = self.generateNweGraph(list(new_g.nodes), random.choice(tuple(neighbors)))
+        return new_g
+
+    ''' create the new graph from main graph and the neighbors '''
+
+    def generateNweGraph(self, nodes, node):
+        nodes.append(node)
+        return self.main_graph.subgraph(nodes)
+
+    ''' find all the neighbors in sub graph '''
+
+    def addNeighbors(self, g):
+        neighbors = set()
+        for vertex in g.nodes:
+            neighbors.update(self.getNeighbors(vertex, self.main_graph))
+        # neighbors.remove(g.nodes)
+        neighbors.difference_update(list(g.nodes))
+        return neighbors
+
+    ''' get neighbors of node '''
+
+    def getNeighbors(self, node, _graph):
+        return list(_graph.adj[node].keys())
+
     ''' write all graphs to gml graph format'''
+
     def WriteAll(self):
         for id, graph in enumerate(self.subGraphs_list):
             self.writeFile(graph, id)
 
     ''' write a graph to gml graph format'''
+
     def writeFile(self, G, id):
         nx.write_gml(G=G, path=os.path.join(self.sub_graphs_output_directory_path, str(id) + ".gml"))
 
     ''' draw the main graph '''
+
     def plotGraph(self):
         elarge = [(u, v) for (u, v, d) in self.main_graph.edges(data=True) if d['weight'] > 0.5]
         esmall = [(u, v) for (u, v, d) in self.main_graph.edges(data=True) if d['weight'] <= 0.5]
@@ -164,4 +222,5 @@ class GraphCreator(AbstractConfigClass):
         plt.axis('off')
         plt.show()
 
-
+    def writeMainGraph(self):
+        nx.write_gml(G=self.main_graph, path=os.path.join(self.main_graph_output_directory_path, "main_graph.gml"))
