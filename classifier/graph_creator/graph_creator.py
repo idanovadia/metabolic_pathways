@@ -91,7 +91,7 @@ class GraphCreator(AbstractConfigClass):
         self.writeMainGraph()
         self.subGraphsCreator()
         self.addRandomNeighbors()
-        # self.WriteAll()
+        self.WriteAll()
 
         # nx.draw(self.main_graph,with_labels=True)
         # plt.savefig("filename.png")
@@ -163,20 +163,24 @@ class GraphCreator(AbstractConfigClass):
 
     ''' add neighbors to sub graph'''
 
-    def addNeighborsByThreshold(self, g):
-        new_g = g
+    def addNeighborsByThreshold(self, g_):
+        new_g = g_.copy()
         for count in range(self.number_of_neighbors):
             neighbors = self.addNeighbors(new_g)
             if len(neighbors) == 0:
                 break
             new_g = self.generateNweGraph(list(new_g.nodes), random.choice(tuple(neighbors)))
+        label = str(g_.graph['label'])
+        type = str(g_.graph['type'])
+        new_g.graph['label'] = label
+        new_g.graph['type'] = type
         return new_g
 
     ''' create the new graph from main graph and the neighbors '''
 
     def generateNweGraph(self, nodes, node):
         nodes.append(node)
-        return self.main_graph.subgraph(nodes)
+        return self.main_graph.subgraph(nodes).copy()
 
     ''' find all the neighbors in sub graph '''
 
