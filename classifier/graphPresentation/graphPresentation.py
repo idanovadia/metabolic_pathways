@@ -2,7 +2,6 @@ from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 import networkx as nx
 import os
 import matplotlib.pyplot as plt
-from networkx_viewer import Viewer
 
 
 class GraphPresentation(AbstractConfigClass):

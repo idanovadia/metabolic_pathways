@@ -39,7 +39,6 @@ class classifier(AbstractConfigClass):
         self.valid.exec()
         self.metrics.exec()
         self.classify()
-        self.printdict()
         self.outputResult()
 
 
@@ -63,17 +62,11 @@ class classifier(AbstractConfigClass):
                 predictions=[]
                 for x_train , y_train , x_test , y_test in val_gen:
                     cls.fit(x_train, y_train)
-                    # print(cls.predict(x_test))
-                    # print("Train Score : {} , Test Score : {} ".format(cls.evaluate(x_train, y_train),
-                    #
-                    #
                     predictions.append([cls.predict(x_train), y_train,cls.predict(x_test),y_test])
 
-                print((cls.name,val.name))
                 scores=self.calculateScore(predictions)
                 self.resultdict.append(Result(cls.name,val.name,scores))
                 # self.resultdict[(cls.name,val.name)]={'train':trainsum/count,'test':testsum/count}
-        self.printdict()
 
 
 
