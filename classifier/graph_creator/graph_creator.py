@@ -1,5 +1,5 @@
 import random
-
+from queue import PriorityQueue
 import pandas as pd
 import numpy as np
 import sklearn
@@ -90,8 +90,9 @@ class GraphCreator(AbstractConfigClass):
         # self.removeEdgesByList()
         self.writeMainGraph()
         self.subGraphsCreator()
-        self.addRandomNeighbors()
-        # self.WriteAll()
+        # self.addRandomNeighbors()
+        self.NeighborsByPriority()
+        self.WriteAll()
 
         # nx.draw(self.main_graph,with_labels=True)
         # plt.savefig("filename.png")
@@ -137,22 +138,23 @@ class GraphCreator(AbstractConfigClass):
     Generate new weight 0 or 1 by threshold
     '''
 
-    def generateWightsByThreshold(self):
-        for (u, v, d) in self.main_graph.edges(data=True):
-            if d['weight'] >= float(self.threshold_weights):
-                d['weight'] = 1
-            else:
-                d['weight'] = 0
-                self.removeEdges.append((u, v))
+    # def generateWightsByThreshold(self):
+    #     for (u, v, d) in self.main_graph.edges(data=True):
+    #         if d['weight'] >= float(self.threshold_weights):
+    #             d['weight'] = 1
+    #         else:
+    #             d['weight'] = 0
+    #             self.removeEdges.append((u, v))
+    #
+    # ''' Remove edges from main graph that have weights = 0'''
+    #
+    # def removeEdgesByList(self):
+    #     for i in range(len(self.removeEdges)):
+    #         u = self.removeEdges[i][0]
+    #         v = self.removeEdges[i][1]
+    #         self.main_graph.remove_edge(u=u, v=v)
 
-    ''' Remove edges from main graph that have weights = 0'''
-
-    def removeEdgesByList(self):
-        for i in range(len(self.removeEdges)):
-            u = self.removeEdges[i][0]
-            v = self.removeEdges[i][1]
-            self.main_graph.remove_edge(u=u, v=v)
-
+    # ############################################################################################################################################
     ''' Adding neighbors to each sub graph  '''
 
     def addRandomNeighbors(self):
@@ -163,20 +165,24 @@ class GraphCreator(AbstractConfigClass):
 
     ''' add neighbors to sub graph'''
 
-    def addNeighborsByThreshold(self, g):
-        new_g = g
+    def addNeighborsByThreshold(self, g_):
+        new_g = g_.copy()
         for count in range(self.number_of_neighbors):
             neighbors = self.addNeighbors(new_g)
             if len(neighbors) == 0:
                 break
             new_g = self.generateNweGraph(list(new_g.nodes), random.choice(tuple(neighbors)))
+        label = str(g_.graph['label'])
+        type = str(g_.graph['type'])
+        new_g.graph['label'] = label
+        new_g.graph['type'] = type
         return new_g
 
     ''' create the new graph from main graph and the neighbors '''
 
     def generateNweGraph(self, nodes, node):
         nodes.append(node)
-        return self.main_graph.subgraph(nodes)
+        return self.main_graph.subgraph(nodes).copy()
 
     ''' find all the neighbors in sub graph '''
 
@@ -193,6 +199,8 @@ class GraphCreator(AbstractConfigClass):
     def getNeighbors(self, node, _graph):
         return list(_graph.adj[node].keys())
 
+    # ############################################################################################################################################
+
     ''' write all graphs to gml graph format'''
 
     def WriteAll(self):
@@ -206,21 +214,57 @@ class GraphCreator(AbstractConfigClass):
 
     ''' draw the main graph '''
 
-    def plotGraph(self):
-        elarge = [(u, v) for (u, v, d) in self.main_graph.edges(data=True) if d['weight'] > 0.5]
-        esmall = [(u, v) for (u, v, d) in self.main_graph.edges(data=True) if d['weight'] <= 0.5]
-        pos = nx.spring_layout(self.main_graph)  # positions for all nodes
-        # nodes
-        nx.draw_networkx_nodes(self.main_graph, pos, node_size=10)
-        # edges
-        nx.draw_networkx_edges(self.main_graph, pos, edgelist=elarge,
-                               width=2)
-        nx.draw_networkx_edges(self.main_graph, pos, edgelist=esmall,
-                               width=2, alpha=0.5, edge_color='b', style='dashed')
-        # labels
-        nx.draw_networkx_labels(self.main_graph, pos, font_size=6, font_family='sans-serif')
-        plt.axis('off')
-        plt.show()
-
     def writeMainGraph(self):
         nx.write_gml(G=self.main_graph, path=os.path.join(self.main_graph_output_directory_path, "main_graph.gml"))
+
+    # ############################################################################################################################################
+
+    # def plotGraph(self):
+    #     elarge = [(u, v) for (u, v, d) in self.main_graph.edges(data=True) if d['weight'] > 0.5]
+    #     esmall = [(u, v) for (u, v, d) in self.main_graph.edges(data=True) if d['weight'] <= 0.5]
+    #     pos = nx.spring_layout(self.main_graph)  # positions for all nodes
+    #     # nodes
+    #     nx.draw_networkx_nodes(self.main_graph, pos, node_size=10)
+    #     # edges
+    #     nx.draw_networkx_edges(self.main_graph, pos, edgelist=elarge,
+    #                            width=2)
+    #     nx.draw_networkx_edges(self.main_graph, pos, edgelist=esmall,
+    #                            width=2, alpha=0.5, edge_color='b', style='dashed')
+    #     # labels
+    #     nx.draw_networkx_labels(self.main_graph, pos, font_size=6, font_family='sans-serif')
+    #     plt.axis('off')
+    #     plt.show()
+    # ############################################################################################################################################
+
+    def NeighborsByPriority(self):
+        subgraphs_with_neighbors = []
+        for i in self.subGraphs_list:
+            subgraphs_with_neighbors.append(self.addNeighborsByPriority(i))
+        self.subGraphs_list = subgraphs_with_neighbors
+
+    def addNeighborsByPriority(self, g):
+        new_g = g
+        for count in range(self.number_of_neighbors):
+            neighbors = self.addNeighbors_PriorityQueue(new_g)
+            if len(neighbors.queue) == 0:
+                break
+            new_node = self.getNextNode(neighbors, new_g.nodes)
+            new_g = self.generateNweGraph(list(new_g.nodes), new_node)
+        return new_g
+
+    def addNeighbors_PriorityQueue(self, g):
+        neighbors = PriorityQueue()
+        for vertex in g.nodes:
+            for key, value in self.main_graph.adj._atlas[vertex].items():
+                neighbors.put((-1 * value["weight"], key))
+        return neighbors
+
+    def getNextNode(self, neighbors, nodes):
+        node = neighbors.queue[0]
+        count = 1
+        while node[1] in nodes:
+            if len(neighbors.queue) == 0:
+                return
+            node = neighbors.queue[count]
+            count += 1
+        return node[0] * -1
