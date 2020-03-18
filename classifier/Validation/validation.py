@@ -21,8 +21,7 @@ class validation(AbstractConfigClass):
             relative_path=self.config_parser.eval(self.__class__.__name__, "train_label_directory_path"))
         self.validation_dict={}
         self.val_dir = []
-        self.x_train = pd.read_excel(self.train_directory_path)
-        self.y_train = pd.read_excel(self.label_directory_path)[0]
+
 
     def initValidationDict(self):
         self.validation_dict['LeaveOneOut']=LeaveOneOutWrapper
@@ -35,6 +34,8 @@ class validation(AbstractConfigClass):
 
 
     def exec(self):
+        self.x_train = pd.read_excel(self.train_directory_path)
+        self.y_train = pd.read_excel(self.label_directory_path)[0]
         self.initValidationDict()
         self.fillValidationDirectory(self.x_train, self.y_train)
 
