@@ -91,7 +91,7 @@ class GraphCreator(AbstractConfigClass):
         self.writeMainGraph()
         self.subGraphsCreator()
         # self.addRandomNeighbors()
-        self.NeighborsByPriority()
+        # self.NeighborsByPriority()
         self.WriteAll()
 
         # nx.draw(self.main_graph,with_labels=True)

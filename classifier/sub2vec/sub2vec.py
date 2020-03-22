@@ -108,7 +108,7 @@ class Sub2Vec(AbstractConfigClass):
     '''
 
     def saveFile(self, csv, path, name):
-        csv.to_excel(os.path.join(path, name))
+        csv.to_excel(os.path.join(path, name),index=False)
 
     ''' write all graphs to gml graph format'''
 

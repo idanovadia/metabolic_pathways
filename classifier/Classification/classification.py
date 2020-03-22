@@ -101,6 +101,8 @@ class classifier(AbstractConfigClass):
 
         df=df.T
         df.to_excel(self.csv_output_directory + "/" + self.output_file_name + "_" + str(timeit.timeit()) + ".xlsx")
+        print(df.to_string)
+
 
 
 

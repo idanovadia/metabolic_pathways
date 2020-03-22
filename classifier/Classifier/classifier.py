@@ -33,6 +33,7 @@ class Classifier(AbstractConfigClass):
     def exec(self):
         self.LeaveOneOut()
         self.saveFile()
+        self.printResults()
 
     def LeaveOneOut(self, ):
         begin_run = timeit.timeit()
@@ -61,5 +62,8 @@ class Classifier(AbstractConfigClass):
 
     def saveFile(self):
         self.df_results.to_excel(self.csv_output_directory+"/"+self.output_file_name+"_"+str(timeit.timeit())+".xlsx")
+
+    def printResults(self):
+        print(self.df_results.to_string())
 
 
