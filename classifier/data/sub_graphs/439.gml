@@ -3,11 +3,11 @@ graph [
   type "2001"
   node [
     id 0
-    label "phosphate"
+    label "beta;-alanine"
   ]
   node [
     id 1
-    label "beta;-alanine"
+    label "phosphate"
   ]
   node [
     id 2
@@ -19,12 +19,12 @@ graph [
   ]
   edge [
     source 0
-    target 3
-    weight 0.6510037877502363
+    target 2
+    weight 0.5427085069239712
   ]
   edge [
     source 1
-    target 2
-    weight 0.5427085069239712
+    target 3
+    weight 0.6510037877502363
   ]
 ]

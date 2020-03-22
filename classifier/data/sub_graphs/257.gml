@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "l-isoleucine"
+    label "phosphate"
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-isoleucine"
   ]
   node [
     id 4
@@ -23,12 +23,12 @@ graph [
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight 0.6510037877502363
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 0.8214449673954837
   ]
   edge [
@@ -37,7 +37,7 @@ graph [
     weight 0.8560180260893289
   ]
   edge [
-    source 2
+    source 3
     target 4
     weight 0.8117751078239503
   ]

@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "udp-alpha;-d-galacturonate"
+    label "gaba"
   ]
   node [
     id 1
@@ -11,7 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "gaba"
+    label "udp-alpha;-d-galacturonate"
   ]
   edge [
     source 0

@@ -4,6 +4,6 @@ graph [
   name "194.gml"
   node [
     id 0
-    label "succinate"
+    label "l-glutamate"
   ]
 ]

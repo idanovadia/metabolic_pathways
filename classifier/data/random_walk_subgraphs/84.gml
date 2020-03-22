@@ -4,6 +4,6 @@ graph [
   name "84.gml"
   node [
     id 0
-    label "l-glutamate"
+    label "l-isoleucine"
   ]
 ]

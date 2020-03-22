@@ -4,11 +4,11 @@ graph [
   name "327.gml"
   node [
     id 0
-    label "l-cysteine"
+    label "l-valine"
   ]
   node [
     id 1
-    label "l-valine"
+    label "l-cysteine"
   ]
   edge [
     source 0

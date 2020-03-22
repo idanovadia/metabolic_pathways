@@ -4,29 +4,29 @@ graph [
   name "218.gml"
   node [
     id 0
-    label "phosphate"
+    label "succinate"
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "(s)-malate"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-alanine"
   ]
   edge [
     source 0
     target 2
-    weight 0.6510037877502363
+    weight 0.5154836860390344
   ]
   edge [
     source 0
     target 1
-    weight 0.6011486587004862
+    weight 0.5122229946934221
   ]
   edge [
     source 1
     target 2
-    weight 0.6056390159084215
+    weight 0.52767586406752
   ]
 ]

@@ -4,6 +4,6 @@ graph [
   name "181.gml"
   node [
     id 0
-    label "l-serine"
+    label "gdp-alpha;-d-mannose"
   ]
 ]

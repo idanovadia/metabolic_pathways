@@ -4,29 +4,29 @@ graph [
   name "406.gml"
   node [
     id 0
-    label "l-alanine"
+    label "glucose_6_phosphate"
   ]
   node [
     id 1
-    label "dehydroascorbate (bicyclic form)"
+    label "gaba"
   ]
   node [
     id 2
-    label "alpha;-tocopherol"
+    label "alpha;,alpha;-trehalose"
   ]
   edge [
     source 0
     target 1
-    weight 0.6803486715885059
+    weight 0.6849410070904632
   ]
   edge [
     source 0
     target 2
-    weight 0.6098175065214301
+    weight 0.6749673616300522
   ]
   edge [
     source 1
     target 2
-    weight 0.8286429403657696
+    weight 0.6936625138569831
   ]
 ]

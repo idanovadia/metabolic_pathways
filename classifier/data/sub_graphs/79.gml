@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-isoleucine"
+    label "l-threonine"
   ]
   node [
     id 1
-    label "l-threonine"
+    label "l-isoleucine"
   ]
   node [
     id 2

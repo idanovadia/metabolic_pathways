@@ -4,11 +4,11 @@ graph [
   name "202.gml"
   node [
     id 0
-    label "l-phenylalanine"
+    label "glycine"
   ]
   node [
     id 1
-    label "glycine"
+    label "l-phenylalanine"
   ]
   edge [
     source 0

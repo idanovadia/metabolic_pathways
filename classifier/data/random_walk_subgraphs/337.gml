@@ -4,29 +4,29 @@ graph [
   name "337.gml"
   node [
     id 0
-    label "l-alanine"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "erythritol"
+    label "l-threonine"
   ]
   node [
     id 2
-    label "l-arginine"
+    label "erythritol"
   ]
   edge [
     source 0
     target 2
-    weight 0.5069688742884643
+    weight 0.5030137435371759
   ]
   edge [
     source 0
     target 1
-    weight 0.8376832835132291
+    weight 0.6836197227468748
   ]
   edge [
     source 1
     target 2
-    weight 0.5030137435371759
+    weight 0.7083485940056565
   ]
 ]

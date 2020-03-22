@@ -7,20 +7,20 @@ graph [
   ]
   node [
     id 1
-    label "dehydroascorbate (bicyclic form)"
+    label "(s)-malate"
   ]
   node [
     id 2
-    label "(s)-malate"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 0.6093210323648746
+    label "dehydroascorbate (bicyclic form)"
   ]
   edge [
     source 0
     target 2
+    weight 0.6093210323648746
+  ]
+  edge [
+    source 0
+    target 1
     weight 0.5962837030133438
   ]
   edge [

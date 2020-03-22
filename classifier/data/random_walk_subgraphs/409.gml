@@ -8,20 +8,20 @@ graph [
   ]
   node [
     id 1
-    label "l-tryptophan"
+    label "glycerol"
   ]
   node [
     id 2
-    label "glycine"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 0.617319894967774
+    label "alpha;-tocopherol"
   ]
   edge [
     source 0
     target 2
-    weight 0.6078537278651192
+    weight 0.6422357191045575
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.5685346977628644
   ]
 ]

@@ -3,19 +3,19 @@ graph [
   type "2001"
   node [
     id 0
-    label "l-alanine"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "l-tryptophan"
+    label "l-alanine"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-tryptophan"
   ]
   edge [
-    source 0
-    target 1
+    source 1
+    target 2
     weight 0.5403694072428842
   ]
 ]

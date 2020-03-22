@@ -3,14 +3,14 @@ graph [
   type "trainset"
   node [
     id 0
-    label "succinate"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "phosphate"
+    label "succinate"
   ]
   node [
     id 2
-    label "l-arginine"
+    label "phosphate"
   ]
 ]

@@ -4,24 +4,29 @@ graph [
   name "239.gml"
   node [
     id 0
-    label "l-cysteine"
+    label "l-threonine"
   ]
   node [
     id 1
-    label "l-tryptophan"
+    label "l-leucine"
   ]
   node [
     id 2
-    label "l-leucine"
+    label "l-phenylalanine"
   ]
   edge [
     source 0
     target 2
-    weight 0.6994221398999002
+    weight 0.8956904981140658
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.8421669500271493
   ]
   edge [
     source 1
     target 2
-    weight 0.5295081497680638
+    weight 0.8707006578322569
   ]
 ]

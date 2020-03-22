@@ -8,11 +8,20 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "phosphate"
+  ]
+  node [
+    id 2
+    label "galactose"
   ]
   edge [
     source 0
     target 1
-    weight 0.5889560002830893
+    weight 0.5207469450961464
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.5884905612973588
   ]
 ]

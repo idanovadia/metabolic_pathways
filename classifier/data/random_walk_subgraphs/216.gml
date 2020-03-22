@@ -4,11 +4,11 @@ graph [
   name "216.gml"
   node [
     id 0
-    label "succinate"
+    label "glycine"
   ]
   node [
     id 1
-    label "glycine"
+    label "succinate"
   ]
   edge [
     source 0

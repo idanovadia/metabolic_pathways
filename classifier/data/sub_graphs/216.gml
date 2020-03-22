@@ -3,19 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "succinate"
+    label "glycine"
   ]
   node [
     id 1
-    label "phosphate"
+    label "succinate"
   ]
   node [
     id 2
-    label "glycine"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.5295183185793924
   ]
 ]

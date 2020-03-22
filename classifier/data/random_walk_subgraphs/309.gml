@@ -4,6 +4,6 @@ graph [
   name "309.gml"
   node [
     id 0
-    label "l-glutamate"
+    label "l-lysine"
   ]
 ]

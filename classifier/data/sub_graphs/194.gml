@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "succinate"
+    label "l-lysine"
   ]
   node [
     id 1
-    label "l-lysine"
+    label "succinate"
   ]
   node [
     id 2

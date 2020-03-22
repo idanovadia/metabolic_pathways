@@ -4,15 +4,15 @@ graph [
   name "410.gml"
   node [
     id 0
-    label "l-aspartate"
+    label "gdp-alpha;-d-mannose"
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "citrate"
   ]
   edge [
     source 0
     target 1
-    weight 0.565023298494408
+    weight 0.587096072638827
   ]
 ]

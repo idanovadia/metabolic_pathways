@@ -4,6 +4,6 @@ graph [
   name "173.gml"
   node [
     id 0
-    label "d-glycerate"
+    label "d-gluconate"
   ]
 ]

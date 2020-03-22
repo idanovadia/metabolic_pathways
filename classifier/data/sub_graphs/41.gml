@@ -3,27 +3,32 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamine"
-  ]
-  node [
-    id 1
-    label "l-arginine"
-  ]
-  node [
-    id 2
     label "l-glutamate"
   ]
   node [
-    id 3
-    label "fumarate"
+    id 1
+    label "l-aspartate"
   ]
   node [
-    id 4
+    id 2
+    label "l-glutamine"
+  ]
+  node [
+    id 3
     label "phosphate"
   ]
   node [
+    id 4
+    label "l-arginine"
+  ]
+  node [
     id 5
-    label "l-aspartate"
+    label "fumarate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.6056390159084215
   ]
   edge [
     source 0
@@ -32,22 +37,17 @@ graph [
   ]
   edge [
     source 0
-    target 4
-    weight 0.5207469450961464
-  ]
-  edge [
-    source 2
-    target 5
-    weight 0.6056390159084215
-  ]
-  edge [
-    source 2
-    target 4
+    target 3
     weight 0.6510037877502363
   ]
   edge [
-    source 4
-    target 5
+    source 1
+    target 3
     weight 0.6011486587004862
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.5207469450961464
   ]
 ]

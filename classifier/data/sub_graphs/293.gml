@@ -7,23 +7,23 @@ graph [
   ]
   node [
     id 1
-    label "l-aspartate"
-  ]
-  node [
-    id 2
     label "l-asparagine"
   ]
   node [
-    id 3
+    id 2
     label "l-glutamate"
+  ]
+  node [
+    id 3
+    label "l-aspartate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.5203230179999729
   ]
   edge [
-    source 1
+    source 2
     target 3
     weight 0.6056390159084215
   ]

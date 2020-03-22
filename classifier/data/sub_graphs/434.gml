@@ -3,14 +3,14 @@ graph [
   type "2001"
   node [
     id 0
-    label "l-tryptophan"
-  ]
-  node [
-    id 1
     label "glucose"
   ]
   node [
-    id 2
+    id 1
     label "l-glutamate"
+  ]
+  node [
+    id 2
+    label "l-tryptophan"
   ]
 ]

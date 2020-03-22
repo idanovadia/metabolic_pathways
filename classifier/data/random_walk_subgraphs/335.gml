@@ -4,29 +4,15 @@ graph [
   name "335.gml"
   node [
     id 0
-    label "l-tyrosine"
+    label "d-threo-isocitrate"
   ]
   node [
     id 1
-    label "glucose_6_phosphate"
-  ]
-  node [
-    id 2
-    label "l-valine"
+    label "phosphate"
   ]
   edge [
     source 0
     target 1
-    weight 0.5607137788678386
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.7131094485116178
-  ]
-  edge [
-    source 1
-    target 2
-    weight 0.693908200001238
+    weight 0.6361601092405977
   ]
 ]

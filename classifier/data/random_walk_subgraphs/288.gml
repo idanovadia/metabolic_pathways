@@ -4,7 +4,7 @@ graph [
   name "288.gml"
   node [
     id 0
-    label "l-glutamine"
+    label "glucose"
   ]
   node [
     id 1
@@ -16,13 +16,8 @@ graph [
   ]
   edge [
     source 0
-    target 1
-    weight 0.5889560002830893
-  ]
-  edge [
-    source 0
     target 2
-    weight 0.5207469450961464
+    weight 0.5997968146524117
   ]
   edge [
     source 1

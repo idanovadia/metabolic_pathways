@@ -4,6 +4,6 @@ graph [
   name "88.gml"
   node [
     id 0
-    label "l-serine"
+    label "phosphate"
   ]
 ]

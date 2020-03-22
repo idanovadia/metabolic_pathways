@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-serine"
+    label "glycine"
   ]
   node [
     id 1
@@ -11,34 +11,34 @@ graph [
   ]
   node [
     id 2
-    label "glycine"
-  ]
-  node [
-    id 3
     label "phosphate"
   ]
   node [
-    id 4
+    id 3
     label "(s)-malate"
+  ]
+  node [
+    id 4
+    label "l-serine"
   ]
   edge [
     source 0
-    target 2
+    target 3
+    weight 0.639388329372591
+  ]
+  edge [
+    source 0
+    target 4
     weight 0.8435878621427529
   ]
   edge [
-    source 0
-    target 4
-    weight 0.6485243401162355
-  ]
-  edge [
     source 1
-    target 4
+    target 3
     weight 0.5576849502170195
   ]
   edge [
-    source 2
+    source 3
     target 4
-    weight 0.639388329372591
+    weight 0.6485243401162355
   ]
 ]

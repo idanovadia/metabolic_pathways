@@ -4,15 +4,15 @@ graph [
   name "398.gml"
   node [
     id 0
-    label "dehydroascorbate (bicyclic form)"
+    label "fructose"
   ]
   node [
     id 1
-    label "succinate"
+    label "galactose"
   ]
   edge [
     source 0
     target 1
-    weight 0.625896606917565
+    weight 0.7995613409151371
   ]
 ]

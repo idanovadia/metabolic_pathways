@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-proline"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "l-arginine"
+    label "l-proline"
   ]
   node [
     id 2

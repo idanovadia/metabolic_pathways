@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-aspartate"
   ]
   node [
     id 2
@@ -15,30 +15,30 @@ graph [
   ]
   node [
     id 3
-    label "l-threonine"
+    label "phosphate"
   ]
   node [
     id 4
-    label "l-aspartate"
-  ]
-  edge [
-    source 0
-    target 4
-    weight 0.6056390159084215
+    label "l-threonine"
   ]
   edge [
     source 0
     target 1
+    weight 0.6056390159084215
+  ]
+  edge [
+    source 0
+    target 3
     weight 0.6510037877502363
   ]
   edge [
     source 1
-    target 4
+    target 3
     weight 0.6011486587004862
   ]
   edge [
     source 2
-    target 3
+    target 4
     weight 0.8173615410491871
   ]
 ]

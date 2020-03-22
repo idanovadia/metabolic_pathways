@@ -4,11 +4,11 @@ graph [
   name "66.gml"
   node [
     id 0
-    label "putrescine"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "l-arginine"
+    label "putrescine"
   ]
   edge [
     source 0

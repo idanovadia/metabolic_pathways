@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-aspartate"
   ]
   edge [
     source 1

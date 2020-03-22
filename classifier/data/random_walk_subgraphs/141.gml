@@ -4,6 +4,6 @@ graph [
   name "141.gml"
   node [
     id 0
-    label "l-arginine"
+    label "l-proline"
   ]
 ]

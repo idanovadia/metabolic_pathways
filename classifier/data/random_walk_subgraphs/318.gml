@@ -8,11 +8,11 @@ graph [
   ]
   node [
     id 1
-    label "l-methionine"
+    label "l-cysteine"
   ]
   edge [
     source 0
     target 1
-    weight 0.7657222335493962
+    weight 0.529497355748019
   ]
 ]

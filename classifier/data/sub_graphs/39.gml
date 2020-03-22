@@ -3,23 +3,23 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "glucose"
   ]
   node [
     id 1
-    label "l-ascorbate"
+    label "phosphate"
   ]
   node [
     id 2
-    label "udp-alpha;-d-galacturonate"
+    label "l-ascorbate"
   ]
   node [
     id 3
-    label "glucose"
+    label "udp-alpha;-d-galacturonate"
   ]
   edge [
     source 0
-    target 3
+    target 1
     weight 0.5997968146524117
   ]
 ]

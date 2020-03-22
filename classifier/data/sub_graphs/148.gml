@@ -7,38 +7,38 @@ graph [
   ]
   node [
     id 1
-    label "citrate"
+    label "(s)-malate"
   ]
   node [
     id 2
-    label "cis-aconitate"
-  ]
-  node [
-    id 3
     label "succinate"
   ]
   node [
+    id 3
+    label "citrate"
+  ]
+  node [
     id 4
-    label "(s)-malate"
+    label "cis-aconitate"
   ]
   edge [
     source 0
-    target 1
+    target 3
     weight 0.8771861478709295
   ]
   edge [
-    source 2
+    source 1
     target 4
     weight 0.6831210743337447
   ]
   edge [
-    source 2
-    target 3
-    weight 0.5806217127849199
+    source 1
+    target 2
+    weight 0.5122229946934221
   ]
   edge [
-    source 3
+    source 2
     target 4
-    weight 0.5122229946934221
+    weight 0.5806217127849199
   ]
 ]

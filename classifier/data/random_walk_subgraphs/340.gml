@@ -4,29 +4,24 @@ graph [
   name "340.gml"
   node [
     id 0
-    label "fumarate"
+    label "alpha;-tocopherol"
   ]
   node [
     id 1
-    label "l-cysteine"
+    label "threonate"
   ]
   node [
     id 2
-    label "benzoate"
+    label "l-cysteine"
   ]
   edge [
     source 0
     target 1
-    weight 0.5669842710354585
+    weight 0.6906040660365307
   ]
   edge [
     source 0
     target 2
-    weight 0.6527375781415498
-  ]
-  edge [
-    source 1
-    target 2
-    weight 0.6683140069227163
+    weight 0.5758068469544568
   ]
 ]

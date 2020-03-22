@@ -4,6 +4,6 @@ graph [
   name "82.gml"
   node [
     id 0
-    label "benzoate"
+    label "glucose"
   ]
 ]

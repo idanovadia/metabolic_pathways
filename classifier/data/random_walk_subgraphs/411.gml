@@ -4,29 +4,29 @@ graph [
   name "411.gml"
   node [
     id 0
-    label "l-lysine"
+    label "l-valine"
   ]
   node [
     id 1
-    label "l-leucine"
+    label "maltose"
   ]
   node [
     id 2
-    label "l-methionine"
+    label "threonate"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.5279151243589283
   ]
   edge [
     source 0
     target 1
-    weight 0.7849455097073349
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.8285406483445502
+    weight 0.5979376370014732
   ]
   edge [
     source 1
     target 2
-    weight 0.8498725528167298
+    weight 0.6803057686238279
   ]
 ]

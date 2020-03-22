@@ -8,11 +8,11 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-aspartate"
   ]
   edge [
     source 0
     target 1
-    weight 0.6510037877502363
+    weight 0.6011486587004862
   ]
 ]

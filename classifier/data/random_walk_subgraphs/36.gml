@@ -4,11 +4,11 @@ graph [
   name "36.gml"
   node [
     id 0
-    label "l-cysteine"
+    label "l-asparagine"
   ]
   node [
     id 1
-    label "l-asparagine"
+    label "l-cysteine"
   ]
   edge [
     source 0

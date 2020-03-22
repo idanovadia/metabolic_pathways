@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "succinate"
+    label "(s)-malate"
   ]
   node [
     id 2
-    label "(s)-malate"
+    label "succinate"
   ]
   node [
     id 3
@@ -19,12 +19,12 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.5100248837176506
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.5624770794060734
   ]
   edge [

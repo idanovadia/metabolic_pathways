@@ -4,11 +4,11 @@ graph [
   name "296.gml"
   node [
     id 0
-    label "l-alanine"
+    label "l-lysine"
   ]
   node [
     id 1
-    label "l-lysine"
+    label "l-alanine"
   ]
   edge [
     source 0

@@ -4,24 +4,29 @@ graph [
   name "357.gml"
   node [
     id 0
-    label "l-isoleucine"
-  ]
-  node [
-    id 1
     label "d-gluconate"
   ]
   node [
-    id 2
+    id 1
     label "maltose"
+  ]
+  node [
+    id 2
+    label "gdp-beta;-l-fucose"
   ]
   edge [
     source 0
     target 2
-    weight 0.5187220891857288
+    weight 0.5364020212039078
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.5543380464269871
   ]
   edge [
     source 1
     target 2
-    weight 0.5543380464269871
+    weight 0.5814224480884902
   ]
 ]

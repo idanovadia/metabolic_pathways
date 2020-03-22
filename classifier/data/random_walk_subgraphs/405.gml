@@ -8,25 +8,25 @@ graph [
   ]
   node [
     id 1
-    label "l-cysteine"
+    label "l-leucine"
   ]
   node [
     id 2
-    label "glycine"
+    label "l-cysteine"
   ]
   edge [
     source 0
     target 1
-    weight 0.5516365501551408
+    weight 0.5879269414402317
   ]
   edge [
     source 0
     target 2
-    weight 0.5848689946128072
+    weight 0.5516365501551408
   ]
   edge [
     source 1
     target 2
-    weight 0.6656521003501893
+    weight 0.6994221398999002
   ]
 ]

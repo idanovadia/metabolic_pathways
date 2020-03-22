@@ -4,11 +4,11 @@ graph [
   name "349.gml"
   node [
     id 0
-    label "galactose"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
+    label "galactose"
   ]
   edge [
     source 0

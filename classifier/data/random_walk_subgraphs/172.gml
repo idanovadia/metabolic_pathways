@@ -4,11 +4,11 @@ graph [
   name "172.gml"
   node [
     id 0
-    label "l-aspartate"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-aspartate"
   ]
   edge [
     source 0

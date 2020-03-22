@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "glucose"
   ]
   node [
     id 2
-    label "glucose"
+    label "phosphate"
   ]
   edge [
     source 1

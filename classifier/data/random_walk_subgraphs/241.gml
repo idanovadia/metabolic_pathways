@@ -4,11 +4,11 @@ graph [
   name "241.gml"
   node [
     id 0
-    label "l-tryptophan"
+    label "l-lysine"
   ]
   node [
     id 1
-    label "l-lysine"
+    label "l-tryptophan"
   ]
   edge [
     source 0

@@ -4,6 +4,6 @@ graph [
   name "184.gml"
   node [
     id 0
-    label "l-glutamate"
+    label "gdp-alpha;-d-mannose"
   ]
 ]

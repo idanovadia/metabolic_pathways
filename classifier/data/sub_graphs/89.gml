@@ -7,19 +7,19 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
-  ]
-  node [
-    id 2
     label "glucose"
   ]
   node [
-    id 3
+    id 2
     label "sucrose"
+  ]
+  node [
+    id 3
+    label "phosphate"
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 0.5997968146524117
   ]
 ]

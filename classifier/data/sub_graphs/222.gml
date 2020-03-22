@@ -7,38 +7,38 @@ graph [
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-aspartate"
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-alanine"
   ]
   node [
     id 3
-    label "(s)-malate"
+    label "phosphate"
   ]
   node [
     id 4
-    label "l-aspartate"
+    label "(s)-malate"
   ]
   edge [
     source 0
-    target 4
+    target 1
     weight 0.6056390159084215
   ]
   edge [
     source 0
-    target 2
+    target 3
     weight 0.6510037877502363
   ]
   edge [
     source 1
     target 3
-    weight 0.52767586406752
+    weight 0.6011486587004862
   ]
   edge [
     source 2
     target 4
-    weight 0.6011486587004862
+    weight 0.52767586406752
   ]
 ]

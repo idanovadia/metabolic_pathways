@@ -4,29 +4,29 @@ graph [
   name "333.gml"
   node [
     id 0
-    label "udp-alpha;-d-galacturonate"
-  ]
-  node [
-    id 1
     label "l-lysine"
   ]
   node [
+    id 1
+    label "uracil"
+  ]
+  node [
     id 2
-    label "maltose"
+    label "l-serine"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.7433623295847455
   ]
   edge [
     source 0
     target 1
-    weight 0.5106272773119287
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.6302739198755571
+    weight 0.5430928711252357
   ]
   edge [
     source 1
     target 2
-    weight 0.5473681375357934
+    weight 0.5757439281780684
   ]
 ]

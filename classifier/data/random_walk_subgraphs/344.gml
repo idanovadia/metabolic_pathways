@@ -4,7 +4,7 @@ graph [
   name "344.gml"
   node [
     id 0
-    label "l-threonine"
+    label "glycine"
   ]
   node [
     id 1
@@ -12,21 +12,16 @@ graph [
   ]
   node [
     id 2
-    label "gaba"
+    label "l-serine"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.8435878621427529
   ]
   edge [
     source 0
     target 1
-    weight 0.504357454230422
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.8083186654814503
-  ]
-  edge [
-    source 1
-    target 2
-    weight 0.588599221603567
+    weight 0.5295183185793924
   ]
 ]

@@ -3,11 +3,11 @@ graph [
   type "2001"
   node [
     id 0
-    label "succinate"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "l-arginine"
+    label "succinate"
   ]
   node [
     id 2

@@ -4,7 +4,7 @@ graph [
   name "375.gml"
   node [
     id 0
-    label "l-serine"
+    label "l-arginine"
   ]
   node [
     id 1
@@ -12,7 +12,12 @@ graph [
   ]
   node [
     id 2
-    label "l-arginine"
+    label "l-serine"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.6304774274893195
   ]
   edge [
     source 0
@@ -20,13 +25,8 @@ graph [
     weight 0.6019927940005843
   ]
   edge [
-    source 0
-    target 1
-    weight 0.8258656390723816
-  ]
-  edge [
     source 1
     target 2
-    weight 0.6304774274893195
+    weight 0.8258656390723816
   ]
 ]

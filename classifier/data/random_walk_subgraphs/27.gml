@@ -4,6 +4,6 @@ graph [
   name "27.gml"
   node [
     id 0
-    label "glucose"
+    label "udp-alpha;-d-galacturonate"
   ]
 ]

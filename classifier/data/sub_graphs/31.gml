@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "galactose"
+    label "gdp-alpha;-d-mannose"
   ]
   node [
     id 2
-    label "gdp-alpha;-d-mannose"
+    label "galactose"
   ]
   edge [
     source 1

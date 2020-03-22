@@ -4,15 +4,15 @@ graph [
   name "146.gml"
   node [
     id 0
-    label "phosphate"
+    label "glycine"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-serine"
   ]
   edge [
     source 0
     target 1
-    weight 0.6510037877502363
+    weight 0.8435878621427529
   ]
 ]

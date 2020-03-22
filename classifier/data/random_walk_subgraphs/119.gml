@@ -4,15 +4,15 @@ graph [
   name "119.gml"
   node [
     id 0
-    label "d-ribofuranose"
+    label "l-glutamine"
   ]
   node [
     id 1
-    label "uracil"
+    label "l-glutamate"
   ]
   edge [
     source 0
     target 1
-    weight 0.6067946586393936
+    weight 0.5889560002830893
   ]
 ]

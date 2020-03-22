@@ -4,6 +4,6 @@ graph [
   name "311.gml"
   node [
     id 0
-    label "l-tryptophan"
+    label "l-serine"
   ]
 ]

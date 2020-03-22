@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "succinate"
+    label "l-leucine"
   ]
   node [
     id 1
-    label "l-leucine"
+    label "succinate"
   ]
   edge [
     source 0

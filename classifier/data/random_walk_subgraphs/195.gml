@@ -4,6 +4,6 @@ graph [
   name "195.gml"
   node [
     id 0
-    label "l-valine"
+    label "glucose"
   ]
 ]

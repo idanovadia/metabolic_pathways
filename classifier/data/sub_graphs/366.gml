@@ -3,19 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-phenylalanine"
-  ]
-  node [
-    id 1
     label "sucrose"
   ]
   node [
-    id 2
+    id 1
     label "l-glutamate"
+  ]
+  node [
+    id 2
+    label "l-phenylalanine"
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.58034282142025
   ]
 ]

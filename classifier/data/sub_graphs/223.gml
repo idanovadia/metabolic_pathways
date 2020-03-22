@@ -3,14 +3,14 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-tryptophan"
-  ]
-  node [
-    id 1
     label "glycine"
   ]
   node [
-    id 2
+    id 1
     label "l-glutamate"
+  ]
+  node [
+    id 2
+    label "l-tryptophan"
   ]
 ]

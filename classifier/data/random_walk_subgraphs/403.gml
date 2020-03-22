@@ -4,29 +4,29 @@ graph [
   name "403.gml"
   node [
     id 0
-    label "dehydroascorbate (bicyclic form)"
+    label "fructose"
   ]
   node [
     id 1
-    label "alpha;-tocopherol"
+    label "gdp-alpha;-d-mannose"
   ]
   node [
     id 2
-    label "alpha;,alpha;-trehalose"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.7971204323753757
+    label "phosphate"
   ]
   edge [
     source 0
     target 1
-    weight 0.8286429403657696
+    weight 0.8225441112982442
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.6050658792379198
   ]
   edge [
     source 1
     target 2
-    weight 0.7707843244414465
+    weight 0.6477135913764945
   ]
 ]

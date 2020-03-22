@@ -3,14 +3,14 @@ graph [
   type "trainset"
   node [
     id 0
-    label "fumarate"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "fumarate"
   ]
   node [
     id 2
-    label "l-arginine"
+    label "l-aspartate"
   ]
 ]

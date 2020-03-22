@@ -3,10 +3,10 @@ graph [
   type "2001"
   node [
     id 0
-    label "(s)-malate"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
+    label "(s)-malate"
   ]
 ]

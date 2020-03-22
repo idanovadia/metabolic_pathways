@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "l-serine"
+    label "alpha;,alpha;-trehalose"
   ]
   node [
     id 2
@@ -15,7 +15,7 @@ graph [
   ]
   node [
     id 3
-    label "alpha;,alpha;-trehalose"
+    label "l-serine"
   ]
   edge [
     source 0
@@ -24,13 +24,13 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 3
     weight 0.6458716671893457
   ]
   edge [
     source 1
     target 2
-    weight 0.7032509826257202
+    weight 0.5944805055466351
   ]
   edge [
     source 1
@@ -40,6 +40,6 @@ graph [
   edge [
     source 2
     target 3
-    weight 0.5944805055466351
+    weight 0.7032509826257202
   ]
 ]

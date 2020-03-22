@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "citrate"
+    label "maltose"
   ]
   node [
     id 1
@@ -19,16 +19,26 @@ graph [
   ]
   node [
     id 4
-    label "galactose"
+    label "citrate"
   ]
   node [
     id 5
-    label "maltose"
+    label "galactose"
   ]
   edge [
     source 0
-    target 4
-    weight 0.5100108841943595
+    target 1
+    weight 0.5187220891857288
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.619450120674566
+  ]
+  edge [
+    source 0
+    target 3
+    weight 0.5734341278623796
   ]
   edge [
     source 1
@@ -36,23 +46,13 @@ graph [
     weight 0.6452781967830801
   ]
   edge [
-    source 1
-    target 5
-    weight 0.5187220891857288
-  ]
-  edge [
-    source 2
-    target 5
-    weight 0.619450120674566
-  ]
-  edge [
     source 2
     target 3
     weight 0.5256596403282765
   ]
   edge [
-    source 3
+    source 4
     target 5
-    weight 0.5734341278623796
+    weight 0.5100108841943595
   ]
 ]

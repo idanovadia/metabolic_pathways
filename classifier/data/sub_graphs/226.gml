@@ -11,33 +11,33 @@ graph [
   ]
   node [
     id 2
-    label "fumarate"
+    label "l-phenylalanine"
   ]
   node [
     id 3
-    label "succinate"
-  ]
-  node [
-    id 4
     label "phosphate"
   ]
   node [
-    id 5
-    label "l-phenylalanine"
+    id 4
+    label "succinate"
   ]
-  edge [
-    source 0
-    target 2
-    weight 0.6527375781415498
+  node [
+    id 5
+    label "fumarate"
   ]
   edge [
     source 0
     target 5
+    weight 0.6527375781415498
+  ]
+  edge [
+    source 0
+    target 2
     weight 0.6752308628578606
   ]
   edge [
     source 1
-    target 4
+    target 3
     weight 0.6510037877502363
   ]
   edge [
@@ -47,12 +47,12 @@ graph [
   ]
   edge [
     source 2
-    target 3
-    weight 0.5624770794060734
+    target 4
+    weight 0.5469068305141396
   ]
   edge [
-    source 3
+    source 4
     target 5
-    weight 0.5469068305141396
+    weight 0.5624770794060734
   ]
 ]

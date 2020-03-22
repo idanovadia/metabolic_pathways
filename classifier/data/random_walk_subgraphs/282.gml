@@ -4,11 +4,11 @@ graph [
   name "282.gml"
   node [
     id 0
-    label "l-phenylalanine"
+    label "l-methionine"
   ]
   node [
     id 1
-    label "l-methionine"
+    label "l-phenylalanine"
   ]
   edge [
     source 0

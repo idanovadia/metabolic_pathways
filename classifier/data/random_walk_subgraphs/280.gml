@@ -4,15 +4,15 @@ graph [
   name "280.gml"
   node [
     id 0
-    label "d-threo-isocitrate"
+    label "fumarate"
   ]
   node [
     id 1
-    label "citrate"
+    label "succinate"
   ]
   edge [
     source 0
     target 1
-    weight 0.8771861478709295
+    weight 0.5624770794060734
   ]
 ]

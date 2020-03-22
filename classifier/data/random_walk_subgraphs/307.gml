@@ -4,11 +4,11 @@ graph [
   name "307.gml"
   node [
     id 0
-    label "l-alanine"
+    label "putrescine"
   ]
   node [
     id 1
-    label "putrescine"
+    label "l-alanine"
   ]
   edge [
     source 0

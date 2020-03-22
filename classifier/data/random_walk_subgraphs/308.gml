@@ -4,15 +4,15 @@ graph [
   name "308.gml"
   node [
     id 0
-    label "putrescine"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "l-arginine"
+    label "phosphate"
   ]
   edge [
     source 0
     target 1
-    weight 0.5560988845611036
+    weight 0.6510037877502363
   ]
 ]

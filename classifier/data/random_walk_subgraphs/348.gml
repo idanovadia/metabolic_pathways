@@ -4,15 +4,29 @@ graph [
   name "348.gml"
   node [
     id 0
-    label "(s)-malate"
+    label "glucose_6_phosphate"
   ]
   node [
     id 1
-    label "l-asparagine"
+    label "benzoate"
+  ]
+  node [
+    id 2
+    label "(s)-malate"
   ]
   edge [
     source 0
     target 1
-    weight 0.5873956525040094
+    weight 0.6377044589076303
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.5958252989025832
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.6748116612440601
   ]
 ]

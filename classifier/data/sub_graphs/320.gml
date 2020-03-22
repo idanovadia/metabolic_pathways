@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "phosphate"
   ]
   edge [
     source 1

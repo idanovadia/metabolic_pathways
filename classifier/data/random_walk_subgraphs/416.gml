@@ -4,7 +4,7 @@ graph [
   name "416.gml"
   node [
     id 0
-    label "glucose_6_phosphate"
+    label "erythritol"
   ]
   node [
     id 1
@@ -12,21 +12,21 @@ graph [
   ]
   node [
     id 2
-    label "l-leucine"
+    label "l-methionine"
   ]
   edge [
     source 0
     target 2
-    weight 0.7168984230024023
+    weight 0.634753630459894
   ]
   edge [
     source 0
     target 1
-    weight 0.76192111271555
+    weight 0.815983187642951
   ]
   edge [
     source 1
     target 2
-    weight 0.6465930163906178
+    weight 0.5555579426205052
   ]
 ]

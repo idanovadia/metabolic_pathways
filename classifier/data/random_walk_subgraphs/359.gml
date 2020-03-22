@@ -4,15 +4,15 @@ graph [
   name "359.gml"
   node [
     id 0
-    label "uracil"
+    label "d-glycerate"
   ]
   node [
     id 1
-    label "l-leucine"
+    label "dehydroascorbate (bicyclic form)"
   ]
   edge [
     source 0
     target 1
-    weight 0.5816043809786163
+    weight 0.5864870521773341
   ]
 ]

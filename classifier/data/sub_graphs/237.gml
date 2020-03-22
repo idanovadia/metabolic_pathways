@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamine"
+    label "glucose"
   ]
   node [
     id 1
@@ -11,7 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "succinate"
+    label "l-glutamine"
   ]
   node [
     id 3
@@ -19,17 +19,17 @@ graph [
   ]
   node [
     id 4
-    label "glucose"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 0.5889560002830893
+    label "succinate"
   ]
   edge [
     source 0
     target 3
-    weight 0.5207469450961464
+    weight 0.5997968146524117
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.5889560002830893
   ]
   edge [
     source 1
@@ -37,8 +37,8 @@ graph [
     weight 0.6510037877502363
   ]
   edge [
-    source 3
-    target 4
-    weight 0.5997968146524117
+    source 2
+    target 3
+    weight 0.5207469450961464
   ]
 ]

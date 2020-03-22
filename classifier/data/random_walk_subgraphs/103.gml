@@ -4,6 +4,6 @@ graph [
   name "103.gml"
   node [
     id 0
-    label "phosphate"
+    label "d-ribofuranose"
   ]
 ]

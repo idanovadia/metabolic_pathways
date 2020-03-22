@@ -4,6 +4,6 @@ graph [
   name "225.gml"
   node [
     id 0
-    label "phosphate"
+    label "beta;-alanine"
   ]
 ]

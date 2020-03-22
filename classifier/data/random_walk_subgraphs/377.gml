@@ -4,15 +4,15 @@ graph [
   name "377.gml"
   node [
     id 0
-    label "glucose_6_phosphate"
+    label "glycerol"
   ]
   node [
     id 1
-    label "l-leucine"
+    label "glucose_6_phosphate"
   ]
   edge [
     source 0
     target 1
-    weight 0.7168984230024023
+    weight 0.5179474777486434
   ]
 ]

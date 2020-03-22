@@ -4,15 +4,15 @@ graph [
   name "190.gml"
   node [
     id 0
-    label "l-cysteine"
+    label "l-methionine"
   ]
   node [
     id 1
-    label "l-methionine"
+    label "l-tyrosine"
   ]
   edge [
     source 0
     target 1
-    weight 0.6853509232746886
+    weight 0.7657222335493962
   ]
 ]

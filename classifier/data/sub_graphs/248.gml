@@ -3,18 +3,18 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-cysteine"
+    label "succinate"
   ]
   node [
     id 1
-    label "succinate"
+    label "l-cysteine"
   ]
   node [
     id 2
     label "l-methionine"
   ]
   edge [
-    source 0
+    source 1
     target 2
     weight 0.6853509232746886
   ]

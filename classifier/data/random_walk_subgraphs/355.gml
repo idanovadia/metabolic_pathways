@@ -4,15 +4,24 @@ graph [
   name "355.gml"
   node [
     id 0
-    label "citrate"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "glucose"
+    label "beta;-alanine"
+  ]
+  node [
+    id 2
+    label "erythritol"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.5030137435371759
   ]
   edge [
     source 0
     target 1
-    weight 0.7173530497011449
+    weight 0.6361406546771838
   ]
 ]

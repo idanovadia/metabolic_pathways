@@ -4,15 +4,15 @@ graph [
   name "300.gml"
   node [
     id 0
-    label "phosphate"
+    label "l-methionine"
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "l-cysteine"
   ]
   edge [
     source 0
     target 1
-    weight 0.6011486587004862
+    weight 0.6853509232746886
   ]
 ]

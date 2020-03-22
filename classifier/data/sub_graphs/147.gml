@@ -3,10 +3,10 @@ graph [
   type "trainset"
   node [
     id 0
-    label "succinate"
+    label "putrescine"
   ]
   node [
     id 1
-    label "putrescine"
+    label "succinate"
   ]
 ]

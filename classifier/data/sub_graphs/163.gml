@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-methionine"
   ]
   node [
     id 2
-    label "l-methionine"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.5207469450961464
   ]
 ]

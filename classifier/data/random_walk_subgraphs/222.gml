@@ -4,11 +4,11 @@ graph [
   name "222.gml"
   node [
     id 0
-    label "l-alanine"
+    label "(s)-malate"
   ]
   node [
     id 1
-    label "(s)-malate"
+    label "l-alanine"
   ]
   edge [
     source 0

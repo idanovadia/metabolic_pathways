@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-phenylalanine"
+    label "l-tryptophan"
   ]
   node [
     id 1
-    label "l-tryptophan"
+    label "l-phenylalanine"
   ]
   edge [
     source 0

@@ -8,25 +8,25 @@ graph [
   ]
   node [
     id 1
-    label "glycine"
+    label "alpha;,alpha;-trehalose"
   ]
   node [
     id 2
-    label "threonate"
+    label "l-serine"
   ]
   edge [
     source 0
     target 2
-    weight 0.6906040660365307
+    weight 0.630230616552183
   ]
   edge [
     source 0
     target 1
-    weight 0.6598738934197439
+    weight 0.7707843244414465
   ]
   edge [
     source 1
     target 2
-    weight 0.5084012785120257
+    weight 0.5749914506054967
   ]
 ]

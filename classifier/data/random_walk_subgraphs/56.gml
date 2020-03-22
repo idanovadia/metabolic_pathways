@@ -4,6 +4,15 @@ graph [
   name "56.gml"
   node [
     id 0
-    label "fumarate"
+    label "phosphate"
+  ]
+  node [
+    id 1
+    label "l-aspartate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.6011486587004862
   ]
 ]

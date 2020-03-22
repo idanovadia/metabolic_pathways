@@ -4,11 +4,11 @@ graph [
   name "384.gml"
   node [
     id 0
-    label "dehydroascorbate (bicyclic form)"
+    label "glycerol"
   ]
   node [
     id 1
-    label "glycerol"
+    label "dehydroascorbate (bicyclic form)"
   ]
   edge [
     source 0

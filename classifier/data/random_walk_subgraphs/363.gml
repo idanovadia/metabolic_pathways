@@ -8,25 +8,11 @@ graph [
   ]
   node [
     id 1
-    label "succinate"
-  ]
-  node [
-    id 2
-    label "threonate"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.7640087750154496
+    label "alpha;-tocopherol"
   ]
   edge [
     source 0
     target 1
-    weight 0.5552911240390985
-  ]
-  edge [
-    source 1
-    target 2
-    weight 0.5745845326795112
+    weight 0.5715179998365042
   ]
 ]

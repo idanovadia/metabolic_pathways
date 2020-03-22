@@ -4,11 +4,11 @@ graph [
   name "304.gml"
   node [
     id 0
-    label "l-serine"
+    label "uracil"
   ]
   node [
     id 1
-    label "uracil"
+    label "l-serine"
   ]
   edge [
     source 0

@@ -4,11 +4,11 @@ graph [
   name "65.gml"
   node [
     id 0
-    label "phosphate"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
+    label "phosphate"
   ]
   edge [
     source 0

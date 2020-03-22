@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-serine"
+    label "l-arginine"
   ]
   node [
     id 1
@@ -15,7 +15,7 @@ graph [
   ]
   node [
     id 3
-    label "l-arginine"
+    label "l-serine"
   ]
   edge [
     source 0

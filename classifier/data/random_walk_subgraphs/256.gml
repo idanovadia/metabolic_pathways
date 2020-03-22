@@ -4,6 +4,6 @@ graph [
   name "256.gml"
   node [
     id 0
-    label "glucose"
+    label "l-isoleucine"
   ]
 ]

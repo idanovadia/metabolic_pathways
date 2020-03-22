@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "uracil"
+    label "d-ribofuranose"
   ]
   node [
     id 1
-    label "d-ribofuranose"
+    label "uracil"
   ]
   node [
     id 2

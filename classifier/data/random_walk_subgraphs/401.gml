@@ -8,25 +8,25 @@ graph [
   ]
   node [
     id 1
-    label "l-valine"
+    label "l-tyrosine"
   ]
   node [
     id 2
-    label "l-lysine"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.7339322771739403
+    label "l-valine"
   ]
   edge [
     source 0
     target 1
+    weight 0.6842315849505913
+  ]
+  edge [
+    source 0
+    target 2
     weight 0.7376187369416969
   ]
   edge [
     source 1
     target 2
-    weight 0.7741925869687609
+    weight 0.7131094485116178
   ]
 ]

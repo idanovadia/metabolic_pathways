@@ -4,29 +4,29 @@ graph [
   name "334.gml"
   node [
     id 0
-    label "gdp-beta;-l-fucose"
+    label "l-threonine"
   ]
   node [
     id 1
-    label "dehydroascorbate (bicyclic form)"
+    label "l-lysine"
   ]
   node [
     id 2
-    label "alpha;,alpha;-trehalose"
+    label "l-isoleucine"
   ]
   edge [
     source 0
     target 2
-    weight 0.5969101741206816
+    weight 0.8117751078239503
   ]
   edge [
     source 0
     target 1
-    weight 0.6093210323648746
+    weight 0.8366009433099568
   ]
   edge [
     source 1
     target 2
-    weight 0.7971204323753757
+    weight 0.7492417396482305
   ]
 ]

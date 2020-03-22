@@ -3,11 +3,11 @@ graph [
   type "2001"
   node [
     id 0
-    label "glycine"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
+    label "glycine"
   ]
   node [
     id 2

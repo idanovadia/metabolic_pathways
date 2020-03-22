@@ -4,11 +4,11 @@ graph [
   name "3.gml"
   node [
     id 0
-    label "l-alanine"
+    label "succinate"
   ]
   node [
     id 1
-    label "succinate"
+    label "l-alanine"
   ]
   edge [
     source 0

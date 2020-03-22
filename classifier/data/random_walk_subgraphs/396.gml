@@ -4,6 +4,6 @@ graph [
   name "396.gml"
   node [
     id 0
-    label "fructose"
+    label "saccharate"
   ]
 ]

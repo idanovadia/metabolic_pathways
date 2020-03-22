@@ -11,20 +11,20 @@ graph [
   ]
   node [
     id 2
-    label "l-aspartate"
+    label "l-methionine"
   ]
   node [
     id 3
-    label "l-methionine"
+    label "l-aspartate"
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight 0.5167796114464185
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 0.6011486587004862
   ]
 ]

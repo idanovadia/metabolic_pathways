@@ -8,7 +8,7 @@ graph [
   ]
   node [
     id 1
-    label "l-isoleucine"
+    label "l-valine"
   ]
   node [
     id 2
@@ -16,17 +16,17 @@ graph [
   ]
   edge [
     source 0
-    target 1
-    weight 0.9396072216819914
-  ]
-  edge [
-    source 0
     target 2
     weight 0.8421669500271493
   ]
   edge [
+    source 0
+    target 1
+    weight 0.9154607840850747
+  ]
+  edge [
     source 1
     target 2
-    weight 0.8117751078239503
+    weight 0.8333132788752211
   ]
 ]

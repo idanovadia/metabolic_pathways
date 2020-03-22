@@ -4,6 +4,6 @@ graph [
   name "71.gml"
   node [
     id 0
-    label "uracil"
+    label "beta;-alanine"
   ]
 ]
