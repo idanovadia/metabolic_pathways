@@ -1,0 +1,314 @@
+import torch
+import torch.nn.functional as F
+import random
+import copy
+import time
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn import cluster
+import networkx as nx
+
+
+def show_matrix(t):
+    # img = img / 2 + 0.5     # unnormalize
+    plt.title('correlation matrix')
+    npimg = t.cpu().numpy()
+    plt.imshow(npimg, cmap="Greys")
+    plt.show()
+
+
+def show_graph(t, threshold=0.9, pos_color="b", neg_color="r"):
+    t = t.cpu()
+    apos = torch.threshold(t, threshold, 0).numpy()
+    gpos = nx.from_numpy_matrix(apos)
+
+    aneg = torch.threshold(t.neg(), threshold, 0).numpy()
+    gneg = nx.from_numpy_matrix(aneg)
+
+    pos = nx.spring_layout(gpos)
+
+    nx.draw_networkx(gpos, pos=pos, with_labels=False, node_size=2, edge_color=pos_color, node_color="black", alpha=0.2)
+    nx.draw_networkx(gneg, pos=pos, with_labels=False, node_size=2, edge_color=neg_color, node_color="black", alpha=0.2)
+
+    # nx.draw_networkx_edges(gneg,pos,
+    #                            with_labels=False,
+    #                            edge_color='r',
+    #                            width=1.0,
+    #                            alpha=0.1
+    #                         )
+    # nx.draw_networkx_edges(gpos,pos,
+    #                            with_labels=False,
+    #                            edge_color='b',
+    #                            width=1.0,
+    #                            alpha=0.2
+    #                         )
+
+    # plt.axis('off')
+    plt.title('correlation network')
+    plt.show()
+
+
+def print_reactions(reactions):
+    original = (reactions.get_reactions_tensor() * 10).int()
+    original = [repr(t) for t in list(original)]
+    original.sort()
+    for i in original:
+        print(i)
+
+
+def generate_reaction_def(sub_count, prod_count, metabolites, low=0, high=1):
+    """
+    returns a tupple (substrate, product) of sub_count substrates randomly drawn from metabolites
+    and prod_count products randomly drawn from metabolites
+    ???such that substrates and products are mutually exclusive.???
+    """
+    m = set(metabolites)
+    sub = set(random.sample(m, sub_count))
+    prod = set(random.sample(m, prod_count))
+    return ([random.uniform(low, high) if i in sub else 0.0 for i in m],
+            [random.uniform(low, high) if i in prod else 0.0 for i in m])
+
+
+class Reaction(torch.nn.Module):
+    def __init__(self, sub, prod, eps=1e-20, step=0.0001):
+        super(Reaction, self).__init__()
+        self._sub = torch.nn.Parameter(sub.clone())
+        self._prod = torch.nn.Parameter(prod.clone())
+        self._step = step
+        self._eps = eps
+
+    def forward(self, x):
+        y = x
+        x = x / self._sub  # required sub
+        x = 1 - 1 / x  # the chance to collect all required substrates
+        x = F.relu(x)  # nullify negative prob
+        x = x.prod(dim=1, keepdim=True)  # total prob to collect all required substrates
+        x = x * self._step
+        x = y + x * (self._prod - self._sub)
+        return x
+
+    def get_def_tensor(self):
+        s = torch.unsqueeze(self._sub, 0)
+        p = torch.unsqueeze(self._prod, 0)
+        return torch.cat((s, p), dim=0)
+
+    def __repr__(self):
+        return self.__str__()
+
+    def __str__(self):
+        return "Reaction(\n\tsub={},\n\t prod={})".format(self._sub, self._prod)
+
+
+class MultiReaction(torch.nn.Module):
+    def __init__(self, rcount, metabolites, scount=2, pcount=2, step=0.0001, low=0.0, high=1.0, substrates=None,
+                 products=None):
+        super(MultiReaction, self).__init__()
+        self._reactions = torch.nn.ModuleList()
+        for i in range(rcount):
+            if substrates == None:
+                sub, prod = generate_reaction_def(scount, pcount, metabolites, low, high)
+            else:
+                sub, prod = substrates, products
+            sub = torch.Tensor(sub).to(device)  # so far there is no self.device in pytorch Modules
+            prod = torch.Tensor(prod).to(device)  # so far there is no self.device in pytorch Modules
+            r = Reaction(sub, prod, step=step)
+            self._reactions.append(r)
+
+    def forward(self, x):
+        # random.shuffle(self._reactions)
+        for m in self._reactions:
+            x = m(x)
+        return x
+
+    def get_reactions_tensor(self):
+        rslt = [r.get_def_tensor().unsqueeze(dim=0) for r in self._reactions]
+        rslt = torch.cat(rslt, dim=0)
+        return rslt
+
+
+def pearson_r(x, y):
+    vx = x - torch.mean(x)
+    vy = y - torch.mean(y)
+
+    rx = torch.rsqrt(torch.sum(vx ** 2))
+    ry = torch.rsqrt(torch.sum(vy ** 2))
+
+    s = torch.sum(vx * vy)
+    cost = s * rx * ry
+    return cost
+
+
+def correlation_matrix(b):
+    vb = b - torch.mean(b, dim=0)
+    mr = torch.rsqrt(torch.sum(vb ** 2, dim=0))
+    mr = mr.unsqueeze(dim=0)
+    corr = torch.mm(vb.t(), vb) * torch.mm(mr.t(), mr)
+    return corr
+
+
+class Process(torch.nn.Module):
+    def __init__(self, rcount, metabolites, scount=2, pcount=2, low=0.0, high=1.0, substrates=None, products=None,
+                 step=0.0001, iterations=100):
+        super(Process, self).__init__()
+        #todo add here output of generator
+        self._mr = MultiReaction(rcount, metabolites, scount=scount, pcount=pcount, step=step, low=low, high=high,
+                                 substrates=substrates, products=products)
+        self._iterations = iterations
+
+    def forward(self, x):
+        iterations_for_sample = torch.randint(low=0, high=self._iterations, size=(minibatch_size,), device=device,
+                                              requires_grad=False)
+        for i in range(self._iterations):
+            doit = (iterations_for_sample > i).float()
+            doit = doit.unsqueeze(dim=1)
+            doit = torch.cat([doit] * m_count, dim=1)
+            y = self._mr(x)
+            x = y * doit + x * (1 - doit)
+
+        c = correlation_matrix(x)
+        c = c - torch.eye(m_count).to(device)
+        return x, c
+
+    def get_reactions_tensor(self):
+        return self._mr.get_reactions_tensor()
+
+
+import numpy as np
+import sklearn.cluster as cluster
+
+def compare_tensor_sets(s1,s2):
+    """
+    s1 and s2 are lists of tensors of the same size and shape.
+    the comparison is performed in a greedy manner where the frist element of s1 is compared to all elements of s2,
+    the minimal MSE is recorded, and the respective element of s2 is removed. The second element of s1 is compared
+    to the remaining elements of s2 and so on.
+    @return the average of the minimal MSE values for all elements of s1.
+    """
+    s1 = list(s1)
+    s2 = list(s2)
+    rcount = len(s1)
+    assert(rcount==len(s2))
+    rslt = 0.0
+    while len(s1)>0:
+        i = s1.pop()
+        mses = torch.Tensor([F.mse_loss(i,j) for j in s2])
+        j = mses.argmin()
+        del s2[j]
+        rslt+=mses[j]
+    return rslt / rcount
+
+m_count = 8
+reactions_count = 1
+dataset_size = 1
+minibatch_size = 10
+sub_min = 2
+sub_max = 2.01
+epochs = 20
+step = 0.5
+iterations = 100
+s_count=3
+p_count=3
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+#device = "cpu"
+
+metabolites = range(m_count)
+reactions = Process(reactions_count, metabolites,
+                    #scount=s_count, pcount=p_count,
+                    #low=1.0,high=1.0
+                    substrates=[1,1,1,0,0,0,0,0],
+                    products  =[0,0,0,1,1,1,0,0],
+                    step=step, iterations=iterations,
+                   ).to(device)
+print_reactions(reactions)
+
+with torch.no_grad():
+    dataset = []
+    for i in range(dataset_size):
+        batch_x = torch.Tensor(size=(minibatch_size,m_count)).to(device)
+        batch_x.uniform_(sub_min,sub_max)
+        print(batch_x)
+        ym,yc = reactions(batch_x)
+        print(ym)
+        dataset.append((batch_x,yc))
+        if i%1==0:
+            print("batch {}: {}".format(i,yc.size()))
+            print(yc.min())
+            print(yc.max())
+            show_matrix(yc)
+            show_graph(yc,threshold=0.3)
+
+model = Process(reactions_count, metabolites, scount=m_count, pcount=m_count, step=step, iterations=iterations).to(
+    device)
+
+optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
+##optimizer = torch.optim.Adadelta(model.parameters(), lr=1.0, rho=0.9, eps=1e-06, weight_decay=1.0)
+##optimizer = torch.optim.Adagrad(model.parameters(), lr=0.01, lr_decay=0, weight_decay=0, initial_accumulator_value=0)
+# optimizer = torch.optim.Adamax(model.parameters(), lr=0.002, betas=(0.9, 0.999), eps=1e-08, weight_decay=0)
+# optimizer = torch.optim.ASGD(model.parameters(), lr=0.1, lambd=0.0001, alpha=0.75, t0=1000000.0, weight_decay=0.01)
+# optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9, dampening=0, weight_decay=0, nesterov=False)
+
+
+ploss = 0.0
+rloss = 0.0
+with torch.no_grad():
+    rt = reactions.get_reactions_tensor()
+    r1 = model.get_reactions_tensor()
+T = time.time()
+for epoch in range(epochs):
+    for x, y in dataset:
+
+        rand_x = torch.Tensor(size=(minibatch_size, m_count)).to(device)
+        rand_x.uniform_(sub_min, sub_max)
+
+        optimizer.zero_grad()
+
+        ym, yc = model(x)
+        loss = F.mse_loss(yc, y)
+        loss.backward(retain_graph=True)
+        optimizer.step()
+
+        # print(y_pred)
+        # print(y)
+        # print(loss)
+
+        with torch.no_grad():
+            r2 = model.get_reactions_tensor()
+            if (ploss > 0) and (loss.item() / ploss > 100):
+                print(r1)
+                print(r2)
+            ploss += float(loss.item())
+            rloss += float(compare_tensor_sets(rt, r2).item())
+            r1 = r2
+
+    if epoch % 1 == 0:
+        T = time.time() - T
+        ploss = ploss / 1 / dataset_size
+        rloss = rloss / 1 / dataset_size
+        print("{}\t time:{:2.3g} \t p-loss:{} \t r-loss :{}".format(epoch, T, ploss, rloss))
+        if ploss < (10 ** (-20)):
+            print("stop")
+            break
+        ploss = 0.0
+        rloss = 0.0
+        T = time.time()
+
+predicted = model.get_reactions_tensor()
+predicted = predicted.round().int()
+predicted = [repr(t) for t in list(predicted)]
+predicted.sort()
+
+
+original = reactions.get_reactions_tensor().int()
+original = [repr(t) for t in list(original)]
+original.sort()
+
+verdict = [x==y for x,y in zip(original, predicted)]
+print(verdict)
+
+for i in range(len(predicted)):
+    print("reaction %d predicted: %r "%(i,original[i]==predicted[i]))
+    print("original:")
+    print(original[i])
+    print("predicted:")
+    print(predicted[i])
