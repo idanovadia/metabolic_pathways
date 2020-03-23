@@ -1,5 +1,5 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
@@ -7,11 +7,10 @@ graph [
   ]
   node [
     id 1
-    label "putrescine"
+    label "l-glutamate"
   ]
-  edge [
-    source 0
-    target 1
-    weight 0.5560988845611036
+  node [
+    id 2
+    label "succinate"
   ]
 ]

@@ -4,15 +4,15 @@ graph [
   name "174.gml"
   node [
     id 0
-    label "l-lysine"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "phosphate"
   ]
   edge [
     source 0
     target 1
-    weight 0.588887828830241
+    weight 0.6510037877502363
   ]
 ]

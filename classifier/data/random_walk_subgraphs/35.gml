@@ -1,18 +1,18 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "35.gml"
   node [
     id 0
-    label "citrate"
+    label "l-leucine"
   ]
   node [
     id 1
-    label "phosphate"
+    label "succinate"
   ]
   edge [
     source 0
     target 1
-    weight 0.6427592293237053
+    weight 0.5408326631431758
   ]
 ]

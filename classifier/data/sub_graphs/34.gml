@@ -1,8 +1,21 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
+    label "phosphate"
+  ]
+  node [
+    id 1
     label "succinate"
+  ]
+  node [
+    id 2
+    label "glycine"
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.5295183185793924
   ]
 ]

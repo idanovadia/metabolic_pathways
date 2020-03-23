@@ -1,18 +1,32 @@
 graph [
-  label "random"
+  label "positive"
   type "trainset"
   name "339.gml"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "phosphate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-glutamate"
+  ]
+  node [
+    id 2
+    label "l-aspartate"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.6011486587004862
   ]
   edge [
     source 0
     target 1
-    weight 0.6477135913764945
+    weight 0.6510037877502363
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.6056390159084215
   ]
 ]

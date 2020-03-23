@@ -1,17 +1,17 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "putrescine"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "l-glutamine"
+    label "succinate"
   ]
   node [
     id 2
-    label "l-methionine"
+    label "l-serine"
   ]
   node [
     id 3
@@ -20,11 +20,6 @@ graph [
   edge [
     source 0
     target 2
-    weight 0.6633472043941817
-  ]
-  edge [
-    source 1
-    target 3
-    weight 0.5207469450961464
+    weight 0.6019927940005843
   ]
 ]

@@ -1,21 +1,17 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-threonine"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "l-isoleucine"
-  ]
-  node [
-    id 2
-    label "l-glutamate"
+    label "l-valine"
   ]
   edge [
     source 0
     target 1
-    weight 0.8117751078239503
+    weight 0.6880543223219517
   ]
 ]

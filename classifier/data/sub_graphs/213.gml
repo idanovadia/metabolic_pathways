@@ -1,12 +1,12 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "beta;-alanine"
+    label "l-aspartate"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-asparagine"
   ]
 ]

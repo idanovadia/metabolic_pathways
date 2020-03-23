@@ -3,10 +3,14 @@ graph [
   type "trainset"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "uracil"
   ]
   node [
     id 1
-    label "l-serine"
+    label "beta;-alanine"
+  ]
+  node [
+    id 2
+    label "phosphate"
   ]
 ]

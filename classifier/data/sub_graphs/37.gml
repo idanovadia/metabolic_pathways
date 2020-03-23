@@ -1,8 +1,12 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-serine"
+  ]
+  node [
+    id 1
+    label "citrate"
   ]
 ]

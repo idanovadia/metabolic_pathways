@@ -3,51 +3,76 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glucose"
+    label "threonate"
   ]
   node [
     id 1
-    label "d-gluconate"
+    label "alpha;-tocopherol"
   ]
   node [
     id 2
-    label "l-tyrosine"
+    label "succinate"
   ]
   node [
     id 3
-    label "l-tryptophan"
+    label "l-leucine"
   ]
   node [
     id 4
-    label "glycerol"
+    label "shikimate"
   ]
   node [
     id 5
-    label "glucose_6_phosphate"
+    label "erythritol"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.6906040660365307
+  ]
+  edge [
+    source 0
+    target 5
+    weight 0.7507379506502267
+  ]
+  edge [
+    source 0
+    target 3
+    weight 0.551799586095182
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.5745845326795112
   ]
   edge [
     source 1
     target 5
-    weight 0.5826545347036726
+    weight 0.7186614385387454
+  ]
+  edge [
+    source 1
+    target 3
+    weight 0.6597188589865273
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.5681822159212763
   ]
   edge [
     source 2
     target 5
-    weight 0.5607137788678386
+    weight 0.5851089828202987
   ]
   edge [
     source 2
     target 3
-    weight 0.6441836645725553
+    weight 0.5408326631431758
   ]
   edge [
     source 3
     target 5
-    weight 0.5607523830066249
-  ]
-  edge [
-    source 4
-    target 5
-    weight 0.5179474777486434
+    weight 0.6784797933102927
   ]
 ]

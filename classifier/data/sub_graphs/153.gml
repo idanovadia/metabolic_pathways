@@ -1,17 +1,16 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-glutamine"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 1
     label "l-glutamate"
   ]
-  edge [
-    source 0
-    target 1
-    weight 0.5889560002830893
+  node [
+    id 2
+    label "gdp-alpha;-d-mannose"
   ]
 ]

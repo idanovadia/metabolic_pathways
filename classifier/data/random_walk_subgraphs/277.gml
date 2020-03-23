@@ -1,18 +1,32 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "277.gml"
   node [
     id 0
-    label "l-cysteine"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "l-methionine"
+    label "l-aspartate"
+  ]
+  node [
+    id 2
+    label "phosphate"
   ]
   edge [
     source 0
     target 1
-    weight 0.6853509232746886
+    weight 0.6056390159084215
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.6510037877502363
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.6011486587004862
   ]
 ]

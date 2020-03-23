@@ -1,32 +1,32 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "167.gml"
   node [
     id 0
-    label "5-oxoproline"
+    label "l-threonine"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-isoleucine"
   ]
   node [
     id 2
-    label "phosphate"
+    label "glycine"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.8560180260893289
   ]
   edge [
     source 0
     target 1
-    weight 0.7056986113630674
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.6642051888846479
+    weight 0.8117751078239503
   ]
   edge [
     source 1
     target 2
-    weight 0.6510037877502363
+    weight 0.8214449673954837
   ]
 ]

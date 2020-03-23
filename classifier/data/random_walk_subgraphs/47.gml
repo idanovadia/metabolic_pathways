@@ -1,18 +1,18 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "47.gml"
   node [
     id 0
-    label "l-glutamate"
+    label "l-phenylalanine"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-alanine"
   ]
   edge [
     source 0
     target 1
-    weight 0.6510037877502363
+    weight 0.698389240022241
   ]
 ]

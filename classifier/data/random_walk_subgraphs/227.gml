@@ -1,9 +1,18 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "227.gml"
   node [
     id 0
-    label "phosphate"
+    label "l-asparagine"
+  ]
+  node [
+    id 1
+    label "l-cysteine"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.656446975811793
   ]
 ]

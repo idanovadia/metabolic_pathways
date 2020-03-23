@@ -4,15 +4,29 @@ graph [
   name "385.gml"
   node [
     id 0
-    label "l-cysteine"
+    label "l-tyrosine"
   ]
   node [
     id 1
-    label "l-serine"
+    label "glucose_6_phosphate"
+  ]
+  node [
+    id 2
+    label "l-tryptophan"
   ]
   edge [
     source 0
     target 1
-    weight 0.7032509826257202
+    weight 0.5607137788678386
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.6441836645725553
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.5607523830066249
   ]
 ]

@@ -1,32 +1,32 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "210.gml"
   node [
     id 0
-    label "citrate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "d-threo-isocitrate"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-aspartate"
   ]
   edge [
     source 0
     target 2
-    weight 0.6427592293237053
+    weight 0.6011486587004862
   ]
   edge [
     source 0
     target 1
-    weight 0.8771861478709295
+    weight 0.6510037877502363
   ]
   edge [
     source 1
     target 2
-    weight 0.6361601092405977
+    weight 0.6056390159084215
   ]
 ]

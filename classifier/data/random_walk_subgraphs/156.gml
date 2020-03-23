@@ -1,5 +1,5 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "156.gml"
   node [
@@ -8,11 +8,11 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-aspartate"
   ]
   edge [
     source 0
     target 1
-    weight 0.6510037877502363
+    weight 0.6056390159084215
   ]
 ]

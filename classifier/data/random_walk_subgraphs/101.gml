@@ -1,18 +1,18 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "101.gml"
   node [
     id 0
-    label "glucose"
+    label "l-phenylalanine"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-tryptophan"
   ]
   edge [
     source 0
     target 1
-    weight 0.5997968146524117
+    weight 0.5992700509333997
   ]
 ]

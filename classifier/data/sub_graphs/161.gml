@@ -1,68 +1,35 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "l-glutamine"
+    label "l-methionine"
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-serine"
   ]
   node [
     id 3
-    label "d-threo-isocitrate"
-  ]
-  node [
-    id 4
-    label "citrate"
-  ]
-  node [
-    id 5
-    label "cis-aconitate"
-  ]
-  edge [
-    source 0
-    target 4
-    weight 0.5136311728759257
+    label "phosphate"
   ]
   edge [
     source 0
     target 1
-    weight 0.5889560002830893
-  ]
-  edge [
-    source 0
-    target 3
-    weight 0.5525102549763423
+    weight 0.6853509232746886
   ]
   edge [
     source 0
     target 2
-    weight 0.6510037877502363
+    weight 0.7032509826257202
   ]
   edge [
     source 1
     target 2
-    weight 0.5207469450961464
-  ]
-  edge [
-    source 2
-    target 4
-    weight 0.6427592293237053
-  ]
-  edge [
-    source 2
-    target 3
-    weight 0.6361601092405977
-  ]
-  edge [
-    source 3
-    target 4
-    weight 0.8771861478709295
+    weight 0.7930880805620052
   ]
 ]

@@ -1,9 +1,9 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-glutamine"
+    label "l-tyrosine"
   ]
   node [
     id 1
@@ -13,15 +13,14 @@ graph [
     id 2
     label "phosphate"
   ]
-  edge [
-    source 0
-    target 1
-    weight 0.5889560002830893
+  node [
+    id 3
+    label "l-alanine"
   ]
   edge [
     source 0
-    target 2
-    weight 0.5207469450961464
+    target 3
+    weight 0.5043718061860422
   ]
   edge [
     source 1

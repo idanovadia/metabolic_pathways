@@ -1,32 +1,18 @@
 graph [
-  label "random"
+  label "positive"
   type "trainset"
   name "332.gml"
   node [
     id 0
-    label "saccharate"
+    label "l-phenylalanine"
   ]
   node [
     id 1
-    label "threonate"
-  ]
-  node [
-    id 2
-    label "alpha;,alpha;-trehalose"
+    label "l-tyrosine"
   ]
   edge [
     source 0
     target 1
-    weight 0.6673773037402116
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.7069231221967889
-  ]
-  edge [
-    source 1
-    target 2
-    weight 0.6643025484907443
+    weight 0.7832158514012088
   ]
 ]

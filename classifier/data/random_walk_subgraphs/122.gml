@@ -1,9 +1,18 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "122.gml"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "l-cysteine"
+  ]
+  node [
+    id 1
+    label "beta;-alanine"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.5427085069239712
   ]
 ]

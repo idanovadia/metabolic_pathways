@@ -4,24 +4,24 @@ graph [
   name "414.gml"
   node [
     id 0
-    label "l-valine"
+    label "gaba"
   ]
   node [
     id 1
-    label "l-isoleucine"
+    label "d-glycerate"
   ]
   node [
     id 2
-    label "saccharate"
+    label "benzoate"
   ]
   edge [
     source 0
     target 2
-    weight 0.6388255424709363
+    weight 0.6470280317289542
   ]
   edge [
-    source 0
-    target 1
-    weight 0.8674932232268686
+    source 1
+    target 2
+    weight 0.5185829357542503
   ]
 ]

@@ -1,9 +1,9 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "l-lysine"
+    label "l-aspartate"
   ]
   node [
     id 1
@@ -11,20 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "l-glutamate"
-  ]
-  node [
-    id 3
-    label "l-alanine"
+    label "fumarate"
   ]
   edge [
     source 0
-    target 3
-    weight 0.588887828830241
-  ]
-  edge [
-    source 1
-    target 2
-    weight 0.6510037877502363
+    target 1
+    weight 0.6011486587004862
   ]
 ]

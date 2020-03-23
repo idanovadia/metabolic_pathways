@@ -1,12 +1,12 @@
 graph [
-  label "positive"
-  type "trainset"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "glucose"
+    label "l-aspartate"
   ]
   node [
     id 1
-    label "succinate"
+    label "beta;-alanine"
   ]
 ]

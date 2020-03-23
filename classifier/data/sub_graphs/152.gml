@@ -1,21 +1,16 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-threonine"
+    label "l-tryptophan"
   ]
   node [
     id 1
-    label "l-homoserine"
+    label "succinate"
   ]
   node [
     id 2
     label "phosphate"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 0.8173615410491871
   ]
 ]

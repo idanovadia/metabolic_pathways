@@ -1,18 +1,18 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "144.gml"
   node [
     id 0
-    label "glucose"
+    label "putrescine"
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "fumarate"
   ]
   edge [
     source 0
     target 1
-    weight 0.8362263468292753
+    weight 0.5446459690947387
   ]
 ]

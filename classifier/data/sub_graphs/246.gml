@@ -1,12 +1,21 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "succinate"
   ]
   node [
     id 1
-    label "d-glycerate"
+    label "l-glutamate"
+  ]
+  node [
+    id 2
+    label "l-alanine"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.5154836860390344
   ]
 ]

@@ -4,24 +4,15 @@ graph [
   name "189.gml"
   node [
     id 0
-    label "l-arginine"
+    label "l-phenylalanine"
   ]
   node [
     id 1
-    label "beta;-alanine"
-  ]
-  node [
-    id 2
-    label "l-alanine"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.5069688742884643
+    label "l-tryptophan"
   ]
   edge [
     source 0
     target 1
-    weight 0.6361406546771838
+    weight 0.5992700509333997
   ]
 ]

@@ -1,25 +1,34 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "fructose 1,6-bisphosphate"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "glucose"
+    label "phosphate"
   ]
   node [
     id 2
-    label "sucrose"
+    label "succinate"
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-methionine"
+  ]
+  node [
+    id 4
+    label "l-aspartate"
+  ]
+  edge [
+    source 0
+    target 3
+    weight 0.6853509232746886
   ]
   edge [
     source 1
-    target 3
-    weight 0.5997968146524117
+    target 4
+    weight 0.6011486587004862
   ]
 ]

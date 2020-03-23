@@ -4,29 +4,29 @@ graph [
   name "403.gml"
   node [
     id 0
-    label "fructose"
+    label "l-isoleucine"
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "putrescine"
   ]
   node [
     id 2
-    label "phosphate"
+    label "fumarate"
   ]
   edge [
     source 0
     target 1
-    weight 0.8225441112982442
+    weight 0.526016780870724
   ]
   edge [
     source 0
     target 2
-    weight 0.6050658792379198
+    weight 0.5101472797974566
   ]
   edge [
     source 1
     target 2
-    weight 0.6477135913764945
+    weight 0.5446459690947387
   ]
 ]

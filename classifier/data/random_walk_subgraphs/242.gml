@@ -1,18 +1,9 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "242.gml"
   node [
     id 0
-    label "fumarate"
-  ]
-  node [
-    id 1
-    label "glycine"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 0.5642817812921104
+    label "l-glutamate"
   ]
 ]

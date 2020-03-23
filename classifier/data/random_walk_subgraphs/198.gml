@@ -1,18 +1,18 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "198.gml"
   node [
     id 0
-    label "l-alanine"
+    label "succinate"
   ]
   node [
     id 1
-    label "l-tryptophan"
+    label "l-alanine"
   ]
   edge [
     source 0
     target 1
-    weight 0.5403694072428842
+    weight 0.5154836860390344
   ]
 ]

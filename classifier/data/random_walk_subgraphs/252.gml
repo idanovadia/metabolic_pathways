@@ -1,32 +1,18 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "252.gml"
   node [
     id 0
-    label "glucose"
+    label "l-serine"
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
-  ]
-  node [
-    id 2
-    label "phosphate"
+    label "l-threonine"
   ]
   edge [
     source 0
     target 1
-    weight 0.8362263468292753
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.5997968146524117
-  ]
-  edge [
-    source 1
-    target 2
-    weight 0.6477135913764945
+    weight 0.8604651618855781
   ]
 ]

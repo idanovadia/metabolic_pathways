@@ -1,9 +1,18 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "158.gml"
   node [
     id 0
-    label "l-asparagine"
+    label "l-arginine"
+  ]
+  node [
+    id 1
+    label "putrescine"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.5560988845611036
   ]
 ]

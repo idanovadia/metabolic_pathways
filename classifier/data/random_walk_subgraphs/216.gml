@@ -1,18 +1,18 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "216.gml"
   node [
     id 0
-    label "glycine"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "succinate"
+    label "l-aspartate"
   ]
   edge [
     source 0
     target 1
-    weight 0.5295183185793924
+    weight 0.6056390159084215
   ]
 ]

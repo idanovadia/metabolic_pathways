@@ -1,9 +1,9 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "60.gml"
   node [
     id 0
-    label "glucose"
+    label "l-tyrosine"
   ]
 ]

@@ -1,35 +1,17 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
-  ]
-  node [
-    id 2
-    label "galactose"
-  ]
-  node [
-    id 3
-    label "l-ascorbate"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.5884905612973588
+    label "beta;-alanine"
   ]
   edge [
     source 0
     target 1
-    weight 0.6477135913764945
-  ]
-  edge [
-    source 1
-    target 2
-    weight 0.8522832379314891
+    weight 0.5427085069239712
   ]
 ]

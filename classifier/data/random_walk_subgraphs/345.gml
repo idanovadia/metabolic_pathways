@@ -1,32 +1,32 @@
 graph [
-  label "random"
+  label "positive"
   type "trainset"
   name "345.gml"
   node [
     id 0
-    label "l-threonine"
+    label "succinate"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "fumarate"
   ]
   node [
     id 2
-    label "gdp-beta;-l-fucose"
+    label "cis-aconitate"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.5806217127849199
   ]
   edge [
     source 0
     target 1
-    weight 0.7127713604789605
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.6067721321307238
+    weight 0.5624770794060734
   ]
   edge [
     source 1
     target 2
-    weight 0.5842827296297292
+    weight 0.7002421349708607
   ]
 ]
