@@ -4,29 +4,29 @@ graph [
   name "187.gml"
   node [
     id 0
-    label "l-threonine"
+    label "(s)-malate"
   ]
   node [
     id 1
-    label "l-cysteine"
+    label "succinate"
   ]
   node [
     id 2
-    label "l-methionine"
+    label "fumarate"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.5100248837176506
   ]
   edge [
     source 0
     target 1
-    weight 0.722790409488207
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.8363266960737059
+    weight 0.5122229946934221
   ]
   edge [
     source 1
     target 2
-    weight 0.6853509232746886
+    weight 0.5624770794060734
   ]
 ]

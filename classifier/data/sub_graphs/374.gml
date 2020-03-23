@@ -3,40 +3,42 @@ graph [
   type "trainset"
   node [
     id 0
-    label "benzoate"
+    label "(s)-malate"
   ]
   node [
     id 1
-    label "l-glutamate"
-  ]
-  node [
-    id 2
     label "phosphate"
   ]
   node [
+    id 2
+    label "l-valine"
+  ]
+  node [
     id 3
-    label "succinate"
+    label "l-lysine"
   ]
   node [
     id 4
-    label "l-cysteine"
-  ]
-  node [
-    id 5
-    label "l-arginine"
-  ]
-  node [
-    id 6
-    label "sucrose"
+    label "l-aspartate"
   ]
   edge [
     source 0
-    target 4
-    weight 0.6683140069227163
+    target 3
+    weight 0.5830461107886474
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.6314071499873977
   ]
   edge [
     source 1
-    target 2
-    weight 0.6510037877502363
+    target 4
+    weight 0.6011486587004862
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.7741925869687609
   ]
 ]

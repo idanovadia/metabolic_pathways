@@ -1,17 +1,21 @@
 graph [
-  label "testset"
-  type "2001"
+  label "random"
+  type "trainset"
   node [
     id 0
-    label "l-threonine"
+    label "udp-alpha;-d-galacturonate"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-aspartate"
+  ]
+  node [
+    id 2
+    label "gaba"
   ]
   edge [
     source 0
-    target 1
-    weight 0.7127713604789605
+    target 2
+    weight 0.5453652787863678
   ]
 ]

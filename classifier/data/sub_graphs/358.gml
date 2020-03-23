@@ -1,91 +1,45 @@
 graph [
-  label "random"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "glucose"
+    label "phosphate"
   ]
   node [
     id 1
-    label "erythritol"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "l-phenylalanine"
+    label "l-aspartate"
   ]
   node [
     id 3
-    label "d-glycerate"
-  ]
-  node [
-    id 4
-    label "gdp-beta;-l-fucose"
-  ]
-  node [
-    id 5
-    label "succinate"
-  ]
-  node [
-    id 6
-    label "l-cysteine"
-  ]
-  node [
-    id 7
-    label "shikimate"
+    label "l-glutamine"
   ]
   edge [
-    source 1
-    target 6
-    weight 0.6932076457403629
+    source 0
+    target 2
+    weight 0.6011486587004862
   ]
   edge [
-    source 1
-    target 4
-    weight 0.6860161189393285
+    source 0
+    target 1
+    weight 0.6510037877502363
   ]
   edge [
-    source 1
+    source 0
     target 3
-    weight 0.6292988776993444
+    weight 0.5207469450961464
   ]
   edge [
     source 1
     target 2
-    weight 0.7226904648644844
+    weight 0.6056390159084215
   ]
   edge [
     source 1
-    target 5
-    weight 0.5851089828202987
-  ]
-  edge [
-    source 2
-    target 6
-    weight 0.7707557676172315
-  ]
-  edge [
-    source 2
-    target 4
-    weight 0.6106668124342106
-  ]
-  edge [
-    source 2
-    target 5
-    weight 0.5469068305141396
-  ]
-  edge [
-    source 3
-    target 4
-    weight 0.5839682984507061
-  ]
-  edge [
-    source 3
-    target 5
-    weight 0.5552911240390985
-  ]
-  edge [
-    source 4
-    target 6
-    weight 0.5516365501551408
+    target 3
+    weight 0.5889560002830893
   ]
 ]

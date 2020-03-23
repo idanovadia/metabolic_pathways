@@ -1,21 +1,76 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-leucine"
+    label "l-valine"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-phenylalanine"
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-glutamate"
+  ]
+  node [
+    id 3
+    label "l-glutamine"
+  ]
+  node [
+    id 4
+    label "glucose"
+  ]
+  node [
+    id 5
+    label "l-alanine"
+  ]
+  node [
+    id 6
+    label "l-leucine"
+  ]
+  node [
+    id 7
+    label "l-aspartate"
+  ]
+  edge [
+    source 0
+    target 5
+    weight 0.6999784456832955
+  ]
+  edge [
+    source 0
+    target 6
+    weight 0.9154607840850747
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.8295602113900087
   ]
   edge [
     source 1
-    target 2
-    weight 0.6510037877502363
+    target 5
+    weight 0.698389240022241
+  ]
+  edge [
+    source 1
+    target 6
+    weight 0.8707006578322569
+  ]
+  edge [
+    source 2
+    target 7
+    weight 0.6056390159084215
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.5889560002830893
+  ]
+  edge [
+    source 5
+    target 6
+    weight 0.6748410034230655
   ]
 ]

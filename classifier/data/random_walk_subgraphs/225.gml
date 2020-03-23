@@ -1,9 +1,9 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "225.gml"
   node [
     id 0
-    label "beta;-alanine"
+    label "l-aspartate"
   ]
 ]

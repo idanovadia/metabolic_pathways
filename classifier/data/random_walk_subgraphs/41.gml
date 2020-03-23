@@ -1,32 +1,27 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "41.gml"
   node [
     id 0
-    label "l-glutamate"
+    label "benzoate"
   ]
   node [
     id 1
-    label "l-glutamine"
+    label "succinate"
   ]
   node [
     id 2
-    label "phosphate"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 0.5889560002830893
+    label "fumarate"
   ]
   edge [
     source 0
     target 2
-    weight 0.6510037877502363
+    weight 0.6527375781415498
   ]
   edge [
     source 1
     target 2
-    weight 0.5207469450961464
+    weight 0.5624770794060734
   ]
 ]

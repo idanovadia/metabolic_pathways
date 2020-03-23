@@ -1,18 +1,18 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "318.gml"
   node [
     id 0
-    label "l-tyrosine"
+    label "maltose"
   ]
   node [
     id 1
-    label "l-cysteine"
+    label "sucrose"
   ]
   edge [
     source 0
     target 1
-    weight 0.529497355748019
+    weight 0.6595035433237747
   ]
 ]

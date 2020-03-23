@@ -1,18 +1,18 @@
 graph [
-  label "random"
+  label "positive"
   type "trainset"
   name "338.gml"
   node [
     id 0
-    label "glucose_6_phosphate"
+    label "uracil"
   ]
   node [
     id 1
-    label "threonate"
+    label "d-ribofuranose"
   ]
   edge [
     source 0
     target 1
-    weight 0.6168785408792452
+    weight 0.6067946586393936
   ]
 ]

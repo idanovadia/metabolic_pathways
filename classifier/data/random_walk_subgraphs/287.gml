@@ -1,9 +1,18 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "287.gml"
   node [
     id 0
-    label "glucose"
+    label "phosphate"
+  ]
+  node [
+    id 1
+    label "l-glutamine"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.5207469450961464
   ]
 ]

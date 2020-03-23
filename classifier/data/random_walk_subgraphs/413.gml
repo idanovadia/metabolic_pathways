@@ -4,29 +4,24 @@ graph [
   name "413.gml"
   node [
     id 0
-    label "gaba"
+    label "l-tryptophan"
   ]
   node [
     id 1
-    label "l-isoleucine"
+    label "l-asparagine"
   ]
   node [
     id 2
-    label "alpha;-tocopherol"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.6788081714814038
+    label "(s)-malate"
   ]
   edge [
     source 0
     target 1
-    weight 0.7611077634086806
+    weight 0.6355741999189273
   ]
   edge [
     source 1
     target 2
-    weight 0.5981655843555822
+    weight 0.5873956525040094
   ]
 ]

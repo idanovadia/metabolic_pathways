@@ -1,18 +1,18 @@
 graph [
-  label "random"
+  label "positive"
   type "trainset"
   name "360.gml"
   node [
     id 0
-    label "l-isoleucine"
+    label "phosphate"
   ]
   node [
     id 1
-    label "(s)-malate"
+    label "l-glutamine"
   ]
   edge [
     source 0
     target 1
-    weight 0.6452781967830801
+    weight 0.5207469450961464
   ]
 ]

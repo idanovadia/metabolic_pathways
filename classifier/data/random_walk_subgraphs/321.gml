@@ -1,18 +1,18 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "321.gml"
   node [
     id 0
-    label "l-arginine"
+    label "l-aspartate"
   ]
   node [
     id 1
-    label "l-valine"
+    label "phosphate"
   ]
   edge [
     source 0
     target 1
-    weight 0.6592586044606605
+    weight 0.6011486587004862
   ]
 ]

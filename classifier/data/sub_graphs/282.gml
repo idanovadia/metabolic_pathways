@@ -1,17 +1,21 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "l-methionine"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-phenylalanine"
+    label "l-methionine"
+  ]
+  node [
+    id 2
+    label "l-glutamine"
   ]
   edge [
     source 0
-    target 1
-    weight 0.8446683851032818
+    target 2
+    weight 0.5207469450961464
   ]
 ]

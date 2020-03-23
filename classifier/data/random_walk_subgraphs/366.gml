@@ -4,15 +4,15 @@ graph [
   name "366.gml"
   node [
     id 0
-    label "sucrose"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 1
-    label "l-phenylalanine"
+    label "d-gluconate"
   ]
   edge [
     source 0
     target 1
-    weight 0.58034282142025
+    weight 0.5364020212039078
   ]
 ]

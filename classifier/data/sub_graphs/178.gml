@@ -3,89 +3,29 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "putrescine"
   ]
   node [
     id 2
-    label "l-alanine"
+    label "l-lysine"
   ]
-  node [
-    id 3
-    label "phosphate"
-  ]
-  node [
-    id 4
-    label "succinate"
-  ]
-  node [
-    id 5
-    label "(s)-malate"
-  ]
-  node [
-    id 6
-    label "fumarate"
-  ]
-  node [
-    id 7
-    label "l-serine"
+  edge [
+    source 0
+    target 2
+    weight 0.7383488648867993
   ]
   edge [
     source 0
     target 1
-    weight 0.6056390159084215
-  ]
-  edge [
-    source 0
-    target 3
-    weight 0.6510037877502363
+    weight 0.5560988845611036
   ]
   edge [
     source 1
-    target 3
-    weight 0.6011486587004862
-  ]
-  edge [
-    source 2
-    target 5
-    weight 0.52767586406752
-  ]
-  edge [
-    source 2
-    target 7
-    weight 0.5832377536907697
-  ]
-  edge [
-    source 2
-    target 4
-    weight 0.5154836860390344
-  ]
-  edge [
-    source 4
-    target 6
-    weight 0.5624770794060734
-  ]
-  edge [
-    source 4
-    target 5
-    weight 0.5122229946934221
-  ]
-  edge [
-    source 5
-    target 6
-    weight 0.5100248837176506
-  ]
-  edge [
-    source 5
-    target 7
-    weight 0.6485243401162355
-  ]
-  edge [
-    source 6
-    target 7
-    weight 0.5364194507938012
+    target 2
+    weight 0.6385909901460664
   ]
 ]

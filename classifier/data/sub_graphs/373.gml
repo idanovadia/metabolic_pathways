@@ -3,29 +3,42 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-arginine"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "l-lysine"
+    label "threonate"
   ]
   node [
     id 2
-    label "l-alanine"
+    label "l-glutamate"
+  ]
+  node [
+    id 3
+    label "d-glycerate"
+  ]
+  node [
+    id 4
+    label "erythritol"
   ]
   edge [
     source 0
-    target 2
-    weight 0.5069688742884643
-  ]
-  edge [
-    source 0
-    target 1
-    weight 0.7383488648867993
+    target 4
+    weight 0.6932076457403629
   ]
   edge [
     source 1
-    target 2
-    weight 0.588887828830241
+    target 4
+    weight 0.7507379506502267
+  ]
+  edge [
+    source 1
+    target 3
+    weight 0.7640087750154496
+  ]
+  edge [
+    source 3
+    target 4
+    weight 0.6292988776993444
   ]
 ]

@@ -1,18 +1,18 @@
 graph [
-  label "random"
+  label "positive"
   type "trainset"
   name "349.gml"
   node [
     id 0
-    label "glucose"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "galactose"
+    label "l-alanine"
   ]
   edge [
     source 0
     target 1
-    weight 0.7874216966063861
+    weight 0.6955937024459136
   ]
 ]

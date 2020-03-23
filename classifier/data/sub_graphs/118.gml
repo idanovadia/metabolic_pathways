@@ -1,9 +1,9 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-methionine"
+    label "l-tyrosine"
   ]
   node [
     id 1

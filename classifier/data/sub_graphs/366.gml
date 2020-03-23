@@ -3,19 +3,29 @@ graph [
   type "trainset"
   node [
     id 0
-    label "sucrose"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "d-gluconate"
   ]
   node [
     id 2
-    label "l-phenylalanine"
+    label "(s)-malate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.5364020212039078
   ]
   edge [
     source 0
     target 2
-    weight 0.58034282142025
+    weight 0.5962837030133438
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.5222093656226529
   ]
 ]

@@ -1,21 +1,12 @@
 graph [
-  label "positive"
-  type "trainset"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "fumarate"
+    label "glucose"
   ]
   node [
     id 1
-    label "phosphate"
-  ]
-  node [
-    id 2
-    label "l-aspartate"
-  ]
-  edge [
-    source 1
-    target 2
-    weight 0.6011486587004862
+    label "l-valine"
   ]
 ]

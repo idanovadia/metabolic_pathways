@@ -1,12 +1,17 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "benzoate"
+    label "l-leucine"
   ]
   node [
     id 1
-    label "succinate"
+    label "l-alanine"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.6748410034230655
   ]
 ]

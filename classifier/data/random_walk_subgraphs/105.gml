@@ -1,18 +1,18 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "105.gml"
   node [
     id 0
-    label "l-glutamine"
+    label "uracil"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-serine"
   ]
   edge [
     source 0
     target 1
-    weight 0.5207469450961464
+    weight 0.5757439281780684
   ]
 ]

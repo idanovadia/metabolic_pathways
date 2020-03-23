@@ -1,9 +1,9 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "238.gml"
   node [
     id 0
-    label "succinate"
+    label "gdp-beta;-l-fucose"
   ]
 ]

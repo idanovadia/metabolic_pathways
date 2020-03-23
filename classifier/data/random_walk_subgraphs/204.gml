@@ -1,10 +1,10 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "204.gml"
   node [
     id 0
-    label "l-arginine"
+    label "l-cysteine"
   ]
   node [
     id 1
@@ -13,6 +13,6 @@ graph [
   edge [
     source 0
     target 1
-    weight 0.5069688742884643
+    weight 0.6955937024459136
   ]
 ]

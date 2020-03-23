@@ -1,16 +1,12 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "l-arginine"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 1
-    label "succinate"
-  ]
-  node [
-    id 2
-    label "l-glutamate"
+    label "gdp-alpha;-d-mannose"
   ]
 ]

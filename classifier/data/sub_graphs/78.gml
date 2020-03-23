@@ -1,21 +1,21 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "putrescine"
+    label "l-tryptophan"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "l-aspartate"
+    label "l-alanine"
   ]
   edge [
-    source 1
+    source 0
     target 2
-    weight 0.6011486587004862
+    weight 0.5403694072428842
   ]
 ]

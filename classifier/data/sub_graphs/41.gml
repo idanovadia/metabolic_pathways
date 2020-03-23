@@ -1,25 +1,25 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
-  ]
-  node [
-    id 1
-    label "l-aspartate"
-  ]
-  node [
-    id 2
-    label "l-glutamine"
-  ]
-  node [
-    id 3
     label "phosphate"
   ]
   node [
+    id 1
+    label "l-phenylalanine"
+  ]
+  node [
+    id 2
+    label "l-glutamate"
+  ]
+  node [
+    id 3
+    label "benzoate"
+  ]
+  node [
     id 4
-    label "l-arginine"
+    label "succinate"
   ]
   node [
     id 5
@@ -27,27 +27,32 @@ graph [
   ]
   edge [
     source 0
-    target 1
-    weight 0.6056390159084215
-  ]
-  edge [
-    source 0
     target 2
-    weight 0.5889560002830893
-  ]
-  edge [
-    source 0
-    target 3
     weight 0.6510037877502363
   ]
   edge [
     source 1
     target 3
-    weight 0.6011486587004862
+    weight 0.6752308628578606
   ]
   edge [
-    source 2
-    target 3
-    weight 0.5207469450961464
+    source 1
+    target 5
+    weight 0.5823857379316253
+  ]
+  edge [
+    source 1
+    target 4
+    weight 0.5469068305141396
+  ]
+  edge [
+    source 3
+    target 5
+    weight 0.6527375781415498
+  ]
+  edge [
+    source 4
+    target 5
+    weight 0.5624770794060734
   ]
 ]

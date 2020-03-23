@@ -8,25 +8,20 @@ graph [
   ]
   node [
     id 1
-    label "gaba"
+    label "maltose"
   ]
   node [
     id 2
-    label "alpha;,alpha;-trehalose"
+    label "sucrose"
   ]
   edge [
     source 0
     target 1
-    weight 0.6849410070904632
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.6749673616300522
+    weight 0.7361326428183336
   ]
   edge [
     source 1
     target 2
-    weight 0.6936625138569831
+    weight 0.6595035433237747
   ]
 ]

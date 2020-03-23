@@ -1,5 +1,5 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
@@ -7,6 +7,6 @@ graph [
   ]
   node [
     id 1
-    label "(s)-malate"
+    label "l-tyrosine"
   ]
 ]

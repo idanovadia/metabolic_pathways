@@ -1,18 +1,18 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "43.gml"
   node [
     id 0
-    label "glycine"
+    label "l-lysine"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-tryptophan"
   ]
   edge [
     source 0
     target 1
-    weight 0.6662638707918508
+    weight 0.6319284415874113
   ]
 ]

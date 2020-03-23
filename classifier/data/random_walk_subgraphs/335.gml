@@ -1,18 +1,18 @@
 graph [
-  label "random"
+  label "positive"
   type "trainset"
   name "335.gml"
   node [
     id 0
-    label "d-threo-isocitrate"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "phosphate"
+    label "putrescine"
   ]
   edge [
     source 0
     target 1
-    weight 0.6361601092405977
+    weight 0.5560988845611036
   ]
 ]

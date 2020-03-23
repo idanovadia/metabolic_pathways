@@ -1,18 +1,18 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "303.gml"
   node [
     id 0
-    label "l-glutamate"
+    label "uracil"
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "d-ribofuranose"
   ]
   edge [
     source 0
     target 1
-    weight 0.6056390159084215
+    weight 0.6067946586393936
   ]
 ]

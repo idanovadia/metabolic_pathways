@@ -1,6 +1,6 @@
 graph [
-  label "positive"
-  type "trainset"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
     label "l-tyrosine"
@@ -11,11 +11,6 @@ graph [
   ]
   node [
     id 2
-    label "l-phenylalanine"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.7832158514012088
+    label "fumarate"
   ]
 ]

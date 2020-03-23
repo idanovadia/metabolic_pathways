@@ -11,15 +11,15 @@ graph [
   ]
   node [
     id 2
-    label "phosphate"
+    label "shikimate"
   ]
   node [
     id 3
-    label "shikimate"
+    label "phosphate"
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 0.6510037877502363
   ]
 ]

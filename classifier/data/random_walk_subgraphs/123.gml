@@ -1,10 +1,10 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "123.gml"
   node [
     id 0
-    label "glucose"
+    label "l-glutamate"
   ]
   node [
     id 1
@@ -13,6 +13,6 @@ graph [
   edge [
     source 0
     target 1
-    weight 0.5997968146524117
+    weight 0.6510037877502363
   ]
 ]

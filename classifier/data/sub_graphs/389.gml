@@ -3,93 +3,76 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glycerate_3_phosphate"
+    label "l-phenylalanine"
   ]
   node [
     id 1
-    label "benzoate"
+    label "alpha;,alpha;-trehalose"
   ]
   node [
     id 2
-    label "l-aspartate"
+    label "gaba"
   ]
   node [
     id 3
-    label "udp-alpha;-d-galacturonate"
+    label "citrate"
   ]
   node [
     id 4
-    label "l-glutamine"
-  ]
-  node [
-    id 5
     label "l-leucine"
   ]
   node [
-    id 6
-    label "gdp-alpha;-d-mannose"
+    id 5
+    label "sucrose"
   ]
-  node [
-    id 7
-    label "gdp-beta;-l-fucose"
+  edge [
+    source 0
+    target 2
+    weight 0.8509510835359132
   ]
-  node [
-    id 8
-    label "l-cysteine"
+  edge [
+    source 0
+    target 4
+    weight 0.8707006578322569
+  ]
+  edge [
+    source 0
+    target 5
+    weight 0.58034282142025
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.6510270376323252
   ]
   edge [
     source 1
-    target 8
-    weight 0.6683140069227163
+    target 2
+    weight 0.6936625138569831
   ]
   edge [
     source 1
-    target 7
-    weight 0.6753085165938773
-  ]
-  edge [
-    source 1
-    target 3
-    weight 0.6369787793062578
+    target 4
+    weight 0.6162741656073973
   ]
   edge [
     source 1
     target 5
-    weight 0.6385212300047025
+    weight 0.6435067791368551
   ]
   edge [
     source 2
-    target 6
-    weight 0.565023298494408
+    target 4
+    weight 0.7842295387080541
   ]
   edge [
-    source 3
-    target 8
-    weight 0.6253528732115167
-  ]
-  edge [
-    source 3
-    target 7
-    weight 0.6106647501095485
-  ]
-  edge [
-    source 3
+    source 2
     target 5
-    weight 0.5487701159447543
+    weight 0.655987769389265
   ]
   edge [
-    source 5
-    target 8
-    weight 0.6994221398999002
-  ]
-  edge [
-    source 5
-    target 7
-    weight 0.5879269414402317
-  ]
-  edge [
-    source 7
-    target 8
-    weight 0.5516365501551408
+    source 4
+    target 5
+    weight 0.5460751877739148
   ]
 ]

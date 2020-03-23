@@ -1,12 +1,21 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "glucose"
+    label "l-cysteine"
   ]
   node [
     id 1
-    label "l-tyrosine"
+    label "succinate"
+  ]
+  node [
+    id 2
+    label "l-methionine"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.6853509232746886
   ]
 ]

@@ -4,15 +4,15 @@ graph [
   name "388.gml"
   node [
     id 0
-    label "l-tyrosine"
+    label "alpha;-tocopherol"
   ]
   node [
     id 1
-    label "l-cysteine"
+    label "l-alanine"
   ]
   edge [
     source 0
     target 1
-    weight 0.529497355748019
+    weight 0.6098175065214301
   ]
 ]

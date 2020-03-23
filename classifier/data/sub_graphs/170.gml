@@ -3,23 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-arginine"
+    label "glucose"
   ]
   node [
     id 1
-    label "succinate"
+    label "l-isoleucine"
   ]
   node [
     id 2
-    label "phosphate"
-  ]
-  node [
-    id 3
-    label "l-serine"
+    label "l-valine"
   ]
   edge [
-    source 0
-    target 3
-    weight 0.6019927940005843
+    source 1
+    target 2
+    weight 0.8674932232268686
   ]
 ]

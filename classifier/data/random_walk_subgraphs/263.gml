@@ -1,5 +1,5 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   name "263.gml"
   node [

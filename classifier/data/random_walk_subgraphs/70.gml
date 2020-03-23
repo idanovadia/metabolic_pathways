@@ -1,9 +1,9 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   name "70.gml"
   node [
     id 0
-    label "l-lysine"
+    label "l-glutamate"
   ]
 ]

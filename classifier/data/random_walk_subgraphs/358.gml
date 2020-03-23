@@ -1,9 +1,18 @@
 graph [
-  label "random"
+  label "positive"
   type "trainset"
   name "358.gml"
   node [
     id 0
-    label "shikimate"
+    label "phosphate"
+  ]
+  node [
+    id 1
+    label "l-aspartate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.6011486587004862
   ]
 ]
