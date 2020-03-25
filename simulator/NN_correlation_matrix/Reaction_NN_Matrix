@@ -9,6 +9,9 @@ from sklearn import cluster
 import networkx as nx
 
 from simulator.NN_correlation_matrix.gan_NN_Matrix_simulator import Generator
+from simulator.NN_correlation_matrix.generatorstructurefactory import GeneratorStructureFactory
+
+gan_model_global = None #variable to make setting of model easier
 
 
 def show_matrix(t):
@@ -132,7 +135,8 @@ class MultiReaction_new(torch.nn.Module):
                  products=None):
         super(MultiReaction_new, self).__init__()
         self._reactions = torch.nn.ModuleList()
-        self._generator = Generator(m_count*2)
+        global gan_model_global
+        self._generator = Generator(m_count*2, gan_model_global)
         #todo delete itreation - instead the output will be divided into reactions
         for i in range(rcount):
             if substrates == None:
@@ -155,6 +159,7 @@ class MultiReaction_new(torch.nn.Module):
         rslt = [r.get_def_tensor().unsqueeze(dim=0) for r in self._reactions]
         rslt = torch.cat(rslt, dim=0)
         return rslt
+
 
 def pearson_r(x, y):
     vx = x - torch.mean(x)
@@ -206,7 +211,8 @@ class Process_new(torch.nn.Module):
         super(Process_new, self).__init__()
         # self._mr = MultiReaction(rcount, metabolites, scount=scount, pcount=pcount, step=step, low=low, high=high,
         #                          substrates=substrates, products=products)
-        self._mr = Generator(m_count*2) #todo change size of input
+
+        #self._mr = Generator(m_count*2, None) #todo change size of input
         self._mr = MultiReaction_new(rcount, metabolites, scount=scount, pcount=pcount, step=step, low=low, high=high,
                                   substrates=substrates, products=products)
         self._iterations = iterations
@@ -227,6 +233,7 @@ class Process_new(torch.nn.Module):
 
     def get_reactions_tensor(self):
          return self._mr.get_reactions_tensor()
+
 
 
 import numpy as np
@@ -259,7 +266,7 @@ dataset_size = 1
 minibatch_size = 10
 sub_min = 2
 sub_max = 2.01
-epochs = 200
+epochs = 20
 step = 0.5
 iterations = 100
 s_count=3
@@ -272,9 +279,22 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 class Test():
 
     def run_tests(self):
-        return
+        generator_structure_factory = GeneratorStructureFactory(m_count*2)
+        structure_list = generator_structure_factory.get_structure_list()
+        for structure in structure_list:
+            name = structure.get_name()
+            gan_model = structure.get_model()
+            print("\n****************************************")
+            print("Running Test With Structure: " + name)
+            print("**************************************** \n ")
+            self.run_one_test(gan_model)
+            print("\n****************************************")
+            print("End of Test With Structure: " + name)
+            print("**************************************** \n ")
 
-    def run_one_test(self, generator_structure):
+    def run_one_test(self, gan_model):
+        global gan_model_global
+        gan_model_global = gan_model
         metabolites = range(m_count)
         reactions = Process_new(reactions_count, metabolites,
                                 #scount=s_count, pcount=p_count,
@@ -376,7 +396,20 @@ class Test():
             print(original[i])
             print("predicted:")
             print(predicted[i])
+            self.calculate_error(original[i], predicted[i])
 
+    #todo fix this
+    def calculate_error(self, original, predicted):
+        error_in_input = 0
+        for i in range(m_count):
+            if(original[0][i] != predicted[0][i]):
+                error_in_input = error_in_input + 1
+        error_in_output = 0
+        for i in range(m_count):
+            if(original[1][i] != predicted[1][i]):
+                error_in_output = error_in_output + 1
+        print("Error in input: " + str( (error_in_input/m_count) * 100))
+        print("Error in output: " + str((error_in_output / m_count) * 100))
 
 test = Test()
-test.run_one_test()
+test.run_tests()

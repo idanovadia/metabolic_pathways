@@ -8,15 +8,23 @@ Z_dim = 100 #input layer for the generator
 H_dim = 128 #middle layer
 #X_dim is the output layer of generator
 
-class Generator(nn.Module):
-    def __init__(self, X_dim):
-        super().__init__()
-        self.model = nn.Sequential(
+default_model = nn.Sequential(
             nn.Linear(Z_dim, H_dim),
             nn.ReLU(),
-            nn.Linear(H_dim, X_dim),
+            nn.Linear(H_dim, 16),
             nn.Sigmoid()
         )
+
+class Generator(nn.Module):
+    def __init__(self, X_dim, model=default_model):
+        super().__init__()
+        # self.model = nn.Sequential(
+        #     nn.Linear(Z_dim, H_dim),
+        #     nn.ReLU(),
+        #     nn.Linear(H_dim, X_dim),
+        #     nn.Sigmoid()
+        # )
+        self.model = model
 
     def forward(self, input):
         return self.model(input)
@@ -43,6 +51,9 @@ class Generator(nn.Module):
         substrate = result[i*m_size*2 : i*m_size*2 + m_size]
         product = result[i*m_size*2 + m_size : i*m_size*2 + m_size + m_size]
         return substrate, product
+
+    def set_gan_model(self, gan_model):
+        self.model = gan_model
 
 if __name__ == '__main__':
     gan_generator = Generator(2*50*10)
