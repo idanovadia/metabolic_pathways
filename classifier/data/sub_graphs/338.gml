@@ -3,19 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "uracil"
+    label "l-glutamine"
   ]
   node [
     id 1
-    label "phosphate"
+    label "uracil"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "phosphate"
   ]
   node [
     id 3
-    label "l-glutamine"
+    label "l-glutamate"
   ]
   node [
     id 4
@@ -23,22 +23,22 @@ graph [
   ]
   edge [
     source 0
+    target 3
+    weight 0.5889560002830893
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.5207469450961464
+  ]
+  edge [
+    source 1
     target 4
     weight 0.6067946586393936
   ]
   edge [
-    source 1
-    target 2
-    weight 0.6510037877502363
-  ]
-  edge [
-    source 1
-    target 3
-    weight 0.5207469450961464
-  ]
-  edge [
     source 2
     target 3
-    weight 0.5889560002830893
+    weight 0.6510037877502363
   ]
 ]

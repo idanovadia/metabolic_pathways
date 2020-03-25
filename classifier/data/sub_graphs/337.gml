@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "uracil"
+    label "l-glutamine"
   ]
   node [
     id 3
-    label "l-glutamine"
+    label "uracil"
   ]
   edge [
     source 0
@@ -24,12 +24,12 @@ graph [
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight 0.5207469450961464
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight 0.5889560002830893
   ]
 ]

@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-tryptophan"
+    label "glycine"
   ]
   node [
     id 1
@@ -11,6 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "glycine"
+    label "l-tryptophan"
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.4619942856368425
   ]
 ]

@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "alpha;,alpha;-trehalose"
   ]
   node [
     id 2
-    label "alpha;,alpha;-trehalose"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.5884905612973588
   ]
 ]

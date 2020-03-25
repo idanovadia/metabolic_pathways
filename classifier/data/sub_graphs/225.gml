@@ -3,14 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-arginine"
+    label "fumarate"
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "l-arginine"
   ]
   node [
     id 2
-    label "fumarate"
+    label "l-aspartate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.4261967379799564
   ]
 ]

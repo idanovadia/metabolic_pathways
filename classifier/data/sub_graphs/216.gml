@@ -11,11 +11,20 @@ graph [
   ]
   node [
     id 2
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 3
     label "l-aspartate"
   ]
   edge [
-    source 1
+    source 0
     target 2
+    weight 0.3248062489421025
+  ]
+  edge [
+    source 1
+    target 3
     weight 0.6056390159084215
   ]
 ]

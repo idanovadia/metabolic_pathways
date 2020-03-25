@@ -11,15 +11,15 @@ graph [
   ]
   node [
     id 2
-    label "l-aspartate"
+    label "l-glutamine"
   ]
   node [
     id 3
-    label "l-glutamine"
+    label "l-aspartate"
   ]
   edge [
     source 0
-    target 2
+    target 3
     weight 0.6011486587004862
   ]
   edge [
@@ -29,17 +29,22 @@ graph [
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight 0.5207469450961464
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 0.6056390159084215
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight 0.5889560002830893
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.4514014676011702
   ]
 ]

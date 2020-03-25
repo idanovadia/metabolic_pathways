@@ -3,11 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-glutamate"
+  ]
+  node [
+    id 2
+    label "2-oxoglutarate"
   ]
   edge [
     source 0

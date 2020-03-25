@@ -3,15 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-glutamine"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-tryptophan"
   ]
   node [
     id 2
-    label "l-glutamine"
+    label "phosphate"
   ]
   node [
     id 3
@@ -19,12 +19,12 @@ graph [
   ]
   node [
     id 4
-    label "l-tryptophan"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 1
-    weight 0.6510037877502363
+    target 4
+    weight 0.5889560002830893
   ]
   edge [
     source 0
@@ -33,12 +33,12 @@ graph [
   ]
   edge [
     source 1
-    target 2
-    weight 0.5889560002830893
+    target 3
+    weight 0.5403694072428842
   ]
   edge [
-    source 3
+    source 2
     target 4
-    weight 0.5403694072428842
+    weight 0.6510037877502363
   ]
 ]
