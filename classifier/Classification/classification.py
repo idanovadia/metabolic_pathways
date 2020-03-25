@@ -1,5 +1,6 @@
 from classifier.Classification.Wrappers.catboostWrapper import CatBoost
 from classifier.Classification.Wrappers.randomForestWrapper import RandomForestWrapper
+from classifier.Classification.Wrappers.svmWrapper import SvmWrapper
 from classifier.Classification.Wrappers.xgboostWrapper import xgboostWrapper
 from classifier.Classification.Wrappers.lightgbmWrapper import lightgbmWrapper
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
@@ -45,6 +46,7 @@ class classifier(AbstractConfigClass):
         self.classifiers_dict['xgboost'] = xgboostWrapper
         self.classifiers_dict['lightgbm'] = lightgbmWrapper
         self.classifiers_dict['CatBoost'] = CatBoost
+        self.classifiers_dict['SvmWrapper'] = SvmWrapper
 
     def fillClassifiersDirectory(self):
         for classifier in self.classifiers_list:
