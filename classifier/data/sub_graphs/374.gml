@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "(s)-malate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "(s)-malate"
   ]
   node [
     id 2
@@ -23,18 +23,18 @@ graph [
   ]
   edge [
     source 0
+    target 4
+    weight 0.6011486587004862
+  ]
+  edge [
+    source 1
     target 3
     weight 0.5830461107886474
   ]
   edge [
-    source 0
+    source 1
     target 2
     weight 0.6314071499873977
-  ]
-  edge [
-    source 1
-    target 4
-    weight 0.6011486587004862
   ]
   edge [
     source 2

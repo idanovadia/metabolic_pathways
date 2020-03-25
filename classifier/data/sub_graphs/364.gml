@@ -7,6 +7,15 @@ graph [
   ]
   node [
     id 1
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 2
     label "l-valine"
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.4020622706620666
   ]
 ]

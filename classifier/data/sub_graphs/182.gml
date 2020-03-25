@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-cysteine"
+    label "phosphate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-methionine"
   ]
   node [
     id 2
@@ -15,7 +15,7 @@ graph [
   ]
   node [
     id 3
-    label "l-methionine"
+    label "l-cysteine"
   ]
   node [
     id 4
@@ -23,12 +23,22 @@ graph [
   ]
   edge [
     source 0
+    target 4
+    weight 0.6011486587004862
+  ]
+  edge [
+    source 1
     target 3
     weight 0.6853509232746886
   ]
   edge [
     source 1
-    target 4
-    weight 0.6011486587004862
+    target 2
+    weight 0.4681966153919231
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.4765751650797137
   ]
 ]

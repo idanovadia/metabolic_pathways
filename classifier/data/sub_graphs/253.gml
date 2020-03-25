@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "d-threo-isocitrate"
+    label "cis-aconitate"
   ]
   node [
     id 1
@@ -15,21 +15,21 @@ graph [
   ]
   node [
     id 3
-    label "cis-aconitate"
+    label "citrate"
   ]
   node [
     id 4
-    label "citrate"
+    label "d-threo-isocitrate"
   ]
   edge [
     source 0
-    target 4
-    weight 0.8771861478709295
+    target 1
+    weight 0.6831210743337447
   ]
   edge [
-    source 1
-    target 3
-    weight 0.6831210743337447
+    source 0
+    target 2
+    weight 0.5806217127849199
   ]
   edge [
     source 1
@@ -37,8 +37,8 @@ graph [
     weight 0.5122229946934221
   ]
   edge [
-    source 2
-    target 3
-    weight 0.5806217127849199
+    source 3
+    target 4
+    weight 0.8771861478709295
   ]
 ]

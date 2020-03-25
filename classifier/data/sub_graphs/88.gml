@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "(s)-malate"
+    label "fumarate"
   ]
   node [
     id 1
@@ -15,7 +15,7 @@ graph [
   ]
   node [
     id 3
-    label "fumarate"
+    label "(s)-malate"
   ]
   edge [
     source 0
@@ -25,11 +25,11 @@ graph [
   edge [
     source 0
     target 2
-    weight 0.5122229946934221
+    weight 0.5624770794060734
   ]
   edge [
     source 2
     target 3
-    weight 0.5624770794060734
+    weight 0.5122229946934221
   ]
 ]

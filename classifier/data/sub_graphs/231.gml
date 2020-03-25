@@ -3,14 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-methionine"
+    label "l-ascorbate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-methionine"
   ]
   node [
     id 2
-    label "l-ascorbate"
+    label "phosphate"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.3483701715494122
   ]
 ]

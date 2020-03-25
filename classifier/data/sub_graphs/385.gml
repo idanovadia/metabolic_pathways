@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "l-tyrosine"
+    label "l-tryptophan"
   ]
   node [
     id 2
@@ -19,11 +19,15 @@ graph [
   ]
   node [
     id 4
-    label "l-tryptophan"
+    label "maltitol"
   ]
   node [
     id 5
     label "glycerol"
+  ]
+  node [
+    id 6
+    label "l-tyrosine"
   ]
   edge [
     source 0
@@ -31,13 +35,43 @@ graph [
     weight 0.5826545347036726
   ]
   edge [
+    source 0
+    target 5
+    weight 0.4505503613134078
+  ]
+  edge [
+    source 0
+    target 4
+    weight 0.3217605406126031
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.4819806101688883
+  ]
+  edge [
+    source 0
+    target 6
+    weight 0.4060150255291594
+  ]
+  edge [
     source 1
     target 2
-    weight 0.5607137788678386
+    weight 0.5607523830066249
+  ]
+  edge [
+    source 1
+    target 5
+    weight 0.4878432263874433
   ]
   edge [
     source 1
     target 4
+    weight 0.2541504356703128
+  ]
+  edge [
+    source 1
+    target 6
     weight 0.6441836645725553
   ]
   edge [
@@ -48,6 +82,26 @@ graph [
   edge [
     source 2
     target 4
-    weight 0.5607523830066249
+    weight 0.3929646907840059
+  ]
+  edge [
+    source 2
+    target 6
+    weight 0.5607137788678386
+  ]
+  edge [
+    source 4
+    target 5
+    weight 0.3625056014866969
+  ]
+  edge [
+    source 4
+    target 6
+    weight 0.2364765475532342
+  ]
+  edge [
+    source 5
+    target 6
+    weight 0.3585328623876819
   ]
 ]

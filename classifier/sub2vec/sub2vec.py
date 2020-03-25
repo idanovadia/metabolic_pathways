@@ -68,12 +68,16 @@ class Sub2Vec(AbstractConfigClass):
             if g.graph['type'] == "trainset":
                 self.rw_list_of_graphs_train = random_walk_object.insertGraphToSet(
                     list_of_graphs=self.rw_list_of_graphs_train,
-                    graph=random_walk_object.randomWalk(g))
-            else:
-                for i in range(self.random_walk_graphs_to_create):
-                    self.rw_list_of_graphs_test = random_walk_object.insertGraphToSet(
-                        list_of_graphs=self.rw_list_of_graphs_test,
-                        graph=random_walk_object.randomWalk(g))
+                    graph=g)
+                # self.rw_list_of_graphs_train = random_walk_object.insertGraphToSet(
+                #     list_of_graphs=self.rw_list_of_graphs_train,
+                #     graph=random_walk_object.randomWalk(g))
+
+            # else:
+            #     for i in range(self.random_walk_graphs_to_create):
+            #         self.rw_list_of_graphs_test = random_walk_object.insertGraphToSet(
+            #             list_of_graphs=self.rw_list_of_graphs_test,
+            #             graph=random_walk_object.randomWalk(g))
 
     '''Using Doc2vec to get embedding'''
 

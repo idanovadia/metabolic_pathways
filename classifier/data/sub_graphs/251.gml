@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-cysteine"
+    label "glycine"
   ]
   node [
     id 1
@@ -11,7 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "glycine"
+    label "l-cysteine"
   ]
   node [
     id 3

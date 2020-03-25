@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "gaba"
   ]
   node [
     id 2
-    label "gaba"
+    label "l-aspartate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.5453652787863678
   ]
 ]

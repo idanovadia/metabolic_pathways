@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-tyrosine"
+    label "phosphate"
   ]
   node [
     id 1
@@ -11,15 +11,29 @@ graph [
   ]
   node [
     id 2
-    label "shikimate"
+    label "2-oxoglutarate"
   ]
   node [
     id 3
-    label "phosphate"
+    label "shikimate"
+  ]
+  node [
+    id 4
+    label "l-tyrosine"
   ]
   edge [
-    source 1
-    target 3
+    source 0
+    target 1
     weight 0.6510037877502363
+  ]
+  edge [
+    source 2
+    target 4
+    weight 0.3464914106866316
+  ]
+  edge [
+    source 3
+    target 4
+    weight 0.3188374742582401
   ]
 ]

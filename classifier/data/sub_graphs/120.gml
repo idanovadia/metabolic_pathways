@@ -3,24 +3,29 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-cysteine"
+    label "l-alanine"
   ]
   node [
     id 1
-    label "beta;-alanine"
+    label "l-cysteine"
   ]
   node [
     id 2
-    label "l-alanine"
+    label "beta;-alanine"
   ]
   edge [
     source 0
     target 2
-    weight 0.6955937024459136
+    weight 0.4533043899379032
   ]
   edge [
     source 0
     target 1
+    weight 0.6955937024459136
+  ]
+  edge [
+    source 1
+    target 2
     weight 0.5427085069239712
   ]
 ]

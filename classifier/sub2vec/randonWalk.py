@@ -15,30 +15,36 @@ class RandomWalk():
         return False
 
     def insertGraphToSet(self, list_of_graphs, graph):
-        # if len(list_of_graphs) != 0:
-        #     for g in list_of_graphs:
-        #         if self.graphComparator(g, graph):
-        #             return list_of_graphs
-        list_of_graphs.append(graph)
+        for counter, j in enumerate(graph.nodes):
+            for i in range(self.number_of_graphs):
+                new_graph = self.randomWalk(graph, j, i)
+                new_graph.graph["name"] = str(i) + "_" + str(counter) + "_" + new_graph.graph["name"]
+                list_of_graphs.append(new_graph)
         return list_of_graphs
 
     # Get sub-graph in nx format
-    def randomWalk(self, sub_graph):
+    def randomWalk(self, sub_graph, root, sub_name):
         self.empty_nodes_list = False
         rw_nodes_list = []
         count = 0
         threshold = self.threshold
         nodes = list(sub_graph.nodes)
-        count, node = self.getNextNode(count, nodes, rw_nodes_list)
+        count, node = self.getFirstNode(count, nodes, rw_nodes_list, root)
         while count < threshold and len(nodes) > 0:
             nodes = self.getNeighbors(node, sub_graph)
             if len(nodes) == 0:
                 break
             count, node = self.getNextNode(count, nodes, rw_nodes_list)
-        return sub_graph.subgraph(rw_nodes_list)
+        # sub_graph.graph["name"] = str(sub_name) + "_" + sub_graph.graph["name"]
+        return sub_graph.subgraph(rw_nodes_list).copy()
+
+    def getFirstNode(self, count, nodes, rw_nodes_list, root):
+        rw_nodes_list.append(root)
+        nodes.remove(root)
+        count += 1
+        return count, root
 
     def getNextNode(self, count, nodes, rw_nodes_list):
-        # node = self.randomNode(nodes, left_nodes)
         node = random.choice(nodes)
         rw_nodes_list.append(node)
         nodes.remove(node)

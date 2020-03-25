@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-aspartate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-aspartate"
   ]
   node [
     id 2
