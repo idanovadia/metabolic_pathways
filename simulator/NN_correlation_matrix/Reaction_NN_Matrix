@@ -8,13 +8,15 @@ import numpy as np
 from sklearn import cluster
 import networkx as nx
 
+from simulator.NN_correlation_matrix.gan_NN_Matrix_simulator import Generator
+
 
 def show_matrix(t):
     # img = img / 2 + 0.5     # unnormalize
     plt.title('correlation matrix')
     npimg = t.cpu().numpy()
     plt.imshow(npimg, cmap="Greys")
-    plt.show()
+    #plt.show()
 
 
 def show_graph(t, threshold=0.9, pos_color="b", neg_color="r"):
@@ -45,7 +47,7 @@ def show_graph(t, threshold=0.9, pos_color="b", neg_color="r"):
 
     # plt.axis('off')
     plt.title('correlation network')
-    plt.show()
+    #plt.show()
 
 
 def print_reactions(reactions):
@@ -125,6 +127,34 @@ class MultiReaction(torch.nn.Module):
         rslt = torch.cat(rslt, dim=0)
         return rslt
 
+class MultiReaction_new(torch.nn.Module):
+    def __init__(self, rcount, metabolites, scount=2, pcount=2, step=0.0001, low=0.0, high=1.0, substrates=None,
+                 products=None):
+        super(MultiReaction_new, self).__init__()
+        self._reactions = torch.nn.ModuleList()
+        self._generator = Generator(m_count*2)
+        #todo delete itreation - instead the output will be divided into reactions
+        for i in range(rcount):
+            if substrates == None:
+                #sub, prod = generate_reaction_def(scount, pcount, metabolites, low, high)
+                sub, prod = self._generator.get_reactions_tensor()
+            else:
+                sub, prod = substrates, products
+            sub = torch.Tensor(sub).to(device)  # so far there is no self.device in pytorch Modules
+            prod = torch.Tensor(prod).to(device)  # so far there is no self.device in pytorch Modules
+            r = Reaction(sub, prod, step=step)
+            self._reactions.append(r)
+
+    def forward(self, x):
+        # random.shuffle(self._reactions)
+        for m in self._reactions:
+            x = m(x)
+        return x
+
+    def get_reactions_tensor(self):
+        rslt = [r.get_def_tensor().unsqueeze(dim=0) for r in self._reactions]
+        rslt = torch.cat(rslt, dim=0)
+        return rslt
 
 def pearson_r(x, y):
     vx = x - torch.mean(x)
@@ -145,12 +175,10 @@ def correlation_matrix(b):
     corr = torch.mm(vb.t(), vb) * torch.mm(mr.t(), mr)
     return corr
 
-
 class Process(torch.nn.Module):
     def __init__(self, rcount, metabolites, scount=2, pcount=2, low=0.0, high=1.0, substrates=None, products=None,
                  step=0.0001, iterations=100):
         super(Process, self).__init__()
-        #todo add here output of generator
         self._mr = MultiReaction(rcount, metabolites, scount=scount, pcount=pcount, step=step, low=low, high=high,
                                  substrates=substrates, products=products)
         self._iterations = iterations
@@ -171,6 +199,34 @@ class Process(torch.nn.Module):
 
     def get_reactions_tensor(self):
         return self._mr.get_reactions_tensor()
+
+class Process_new(torch.nn.Module):
+    def __init__(self, rcount, metabolites, scount=2, pcount=2, low=0.0, high=1.0, substrates=None, products=None,
+                 step=0.0001, iterations=100):
+        super(Process_new, self).__init__()
+        # self._mr = MultiReaction(rcount, metabolites, scount=scount, pcount=pcount, step=step, low=low, high=high,
+        #                          substrates=substrates, products=products)
+        self._mr = Generator(m_count*2) #todo change size of input
+        self._mr = MultiReaction_new(rcount, metabolites, scount=scount, pcount=pcount, step=step, low=low, high=high,
+                                  substrates=substrates, products=products)
+        self._iterations = iterations
+
+    def forward(self, x):
+        iterations_for_sample = torch.randint(low=0, high=self._iterations, size=(minibatch_size,), device=device,
+                                              requires_grad=False)
+        for i in range(self._iterations):
+            doit = (iterations_for_sample > i).float()
+            doit = doit.unsqueeze(dim=1)
+            doit = torch.cat([doit] * m_count, dim=1)
+            y = self._mr(x)
+            x = y * doit + x * (1 - doit)
+
+        c = correlation_matrix(x)
+        c = c - torch.eye(m_count).to(device)
+        return x, c
+
+    def get_reactions_tensor(self):
+         return self._mr.get_reactions_tensor()
 
 
 import numpy as np
@@ -197,13 +253,13 @@ def compare_tensor_sets(s1,s2):
         rslt+=mses[j]
     return rslt / rcount
 
-m_count = 8
+m_count = 8 #size of metabolic profile
 reactions_count = 1
 dataset_size = 1
 minibatch_size = 10
 sub_min = 2
 sub_max = 2.01
-epochs = 20
+epochs = 200
 step = 0.5
 iterations = 100
 s_count=3
@@ -212,103 +268,115 @@ p_count=3
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #device = "cpu"
 
-metabolites = range(m_count)
-reactions = Process(reactions_count, metabolites,
-                    #scount=s_count, pcount=p_count,
-                    #low=1.0,high=1.0
-                    substrates=[1,1,1,0,0,0,0,0],
-                    products  =[0,0,0,1,1,1,0,0],
-                    step=step, iterations=iterations,
-                   ).to(device)
-print_reactions(reactions)
 
-with torch.no_grad():
-    dataset = []
-    for i in range(dataset_size):
-        batch_x = torch.Tensor(size=(minibatch_size,m_count)).to(device)
-        batch_x.uniform_(sub_min,sub_max)
-        print(batch_x)
-        ym,yc = reactions(batch_x)
-        print(ym)
-        dataset.append((batch_x,yc))
-        if i%1==0:
-            print("batch {}: {}".format(i,yc.size()))
-            print(yc.min())
-            print(yc.max())
-            show_matrix(yc)
-            show_graph(yc,threshold=0.3)
+class Test():
 
-model = Process(reactions_count, metabolites, scount=m_count, pcount=m_count, step=step, iterations=iterations).to(
-    device)
+    def run_tests(self):
+        return
 
-optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
-##optimizer = torch.optim.Adadelta(model.parameters(), lr=1.0, rho=0.9, eps=1e-06, weight_decay=1.0)
-##optimizer = torch.optim.Adagrad(model.parameters(), lr=0.01, lr_decay=0, weight_decay=0, initial_accumulator_value=0)
-# optimizer = torch.optim.Adamax(model.parameters(), lr=0.002, betas=(0.9, 0.999), eps=1e-08, weight_decay=0)
-# optimizer = torch.optim.ASGD(model.parameters(), lr=0.1, lambd=0.0001, alpha=0.75, t0=1000000.0, weight_decay=0.01)
-# optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9, dampening=0, weight_decay=0, nesterov=False)
+    def run_one_test(self, generator_structure):
+        metabolites = range(m_count)
+        reactions = Process_new(reactions_count, metabolites,
+                                #scount=s_count, pcount=p_count,
+                                #low=1.0,high=1.0
+                                substrates=[1,1,1,0,0,0,0,0],
+                                products  =[0,0,0,1,1,1,0,0],
+                                step=step, iterations=iterations,
+                                ).to(device)
+        print_reactions(reactions)
 
-
-ploss = 0.0
-rloss = 0.0
-with torch.no_grad():
-    rt = reactions.get_reactions_tensor()
-    r1 = model.get_reactions_tensor()
-T = time.time()
-for epoch in range(epochs):
-    for x, y in dataset:
-
-        rand_x = torch.Tensor(size=(minibatch_size, m_count)).to(device)
-        rand_x.uniform_(sub_min, sub_max)
-
-        optimizer.zero_grad()
-
-        ym, yc = model(x)
-        loss = F.mse_loss(yc, y)
-        loss.backward(retain_graph=True)
-        optimizer.step()
-
-        # print(y_pred)
-        # print(y)
-        # print(loss)
-
+        #creation of dataset(?)
         with torch.no_grad():
-            r2 = model.get_reactions_tensor()
-            if (ploss > 0) and (loss.item() / ploss > 100):
-                print(r1)
-                print(r2)
-            ploss += float(loss.item())
-            rloss += float(compare_tensor_sets(rt, r2).item())
-            r1 = r2
+            dataset = []
+            for i in range(dataset_size):
+                batch_x = torch.Tensor(size=(minibatch_size,m_count)).to(device)
+                batch_x.uniform_(sub_min,sub_max)
+                print(batch_x)
+                ym,yc = reactions(batch_x)
+                print(ym)
+                dataset.append((batch_x,yc))
+                if i%1==0:
+                    print("batch {}: {}".format(i,yc.size()))
+                    print(yc.min())
+                    print(yc.max())
+                    show_matrix(yc)
+                    show_graph(yc,threshold=0.3)
 
-    if epoch % 1 == 0:
-        T = time.time() - T
-        ploss = ploss / 1 / dataset_size
-        rloss = rloss / 1 / dataset_size
-        print("{}\t time:{:2.3g} \t p-loss:{} \t r-loss :{}".format(epoch, T, ploss, rloss))
-        if ploss < (10 ** (-20)):
-            print("stop")
-            break
+        model = Process_new(reactions_count, metabolites, scount=m_count, pcount=m_count, step=step, iterations=iterations).to(
+            device)
+
+        optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
+        ##optimizer = torch.optim.Adadelta(model.parameters(), lr=1.0, rho=0.9, eps=1e-06, weight_decay=1.0)
+        ##optimizer = torch.optim.Adagrad(model.parameters(), lr=0.01, lr_decay=0, weight_decay=0, initial_accumulator_value=0)
+        # optimizer = torch.optim.Adamax(model.parameters(), lr=0.002, betas=(0.9, 0.999), eps=1e-08, weight_decay=0)
+        # optimizer = torch.optim.ASGD(model.parameters(), lr=0.1, lambd=0.0001, alpha=0.75, t0=1000000.0, weight_decay=0.01)
+        # optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9, dampening=0, weight_decay=0, nesterov=False)
+
+
         ploss = 0.0
         rloss = 0.0
+        with torch.no_grad():
+            rt = reactions.get_reactions_tensor()
+            r1 = model.get_reactions_tensor()
         T = time.time()
+        for epoch in range(epochs):
+            for x, y in dataset:
 
-predicted = model.get_reactions_tensor()
-predicted = predicted.round().int()
-predicted = [repr(t) for t in list(predicted)]
-predicted.sort()
+                rand_x = torch.Tensor(size=(minibatch_size, m_count)).to(device)
+                rand_x.uniform_(sub_min, sub_max)
+
+                optimizer.zero_grad()
+
+                ym, yc = model(x)
+                loss = F.mse_loss(yc, y)
+                loss.backward(retain_graph=True)
+                optimizer.step()
+
+                # print(y_pred)
+                # print(y)
+                # print(loss)
+
+                with torch.no_grad():
+                    r2 = model.get_reactions_tensor()
+                    if (ploss > 0) and (loss.item() / ploss > 100):
+                        print(r1)
+                        print(r2)
+                    ploss += float(loss.item())
+                    rloss += float(compare_tensor_sets(rt, r2).item())
+                    r1 = r2
+
+            if epoch % 1 == 0:
+                T = time.time() - T
+                ploss = ploss / 1 / dataset_size
+                rloss = rloss / 1 / dataset_size
+                print("{}\t time:{:2.3g} \t p-loss:{} \t r-loss :{}".format(epoch, T, ploss, rloss))
+                if ploss < (10 ** (-20)):
+                    print("stop")
+                    break
+                ploss = 0.0
+                rloss = 0.0
+                T = time.time()
+
+        predicted = model.get_reactions_tensor()
+        predicted = predicted.round().int()
+        predicted = [repr(t) for t in list(predicted)]
+        predicted.sort()
 
 
-original = reactions.get_reactions_tensor().int()
-original = [repr(t) for t in list(original)]
-original.sort()
+        original = reactions.get_reactions_tensor().int()
+        original = [repr(t) for t in list(original)]
+        original.sort()
 
-verdict = [x==y for x,y in zip(original, predicted)]
-print(verdict)
+        verdict = [x==y for x,y in zip(original, predicted)]
+        print(verdict)
 
-for i in range(len(predicted)):
-    print("reaction %d predicted: %r "%(i,original[i]==predicted[i]))
-    print("original:")
-    print(original[i])
-    print("predicted:")
-    print(predicted[i])
+        for i in range(len(predicted)):
+            print("reaction %d predicted: %r "%(i,original[i]==predicted[i]))
+            print("original:")
+            print(original[i])
+            print("predicted:")
+            print(predicted[i])
+
+
+test = Test()
+test.run_one_test()

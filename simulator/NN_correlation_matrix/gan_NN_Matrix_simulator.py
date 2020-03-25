@@ -21,6 +21,12 @@ class Generator(nn.Module):
     def forward(self, input):
         return self.model(input)
 
+    def get_reactions_tensor(self):
+        z = self.get_random_input_layer()
+        output = self(z)
+        output = output.resize(2,8) #todo change to local variables - 8 because of m_count and 2 because of input and output. multiply by r_count
+        return output
+
     def get_random_input_layer(self):
         return torch.randn(1, 100)
 
