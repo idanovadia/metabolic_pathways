@@ -396,7 +396,7 @@ class Test():
             print(original[i])
             print("predicted:")
             print(predicted[i])
-            self.calculate_error(original[i], predicted[i])
+            #self.calculate_error(original[i], predicted[i])
 
     #todo fix this
     def calculate_error(self, original, predicted):
