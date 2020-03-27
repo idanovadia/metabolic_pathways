@@ -1,0 +1,75 @@
+graph [
+  label "random"
+  type "trainset"
+  name "0_7_437.gml"
+  node [
+    id 0
+    label "l-phenylalanine"
+  ]
+  node [
+    id 1
+    label "gdp-beta;-l-fucose"
+  ]
+  node [
+    id 2
+    label "sucrose"
+  ]
+  node [
+    id 3
+    label "shikimate"
+  ]
+  node [
+    id 4
+    label "l-tyrosine"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.6106668124342106
+  ]
+  edge [
+    source 0
+    target 3
+    weight 0.4268278232522483
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.58034282142025
+  ]
+  edge [
+    source 0
+    target 4
+    weight 0.7832158514012088
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.3875364570389897
+  ]
+  edge [
+    source 1
+    target 3
+    weight 0.4153963693784759
+  ]
+  edge [
+    source 1
+    target 4
+    weight 0.4766794384546708
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.3351574843349215
+  ]
+  edge [
+    source 2
+    target 4
+    weight 0.3760815590802823
+  ]
+  edge [
+    source 3
+    target 4
+    weight 0.3188374742582401
+  ]
+]
