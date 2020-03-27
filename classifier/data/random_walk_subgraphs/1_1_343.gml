@@ -1,0 +1,9 @@
+graph [
+  label "positive"
+  type "trainset"
+  name "1_1_343.gml"
+  node [
+    id 0
+    label "udp-alpha;-d-galacturonate"
+  ]
+]
