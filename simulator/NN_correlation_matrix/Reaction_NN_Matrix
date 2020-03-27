@@ -284,7 +284,7 @@ class Test():
             name = structure.get_name()
             input_score, out_score = structure.get_score()
             #gan_model = structure.get_model()
-            print("Model: " + name + ". Input Error Score: " + input_score + ". Output Error Score: " + out_score)
+            print("Model: " + name + ". Input Error Score: " + input_score + "%. Output Error Score: " + out_score + "%")
 
     def run_one_test(self, gan_structure):
         gan_model = gan_structure.get_model()
