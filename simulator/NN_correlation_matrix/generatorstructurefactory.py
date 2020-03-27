@@ -6,12 +6,13 @@
 
 import torch.nn as nn
 Z_dim = 100 #input layer for the generator
+H_dim = 128
 
 class GeneratorStructureFactory(nn.Module):
 
     def __init__(self, out_dim):
         super().__init__()
-        self._out_dum = out_dim
+        self._out_dim = out_dim
         self._structures_list = self.create_strucute_list()
 
     def forward(self, *input):
@@ -31,7 +32,7 @@ class GeneratorStructureFactory(nn.Module):
         model = nn.Sequential(
             nn.Linear(Z_dim, 128),
             nn.ReLU(),
-            nn.Linear(128, self._out_dum),
+            nn.Linear(128, self._out_dim),
             nn.Sigmoid()
         )
         name = "1"
@@ -39,10 +40,14 @@ class GeneratorStructureFactory(nn.Module):
 
     def structure_2(self):
         model = nn.Sequential(
-            nn.Linear(Z_dim, 128),
+            nn.Linear(Z_dim, H_dim),
             nn.ReLU(),
-            nn.Linear(128, self._out_dum),
-            nn.Sigmoid()
+            nn.Linear(H_dim, H_dim * 2),
+            nn.Sigmoid(),
+            nn.Linear(H_dim * 2, H_dim),
+            nn.ReLU(),
+            nn.Linear(H_dim, self._out_dim),
+            nn.Sigmoid(),
         )
         name = "2"
         return GeneratorStructure(name, model)
@@ -59,6 +64,14 @@ class GeneratorStructure():
 
     def get_name(self):
         return self._name
+
+    #todo: maybe change in future because of multireaction
+    def set_score(self, input_error, out_error):
+        self.input_error = input_error
+        self.out_error = out_error
+
+    def get_score(self):
+        return self.input_error, self.out_error
 
 
 

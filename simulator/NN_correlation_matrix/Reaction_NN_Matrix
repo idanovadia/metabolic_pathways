@@ -8,6 +8,7 @@ import numpy as np
 from sklearn import cluster
 import networkx as nx
 
+from simulator.NN_correlation_matrix.Reaction import Reaction
 from simulator.NN_correlation_matrix.gan_NN_Matrix_simulator import Generator
 from simulator.NN_correlation_matrix.generatorstructurefactory import GeneratorStructureFactory
 
@@ -74,34 +75,7 @@ def generate_reaction_def(sub_count, prod_count, metabolites, low=0, high=1):
             [random.uniform(low, high) if i in prod else 0.0 for i in m])
 
 
-class Reaction(torch.nn.Module):
-    def __init__(self, sub, prod, eps=1e-20, step=0.0001):
-        super(Reaction, self).__init__()
-        self._sub = torch.nn.Parameter(sub.clone())
-        self._prod = torch.nn.Parameter(prod.clone())
-        self._step = step
-        self._eps = eps
 
-    def forward(self, x):
-        y = x
-        x = x / self._sub  # required sub
-        x = 1 - 1 / x  # the chance to collect all required substrates
-        x = F.relu(x)  # nullify negative prob
-        x = x.prod(dim=1, keepdim=True)  # total prob to collect all required substrates
-        x = x * self._step
-        x = y + x * (self._prod - self._sub)
-        return x
-
-    def get_def_tensor(self):
-        s = torch.unsqueeze(self._sub, 0)
-        p = torch.unsqueeze(self._prod, 0)
-        return torch.cat((s, p), dim=0)
-
-    def __repr__(self):
-        return self.__str__()
-
-    def __str__(self):
-        return "Reaction(\n\tsub={},\n\t prod={})".format(self._sub, self._prod)
 
 
 class MultiReaction(torch.nn.Module):
@@ -137,6 +111,7 @@ class MultiReaction_new(torch.nn.Module):
         self._reactions = torch.nn.ModuleList()
         global gan_model_global
         self._generator = Generator(m_count*2, gan_model_global)
+        self._is_generated = True
         #todo delete itreation - instead the output will be divided into reactions
         for i in range(rcount):
             if substrates == None:
@@ -144,6 +119,7 @@ class MultiReaction_new(torch.nn.Module):
                 sub, prod = self._generator.get_reactions_tensor()
             else:
                 sub, prod = substrates, products
+                self._is_generated = False
             sub = torch.Tensor(sub).to(device)  # so far there is no self.device in pytorch Modules
             prod = torch.Tensor(prod).to(device)  # so far there is no self.device in pytorch Modules
             r = Reaction(sub, prod, step=step)
@@ -151,6 +127,14 @@ class MultiReaction_new(torch.nn.Module):
 
     def forward(self, x):
         # random.shuffle(self._reactions)
+        if self._is_generated:
+            self._reactions =  torch.nn.ModuleList()
+            sub, prod = self._generator.get_reactions_tensor()
+            sub = torch.Tensor(sub).to(device)
+            prod = torch.Tensor(prod).to(device)
+            r = Reaction(sub, prod, step=step)
+            self._reactions.append(r)
+
         for m in self._reactions:
             x = m(x)
         return x
@@ -283,16 +267,27 @@ class Test():
         structure_list = generator_structure_factory.get_structure_list()
         for structure in structure_list:
             name = structure.get_name()
-            gan_model = structure.get_model()
+            #gan_model = structure.get_model()
             print("\n****************************************")
             print("Running Test With Structure: " + name)
             print("**************************************** \n ")
-            self.run_one_test(gan_model)
+            self.run_one_test(structure)
             print("\n****************************************")
             print("End of Test With Structure: " + name)
             print("**************************************** \n ")
 
-    def run_one_test(self, gan_model):
+        print("\n****************************************")
+        print("Summary")
+        print("**************************************** \n ")
+
+        for structure in structure_list:
+            name = structure.get_name()
+            input_score, out_score = structure.get_score()
+            #gan_model = structure.get_model()
+            print("Model: " + name + ". Input Error Score: " + input_score + ". Output Error Score: " + out_score)
+
+    def run_one_test(self, gan_structure):
+        gan_model = gan_structure.get_model()
         global gan_model_global
         gan_model_global = gan_model
         metabolites = range(m_count)
@@ -379,11 +374,14 @@ class Test():
 
         predicted = model.get_reactions_tensor()
         predicted = predicted.round().int()
+        # todo change this when there are many reactions
+        predict_for_cal = predicted #need this for my calculate_error function, the next line converts it for string for some reason
         predicted = [repr(t) for t in list(predicted)]
         predicted.sort()
 
 
         original = reactions.get_reactions_tensor().int()
+        original_for_cal = original #todo change this when there are many reactions
         original = [repr(t) for t in list(original)]
         original.sort()
 
@@ -396,20 +394,26 @@ class Test():
             print(original[i])
             print("predicted:")
             print(predicted[i])
-            #self.calculate_error(original[i], predicted[i])
 
-    #todo fix this
-    def calculate_error(self, original, predicted):
+        #todo change this when there are many reactions, perhaps can be in the loop before
+        self.calculate_error(original_for_cal, predict_for_cal, gan_structure)
+
+    def calculate_error(self, original, predicted, gan_structure):
         error_in_input = 0
-        for i in range(m_count):
-            if(original[0][i] != predicted[0][i]):
-                error_in_input = error_in_input + 1
         error_in_output = 0
         for i in range(m_count):
-            if(original[1][i] != predicted[1][i]):
+            if(original[0][0][i] != predicted[0][0][i]):
+                error_in_input = error_in_input + 1
+
+            if (original[0][1][i] != predicted[0][1][i]):
                 error_in_output = error_in_output + 1
-        print("Error in input: " + str( (error_in_input/m_count) * 100))
-        print("Error in output: " + str((error_in_output / m_count) * 100))
+
+        input_error = str( (error_in_input/m_count) * 100)
+        out_error = str((error_in_output / m_count) * 100)
+        print("Error in input: " + input_error + "%")
+        print("Error in output: " + out_error + "%")
+
+        gan_structure.set_score(input_error, out_error)
 
 test = Test()
 test.run_tests()
