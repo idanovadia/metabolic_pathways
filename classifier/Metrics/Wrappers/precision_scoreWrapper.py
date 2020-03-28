@@ -7,9 +7,8 @@ class precision_scoreWrapper(MetricsAbstract):
     def __init__(self,**kwargs):
         self.name="precision"
 
-    def calculate(self,predictions):
-        print("Calculating precision")
-        return precision_score(predictions[0],predictions[1],labels=['positive','negative'],average='binary',sample_weight=None,pos_label="positive")
+    def calculate(self,y_pred,y_true):
+        return precision_score(y_true,y_pred,labels=['positive','negative'],average='binary',sample_weight=None,pos_label="positive")
 
 
 

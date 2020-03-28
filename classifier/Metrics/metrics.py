@@ -4,6 +4,8 @@ from classifier.Metrics.Wrappers.accuracy_score import accuracyScoreWrapper
 from classifier.Metrics.Wrappers.fscore import fscoreWrapper
 from classifier.Metrics.Wrappers.recall_scoreWrapper import recal_scoreWrapper
 from classifier.Metrics.Wrappers.precision_scoreWrapper import precision_scoreWrapper
+from classifier.Metrics.Wrappers.rates import rates
+
 
 class Metrics(AbstractConfigClass):
 
@@ -22,6 +24,7 @@ class Metrics(AbstractConfigClass):
         self.metrics_dict['f1score'] = fscoreWrapper
         self.metrics_dict['recall']=recal_scoreWrapper
         self.metrics_dict['precision']=precision_scoreWrapper
+        self.metrics_dict['rates']=rates
 
 
     def fillMetricsDir(self):

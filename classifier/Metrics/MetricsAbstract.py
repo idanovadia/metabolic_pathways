@@ -4,7 +4,7 @@ class MetricsAbstract():
 
     def __init__(self):
         pass
-    def calculate(self,predictions):
+    def calculate(self,y_pred,y_true):
         pass
 
     def getMetricName(self,train=False):
