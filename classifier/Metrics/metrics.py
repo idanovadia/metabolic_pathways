@@ -2,6 +2,8 @@ from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 import json
 from classifier.Metrics.Wrappers.accuracy_score import accuracyScoreWrapper
 from classifier.Metrics.Wrappers.fscore import fscoreWrapper
+from classifier.Metrics.Wrappers.recall_scoreWrapper import recal_scoreWrapper
+from classifier.Metrics.Wrappers.precision_scoreWrapper import precision_scoreWrapper
 
 class Metrics(AbstractConfigClass):
 
@@ -18,6 +20,8 @@ class Metrics(AbstractConfigClass):
     def initMetricsDict(self):
         self.metrics_dict['accuracy']=accuracyScoreWrapper
         self.metrics_dict['f1score'] = fscoreWrapper
+        self.metrics_dict['recall']=recal_scoreWrapper
+        self.metrics_dict['precision']=precision_scoreWrapper
 
 
     def fillMetricsDir(self):
