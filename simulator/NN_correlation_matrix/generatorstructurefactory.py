@@ -21,8 +21,12 @@ class GeneratorStructureFactory(nn.Module):
 
     def create_strucute_list(self):
         structure_list = []
-        structure_list.append(self.structure_1())
-        structure_list.append(self.structure_2())
+        #structure_list.append(self.structure_1())
+        #structure_list.append(self.structure_2())
+        #structure_list.append(self.structure_3())
+        #structure_list.append(self.structure_4())
+        #structure_list.append(self.structure_5())
+        structure_list.append(self.structure_6())
         return structure_list
 
     def get_structure_list(self):
@@ -50,6 +54,60 @@ class GeneratorStructureFactory(nn.Module):
             nn.Sigmoid(),
         )
         name = "2"
+        return GeneratorStructure(name, model)
+
+    def structure_3(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim*2),
+            nn.Linear(Z_dim*2, Z_dim * 4),
+            nn.Linear(Z_dim*4, Z_dim * 2),
+            nn.Linear(Z_dim*2, self._out_dim),
+        )
+        name = "3"
+        return GeneratorStructure(name, model)
+
+    def structure_4(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim*2),
+            nn.Linear(Z_dim*2, Z_dim * 4),
+            nn.Linear(Z_dim*4, Z_dim * 8),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.Linear(Z_dim*4, Z_dim * 2),
+            nn.Linear(Z_dim*2, self._out_dim),
+        )
+        name = "4"
+        return GeneratorStructure(name, model)
+
+    def structure_5(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim*2),
+            nn.Linear(Z_dim*2, Z_dim * 4),
+            nn.Linear(Z_dim*4, Z_dim * 8),
+            nn.Linear(Z_dim * 8, Z_dim * 16),
+            nn.Linear(Z_dim * 16, Z_dim * 8),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.Linear(Z_dim*4, Z_dim * 2),
+            nn.Linear(Z_dim*2, self._out_dim),
+        )
+        name = "5"
+        return GeneratorStructure(name, model)
+
+    def structure_6(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim * 2),
+            nn.ReLU(),
+            nn.Linear(Z_dim * 2, Z_dim * 4),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 4, Z_dim * 8),
+            nn.ReLU(),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 4, Z_dim * 2),
+            nn.ReLU(),
+            nn.Linear(Z_dim * 2, self._out_dim),
+            nn.Sigmoid(),
+        )
+        name = "6"
         return GeneratorStructure(name, model)
 
 
