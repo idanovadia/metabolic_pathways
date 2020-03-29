@@ -6,7 +6,7 @@ class accuracyScoreWrapper(MetricsAbstract):
     def __init__(self,**kwargs):
         self.name="accuracy"
         pass
-    def calculate(self,predictions):
-        return accuracy_score(predictions[0],predictions[1],sample_weight=None,)
+    def calculate(self,y_pred,y_true):
+        return accuracy_score(y_true,y_pred,sample_weight=None,)
 
 

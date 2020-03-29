@@ -7,9 +7,8 @@ class recal_scoreWrapper(MetricsAbstract):
     def __init__(self,**kwargs):
         self.name="recall"
 
-    def calculate(self,predictions):
-        print("calculating recall")
-        return recall_score(predictions[0],predictions[1],average='binary',sample_weight=None,pos_label="positive")
+    def calculate(self,y_pred,y_true):
+        return recall_score(y_true,y_pred,labels=['positive','negative'],average='binary',sample_weight=None,pos_label="positive")
 
 
 

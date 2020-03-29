@@ -1,14 +1,12 @@
 from classifier.Classification.Wrappers.catboostWrapper import CatBoost
 from classifier.Classification.Wrappers.randomForestWrapper import RandomForestWrapper
-# from classifier.Classification.Wrappers.svmWrapper import SvmWrapper
+from classifier.Classification.Wrappers.svmWrapper import SvmWrapper
 from classifier.Classification.Wrappers.xgboostWrapper import xgboostWrapper
 from classifier.Classification.Wrappers.lightgbmWrapper import lightgbmWrapper
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 from classifier.Classification.result import Result
 from classifier.Metrics.metrics import Metrics
 import timeit
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import f1_score
 from classifier.Validation.validation import validation
 import json
 import pandas as pd
@@ -46,7 +44,7 @@ class classifier(AbstractConfigClass):
         self.classifiers_dict['xgboost'] = xgboostWrapper
         self.classifiers_dict['lightgbm'] = lightgbmWrapper
         self.classifiers_dict['CatBoost'] = CatBoost
-        # self.classifiers_dict['SvmWrapper'] = SvmWrapper
+        self.classifiers_dict['Svm'] = SvmWrapper
 
     def fillClassifiersDirectory(self):
         for classifier in self.classifiers_list:
@@ -63,6 +61,7 @@ class classifier(AbstractConfigClass):
                     cls.fit(x_train, y_train)
                     predictions.append([cls.predict(x_train), y_train, cls.predict(x_test), y_test])
 
+
                 scores = self.calculateScore(predictions)
                 self.resultdict.append(Result(cls.name, val.name, scores))
                 # self.resultdict[(cls.name,val.name)]={'train':trainsum/count,'test':testsum/count}
@@ -78,8 +77,8 @@ class classifier(AbstractConfigClass):
             test_sum = 0
             train_sum = 0
             for pred in predictions:
-                train_sum += metric.calculate([pred[0], pred[1]])
-                test_sum += metric.calculate([pred[2], pred[3]])
+                train_sum += metric.calculate(pred[0], pred[1])
+                test_sum += metric.calculate(pred[2], pred[3])
                 count += 1
             train_score = (metric.getMetricName(train=True), train_sum / count)
             test_score = (metric.getMetricName(), test_sum / count)
