@@ -6,6 +6,7 @@ import inspect
 from classifier.Validation.validationMethodAbstract import ValidationMethodAbstract
 from classifier.Validation.Wrappers.LeaveOneOutWrapper import LeaveOneOutWrapper
 from classifier.Validation.Wrappers.KFoldWrapper import KFoldWrapper
+from classifier.Validation.Wrappers.stratifiedKFoldWrapper import stratifiedKFoldWrapper
 
 class validation(AbstractConfigClass):
 
@@ -26,6 +27,7 @@ class validation(AbstractConfigClass):
     def initValidationDict(self):
         self.validation_dict['LeaveOneOut']=LeaveOneOutWrapper
         self.validation_dict['KFold'] = KFoldWrapper
+        self.validation_dict['StratifiedKFold']=stratifiedKFoldWrapper
 
 
     def fillValidationDirectory(self,x_train,y_train):
