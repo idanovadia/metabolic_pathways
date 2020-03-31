@@ -8,7 +8,7 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "d-threo-isocitrate"
   ]
   node [
     id 2
@@ -16,7 +16,7 @@ graph [
   ]
   node [
     id 3
-    label "d-threo-isocitrate"
+    label "phosphate"
   ]
   edge [
     source 0
@@ -25,18 +25,18 @@ graph [
   ]
   edge [
     source 0
-    target 3
+    target 1
     weight 0.4380493304421266
   ]
   edge [
     source 0
-    target 1
+    target 3
     weight 0.5207469450961464
   ]
   edge [
     source 1
     target 2
-    weight 0.6510037877502363
+    weight 0.5525102549763423
   ]
   edge [
     source 1
@@ -46,6 +46,6 @@ graph [
   edge [
     source 2
     target 3
-    weight 0.5525102549763423
+    weight 0.6510037877502363
   ]
 ]

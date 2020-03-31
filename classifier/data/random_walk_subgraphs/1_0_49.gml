@@ -4,6 +4,6 @@ graph [
   name "1_0_49.gml"
   node [
     id 0
-    label "beta;-alanine"
+    label "l-aspartate"
   ]
 ]

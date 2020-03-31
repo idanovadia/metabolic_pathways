@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glycine"
+    label "phosphate"
   ]
   node [
     id 1
@@ -15,16 +15,16 @@ graph [
   ]
   node [
     id 3
-    label "phosphate"
+    label "glycine"
   ]
   edge [
     source 0
-    target 2
-    weight 0.8435878621427529
+    target 1
+    weight 0.6510037877502363
   ]
   edge [
-    source 1
+    source 2
     target 3
-    weight 0.6510037877502363
+    weight 0.8435878621427529
   ]
 ]

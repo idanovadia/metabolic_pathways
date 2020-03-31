@@ -3,7 +3,7 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "glycine"
+    label "l-tryptophan"
   ]
   node [
     id 1
@@ -11,7 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "l-tryptophan"
+    label "glycine"
   ]
   edge [
     source 0

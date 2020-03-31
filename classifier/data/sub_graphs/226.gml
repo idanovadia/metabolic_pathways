@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 2
-    label "gdp-beta;-l-fucose"
+    label "gdp-alpha;-d-mannose"
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.8522832379314891
   ]
 ]

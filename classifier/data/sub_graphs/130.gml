@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "putrescine"
   ]
   node [
     id 2
-    label "putrescine"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.6510037877502363
   ]
 ]

@@ -4,6 +4,6 @@ graph [
   name "1_1_306.gml"
   node [
     id 0
-    label "l-methionine"
+    label "phosphate"
   ]
 ]

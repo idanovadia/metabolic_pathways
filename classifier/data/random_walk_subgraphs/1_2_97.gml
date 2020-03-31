@@ -4,15 +4,6 @@ graph [
   name "1_2_97.gml"
   node [
     id 0
-    label "l-alanine"
-  ]
-  node [
-    id 1
-    label "2-oxoglutarate"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 0.2548733650805993
+    label "l-glutamate"
   ]
 ]

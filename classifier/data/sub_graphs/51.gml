@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-methionine"
   ]
   node [
     id 2
-    label "l-methionine"
+    label "l-alanine"
   ]
   node [
     id 3
@@ -19,12 +19,12 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.588887828830241
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.8285406483445502
   ]
   edge [

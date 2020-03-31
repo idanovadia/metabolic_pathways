@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "l-arginine"
+    label "l-proline"
   ]
   node [
     id 2
@@ -15,21 +15,21 @@ graph [
   ]
   node [
     id 3
-    label "l-proline"
+    label "l-glutamate"
   ]
   edge [
-    source 1
+    source 0
     target 2
     weight 0.3633276792779562
   ]
   edge [
-    source 1
-    target 3
+    source 0
+    target 1
     weight 0.4164864050050148
   ]
   edge [
-    source 2
-    target 3
+    source 1
+    target 2
     weight 0.3520715129550628
   ]
 ]

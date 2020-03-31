@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-proline"
   ]
   node [
     id 2
-    label "l-proline"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.6510037877502363
   ]
 ]

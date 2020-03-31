@@ -1,9 +1,9 @@
 graph [
-  label "random"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-aspartate"
   ]
   node [
     id 1
@@ -11,15 +11,15 @@ graph [
   ]
   node [
     id 2
-    label "l-valine"
-  ]
-  node [
-    id 3
     label "l-lysine"
   ]
   node [
+    id 3
+    label "l-valine"
+  ]
+  node [
     id 4
-    label "l-aspartate"
+    label "phosphate"
   ]
   edge [
     source 0
@@ -28,12 +28,12 @@ graph [
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight 0.5830461107886474
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 0.6314071499873977
   ]
   edge [

@@ -3,33 +3,28 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-alanine"
-  ]
-  node [
-    id 1
     label "2-oxoglutarate"
   ]
   node [
+    id 1
+    label "l-alanine"
+  ]
+  node [
     id 2
-    label "l-tryptophan"
+    label "l-glutamate"
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "l-tryptophan"
   ]
   edge [
     source 0
-    target 1
-    weight 0.2548733650805993
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.5403694072428842
+    target 3
+    weight 0.422963968329234
   ]
   edge [
     source 1
-    target 2
-    weight 0.422963968329234
+    target 3
+    weight 0.5403694072428842
   ]
 ]
