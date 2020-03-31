@@ -4,6 +4,10 @@ from classifier.Metrics.Wrappers.accuracy_score import accuracyScoreWrapper
 from classifier.Metrics.Wrappers.fscore import fscoreWrapper
 from classifier.Metrics.Wrappers.recall_scoreWrapper import recal_scoreWrapper
 from classifier.Metrics.Wrappers.precision_scoreWrapper import precision_scoreWrapper
+from classifier.Metrics.Wrappers.FP import FP
+from classifier.Metrics.Wrappers.FN import FN
+from classifier.Metrics.Wrappers.TP import TP
+from classifier.Metrics.Wrappers.TN import TN
 from classifier.Metrics.Wrappers.rates import rates
 
 
@@ -24,6 +28,10 @@ class Metrics(AbstractConfigClass):
         self.metrics_dict['f1score'] = fscoreWrapper
         self.metrics_dict['recall']=recal_scoreWrapper
         self.metrics_dict['precision']=precision_scoreWrapper
+        self.metrics_dict['FP']=FP
+        self.metrics_dict['FN'] = FN
+        self.metrics_dict['TP'] = TP
+        self.metrics_dict['TN'] = TN
         self.metrics_dict['rates']=rates
 
 

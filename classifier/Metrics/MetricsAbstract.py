@@ -8,7 +8,8 @@ class MetricsAbstract():
         pass
 
     def getMetricName(self,train=False):
-        if train:
-            return "train " + self.name
-        else:
-            return "test " + self.name
+        # if train:
+        #     return "train " + self.name
+        # else:
+        #     return "test " + self.name
+        return self.name
