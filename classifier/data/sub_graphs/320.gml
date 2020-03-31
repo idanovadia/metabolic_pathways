@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "citrate"
   ]
   node [
     id 1
-    label "citrate"
+    label "phosphate"
   ]
   edge [
     source 0

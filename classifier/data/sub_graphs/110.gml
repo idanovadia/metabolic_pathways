@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "d-glycerate"
+    label "glucose"
   ]
   node [
     id 2
-    label "glucose"
+    label "d-glycerate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.8362263468292753
   ]
 ]

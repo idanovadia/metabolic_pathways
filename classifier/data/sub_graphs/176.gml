@@ -3,18 +3,18 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "glycerol"
   ]
   node [
     id 1
-    label "glycerol"
+    label "phosphate"
   ]
   node [
     id 2
     label "l-serine"
   ]
   edge [
-    source 1
+    source 0
     target 2
     weight 0.3823643502981909
   ]

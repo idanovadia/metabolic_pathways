@@ -1,5 +1,5 @@
 graph [
-  label "random"
+  label "negative"
   type "trainset"
   node [
     id 0
@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "dehydroascorbate (bicyclic form)"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "dehydroascorbate (bicyclic form)"
   ]
   node [
     id 3
@@ -19,12 +19,12 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.3248062489421025
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.7104833286285996
   ]
   edge [
@@ -40,11 +40,11 @@ graph [
   edge [
     source 1
     target 3
-    weight 0.6093210323648746
+    weight 0.3038158544099706
   ]
   edge [
     source 2
     target 3
-    weight 0.3038158544099706
+    weight 0.6093210323648746
   ]
 ]

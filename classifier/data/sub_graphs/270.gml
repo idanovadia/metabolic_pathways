@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "udp-alpha;-d-galacturonate"
+    label "glucose"
   ]
   node [
     id 2
@@ -15,16 +15,16 @@ graph [
   ]
   node [
     id 3
-    label "glucose"
+    label "udp-alpha;-d-galacturonate"
   ]
   edge [
     source 0
-    target 1
+    target 3
     weight 0.3856481602867358
   ]
   edge [
-    source 2
-    target 3
+    source 1
+    target 2
     weight 0.5997968146524117
   ]
 ]

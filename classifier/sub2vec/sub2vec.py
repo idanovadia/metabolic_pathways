@@ -1,11 +1,14 @@
 import pandas as pd
 import numpy as np
 from random import randint
+import random
 import networkx as nx
 import os
 import classifier.sub2vec.randonWalk as rw
 import classifier.sub2vec.doc2vec as d2v
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
+from queue import PriorityQueue
+import heapq
 
 
 class Sub2Vec(AbstractConfigClass):
@@ -34,12 +37,15 @@ class Sub2Vec(AbstractConfigClass):
             relative_path=self.config_parser.eval(self.__class__.__name__, 'classifier_files_directory'))
         self.subGraphs_list = []
         self.rw_list_of_graphs_train = []
+        self.rw_list_of_graphs_train_positive = []
+        self.rw_list_of_graphs_train_negative = []
         self.rw_list_of_graphs_test = []
         pass
 
     def exec(self):
         self.generateSubGraphs()
         self.randomWalk()
+        self.chooseBestSubgraphs()
         self.WriteAll()
         self.doc2vec()
         self.generateTrain()
@@ -78,6 +84,28 @@ class Sub2Vec(AbstractConfigClass):
             #         self.rw_list_of_graphs_test = random_walk_object.insertGraphToSet(
             #             list_of_graphs=self.rw_list_of_graphs_test,
             #             graph=random_walk_object.randomWalk(g))
+
+    def chooseBestSubgraphs(self):
+        self.createLabeledList(self.rw_list_of_graphs_train_positive, "positive")
+        self.createLabeledList(self.rw_list_of_graphs_train_negative, "negative")
+        self.rw_list_of_graphs_train =[]
+        self.bestPositives()
+        self.bestNegatives()
+        self.rw_list_of_graphs_train = self.rw_list_of_graphs_train_negative[:100] + self.rw_list_of_graphs_train_positive[:100] 
+        # self.rw_list_of_graphs_train = self.rw_list_of_graphs_train_negative[:len(self.rw_list_of_graphs_train_positive)] + self.rw_list_of_graphs_train_positive
+        random.shuffle(self.rw_list_of_graphs_train)
+
+    def bestPositives(self):
+        self.rw_list_of_graphs_train_positive.sort(key=lambda x: (len(x.nodes), len(x.nodes)),reverse=True);
+
+    def bestNegatives(self):
+        self.rw_list_of_graphs_train_negative.sort(key=lambda x: (len(x.nodes), len(x.nodes)),reverse=True);
+
+
+    def createLabeledList(self, labeledList, label):
+        for i in self.rw_list_of_graphs_train:
+            if i.graph["label"] == label:
+                labeledList.append(i)
 
     '''Using Doc2vec to get embedding'''
 
@@ -125,3 +153,5 @@ class Sub2Vec(AbstractConfigClass):
     def writeFile(self, G):
         nx.write_gml(G=G, path=os.path.join(self.random_walk_directory_path_output, G.name))
         # nx.write_gml(G=G, path=os.path.join(self.random_walk_directory_path_output, str(id) + ".gml"))
+
+

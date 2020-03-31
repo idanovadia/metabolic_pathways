@@ -3,15 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "fumarate"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "fumarate"
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "l-glutamate"
   ]
   node [
     id 3
@@ -19,17 +19,17 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.4263434855086067
   ]
   edge [
     source 0
     target 3
-    weight 0.480832649206715
+    weight 0.3464914106866316
   ]
   edge [
-    source 2
+    source 1
     target 3
-    weight 0.3464914106866316
+    weight 0.480832649206715
   ]
 ]

@@ -1,9 +1,9 @@
 graph [
-  label "random"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-phenylalanine"
+    label "sucrose"
   ]
   node [
     id 1
@@ -11,7 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "sucrose"
+    label "l-phenylalanine"
   ]
   edge [
     source 0

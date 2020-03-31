@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "gdp-alpha;-d-mannose"
   ]
   node [
     id 2
@@ -15,36 +15,36 @@ graph [
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 1
-    weight 0.4756327147119258
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.3432588734918678
-  ]
-  edge [
-    source 0
-    target 3
-    weight 0.6477135913764945
-  ]
-  edge [
-    source 1
-    target 2
-    weight 0.5889560002830893
-  ]
-  edge [
-    source 1
     target 3
     weight 0.6510037877502363
   ]
   edge [
+    source 0
+    target 2
+    weight 0.5207469450961464
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.6477135913764945
+  ]
+  edge [
+    source 1
+    target 3
+    weight 0.4756327147119258
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.3432588734918678
+  ]
+  edge [
     source 2
     target 3
-    weight 0.5207469450961464
+    weight 0.5889560002830893
   ]
 ]

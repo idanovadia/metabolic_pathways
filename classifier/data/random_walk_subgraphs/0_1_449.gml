@@ -1,5 +1,5 @@
 graph [
-  label "random"
+  label "negative"
   type "trainset"
   name "0_1_449.gml"
   node [

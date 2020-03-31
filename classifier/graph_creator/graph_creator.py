@@ -110,6 +110,8 @@ class GraphCreator(AbstractConfigClass):
                 sub_graph_dir_list = os.listdir(dirpath)
                 label = dirpath.split(sep=os.sep)[-1]
                 type = dirpath.split(sep=os.sep)[-2]
+                if label == "random":
+                    label = "negative"
                 for file in sub_graph_dir_list:
                     new_graph = self.sub_graph(os.path.join(dirpath, file), label, type, self.main_graph)
                     self.subGraphs_list.append(new_graph.graph)

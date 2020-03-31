@@ -4,6 +4,6 @@ graph [
   name "1_0_56.gml"
   node [
     id 0
-    label "phosphate"
+    label "glycerol"
   ]
 ]

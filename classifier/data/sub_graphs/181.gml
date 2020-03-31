@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "uracil"
   ]
   node [
     id 1
@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "uracil"
+    label "phosphate"
   ]
   edge [
-    source 1
-    target 2
+    source 0
+    target 1
     weight 0.4743560180923546
   ]
 ]

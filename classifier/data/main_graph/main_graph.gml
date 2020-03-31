@@ -631,11 +631,6 @@ graph [
   ]
   edge [
     source 1
-    target 5
-    weight 0.2548733650805993
-  ]
-  edge [
-    source 1
     target 6
     weight 0.6098175065214301
   ]
@@ -811,11 +806,6 @@ graph [
   ]
   edge [
     source 1
-    target 41
-    weight 0.2767150689467509
-  ]
-  edge [
-    source 1
     target 42
     weight 0.6288725447908934
   ]
@@ -873,11 +863,6 @@ graph [
     source 1
     target 53
     weight 0.5154836860390344
-  ]
-  edge [
-    source 1
-    target 54
-    weight 0.2868507399296453
   ]
   edge [
     source 1
@@ -1321,11 +1306,6 @@ graph [
   ]
   edge [
     source 3
-    target 23
-    weight 0.2992009136061651
-  ]
-  edge [
-    source 3
     target 24
     weight 0.4069088245161324
   ]
@@ -1381,11 +1361,6 @@ graph [
   ]
   edge [
     source 3
-    target 35
-    weight 0.2539476698148144
-  ]
-  edge [
-    source 3
     target 36
     weight 0.4179198934027428
   ]
@@ -1393,11 +1368,6 @@ graph [
     source 3
     target 37
     weight 0.388449512420418
-  ]
-  edge [
-    source 3
-    target 38
-    weight 0.2498475685772375
   ]
   edge [
     source 3
@@ -1856,11 +1826,6 @@ graph [
   ]
   edge [
     source 5
-    target 13
-    weight 0.2340538462540773
-  ]
-  edge [
-    source 5
     target 15
     weight 0.4429892443268689
   ]
@@ -1901,28 +1866,13 @@ graph [
   ]
   edge [
     source 5
-    target 23
-    weight 0.2901457642538198
-  ]
-  edge [
-    source 5
     target 24
     weight 0.4192008645924485
   ]
   edge [
     source 5
-    target 25
-    weight 0.2691442261350318
-  ]
-  edge [
-    source 5
     target 26
     weight 0.3960162109458223
-  ]
-  edge [
-    source 5
-    target 27
-    weight 0.2962733141543221
   ]
   edge [
     source 5
@@ -1941,11 +1891,6 @@ graph [
   ]
   edge [
     source 5
-    target 32
-    weight 0.2571543921560698
-  ]
-  edge [
-    source 5
     target 33
     weight 0.4068745831784469
   ]
@@ -1956,23 +1901,8 @@ graph [
   ]
   edge [
     source 5
-    target 35
-    weight 0.2289146721261399
-  ]
-  edge [
-    source 5
     target 36
     weight 0.3248062489421025
-  ]
-  edge [
-    source 5
-    target 37
-    weight 0.2941928331749219
-  ]
-  edge [
-    source 5
-    target 38
-    weight 0.2189324783266633
   ]
   edge [
     source 5
@@ -2036,28 +1966,8 @@ graph [
   ]
   edge [
     source 5
-    target 53
-    weight 0.2829977261257004
-  ]
-  edge [
-    source 5
     target 54
     weight 0.3940195885850248
-  ]
-  edge [
-    source 5
-    target 55
-    weight 0.2490967100059549
-  ]
-  edge [
-    source 5
-    target 56
-    weight 0.2928561727576023
-  ]
-  edge [
-    source 5
-    target 57
-    weight 0.254413996348359
   ]
   edge [
     source 5
@@ -2481,11 +2391,6 @@ graph [
   ]
   edge [
     source 7
-    target 29
-    weight 0.2710387570483722
-  ]
-  edge [
-    source 7
     target 30
     weight 0.7292933844799988
   ]
@@ -2588,11 +2493,6 @@ graph [
     source 7
     target 50
     weight 0.63541716715581
-  ]
-  edge [
-    source 7
-    target 51
-    weight 0.2732427237087471
   ]
   edge [
     source 7
@@ -2726,11 +2626,6 @@ graph [
   ]
   edge [
     source 8
-    target 23
-    weight 0.2973851193532613
-  ]
-  edge [
-    source 8
     target 24
     weight 0.4116814340554733
   ]
@@ -2798,11 +2693,6 @@ graph [
     source 8
     target 37
     weight 0.4579601284561785
-  ]
-  edge [
-    source 8
-    target 38
-    weight 0.2840208632193083
   ]
   edge [
     source 8
@@ -4246,11 +4136,6 @@ graph [
   ]
   edge [
     source 14
-    target 18
-    weight 0.2810959697595373
-  ]
-  edge [
-    source 14
     target 19
     weight 0.4878448532147957
   ]
@@ -4273,11 +4158,6 @@ graph [
     source 14
     target 23
     weight 0.3207479594610274
-  ]
-  edge [
-    source 14
-    target 24
-    weight 0.2677450133000611
   ]
   edge [
     source 14
@@ -4331,11 +4211,6 @@ graph [
   ]
   edge [
     source 14
-    target 35
-    weight 0.2910736425072144
-  ]
-  edge [
-    source 14
     target 36
     weight 0.4592649956353061
   ]
@@ -4343,11 +4218,6 @@ graph [
     source 14
     target 37
     weight 0.306592921735097
-  ]
-  edge [
-    source 14
-    target 38
-    weight 0.2591469868417454
   ]
   edge [
     source 14
@@ -4411,18 +4281,8 @@ graph [
   ]
   edge [
     source 14
-    target 51
-    weight 0.2848515679282197
-  ]
-  edge [
-    source 14
     target 52
     weight 0.6254698207765071
-  ]
-  edge [
-    source 14
-    target 53
-    weight 0.2993818789631867
   ]
   edge [
     source 14
@@ -5006,11 +4866,6 @@ graph [
   ]
   edge [
     source 17
-    target 29
-    weight 0.2893641802098476
-  ]
-  edge [
-    source 17
     target 30
     weight 0.6571774960335452
   ]
@@ -5231,11 +5086,6 @@ graph [
   ]
   edge [
     source 18
-    target 29
-    weight 0.2900432686084391
-  ]
-  edge [
-    source 18
     target 30
     weight 0.5171989686540417
   ]
@@ -5276,11 +5126,6 @@ graph [
   ]
   edge [
     source 18
-    target 38
-    weight 0.244649336353998
-  ]
-  edge [
-    source 18
     target 39
     weight 0.5317822236019748
   ]
@@ -5303,11 +5148,6 @@ graph [
     source 18
     target 43
     weight 0.5823857379316253
-  ]
-  edge [
-    source 18
-    target 44
-    weight 0.290843780744196
   ]
   edge [
     source 18
@@ -5666,11 +5506,6 @@ graph [
   ]
   edge [
     source 20
-    target 29
-    weight 0.2708324032731246
-  ]
-  edge [
-    source 20
     target 30
     weight 0.7399945902235575
   ]
@@ -5723,11 +5558,6 @@ graph [
     source 20
     target 40
     weight 0.6202887765299443
-  ]
-  edge [
-    source 20
-    target 41
-    weight 0.2843215849957891
   ]
   edge [
     source 20
@@ -5848,11 +5678,6 @@ graph [
     source 21
     target 23
     weight 0.4384208531974889
-  ]
-  edge [
-    source 21
-    target 24
-    weight 0.2625776882758772
   ]
   edge [
     source 21
@@ -6281,11 +6106,6 @@ graph [
   ]
   edge [
     source 23
-    target 29
-    weight 0.2553055639020659
-  ]
-  edge [
-    source 23
     target 30
     weight 0.5570107609657843
   ]
@@ -6321,11 +6141,6 @@ graph [
   ]
   edge [
     source 23
-    target 37
-    weight 0.2857337097134722
-  ]
-  edge [
-    source 23
     target 38
     weight 0.3230765647323574
   ]
@@ -6338,11 +6153,6 @@ graph [
     source 23
     target 40
     weight 0.4364978515510882
-  ]
-  edge [
-    source 23
-    target 41
-    weight 0.2695813265962075
   ]
   edge [
     source 23
@@ -6476,11 +6286,6 @@ graph [
   ]
   edge [
     source 24
-    target 29
-    weight 0.2686073161889345
-  ]
-  edge [
-    source 24
     target 30
     weight 0.4195886575396948
   ]
@@ -6513,16 +6318,6 @@ graph [
     source 24
     target 36
     weight 0.3152294330587748
-  ]
-  edge [
-    source 24
-    target 37
-    weight 0.2871883090135082
-  ]
-  edge [
-    source 24
-    target 38
-    weight 0.2410791123566739
   ]
   edge [
     source 24
@@ -6583,11 +6378,6 @@ graph [
     source 24
     target 50
     weight 0.405083282689319
-  ]
-  edge [
-    source 24
-    target 51
-    weight 0.2278234851122414
   ]
   edge [
     source 24
@@ -6666,11 +6456,6 @@ graph [
   ]
   edge [
     source 25
-    target 29
-    weight 0.2366253939763503
-  ]
-  edge [
-    source 25
     target 30
     weight 0.5534088974389
   ]
@@ -6706,11 +6491,6 @@ graph [
   ]
   edge [
     source 25
-    target 37
-    weight 0.2777857249251928
-  ]
-  edge [
-    source 25
     target 38
     weight 0.3625056014866969
   ]
@@ -6733,11 +6513,6 @@ graph [
     source 25
     target 43
     weight 0.4902421831156353
-  ]
-  edge [
-    source 25
-    target 44
-    weight 0.2930550937058261
   ]
   edge [
     source 25
@@ -6771,11 +6546,6 @@ graph [
   ]
   edge [
     source 25
-    target 51
-    weight 0.2454579825037381
-  ]
-  edge [
-    source 25
     target 52
     weight 0.5632675161560725
   ]
@@ -6783,11 +6553,6 @@ graph [
     source 25
     target 53
     weight 0.3630537765970841
-  ]
-  edge [
-    source 25
-    target 54
-    weight 0.2566197582150778
   ]
   edge [
     source 25
@@ -7201,11 +6966,6 @@ graph [
   ]
   edge [
     source 28
-    target 29
-    weight 0.2851356812636223
-  ]
-  edge [
-    source 28
     target 30
     weight 0.6592180828028624
   ]
@@ -7258,11 +7018,6 @@ graph [
     source 28
     target 40
     weight 0.6161794002600243
-  ]
-  edge [
-    source 28
-    target 41
-    weight 0.2922751416538629
   ]
   edge [
     source 28
@@ -7386,11 +7141,6 @@ graph [
   ]
   edge [
     source 29
-    target 32
-    weight 0.2888349702324423
-  ]
-  edge [
-    source 29
     target 33
     weight 0.3337798575479836
   ]
@@ -7401,18 +7151,8 @@ graph [
   ]
   edge [
     source 29
-    target 35
-    weight 0.2281206743261641
-  ]
-  edge [
-    source 29
     target 36
     weight 0.322299264150566
-  ]
-  edge [
-    source 29
-    target 37
-    weight 0.2452997935643791
   ]
   edge [
     source 29
@@ -7481,28 +7221,13 @@ graph [
   ]
   edge [
     source 29
-    target 53
-    weight 0.2643076500041703
-  ]
-  edge [
-    source 29
     target 54
     weight 0.3876122617111671
   ]
   edge [
     source 29
-    target 55
-    weight 0.2545478357552779
-  ]
-  edge [
-    source 29
     target 56
     weight 0.3331231794323239
-  ]
-  edge [
-    source 29
-    target 57
-    weight 0.2762130742240662
   ]
   edge [
     source 29
@@ -7731,11 +7456,6 @@ graph [
   ]
   edge [
     source 31
-    target 38
-    weight 0.2623425072353398
-  ]
-  edge [
-    source 31
     target 39
     weight 0.5187220891857288
   ]
@@ -7878,11 +7598,6 @@ graph [
     source 32
     target 36
     weight 0.5537558601562386
-  ]
-  edge [
-    source 32
-    target 37
-    weight 0.2951608113338816
   ]
   edge [
     source 32
@@ -8316,11 +8031,6 @@ graph [
   ]
   edge [
     source 35
-    target 37
-    weight 0.2647852735096538
-  ]
-  edge [
-    source 35
     target 38
     weight 0.4569894362882871
   ]
@@ -8336,11 +8046,6 @@ graph [
   ]
   edge [
     source 35
-    target 41
-    weight 0.2756927013964552
-  ]
-  edge [
-    source 35
     target 42
     weight 0.3483701715494122
   ]
@@ -8348,11 +8053,6 @@ graph [
     source 35
     target 43
     weight 0.4137437974649376
-  ]
-  edge [
-    source 35
-    target 44
-    weight 0.2672899567670102
   ]
   edge [
     source 35
@@ -8406,11 +8106,6 @@ graph [
   ]
   edge [
     source 35
-    target 55
-    weight 0.2976181685293784
-  ]
-  edge [
-    source 35
     target 56
     weight 0.3912524371836633
   ]
@@ -8433,11 +8128,6 @@ graph [
     source 35
     target 60
     weight 0.3009218560289919
-  ]
-  edge [
-    source 35
-    target 61
-    weight 0.2491908979862338
   ]
   edge [
     source 35
@@ -8586,11 +8276,6 @@ graph [
   ]
   edge [
     source 37
-    target 38
-    weight 0.2524792281035043
-  ]
-  edge [
-    source 37
     target 39
     weight 0.4016191810261873
   ]
@@ -8726,16 +8411,6 @@ graph [
   ]
   edge [
     source 38
-    target 41
-    weight 0.2217611343515229
-  ]
-  edge [
-    source 38
-    target 42
-    weight 0.294467904019538
-  ]
-  edge [
-    source 38
     target 43
     weight 0.3366536549896117
   ]
@@ -8781,21 +8456,6 @@ graph [
   ]
   edge [
     source 38
-    target 53
-    weight 0.2687420272522948
-  ]
-  edge [
-    source 38
-    target 54
-    weight 0.2479114388009435
-  ]
-  edge [
-    source 38
-    target 55
-    weight 0.2772741488330516
-  ]
-  edge [
-    source 38
     target 56
     weight 0.3676676108087417
   ]
@@ -8813,16 +8473,6 @@ graph [
     source 38
     target 59
     weight 0.3955662426144576
-  ]
-  edge [
-    source 38
-    target 60
-    weight 0.2541504356703128
-  ]
-  edge [
-    source 38
-    target 61
-    weight 0.2364765475532342
   ]
   edge [
     source 38
@@ -9126,18 +8776,8 @@ graph [
   ]
   edge [
     source 41
-    target 53
-    weight 0.26535301015937
-  ]
-  edge [
-    source 41
     target 54
     weight 0.5216170212401949
-  ]
-  edge [
-    source 41
-    target 55
-    weight 0.2949226334762062
   ]
   edge [
     source 41
@@ -9956,11 +9596,6 @@ graph [
   ]
   edge [
     source 51
-    target 55
-    weight 0.2860094001832348
-  ]
-  edge [
-    source 51
     target 56
     weight 0.5013987426416183
   ]
@@ -9978,11 +9613,6 @@ graph [
     source 51
     target 59
     weight 0.4219512437253958
-  ]
-  edge [
-    source 51
-    target 60
-    weight 0.209091679876716
   ]
   edge [
     source 51
@@ -10086,11 +9716,6 @@ graph [
   ]
   edge [
     source 53
-    target 60
-    weight 0.2981078739452129
-  ]
-  edge [
-    source 53
     target 61
     weight 0.3715488172409581
   ]
@@ -10103,11 +9728,6 @@ graph [
     source 53
     target 63
     weight 0.50622383479098
-  ]
-  edge [
-    source 54
-    target 55
-    weight 0.2595419852978388
   ]
   edge [
     source 54
@@ -10128,11 +9748,6 @@ graph [
     source 54
     target 59
     weight 0.6435067791368551
-  ]
-  edge [
-    source 54
-    target 60
-    weight 0.2459686162298055
   ]
   edge [
     source 54
@@ -10441,11 +10056,6 @@ graph [
   ]
   edge [
     source 66
-    target 70
-    weight 0.2932868866837199
-  ]
-  edge [
-    source 66
     target 71
     weight 0.6345332158252402
   ]
@@ -10476,11 +10086,6 @@ graph [
   ]
   edge [
     source 67
-    target 70
-    weight 0.2823084120411334
-  ]
-  edge [
-    source 67
     target 71
     weight 0.4518503057279378
   ]
@@ -10503,11 +10108,6 @@ graph [
     source 68
     target 69
     weight 0.3911121277212266
-  ]
-  edge [
-    source 68
-    target 70
-    weight 0.2667347172076461
   ]
   edge [
     source 68

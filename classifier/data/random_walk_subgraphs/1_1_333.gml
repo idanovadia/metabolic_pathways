@@ -4,6 +4,6 @@ graph [
   name "1_1_333.gml"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "phosphate"
   ]
 ]

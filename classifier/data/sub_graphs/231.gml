@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-ascorbate"
+    label "l-methionine"
   ]
   node [
     id 1
-    label "l-methionine"
+    label "l-ascorbate"
   ]
   node [
     id 2

@@ -4,6 +4,6 @@ graph [
   name "1_1_48.gml"
   node [
     id 0
-    label "benzoate"
+    label "phosphate"
   ]
 ]

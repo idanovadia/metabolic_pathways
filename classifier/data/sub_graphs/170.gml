@@ -3,18 +3,18 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-valine"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
+    label "l-valine"
   ]
   node [
     id 2
     label "l-isoleucine"
   ]
   edge [
-    source 0
+    source 1
     target 2
     weight 0.8674932232268686
   ]

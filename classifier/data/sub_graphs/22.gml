@@ -3,7 +3,7 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "l-phenylalanine"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
@@ -11,25 +11,20 @@ graph [
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "l-glutamate"
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "l-phenylalanine"
   ]
   edge [
     source 0
-    target 1
-    weight 0.698389240022241
-  ]
-  edge [
-    source 0
-    target 2
+    target 3
     weight 0.4123799161204509
   ]
   edge [
     source 1
-    target 2
-    weight 0.2548733650805993
+    target 3
+    weight 0.698389240022241
   ]
 ]

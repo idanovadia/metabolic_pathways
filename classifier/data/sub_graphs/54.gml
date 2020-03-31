@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-aspartate"
   ]
   node [
     id 1
@@ -23,17 +23,17 @@ graph [
   ]
   node [
     id 5
-    label "l-aspartate"
+    label "phosphate"
+  ]
+  edge [
+    source 0
+    target 4
+    weight 0.6056390159084215
   ]
   edge [
     source 0
     target 5
     weight 0.6011486587004862
-  ]
-  edge [
-    source 0
-    target 4
-    weight 0.6510037877502363
   ]
   edge [
     source 1
@@ -46,13 +46,8 @@ graph [
     weight 0.3248062489421025
   ]
   edge [
-    source 2
-    target 3
-    weight 0.2548733650805993
-  ]
-  edge [
     source 4
     target 5
-    weight 0.6056390159084215
+    weight 0.6510037877502363
   ]
 ]

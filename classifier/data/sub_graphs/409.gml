@@ -1,12 +1,12 @@
 graph [
-  label "random"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "succinate"
+    label "citrate"
   ]
   node [
     id 1
-    label "citrate"
+    label "succinate"
   ]
 ]

@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-phenylalanine"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
@@ -11,7 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "l-phenylalanine"
   ]
   edge [
     source 0
