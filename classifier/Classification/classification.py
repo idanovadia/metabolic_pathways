@@ -9,6 +9,7 @@ from classifier.Metrics.metrics import Metrics
 import timeit
 from classifier.Validation.validation import validation
 import json
+import os
 import pandas as pd
 
 
@@ -32,6 +33,7 @@ class classifier(AbstractConfigClass):
         self.initClassifiersnDict()
         self.fillClassifiersDirectory()
         self.resultdict = []
+        self.result_dataframe=pd.DataFrame()
 
     def exec(self):
         self.valid.exec()
@@ -70,7 +72,7 @@ class classifier(AbstractConfigClass):
         print(self.resultdict)
 
     def calculateScore(self, predictions):
-        result = {"train": [], "test": []}
+        result = {"train": {}, "test": {}}
 
         for metric in self.metrics.metrics_dir:
             count = 0
@@ -80,19 +82,26 @@ class classifier(AbstractConfigClass):
                 train_sum += metric.calculate(pred[0], pred[1])
                 test_sum += metric.calculate(pred[2], pred[3])
                 count += 1
-            train_score = (metric.getMetricName(train=True), train_sum / count)
-            test_score = (metric.getMetricName(), test_sum / count)
+            train_score =  (train_sum / count)
+            test_score = (test_sum / count)
 
-            result['train'].append(train_score)
-            result['test'].append(test_score)
+            result['train'][metric.getMetricName()]=train_score
+            result['test'][metric.getMetricName()]=test_score
 
         return result
 
     def outputResult(self):
-        df = pd.DataFrame(columns=['classifier', 'validation', 'train', 'test'])
-        for result in self.resultdict:
-            df = result.getPandas(df)
+        columns = ['correlation threshold','rw threshold','classifier', 'validation', 'train accuracy', 'train F1 score','train Precision','train Recall','train FP', ' train FN','train TP','train TN','test accuracy', 'test F1 score','test Precision','test Recall','test FP', ' test FN','test TP','test TN']
+        # df = pd.DataFrame(columns=columns)
+# s(df)
+        added_cols = {'correlation_treshold':self.config_parser.eval('GraphCreator', "threshold"),'random_walk_treshold':self.config_parser.eval('Sub2Vec', 'random_walk_threshold')}
+        if os.path.exists(self.csv_output_directory+os.sep+self.output_file_name):
+            self.result_dataframe=pd.read_excel(self.csv_output_directory+os.sep+self.output_file_name)
+        else :
+            self.result_dataframe=pd.DataFrame(columns=columns)
 
-        df = df.T
-        df.to_excel(self.csv_output_directory + "/" + self.output_file_name + "_" + str(timeit.timeit()) + ".xlsx")
-        print(df.to_string)
+        for result in self.resultdict:
+            self.result_dataframe = result.getPandas(self.result_dataframe,**added_cols)
+
+        self.result_dataframe.to_excel(self.csv_output_directory + "/" + self.output_file_name+".xlsx",index=False)
+        print(self.result_dataframe.to_string)
