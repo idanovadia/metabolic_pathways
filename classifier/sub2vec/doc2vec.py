@@ -13,5 +13,5 @@ class Doc2Vec:
 
     def fit(self):
         documents = [TaggedDocument(doc.nodes, [i]) for i, doc in enumerate(self.list_of_RW)]
-        model = d2v(documents, vector_size=2, window=2, min_count=1, workers=4)
+        model = d2v(documents, vector_size=10, window=2, min_count=1, workers=4)
         return model.docvecs

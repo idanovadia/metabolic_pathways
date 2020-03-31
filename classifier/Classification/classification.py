@@ -95,8 +95,8 @@ class classifier(AbstractConfigClass):
         # df = pd.DataFrame(columns=columns)
 # s(df)
         added_cols = {'correlation_treshold':self.config_parser.eval('GraphCreator', "threshold"),'random_walk_treshold':self.config_parser.eval('Sub2Vec', 'random_walk_threshold')}
-        if os.path.exists(self.csv_output_directory+os.sep+self.output_file_name):
-            self.result_dataframe=pd.read_excel(self.csv_output_directory+os.sep+self.output_file_name)
+        if os.path.exists(self.csv_output_directory+os.sep+self.output_file_name+'.xlsx'):
+            self.result_dataframe=pd.read_excel(self.csv_output_directory+os.sep+self.output_file_name+'.xlsx')
         else :
             self.result_dataframe=pd.DataFrame(columns=columns)
 
