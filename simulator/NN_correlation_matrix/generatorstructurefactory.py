@@ -21,17 +21,23 @@ class GeneratorStructureFactory(nn.Module):
 
     def create_strucute_list(self):
         structure_list = []
-        #structure_list.append(self.structure_1())
-        #structure_list.append(self.structure_2())
-        #structure_list.append(self.structure_3())
-        #structure_list.append(self.structure_4())
-        #structure_list.append(self.structure_5())
+        structure_list.append(self.structure_1())
+        structure_list.append(self.structure_2())
+        structure_list.append(self.structure_3())
+        structure_list.append(self.structure_4())
+        structure_list.append(self.structure_5())
         structure_list.append(self.structure_6())
+        structure_list.append(self.structure_7())
+        structure_list.append(self.structure_8())
+        structure_list.append(self.structure_9())
+        structure_list.append(self.structure_10())
+        structure_list.append(self.structure_11())
         return structure_list
 
     def get_structure_list(self):
         return self._structures_list
 
+    #Input Error Score: 50.0%. Output Error Score: 62.5%
     def structure_1(self):
         model = nn.Sequential(
             nn.Linear(Z_dim, 128),
@@ -42,6 +48,7 @@ class GeneratorStructureFactory(nn.Module):
         name = "1"
         return GeneratorStructure(name, model)
 
+    #Input Error Score: 62.5%. Output Error Score: 62.5%
     def structure_2(self):
         model = nn.Sequential(
             nn.Linear(Z_dim, H_dim),
@@ -56,6 +63,7 @@ class GeneratorStructureFactory(nn.Module):
         name = "2"
         return GeneratorStructure(name, model)
 
+    #Input Error Score: 37.5%. Output Error Score: 37.5%
     def structure_3(self):
         model = nn.Sequential(
             nn.Linear(Z_dim, Z_dim*2),
@@ -66,6 +74,7 @@ class GeneratorStructureFactory(nn.Module):
         name = "3"
         return GeneratorStructure(name, model)
 
+    #Input Error Score: 37.5%. Output Error Score: 37.5%
     def structure_4(self):
         model = nn.Sequential(
             nn.Linear(Z_dim, Z_dim*2),
@@ -78,6 +87,7 @@ class GeneratorStructureFactory(nn.Module):
         name = "4"
         return GeneratorStructure(name, model)
 
+    #Input Error Score: 75.0%. Output Error Score: 50.0%
     def structure_5(self):
         model = nn.Sequential(
             nn.Linear(Z_dim, Z_dim*2),
@@ -92,6 +102,8 @@ class GeneratorStructureFactory(nn.Module):
         name = "5"
         return GeneratorStructure(name, model)
 
+    #based on model 4, but with Relu and sigmoid functions
+    # Input Error Score: 75.0%. Output Error Score: 87.5%
     def structure_6(self):
         model = nn.Sequential(
             nn.Linear(Z_dim, Z_dim * 2),
@@ -109,6 +121,112 @@ class GeneratorStructureFactory(nn.Module):
         )
         name = "6"
         return GeneratorStructure(name, model)
+
+    #based on model 5 but with relu and sigmoid fucntions
+    #Input Error Score: 75.0%. Output Error Score: 87.5%
+    def structure_7(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim*2),
+            nn.ReLU(),
+            nn.Linear(Z_dim*2, Z_dim * 4),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim*4, Z_dim * 8),
+            nn.ReLU(),
+            nn.Linear(Z_dim * 8, Z_dim * 16),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 16, Z_dim * 8),
+            nn.ReLU(),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim*4, Z_dim * 2),
+            nn.ReLU(),
+            nn.Linear(Z_dim*2, self._out_dim),
+            nn.Sigmoid(),
+        )
+        name = "7"
+        return GeneratorStructure(name, model)
+
+    #based on model 4, but with Relu function
+    #Input Error Score: 87.5%. Output Error Score: 62.5%
+    def structure_8(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim * 2),
+            nn.ReLU(),
+            nn.Linear(Z_dim * 2, Z_dim * 4),
+            nn.ReLU(),
+            nn.Linear(Z_dim * 4, Z_dim * 8),
+            nn.ReLU(),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.ReLU(),
+            nn.Linear(Z_dim * 4, Z_dim * 2),
+            nn.ReLU(),
+            nn.Linear(Z_dim * 2, self._out_dim),
+            nn.Sigmoid(),
+        )
+        name = "8"
+        return GeneratorStructure(name, model)
+
+    # based on model 4, but with sigmoid function
+    #Input Error Score: 50.0%. Output Error Score: 87.5%
+    def structure_9(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim * 2),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 2, Z_dim * 4),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 4, Z_dim * 8),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 4, Z_dim * 2),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 2, self._out_dim),
+            nn.Sigmoid(),
+        )
+        name = "9"
+        return GeneratorStructure(name, model)
+
+    #based on model 5 but with sigmoid fucntion
+    #Input Error Score: 12.5%. Output Error Score: 37.5%
+    def structure_10(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim*2),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim*2, Z_dim * 4),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim*4, Z_dim * 8),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 8, Z_dim * 16),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 16, Z_dim * 8),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim*4, Z_dim * 2),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim*2, self._out_dim),
+            nn.Sigmoid(),
+        )
+        name = "10"
+        return GeneratorStructure(name, model)
+
+    #based on model 4 but with one sigmoid function
+    #Input Error Score: 50.0%. Output Error Score: 25.0%
+    def structure_11(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim * 2),
+            nn.Linear(Z_dim * 2, Z_dim * 4),
+            nn.Linear(Z_dim * 4, Z_dim * 8),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.Linear(Z_dim * 4, Z_dim * 2),
+            nn.Linear(Z_dim * 2, self._out_dim),
+            nn.Sigmoid(),
+        )
+        name = "11"
+        return GeneratorStructure(name, model)
+
+
+
 
 
 class GeneratorStructure():
@@ -130,6 +248,12 @@ class GeneratorStructure():
 
     def get_score(self):
         return self.input_error, self.out_error
+
+    def set_last_mse_loss(self, mse_loss):
+        self.mse_loss = mse_loss
+
+    def get_last_mse_loss(self):
+        return self.mse_loss
 
 
 
