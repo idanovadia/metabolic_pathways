@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "gaba"
+    label "l-tyrosine"
   ]
   node [
     id 2
-    label "l-tyrosine"
+    label "gaba"
   ]
   edge [
     source 1

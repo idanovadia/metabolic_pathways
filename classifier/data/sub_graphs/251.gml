@@ -3,27 +3,27 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
-  ]
-  node [
-    id 1
-    label "l-cysteine"
-  ]
-  node [
-    id 2
     label "l-glutamate"
   ]
   node [
-    id 3
+    id 1
+    label "phosphate"
+  ]
+  node [
+    id 2
     label "glycine"
+  ]
+  node [
+    id 3
+    label "l-cysteine"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.6510037877502363
   ]
   edge [
-    source 1
+    source 2
     target 3
     weight 0.6656521003501893
   ]

@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "fumarate"
+    label "l-aspartate"
   ]
   node [
     id 2
-    label "l-aspartate"
+    label "fumarate"
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.4261967379799564
   ]
 ]

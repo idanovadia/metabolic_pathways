@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-aspartate"
+    label "phosphate"
   ]
   node [
     id 1
@@ -11,20 +11,15 @@ graph [
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "l-glutamate"
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-aspartate"
   ]
   node [
     id 4
-    label "l-glutamate"
-  ]
-  edge [
-    source 0
-    target 4
-    weight 0.6056390159084215
+    label "2-oxoglutarate"
   ]
   edge [
     source 0
@@ -32,13 +27,18 @@ graph [
     weight 0.6011486587004862
   ]
   edge [
-    source 1
+    source 0
     target 2
+    weight 0.6510037877502363
+  ]
+  edge [
+    source 1
+    target 4
     weight 0.403136462263645
   ]
   edge [
-    source 3
-    target 4
-    weight 0.6510037877502363
+    source 2
+    target 3
+    weight 0.6056390159084215
   ]
 ]

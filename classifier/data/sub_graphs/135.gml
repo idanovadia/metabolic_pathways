@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-arginine"
+    label "beta;-alanine"
   ]
   node [
     id 1
-    label "beta;-alanine"
+    label "l-arginine"
   ]
   node [
     id 2
@@ -20,7 +20,7 @@ graph [
   edge [
     source 0
     target 2
-    weight 0.5069688742884643
+    weight 0.4533043899379032
   ]
   edge [
     source 0
@@ -30,17 +30,17 @@ graph [
   edge [
     source 0
     target 3
-    weight 0.6764879810200911
+    weight 0.8209324162178232
   ]
   edge [
     source 1
     target 2
-    weight 0.4533043899379032
+    weight 0.5069688742884643
   ]
   edge [
     source 1
     target 3
-    weight 0.8209324162178232
+    weight 0.6764879810200911
   ]
   edge [
     source 2

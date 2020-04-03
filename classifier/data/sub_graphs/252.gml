@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-serine"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "2-oxoglutarate"
+    label "glycine"
   ]
   node [
     id 2
@@ -15,35 +15,35 @@ graph [
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "l-serine"
   ]
   node [
     id 4
-    label "glycine"
+    label "2-oxoglutarate"
   ]
   edge [
-    source 0
-    target 1
-    weight 0.405716148338836
-  ]
-  edge [
-    source 0
-    target 4
+    source 1
+    target 3
     weight 0.8435878621427529
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.8604651618855781
   ]
   edge [
     source 1
     target 2
-    weight 0.3369126444749189
+    weight 0.8560180260893289
   ]
   edge [
     source 2
     target 4
-    weight 0.8560180260893289
+    weight 0.3369126444749189
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.8604651618855781
+  ]
+  edge [
+    source 3
+    target 4
+    weight 0.405716148338836
   ]
 ]

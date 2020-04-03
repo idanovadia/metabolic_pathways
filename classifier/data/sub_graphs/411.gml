@@ -7,23 +7,23 @@ graph [
   ]
   node [
     id 1
-    label "maltitol"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 2
-    label "fructose"
+    label "maltitol"
   ]
   node [
     id 3
-    label "maltose"
-  ]
-  node [
-    id 4
     label "shikimate"
   ]
   node [
-    id 5
+    id 4
     label "l-alanine"
+  ]
+  node [
+    id 5
+    label "d-gluconate"
   ]
   node [
     id 6
@@ -31,7 +31,7 @@ graph [
   ]
   node [
     id 7
-    label "l-arginine"
+    label "maltose"
   ]
   node [
     id 8
@@ -39,11 +39,11 @@ graph [
   ]
   node [
     id 9
-    label "gdp-beta;-l-fucose"
+    label "l-arginine"
   ]
   node [
     id 10
-    label "d-gluconate"
+    label "fructose"
   ]
   node [
     id 11
@@ -51,17 +51,17 @@ graph [
   ]
   edge [
     source 0
-    target 5
+    target 4
     weight 0.6098175065214301
   ]
   edge [
     source 0
-    target 7
+    target 9
     weight 0.5156849444914577
   ]
   edge [
     source 0
-    target 9
+    target 1
     weight 0.5933699161378129
   ]
   edge [
@@ -71,7 +71,7 @@ graph [
   ]
   edge [
     source 0
-    target 10
+    target 5
     weight 0.5018119257778669
   ]
   edge [
@@ -81,148 +81,158 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 0.3514725889341433
   ]
   edge [
     source 0
-    target 3
+    target 7
     weight 0.7528297377517174
   ]
   edge [
     source 0
-    target 4
+    target 3
     weight 0.3962023405088441
   ]
   edge [
     source 1
-    target 5
-    weight 0.3700769321893242
+    target 4
+    weight 0.5842827296297292
   ]
   edge [
     source 1
     target 9
+    weight 0.4360264009648224
+  ]
+  edge [
+    source 1
+    target 11
+    weight 0.6106647501095485
+  ]
+  edge [
+    source 1
+    target 5
+    weight 0.5364020212039078
+  ]
+  edge [
+    source 1
+    target 6
+    weight 0.5026993892983657
+  ]
+  edge [
+    source 1
+    target 2
     weight 0.3333585073449144
   ]
   edge [
     source 1
-    target 11
-    weight 0.3555722497906738
-  ]
-  edge [
-    source 1
-    target 10
-    weight 0.3217605406126031
+    target 7
+    weight 0.5814224480884902
   ]
   edge [
     source 1
     target 3
-    weight 0.3412286460569733
+    weight 0.4153963693784759
   ]
   edge [
     source 2
-    target 8
-    weight 0.6345332158252402
+    target 4
+    weight 0.3700769321893242
   ]
   edge [
-    source 3
-    target 5
-    weight 0.5976361816409984
-  ]
-  edge [
-    source 3
-    target 7
-    weight 0.4024825217907307
-  ]
-  edge [
-    source 3
-    target 9
-    weight 0.5814224480884902
-  ]
-  edge [
-    source 3
+    source 2
     target 11
-    weight 0.6302739198755571
+    weight 0.3555722497906738
   ]
   edge [
-    source 3
-    target 10
-    weight 0.5543380464269871
+    source 2
+    target 5
+    weight 0.3217605406126031
   ]
   edge [
-    source 3
-    target 6
-    weight 0.5187220891857288
+    source 2
+    target 7
+    weight 0.3412286460569733
   ]
   edge [
     source 3
     target 4
-    weight 0.4406504533667885
-  ]
-  edge [
-    source 4
-    target 5
     weight 0.3798405827229721
   ]
   edge [
-    source 4
-    target 7
+    source 3
+    target 9
     weight 0.3097499386470758
   ]
   edge [
-    source 4
-    target 9
-    weight 0.4153963693784759
-  ]
-  edge [
-    source 4
+    source 3
     target 11
     weight 0.3527770819178199
   ]
   edge [
-    source 4
-    target 10
+    source 3
+    target 5
     weight 0.3259736842182772
   ]
   edge [
-    source 4
+    source 3
     target 6
     weight 0.3625522262166044
   ]
   edge [
-    source 5
+    source 3
     target 7
+    weight 0.4406504533667885
+  ]
+  edge [
+    source 4
+    target 9
     weight 0.5069688742884643
   ]
   edge [
-    source 5
-    target 9
-    weight 0.5842827296297292
-  ]
-  edge [
-    source 5
+    source 4
     target 11
     weight 0.7021201777709495
   ]
   edge [
-    source 5
-    target 10
+    source 4
+    target 5
     weight 0.5580555993625173
   ]
   edge [
-    source 5
+    source 4
     target 6
     weight 0.5232056701888429
   ]
   edge [
-    source 6
+    source 4
     target 7
-    weight 0.6304774274893195
+    weight 0.5976361816409984
+  ]
+  edge [
+    source 5
+    target 9
+    weight 0.369277237263239
+  ]
+  edge [
+    source 5
+    target 11
+    weight 0.6569569066814301
+  ]
+  edge [
+    source 5
+    target 6
+    weight 0.4672856101247377
+  ]
+  edge [
+    source 5
+    target 7
+    weight 0.5543380464269871
   ]
   edge [
     source 6
     target 9
-    weight 0.5026993892983657
+    weight 0.6304774274893195
   ]
   edge [
     source 6
@@ -231,37 +241,27 @@ graph [
   ]
   edge [
     source 6
-    target 10
-    weight 0.4672856101247377
+    target 7
+    weight 0.5187220891857288
   ]
   edge [
     source 7
     target 9
-    weight 0.4360264009648224
+    weight 0.4024825217907307
   ]
   edge [
     source 7
+    target 11
+    weight 0.6302739198755571
+  ]
+  edge [
+    source 8
+    target 10
+    weight 0.6345332158252402
+  ]
+  edge [
+    source 9
     target 11
     weight 0.393481047521195
-  ]
-  edge [
-    source 7
-    target 10
-    weight 0.369277237263239
-  ]
-  edge [
-    source 9
-    target 11
-    weight 0.6106647501095485
-  ]
-  edge [
-    source 9
-    target 10
-    weight 0.5364020212039078
-  ]
-  edge [
-    source 10
-    target 11
-    weight 0.6569569066814301
   ]
 ]

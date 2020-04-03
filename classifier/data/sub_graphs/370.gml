@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "glycerol"
+    label "dehydroascorbate (bicyclic form)"
   ]
   node [
     id 2
-    label "dehydroascorbate (bicyclic form)"
+    label "glycerol"
   ]
   node [
     id 3
@@ -19,7 +19,7 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.4357136817902976
   ]
   edge [

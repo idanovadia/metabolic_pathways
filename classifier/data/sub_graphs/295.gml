@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "2-oxoglutarate"
+    label "phosphate"
   ]
   node [
     id 2
@@ -19,12 +19,12 @@ graph [
   ]
   edge [
     source 0
-    target 3
-    weight 0.6510037877502363
+    target 2
+    weight 0.3520715129550628
   ]
   edge [
     source 1
-    target 2
-    weight 0.3520715129550628
+    target 3
+    weight 0.6510037877502363
   ]
 ]

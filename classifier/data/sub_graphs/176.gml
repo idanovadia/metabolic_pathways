@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-serine"
   ]
   node [
     id 2
-    label "l-serine"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.3823643502981909
   ]
 ]

@@ -11,7 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "l-cysteine"
+    label "l-glutamate"
   ]
   node [
     id 3
@@ -19,11 +19,11 @@ graph [
   ]
   node [
     id 4
-    label "l-glutamate"
+    label "l-cysteine"
   ]
   edge [
     source 0
-    target 2
+    target 4
     weight 0.529497355748019
   ]
   edge [
@@ -38,7 +38,7 @@ graph [
   ]
   edge [
     source 1
-    target 2
+    target 4
     weight 0.3511700880677713
   ]
   edge [
@@ -47,8 +47,8 @@ graph [
     weight 0.3408994025189263
   ]
   edge [
-    source 2
-    target 3
+    source 3
+    target 4
     weight 0.5861697767311169
   ]
 ]

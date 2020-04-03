@@ -3,23 +3,23 @@ graph [
   type "trainset"
   node [
     id 0
-    label "5-oxoproline"
-  ]
-  node [
-    id 1
-    label "l-cysteine"
-  ]
-  node [
-    id 2
-    label "phosphate"
-  ]
-  node [
-    id 3
     label "l-glutamate"
   ]
   node [
-    id 4
+    id 1
+    label "phosphate"
+  ]
+  node [
+    id 2
     label "glycine"
+  ]
+  node [
+    id 3
+    label "5-oxoproline"
+  ]
+  node [
+    id 4
+    label "l-cysteine"
   ]
   edge [
     source 0
@@ -28,17 +28,17 @@ graph [
   ]
   edge [
     source 0
-    target 2
-    weight 0.6642051888846479
+    target 1
+    weight 0.6510037877502363
   ]
   edge [
     source 1
-    target 4
-    weight 0.6656521003501893
+    target 3
+    weight 0.6642051888846479
   ]
   edge [
     source 2
-    target 3
-    weight 0.6510037877502363
+    target 4
+    weight 0.6656521003501893
   ]
 ]

@@ -3,10 +3,10 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "d-ribofuranose"
   ]
   node [
     id 1
-    label "d-ribofuranose"
+    label "phosphate"
   ]
 ]

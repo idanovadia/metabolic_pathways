@@ -7,10 +7,10 @@ graph [
   ]
   node [
     id 1
-    label "glucose"
+    label "succinate"
   ]
   node [
     id 2
-    label "succinate"
+    label "glucose"
   ]
 ]

@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "glycine"
   ]
   node [
     id 2
@@ -15,16 +15,16 @@ graph [
   ]
   node [
     id 3
-    label "glycine"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 1
+    target 3
     weight 0.6510037877502363
   ]
   edge [
-    source 2
-    target 3
+    source 1
+    target 2
     weight 0.8435878621427529
   ]
 ]

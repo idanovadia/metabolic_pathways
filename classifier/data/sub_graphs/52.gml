@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-leucine"
   ]
   node [
     id 2
-    label "l-leucine"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.6455839743188775
   ]
 ]

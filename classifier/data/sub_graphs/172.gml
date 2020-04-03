@@ -3,47 +3,47 @@ graph [
   type "trainset"
   node [
     id 0
-    label "alpha;,alpha;-trehalose"
-  ]
-  node [
-    id 1
-    label "galactose"
-  ]
-  node [
-    id 2
     label "l-glutamine"
   ]
   node [
-    id 3
+    id 1
     label "phosphate"
   ]
   node [
-    id 4
+    id 2
     label "l-glutamate"
   ]
-  edge [
-    source 1
-    target 4
-    weight 0.3447697950507886
+  node [
+    id 3
+    label "alpha;,alpha;-trehalose"
+  ]
+  node [
+    id 4
+    label "galactose"
   ]
   edge [
-    source 1
-    target 3
-    weight 0.5884905612973588
-  ]
-  edge [
-    source 2
-    target 4
+    source 0
+    target 2
     weight 0.5889560002830893
   ]
   edge [
-    source 2
-    target 3
+    source 0
+    target 1
     weight 0.5207469450961464
   ]
   edge [
-    source 3
+    source 1
     target 4
+    weight 0.5884905612973588
+  ]
+  edge [
+    source 1
+    target 2
     weight 0.6510037877502363
+  ]
+  edge [
+    source 2
+    target 4
+    weight 0.3447697950507886
   ]
 ]

@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "beta;-alanine"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "2-oxoglutarate"
+    label "beta;-alanine"
   ]
   node [
     id 2

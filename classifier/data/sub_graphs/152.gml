@@ -7,19 +7,19 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
-  ]
-  node [
-    id 2
     label "succinate"
   ]
   node [
-    id 3
+    id 2
     label "l-tryptophan"
+  ]
+  node [
+    id 3
+    label "phosphate"
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight 0.422963968329234
   ]
 ]

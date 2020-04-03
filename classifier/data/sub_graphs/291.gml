@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-phenylalanine"
   ]
   node [
     id 2
-    label "l-phenylalanine"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.4123799161204509
   ]
 ]

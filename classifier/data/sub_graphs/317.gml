@@ -7,24 +7,24 @@ graph [
   ]
   node [
     id 1
-    label "glucose"
+    label "fructose 1,6-bisphosphate"
   ]
   node [
     id 2
-    label "phosphate"
+    label "glucose"
   ]
   node [
     id 3
-    label "fructose 1,6-bisphosphate"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 3
+    target 1
     weight 0.439802553623092
   ]
   edge [
-    source 1
-    target 2
+    source 2
+    target 3
     weight 0.5997968146524117
   ]
 ]

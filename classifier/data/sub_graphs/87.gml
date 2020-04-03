@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "succinate"
+    label "glycine"
   ]
   node [
     id 2
-    label "glycine"
+    label "succinate"
   ]
   edge [
     source 1

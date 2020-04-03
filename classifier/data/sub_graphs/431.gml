@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-aspartate"
+    label "udp-alpha;-d-galacturonate"
   ]
   node [
     id 1
@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "udp-alpha;-d-galacturonate"
+    label "l-aspartate"
   ]
   edge [
-    source 1
-    target 2
+    source 0
+    target 1
     weight 0.5453652787863678
   ]
 ]

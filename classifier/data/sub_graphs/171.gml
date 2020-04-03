@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "glycerol"
+    label "d-glycerate"
   ]
   node [
     id 2
-    label "d-glycerate"
+    label "glycerol"
   ]
   edge [
     source 1

@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "succinate"
+    label "phosphate"
   ]
   node [
     id 2
@@ -15,15 +15,15 @@ graph [
   ]
   node [
     id 3
-    label "2-oxoglutarate"
+    label "l-glutamate"
   ]
   node [
     id 4
-    label "phosphate"
+    label "succinate"
   ]
   node [
     id 5
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   edge [
     source 0
@@ -32,22 +32,22 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 4
     weight 0.5154836860390344
   ]
   edge [
     source 1
-    target 2
-    weight 0.4863277140185134
+    target 3
+    weight 0.6510037877502363
   ]
   edge [
     source 2
-    target 3
+    target 5
     weight 0.403136462263645
   ]
   edge [
-    source 4
-    target 5
-    weight 0.6510037877502363
+    source 2
+    target 4
+    weight 0.4863277140185134
   ]
 ]

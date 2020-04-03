@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "l-alanine"
-  ]
-  node [
-    id 2
     label "l-tryptophan"
   ]
   node [
-    id 3
+    id 2
     label "phosphate"
+  ]
+  node [
+    id 3
+    label "l-alanine"
   ]
   node [
     id 4
@@ -28,16 +28,16 @@ graph [
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight 0.5207469450961464
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 0.5403694072428842
   ]
   edge [
-    source 3
+    source 2
     target 4
     weight 0.6510037877502363
   ]

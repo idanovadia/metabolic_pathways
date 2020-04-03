@@ -3,15 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-aspartate"
-  ]
-  node [
-    id 1
     label "2-oxoglutarate"
   ]
   node [
-    id 2
+    id 1
     label "l-asparagine"
+  ]
+  node [
+    id 2
+    label "l-aspartate"
   ]
   node [
     id 3
@@ -19,12 +19,12 @@ graph [
   ]
   edge [
     source 0
-    target 3
-    weight 0.6056390159084215
+    target 1
+    weight 0.3098562104744904
   ]
   edge [
-    source 1
-    target 2
-    weight 0.3098562104744904
+    source 2
+    target 3
+    weight 0.6056390159084215
   ]
 ]

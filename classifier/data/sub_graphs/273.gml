@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-leucine"
   ]
   node [
     id 2
-    label "l-leucine"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.4068745831784469
   ]
 ]

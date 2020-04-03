@@ -7,24 +7,24 @@ graph [
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-tyrosine"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-alanine"
   ]
   node [
     id 3
-    label "l-tyrosine"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 2
+    target 3
     weight 0.6510037877502363
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight 0.5043718061860422
   ]
 ]

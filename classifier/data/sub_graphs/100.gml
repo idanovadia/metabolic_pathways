@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-tryptophan"
   ]
   node [
     id 2
-    label "l-tryptophan"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.422963968329234
   ]
 ]

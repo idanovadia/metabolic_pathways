@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "glucose"
+    label "succinate"
   ]
   node [
     id 2
-    label "succinate"
+    label "glucose"
   ]
   node [
     id 3
@@ -23,7 +23,7 @@ graph [
     weight 0.4123799161204509
   ]
   edge [
-    source 2
+    source 1
     target 3
     weight 0.5469068305141396
   ]

@@ -7,19 +7,19 @@ graph [
   ]
   node [
     id 1
-    label "l-alanine"
+    label "succinate"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-alanine"
   ]
   node [
     id 3
-    label "succinate"
+    label "l-glutamate"
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight 0.5154836860390344
   ]
 ]

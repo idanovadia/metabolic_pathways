@@ -3,19 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "uracil"
+    label "d-ribofuranose"
   ]
   node [
     id 1
-    label "phosphate"
+    label "uracil"
   ]
   node [
     id 2
-    label "d-ribofuranose"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.6067946586393936
   ]
 ]
