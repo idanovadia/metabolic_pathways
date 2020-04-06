@@ -21,17 +21,23 @@ class GeneratorStructureFactory(nn.Module):
 
     def create_strucute_list(self):
         structure_list = []
-        structure_list.append(self.structure_1())
-        structure_list.append(self.structure_2())
-        structure_list.append(self.structure_3())
-        structure_list.append(self.structure_4())
-        structure_list.append(self.structure_5())
-        structure_list.append(self.structure_6())
-        structure_list.append(self.structure_7())
-        structure_list.append(self.structure_8())
-        structure_list.append(self.structure_9())
-        structure_list.append(self.structure_10())
-        structure_list.append(self.structure_11())
+        # structure_list.append(self.structure_1())
+        # structure_list.append(self.structure_2())
+        # structure_list.append(self.structure_3())
+        # structure_list.append(self.structure_4())
+        # structure_list.append(self.structure_5())
+        # structure_list.append(self.structure_6())
+        # structure_list.append(self.structure_7())
+        # structure_list.append(self.structure_8())
+        # structure_list.append(self.structure_9())
+        # structure_list.append(self.structure_10())
+        # structure_list.append(self.structure_11())
+
+        # for i in range(2):
+        #     structure = self.structure_11()
+        #     structure.set_name("model" + str(i))
+        #     structure_list.append(structure)
+
         return structure_list
 
     def get_structure_list(self):
@@ -226,9 +232,6 @@ class GeneratorStructureFactory(nn.Module):
         return GeneratorStructure(name, model)
 
 
-
-
-
 class GeneratorStructure():
 
     def __init__(self, name, model):
@@ -240,6 +243,9 @@ class GeneratorStructure():
 
     def get_name(self):
         return self._name
+
+    def set_name(self, name):
+        self._name = name
 
     #todo: maybe change in future because of multireaction
     def set_score(self, input_error, out_error):

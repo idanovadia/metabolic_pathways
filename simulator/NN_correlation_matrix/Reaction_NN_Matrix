@@ -253,7 +253,7 @@ dataset_size = 1
 minibatch_size = 10
 sub_min = 2
 sub_max = 2.01
-epochs = 100#50#200
+epochs = 50#200
 step = 0.5
 iterations = 100
 s_count=3
@@ -268,7 +268,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 def write_date_final_epoch(gan_structure, model_output, real_output, loss_list):
     wb = load_workbook(excel_path)
     sheet_name = gan_structure.get_name()
-    filepath = saving_path + sheet_name + '_final_image.png'
+    filepath = saving_path + 'final_images\\' + sheet_name + '_final_image.png'
 
     # Create the matrix for yc result
     plt.close()
@@ -346,6 +346,36 @@ def write_data_summary(structure_list):
     wb.save(excel_path)
 
 
+def create_dataset():
+    metabolites = range(m_count)
+    reactions = Process_new(reactions_count, metabolites,
+                            # scount=s_count, pcount=p_count,
+                            # low=1.0,high=1.0
+                            substrates=[1, 1, 1, 0, 0, 0, 0, 0],
+                            products=[0, 0, 0, 1, 1, 1, 0, 0],
+                            step=step, iterations=iterations,
+                            ).to(device)
+    print_reactions(reactions)
+
+    # creation of dataset(?)
+    with torch.no_grad():
+        dataset = []
+        for i in range(dataset_size):
+            batch_x = torch.Tensor(size=(minibatch_size, m_count)).to(device)
+            batch_x.uniform_(sub_min, sub_max)
+            print(batch_x)
+            ym, yc = reactions(batch_x)
+            print(ym)
+            dataset.append((batch_x, yc))
+            if i % 1 == 0:
+                print("batch {}: {}".format(i, yc.size()))
+                print(yc.min())
+                print(yc.max())
+                show_matrix(yc)
+                show_graph(yc, threshold=0.3)
+
+    return dataset, reactions
+
 class Test():
 
     def run_tests(self):
@@ -354,14 +384,14 @@ class Test():
 
         generator_structure_factory = GeneratorStructureFactory(m_count*2)
         structure_list = generator_structure_factory.get_structure_list()
-        dataset = create_dataset()
+        dataset, reactions = create_dataset()
         for structure in structure_list:
             name = structure.get_name()
             #gan_model = structure.get_model()
             print("\n****************************************")
             print("Running Test With Structure: " + name)
             print("**************************************** \n ")
-            self.run_one_test(structure)
+            self.run_one_test(structure, dataset, reactions)
             print("\n****************************************")
             print("End of Test With Structure: " + name)
             print("**************************************** \n ")
@@ -378,36 +408,11 @@ class Test():
 
         write_data_summary(structure_list)
 
-    def run_one_test(self, gan_structure):
+    def run_one_test(self, gan_structure, dataset, reactions):
         gan_model = gan_structure.get_model()
         global gan_model_global
         gan_model_global = gan_model
         metabolites = range(m_count)
-        reactions = Process_new(reactions_count, metabolites,
-                                #scount=s_count, pcount=p_count,
-                                #low=1.0,high=1.0
-                                substrates=[1,1,1,0,0,0,0,0],
-                                products  =[0,0,0,1,1,1,0,0],
-                                step=step, iterations=iterations,
-                                ).to(device)
-        print_reactions(reactions)
-
-        #creation of dataset(?)
-        with torch.no_grad():
-            dataset = []
-            for i in range(dataset_size):
-                batch_x = torch.Tensor(size=(minibatch_size,m_count)).to(device)
-                batch_x.uniform_(sub_min,sub_max)
-                print(batch_x)
-                ym,yc = reactions(batch_x)
-                print(ym)
-                dataset.append((batch_x,yc))
-                if i%1==0:
-                    print("batch {}: {}".format(i,yc.size()))
-                    print(yc.min())
-                    print(yc.max())
-                    show_matrix(yc)
-                    show_graph(yc,threshold=0.3)
 
         model = Process_new(reactions_count, metabolites, scount=m_count, pcount=m_count, step=step, iterations=iterations).to(
             device)
