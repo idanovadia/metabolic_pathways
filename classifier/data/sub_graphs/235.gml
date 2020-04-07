@@ -3,19 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "glycine"
-  ]
-  node [
-    id 2
     label "l-serine"
   ]
   node [
+    id 2
+    label "glycine"
+  ]
+  node [
     id 3
-    label "l-glutamate"
+    label "phosphate"
   ]
   edge [
     source 0

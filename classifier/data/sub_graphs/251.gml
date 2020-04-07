@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-cysteine"
   ]
   node [
     id 2
@@ -15,16 +15,16 @@ graph [
   ]
   node [
     id 3
-    label "l-cysteine"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 1
+    target 3
     weight 0.6510037877502363
   ]
   edge [
-    source 2
-    target 3
+    source 1
+    target 2
     weight 0.6656521003501893
   ]
 ]

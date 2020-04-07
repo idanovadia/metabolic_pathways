@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 1
-    label "gdp-beta;-l-fucose"
+    label "2-oxoglutarate"
   ]
   node [
     id 2

@@ -7,23 +7,23 @@ graph [
   ]
   node [
     id 1
-    label "glucose"
-  ]
-  node [
-    id 2
     label "threonate"
   ]
   node [
-    id 3
-    label "l-tryptophan"
+    id 2
+    label "glucose"
   ]
   node [
-    id 4
+    id 3
     label "l-valine"
   ]
   node [
+    id 4
+    label "l-tryptophan"
+  ]
+  node [
     id 5
-    label "alpha;,alpha;-trehalose"
+    label "galactose"
   ]
   node [
     id 6
@@ -31,7 +31,7 @@ graph [
   ]
   node [
     id 7
-    label "galactose"
+    label "alpha;,alpha;-trehalose"
   ]
   edge [
     source 0
@@ -40,53 +40,58 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.6168785408792452
   ]
   edge [
     source 0
-    target 5
+    target 7
     weight 0.6749673616300522
   ]
   edge [
     source 0
-    target 3
+    target 4
     weight 0.5607523830066249
   ]
   edge [
     source 0
-    target 4
+    target 3
     weight 0.693908200001238
   ]
   edge [
     source 1
-    target 7
-    weight 0.7874216966063861
-  ]
-  edge [
-    source 2
     target 6
     weight 0.4223313781554699
   ]
   edge [
-    source 2
-    target 5
+    source 1
+    target 7
     weight 0.6643025484907443
   ]
   edge [
-    source 2
-    target 3
+    source 1
+    target 4
     weight 0.4324764744641859
   ]
   edge [
-    source 2
-    target 4
+    source 1
+    target 3
     weight 0.5279151243589283
   ]
   edge [
-    source 3
+    source 2
     target 5
-    weight 0.3837187316716897
+    weight 0.7874216966063861
+  ]
+  edge [
+    source 3
+    target 6
+    weight 0.5191914417473834
+  ]
+  edge [
+    source 3
+    target 7
+    weight 0.5772984386996378
   ]
   edge [
     source 3
@@ -95,17 +100,12 @@ graph [
   ]
   edge [
     source 4
-    target 6
-    weight 0.5191914417473834
+    target 7
+    weight 0.3837187316716897
   ]
   edge [
-    source 4
-    target 5
-    weight 0.5772984386996378
-  ]
-  edge [
-    source 5
-    target 6
+    source 6
+    target 7
     weight 0.6435067791368551
   ]
 ]

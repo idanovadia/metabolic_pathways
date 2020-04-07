@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamine"
+    label "phosphate"
   ]
   node [
     id 2
@@ -15,11 +15,11 @@ graph [
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-glutamate"
   ]
   node [
     id 4
-    label "l-glutamate"
+    label "l-glutamine"
   ]
   node [
     id 5
@@ -32,12 +32,12 @@ graph [
   ]
   edge [
     source 1
-    target 4
-    weight 0.5889560002830893
+    target 3
+    weight 0.6510037877502363
   ]
   edge [
     source 1
-    target 3
+    target 4
     weight 0.5207469450961464
   ]
   edge [
@@ -48,6 +48,6 @@ graph [
   edge [
     source 3
     target 4
-    weight 0.6510037877502363
+    weight 0.5889560002830893
   ]
 ]

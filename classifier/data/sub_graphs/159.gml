@@ -7,52 +7,52 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "putrescine"
   ]
   node [
     id 2
-    label "l-arginine"
-  ]
-  node [
-    id 3
-    label "succinate"
-  ]
-  node [
-    id 4
     label "2-oxoglutarate"
   ]
   node [
+    id 3
+    label "l-arginine"
+  ]
+  node [
+    id 4
+    label "succinate"
+  ]
+  node [
     id 5
-    label "putrescine"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 1
+    target 5
     weight 0.6510037877502363
   ]
   edge [
-    source 2
-    target 4
-    weight 0.3633276792779562
+    source 1
+    target 3
+    weight 0.5560988845611036
   ]
   edge [
-    source 2
-    target 5
-    weight 0.5560988845611036
+    source 1
+    target 2
+    weight 0.4107455068846682
+  ]
+  edge [
+    source 1
+    target 4
+    weight 0.4572790332591343
   ]
   edge [
     source 2
     target 3
-    weight 0.3704181099113945
+    weight 0.3633276792779562
   ]
   edge [
     source 3
-    target 5
-    weight 0.4572790332591343
-  ]
-  edge [
-    source 4
-    target 5
-    weight 0.4107455068846682
+    target 4
+    weight 0.3704181099113945
   ]
 ]

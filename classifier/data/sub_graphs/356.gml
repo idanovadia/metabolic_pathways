@@ -3,10 +3,10 @@ graph [
   type "trainset"
   node [
     id 0
-    label "udp-alpha;-d-galacturonate"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
+    label "udp-alpha;-d-galacturonate"
   ]
 ]

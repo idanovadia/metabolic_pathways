@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-aspartate"
   ]
   node [
     id 1
@@ -11,7 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "l-aspartate"
+    label "(s)-malate"
   ]
   node [
     id 3
@@ -19,16 +19,16 @@ graph [
   ]
   node [
     id 4
-    label "(s)-malate"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 2
+    target 4
     weight 0.6011486587004862
   ]
   edge [
     source 1
-    target 4
+    target 2
     weight 0.5830461107886474
   ]
   edge [
@@ -37,8 +37,8 @@ graph [
     weight 0.7741925869687609
   ]
   edge [
-    source 3
-    target 4
+    source 2
+    target 3
     weight 0.6314071499873977
   ]
 ]

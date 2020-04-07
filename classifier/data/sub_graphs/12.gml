@@ -3,7 +3,7 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "glycine"
+    label "l-glutamate"
   ]
   node [
     id 1
@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "glycine"
   ]
   edge [
-    source 1
-    target 2
+    source 0
+    target 1
     weight 0.3911121277212266
   ]
 ]

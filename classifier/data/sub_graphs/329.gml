@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-isoleucine"
   ]
   node [
     id 2
-    label "l-isoleucine"
+    label "2-oxoglutarate"
   ]
   node [
     id 3
@@ -23,16 +23,16 @@ graph [
   ]
   node [
     id 5
-    label "2-oxoglutarate"
-  ]
-  edge [
-    source 0
-    target 5
-    weight 0.4068745831784469
+    label "l-glutamate"
   ]
   edge [
     source 0
     target 2
+    weight 0.4068745831784469
+  ]
+  edge [
+    source 0
+    target 1
     weight 0.9396072216819914
   ]
   edge [
@@ -46,33 +46,33 @@ graph [
     weight 0.9154607840850747
   ]
   edge [
-    source 2
-    target 5
+    source 1
+    target 2
     weight 0.396766828295452
   ]
   edge [
-    source 2
+    source 1
     target 4
     weight 0.8117751078239503
   ]
   edge [
-    source 2
+    source 1
     target 3
     weight 0.8674932232268686
   ]
   edge [
-    source 3
-    target 5
+    source 2
+    target 4
+    weight 0.3369126444749189
+  ]
+  edge [
+    source 2
+    target 3
     weight 0.4020622706620666
   ]
   edge [
     source 3
     target 4
     weight 0.8333132788752211
-  ]
-  edge [
-    source 4
-    target 5
-    weight 0.3369126444749189
   ]
 ]

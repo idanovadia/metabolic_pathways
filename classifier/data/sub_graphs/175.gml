@@ -3,47 +3,47 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
-  ]
-  node [
-    id 1
-    label "l-valine"
-  ]
-  node [
-    id 2
-    label "succinate"
-  ]
-  node [
-    id 3
     label "2-oxoglutarate"
   ]
   node [
-    id 4
+    id 1
     label "l-cysteine"
   ]
+  node [
+    id 2
+    label "l-valine"
+  ]
+  node [
+    id 3
+    label "succinate"
+  ]
+  node [
+    id 4
+    label "phosphate"
+  ]
   edge [
-    source 1
-    target 3
+    source 0
+    target 1
+    weight 0.4111791560150839
+  ]
+  edge [
+    source 0
+    target 2
     weight 0.4020622706620666
   ]
   edge [
     source 1
-    target 4
-    weight 0.6880543223219517
+    target 3
+    weight 0.4765751650797137
   ]
   edge [
     source 1
     target 2
-    weight 0.50622383479098
+    weight 0.6880543223219517
   ]
   edge [
     source 2
-    target 4
-    weight 0.4765751650797137
-  ]
-  edge [
-    source 3
-    target 4
-    weight 0.4111791560150839
+    target 3
+    weight 0.50622383479098
   ]
 ]
