@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "(s)-malate"
+    label "phosphate"
   ]
   node [
     id 2
-    label "l-alanine"
+    label "(s)-malate"
   ]
   node [
     id 3
-    label "l-serine"
+    label "fumarate"
   ]
   node [
     id 4
@@ -27,7 +27,7 @@ graph [
   ]
   node [
     id 6
-    label "fumarate"
+    label "l-alanine"
   ]
   node [
     id 7
@@ -35,7 +35,7 @@ graph [
   ]
   node [
     id 8
-    label "phosphate"
+    label "l-serine"
   ]
   edge [
     source 0
@@ -44,77 +44,77 @@ graph [
   ]
   edge [
     source 0
-    target 8
+    target 1
     weight 0.6011486587004862
   ]
   edge [
     source 1
-    target 2
+    target 7
+    weight 0.6510037877502363
+  ]
+  edge [
+    source 2
+    target 6
     weight 0.52767586406752
   ]
   edge [
-    source 1
+    source 2
     target 5
     weight 0.3248062489421025
   ]
   edge [
-    source 1
-    target 6
+    source 2
+    target 3
     weight 0.5100248837176506
   ]
   edge [
-    source 1
-    target 3
+    source 2
+    target 8
     weight 0.6485243401162355
   ]
   edge [
-    source 1
+    source 2
     target 4
     weight 0.5122229946934221
   ]
   edge [
-    source 2
+    source 3
     target 6
     weight 0.4795207245919059
   ]
   edge [
-    source 2
-    target 3
-    weight 0.5832377536907697
-  ]
-  edge [
-    source 2
-    target 4
-    weight 0.5154836860390344
-  ]
-  edge [
     source 3
     target 5
-    weight 0.405716148338836
+    weight 0.4263434855086067
   ]
   edge [
     source 3
-    target 6
+    target 8
     weight 0.5364194507938012
   ]
   edge [
     source 3
     target 4
-    weight 0.4766458924310171
+    weight 0.5624770794060734
   ]
   edge [
     source 4
     target 6
-    weight 0.5624770794060734
+    weight 0.5154836860390344
+  ]
+  edge [
+    source 4
+    target 8
+    weight 0.4766458924310171
   ]
   edge [
     source 5
-    target 6
-    weight 0.4263434855086067
+    target 8
+    weight 0.405716148338836
   ]
   edge [
-    source 7
+    source 6
     target 8
-    weight 0.6510037877502363
+    weight 0.5832377536907697
   ]
 ]

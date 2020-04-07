@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "l-cysteine"
+    label "l-methionine"
   ]
   node [
     id 2
-    label "succinate"
+    label "l-cysteine"
   ]
   node [
     id 3
-    label "l-methionine"
+    label "succinate"
   ]
   node [
     id 4
@@ -28,17 +28,17 @@ graph [
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight 0.6853509232746886
   ]
   edge [
     source 1
-    target 2
-    weight 0.4765751650797137
+    target 3
+    weight 0.4681966153919231
   ]
   edge [
     source 2
     target 3
-    weight 0.4681966153919231
+    weight 0.4765751650797137
   ]
 ]

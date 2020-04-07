@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glycerol"
+    label "d-glycerate"
   ]
   node [
     id 1
-    label "d-glycerate"
+    label "glycerol"
   ]
   edge [
     source 0

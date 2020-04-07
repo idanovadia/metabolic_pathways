@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "l-alanine"
+    label "2-oxoglutarate"
   ]
   node [
     id 3
-    label "2-oxoglutarate"
+    label "l-alanine"
   ]
   node [
     id 4
@@ -28,12 +28,12 @@ graph [
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 0.52767586406752
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight 0.3248062489421025
   ]
 ]

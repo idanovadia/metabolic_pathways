@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "l-phenylalanine"
+    label "phosphate"
   ]
   node [
     id 2
@@ -15,7 +15,7 @@ graph [
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-phenylalanine"
   ]
   node [
     id 4
@@ -23,17 +23,17 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 3
     weight 0.4268278232522483
   ]
   edge [
     source 1
-    target 2
-    weight 0.4123799161204509
-  ]
-  edge [
-    source 3
     target 4
     weight 0.6510037877502363
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.4123799161204509
   ]
 ]

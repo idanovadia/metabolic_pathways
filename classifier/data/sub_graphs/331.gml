@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "putrescine"
+    label "phosphate"
   ]
   node [
     id 2
-    label "phosphate"
+    label "putrescine"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.6011486587004862
   ]
 ]

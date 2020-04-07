@@ -3,15 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "benzoate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-phenylalanine"
+    label "fumarate"
   ]
   node [
     id 2
-    label "succinate"
+    label "benzoate"
   ]
   node [
     id 3
@@ -19,40 +19,30 @@ graph [
   ]
   node [
     id 4
-    label "fumarate"
+    label "l-phenylalanine"
   ]
   node [
     id 5
-    label "l-glutamate"
+    label "succinate"
   ]
   node [
     id 6
-    label "phosphate"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 3
-    weight 0.4790588572571189
-  ]
-  edge [
-    source 0
-    target 4
-    weight 0.6527375781415498
-  ]
-  edge [
-    source 0
-    target 1
-    weight 0.6752308628578606
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.4367800079008436
+    target 6
+    weight 0.6510037877502363
   ]
   edge [
     source 1
     target 3
-    weight 0.4123799161204509
+    weight 0.4263434855086067
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.6527375781415498
   ]
   edge [
     source 1
@@ -61,22 +51,32 @@ graph [
   ]
   edge [
     source 1
-    target 2
-    weight 0.5469068305141396
+    target 5
+    weight 0.5624770794060734
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.4790588572571189
   ]
   edge [
     source 2
     target 4
-    weight 0.5624770794060734
+    weight 0.6752308628578606
+  ]
+  edge [
+    source 2
+    target 5
+    weight 0.4367800079008436
   ]
   edge [
     source 3
     target 4
-    weight 0.4263434855086067
+    weight 0.4123799161204509
   ]
   edge [
-    source 5
-    target 6
-    weight 0.6510037877502363
+    source 4
+    target 5
+    weight 0.5469068305141396
   ]
 ]

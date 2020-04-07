@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "succinate"
+    label "phosphate"
   ]
   node [
     id 2
@@ -19,7 +19,7 @@ graph [
   ]
   node [
     id 4
-    label "phosphate"
+    label "succinate"
   ]
   node [
     id 5
@@ -32,13 +32,13 @@ graph [
   ]
   edge [
     source 0
-    target 4
+    target 1
     weight 0.6011486587004862
   ]
   edge [
     source 1
-    target 2
-    weight 0.4863277140185134
+    target 5
+    weight 0.6510037877502363
   ]
   edge [
     source 2
@@ -46,8 +46,8 @@ graph [
     weight 0.403136462263645
   ]
   edge [
-    source 4
-    target 5
-    weight 0.6510037877502363
+    source 2
+    target 4
+    weight 0.4863277140185134
   ]
 ]

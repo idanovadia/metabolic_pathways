@@ -3,28 +3,28 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
-  ]
-  node [
-    id 1
-    label "glucose"
-  ]
-  node [
-    id 2
     label "succinate"
   ]
   node [
-    id 3
+    id 1
     label "l-phenylalanine"
+  ]
+  node [
+    id 2
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 3
+    label "glucose"
   ]
   edge [
     source 0
-    target 3
-    weight 0.4123799161204509
+    target 1
+    weight 0.5469068305141396
   ]
   edge [
-    source 2
-    target 3
-    weight 0.5469068305141396
+    source 1
+    target 2
+    weight 0.4123799161204509
   ]
 ]

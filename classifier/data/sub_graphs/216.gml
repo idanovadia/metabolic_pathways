@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "(s)-malate"
+    label "l-glutamate"
   ]
   node [
     id 2
@@ -15,16 +15,16 @@ graph [
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "(s)-malate"
   ]
   edge [
     source 0
-    target 3
+    target 1
     weight 0.6056390159084215
   ]
   edge [
-    source 1
-    target 2
+    source 2
+    target 3
     weight 0.3248062489421025
   ]
 ]

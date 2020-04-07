@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "fumarate"
+    label "phosphate"
   ]
   node [
     id 2
-    label "phosphate"
+    label "fumarate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.6011486587004862
   ]
 ]

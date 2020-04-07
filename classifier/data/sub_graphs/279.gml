@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-homoserine"
+    label "l-methionine"
   ]
   node [
     id 1
-    label "l-methionine"
+    label "phosphate"
   ]
   node [
     id 2
@@ -15,21 +15,21 @@ graph [
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-homoserine"
   ]
   edge [
     source 0
     target 2
-    weight 0.6849175207002415
+    weight 0.6853509232746886
   ]
   edge [
     source 0
-    target 1
+    target 3
     weight 0.7830222214590594
   ]
   edge [
-    source 1
-    target 2
-    weight 0.6853509232746886
+    source 2
+    target 3
+    weight 0.6849175207002415
   ]
 ]

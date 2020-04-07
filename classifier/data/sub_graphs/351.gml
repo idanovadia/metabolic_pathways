@@ -11,15 +11,15 @@ graph [
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "phosphate"
   ]
   node [
     id 3
-    label "l-threonine"
+    label "2-oxoglutarate"
   ]
   node [
     id 4
-    label "phosphate"
+    label "l-threonine"
   ]
   node [
     id 5
@@ -32,27 +32,27 @@ graph [
   ]
   edge [
     source 0
-    target 4
+    target 2
     weight 0.6011486587004862
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 0.3472219227848351
   ]
   edge [
     source 1
-    target 3
+    target 4
     weight 0.8173615410491871
   ]
   edge [
     source 2
-    target 3
-    weight 0.3369126444749189
-  ]
-  edge [
-    source 4
     target 5
     weight 0.6510037877502363
+  ]
+  edge [
+    source 3
+    target 4
+    weight 0.3369126444749189
   ]
 ]

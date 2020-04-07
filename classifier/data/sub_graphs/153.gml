@@ -3,15 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
-    label "gdp-beta;-l-fucose"
+    label "gdp-alpha;-d-mannose"
   ]
   node [
     id 3
@@ -19,11 +19,11 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 0.3038158544099706
   ]
   edge [
-    source 1
+    source 2
     target 3
     weight 0.4756327147119258
   ]

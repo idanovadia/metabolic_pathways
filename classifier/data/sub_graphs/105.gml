@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "uracil"
+    label "l-serine"
   ]
   node [
     id 1
-    label "l-serine"
+    label "uracil"
   ]
   edge [
     source 0

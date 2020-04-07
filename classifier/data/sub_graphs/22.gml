@@ -3,15 +3,15 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "2-oxoglutarate"
-  ]
-  node [
-    id 1
     label "l-alanine"
   ]
   node [
-    id 2
+    id 1
     label "l-glutamate"
+  ]
+  node [
+    id 2
+    label "2-oxoglutarate"
   ]
   node [
     id 3
@@ -20,11 +20,11 @@ graph [
   edge [
     source 0
     target 3
-    weight 0.4123799161204509
+    weight 0.698389240022241
   ]
   edge [
-    source 1
+    source 2
     target 3
-    weight 0.698389240022241
+    weight 0.4123799161204509
   ]
 ]

@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-asparagine"
+    label "l-cysteine"
   ]
   node [
     id 2
-    label "l-cysteine"
+    label "l-asparagine"
   ]
   edge [
     source 1

@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "(s)-malate"
+    label "l-lysine"
   ]
   node [
     id 2
-    label "l-lysine"
+    label "(s)-malate"
   ]
   node [
     id 3
@@ -34,11 +34,11 @@ graph [
   edge [
     source 1
     target 3
-    weight 0.6314071499873977
+    weight 0.7741925869687609
   ]
   edge [
     source 2
     target 3
-    weight 0.7741925869687609
+    weight 0.6314071499873977
   ]
 ]

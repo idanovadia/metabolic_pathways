@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "alpha;-tocopherol"
+    label "fructose"
   ]
   node [
     id 2
-    label "alpha;,alpha;-trehalose"
+    label "alpha;-tocopherol"
   ]
   node [
     id 3
-    label "fructose"
+    label "beta;-alanine"
   ]
   node [
     id 4
@@ -27,47 +27,47 @@ graph [
   ]
   node [
     id 6
-    label "beta;-alanine"
+    label "alpha;,alpha;-trehalose"
   ]
   edge [
     source 0
-    target 3
+    target 1
     weight 0.4501359581778627
   ]
   edge [
-    source 1
+    source 2
     target 5
     weight 0.6098175065214301
   ]
   edge [
-    source 1
-    target 6
+    source 2
+    target 3
     weight 0.5898485691674905
   ]
   edge [
-    source 1
+    source 2
     target 4
     weight 0.4190964302701642
   ]
   edge [
-    source 1
-    target 2
+    source 2
+    target 6
     weight 0.7707843244414465
   ]
   edge [
-    source 2
+    source 3
     target 5
-    weight 0.5980463308121475
+    weight 0.4533043899379032
   ]
   edge [
-    source 2
+    source 3
+    target 4
+    weight 0.4116814340554733
+  ]
+  edge [
+    source 3
     target 6
     weight 0.5430575256179176
-  ]
-  edge [
-    source 2
-    target 4
-    weight 0.3507787193826447
   ]
   edge [
     source 4
@@ -77,11 +77,11 @@ graph [
   edge [
     source 4
     target 6
-    weight 0.4116814340554733
+    weight 0.3507787193826447
   ]
   edge [
     source 5
     target 6
-    weight 0.4533043899379032
+    weight 0.5980463308121475
   ]
 ]

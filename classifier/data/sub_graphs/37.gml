@@ -3,18 +3,18 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "citrate"
   ]
   node [
     id 1
-    label "citrate"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
     label "l-serine"
   ]
   edge [
-    source 0
+    source 1
     target 2
     weight 0.405716148338836
   ]

@@ -3,19 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "benzoate"
-  ]
-  node [
-    id 1
-    label "shikimate"
-  ]
-  node [
-    id 2
     label "l-alanine"
   ]
   node [
-    id 3
+    id 1
     label "l-tryptophan"
+  ]
+  node [
+    id 2
+    label "benzoate"
+  ]
+  node [
+    id 3
+    label "shikimate"
   ]
   edge [
     source 0
@@ -25,16 +25,16 @@ graph [
   edge [
     source 0
     target 3
-    weight 0.460140496555413
+    weight 0.3798405827229721
+  ]
+  edge [
+    source 0
+    target 1
+    weight 0.5403694072428842
   ]
   edge [
     source 1
     target 2
-    weight 0.3798405827229721
-  ]
-  edge [
-    source 2
-    target 3
-    weight 0.5403694072428842
+    weight 0.460140496555413
   ]
 ]

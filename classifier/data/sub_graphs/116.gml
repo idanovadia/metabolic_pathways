@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "alpha;,alpha;-trehalose"
+    label "phosphate"
   ]
   node [
     id 1
@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "phosphate"
+    label "alpha;,alpha;-trehalose"
   ]
   edge [
-    source 1
-    target 2
+    source 0
+    target 1
     weight 0.5884905612973588
   ]
 ]

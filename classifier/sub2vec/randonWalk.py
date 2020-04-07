@@ -9,17 +9,19 @@ class RandomWalk():
         self.threshold = threshold
         self.number_of_graphs = number_of_graphs
 
-    def graphComparator(self, graph_1, graph_2):
-        if sorted(list(graph_1.nodes)) == sorted(list(graph_2.nodes)):
-            return True
-        return False
+    # def graphComparator(self, graph_1, graph_2):
+    #     if sorted(list(graph_1.nodes)) == sorted(list(graph_2.nodes)):
+    #         return True
+    #     return False
 
     def insertGraphToSet(self, list_of_graphs, graph):
+        rwList = []
         for counter, j in enumerate(graph.nodes):
             for i in range(self.number_of_graphs):
                 new_graph = self.randomWalk(graph, j, i)
                 new_graph.graph["name"] = str(i) + "_" + str(counter) + "_" + new_graph.graph["name"]
-                list_of_graphs.append(new_graph)
+                rwList.append(new_graph)
+        list_of_graphs.append(rwList)
         return list_of_graphs
 
     # Get sub-graph in nx format

@@ -45,8 +45,8 @@ class Sub2Vec(AbstractConfigClass):
     def exec(self):
         self.generateSubGraphs()
         self.randomWalk()
-        self.chooseBestSubgraphs()
-        self.WriteAll()
+        # self.chooseBestSubgraphs()
+        # self.WriteAll()
         self.doc2vec()
         self.generateTrain()
         self.generateLabel("train_label.xlsx", self.rw_list_of_graphs_train)
@@ -91,7 +91,7 @@ class Sub2Vec(AbstractConfigClass):
         self.rw_list_of_graphs_train =[]
         self.bestPositives()
         self.bestNegatives()
-        self.rw_list_of_graphs_train = self.rw_list_of_graphs_train_negative[:100] + self.rw_list_of_graphs_train_positive[:100] 
+        self.rw_list_of_graphs_train = self.rw_list_of_graphs_train_negative[:100] + self.rw_list_of_graphs_train_positive[:100]
         # self.rw_list_of_graphs_train = self.rw_list_of_graphs_train_negative[:len(self.rw_list_of_graphs_train_positive)] + self.rw_list_of_graphs_train_positive
         random.shuffle(self.rw_list_of_graphs_train)
 
@@ -110,7 +110,8 @@ class Sub2Vec(AbstractConfigClass):
     '''Using Doc2vec to get embedding'''
 
     def doc2vec(self):
-        doc2vec_obj_train = d2v.Doc2Vec(self.rw_list_of_graphs_train)
+        doc2vec_obj_train = d2v.Doc2Vec()
+        doc2vec_obj_train.transform(self.rw_list_of_graphs_train)
         self.vectors_train = doc2vec_obj_train.fit()
         # doc2vec_obj_test = d2v.Doc2Vec(self.rw_list_of_graphs_test)
         # self.vectors_test = doc2vec_obj_test.fit()
@@ -131,7 +132,7 @@ class Sub2Vec(AbstractConfigClass):
 
     def generateLabel(self, file, list):
         labels = []
-        [labels.append("positive") if g.graph['label'] == "positive" else labels.append("negative") for g in list]
+        [labels.append("positive") if g[0].graph['label'] == "positive" else labels.append("negative") for g in list]
         csv = pd.DataFrame(labels)
         self.saveFile(csv, self.classifier_files_directory, file)
 

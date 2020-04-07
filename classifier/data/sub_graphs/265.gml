@@ -7,71 +7,71 @@ graph [
   ]
   node [
     id 1
-    label "l-isoleucine"
-  ]
-  node [
-    id 2
     label "l-homoserine"
   ]
   node [
+    id 2
+    label "phosphate"
+  ]
+  node [
     id 3
-    label "2-oxoglutarate"
+    label "l-isoleucine"
   ]
   node [
     id 4
-    label "l-threonine"
+    label "2-oxoglutarate"
   ]
   node [
     id 5
-    label "l-glutamate"
+    label "l-threonine"
   ]
   node [
     id 6
-    label "phosphate"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 5
+    target 6
     weight 0.6056390159084215
   ]
   edge [
     source 0
-    target 6
+    target 2
     weight 0.6011486587004862
   ]
   edge [
     source 1
-    target 3
-    weight 0.396766828295452
+    target 4
+    weight 0.3472219227848351
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 0.702333516335615
   ]
   edge [
     source 1
-    target 4
-    weight 0.8117751078239503
-  ]
-  edge [
-    source 2
-    target 3
-    weight 0.3472219227848351
-  ]
-  edge [
-    source 2
-    target 4
+    target 5
     weight 0.8173615410491871
+  ]
+  edge [
+    source 2
+    target 6
+    weight 0.6510037877502363
   ]
   edge [
     source 3
     target 4
-    weight 0.3369126444749189
+    weight 0.396766828295452
   ]
   edge [
-    source 5
-    target 6
-    weight 0.6510037877502363
+    source 3
+    target 5
+    weight 0.8117751078239503
+  ]
+  edge [
+    source 4
+    target 5
+    weight 0.3369126444749189
   ]
 ]

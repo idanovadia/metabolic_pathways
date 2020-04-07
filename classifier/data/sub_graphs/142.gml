@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "benzoate"
+    label "succinate"
   ]
   node [
     id 1
-    label "succinate"
+    label "benzoate"
   ]
   edge [
     source 0
