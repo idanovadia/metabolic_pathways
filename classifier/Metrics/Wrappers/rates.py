@@ -24,7 +24,7 @@ class rates(MetricsAbstract):
             if y_pred[i] == 'negative' and y_true[i] != y_pred[i]:
                 FN += 1
 
-        print("TP {} FP {} TN {} FN {}".format(TP,FP,TN,FN))
+        # print("TP {} FP {} TN {} FN {}".format(TP,FP,TN,FN))
 
         return 1
 

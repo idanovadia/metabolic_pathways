@@ -8,7 +8,7 @@ class KFoldWrapper(ValidationMethodAbstract):
         self.x_train=x_train
         self.y_train=y_train
         self.splits=kwargs['kfold_split']
-        self.name='KFold'
+        self.name='KFold k='+str(self.splits)
 
 
     def split(self):

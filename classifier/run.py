@@ -15,20 +15,26 @@ modules_dict['classifier'] = classifier
 
 pipeline = []
 
+num_of_runs= int(getConfig().get("DEFAULT", "num_of_runs"))
+
+
 for module in getConfig().sections():
-    if modules_dict.get(module):
+    if modules_dict.get(module) and module!='DEFAULT':
         pipeline.append(modules_dict.get(module)())
 
-for element in pipeline:
-    print("Initializing {}".format(element.__class__.__name__))
-    element.setup()
+#running test x times
+for i in range(num_of_runs):
+    print("run number {}".format(i))
+    for element in pipeline:
+        print("Initializing {}".format(element.__class__.__name__))
+        element.setup()
 
-print("\n")
-
-for element in pipeline:
-    print("Executing {}".format(element.__class__.__name__))
-    element.exec()
     print("\n")
+
+    for element in pipeline:
+        print("Executing {}".format(element.__class__.__name__))
+        element.exec()
+        print("\n")
 
 if __name__ == '__main__':
     pass

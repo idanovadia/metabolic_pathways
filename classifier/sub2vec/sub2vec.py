@@ -7,8 +7,8 @@ import os
 import classifier.sub2vec.randonWalk as rw
 import classifier.sub2vec.doc2vec as d2v
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
-from queue import PriorityQueue
-import heapq
+import json
+
 
 
 class Sub2Vec(AbstractConfigClass):
@@ -40,7 +40,7 @@ class Sub2Vec(AbstractConfigClass):
         self.rw_list_of_graphs_train_positive = []
         self.rw_list_of_graphs_train_negative = []
         self.rw_list_of_graphs_test = []
-        pass
+        self.doc2vec_args=json.loads(self.config_parser.get(self.__class__.__name__, 'doc2vec_args'))
 
     def exec(self):
         self.generateSubGraphs()
@@ -110,7 +110,7 @@ class Sub2Vec(AbstractConfigClass):
     '''Using Doc2vec to get embedding'''
 
     def doc2vec(self):
-        doc2vec_obj_train = d2v.Doc2Vec()
+        doc2vec_obj_train = d2v.Doc2Vec(**self.doc2vec_args)
         doc2vec_obj_train.transform(self.rw_list_of_graphs_train)
         self.vectors_train = doc2vec_obj_train.fit()
         # doc2vec_obj_test = d2v.Doc2Vec(self.rw_list_of_graphs_test)

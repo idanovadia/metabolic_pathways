@@ -1,20 +1,28 @@
-import gensim.models.doc2vec as doc
-from gensim.test.utils import common_texts
 from gensim.models.doc2vec import Doc2Vec as d2v, TaggedDocument
 
 
-# documents = [TaggedDocument(doc, [i]) for i, doc in enumerate(common_texts)]
-# model = Doc2Vec(documents, vector_size=5, window=2, min_count=1, workers=4)
-# model
 class Doc2Vec:
 
-    def __init__(self):
+    def __init__(self,**kwargs):
         self.list_of_RW = []
         self.listOfTaggedDocuments = []
+        self.vector_size=int(kwargs['vector_size'])
+        self.window_size=int(kwargs['window_size'])
+        self.learning_rate=float(kwargs['learning_rate'])
+        self.min_learning_rate=float(kwargs['min_learning_rate'])
+        self.max_vocab_size=kwargs['min_vocab_size']
+        self.min_count=int(kwargs['min_count'])
+        self.workers=int(kwargs['workers'])
+        self.epochs=int(kwargs['epochs'])
+
 
     def fit(self):
-        # documents = [TaggedDocument(doc, [i]) for i, doc in enumerate(self.list_of_RW)]
-        model = d2v(self.listOfTaggedDocuments , vector_size=10, window=2, min_count=1, workers=4)
+        model = d2v(self.listOfTaggedDocuments ,
+                    vector_size=self.vector_size,
+                    window=self.window_size,
+                    min_count=self.min_count,
+                    workers=self.workers,
+                    epochs=self.epochs)
         return model.docvecs
 
     def transform(self, subGraphsList):
@@ -30,14 +38,4 @@ class Doc2Vec:
             for j in doc:
                 self.listOfTaggedDocuments.append(TaggedDocument(j, [i]))
 
-    # def fit(self):
-    #     documents = [TaggedDocument(doc, [i]) for i, doc in enumerate(self.list_of_RW)]
-    #     model = d2v(documents, vector_size=10, window=2, min_count=1, workers=4)
-    #     return model.docvecs
-    #
-    # def transform(self, subGraphsList):
-    #     for rwList in subGraphsList:
-    #         tmp = []
-    #         for graph in rwList:
-    #             tmp = tmp + (list(graph.nodes))
-    #         self.list_of_RW.append(tmp)
+
