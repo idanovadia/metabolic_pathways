@@ -120,7 +120,7 @@ class MultiReaction_new(torch.nn.Module):
                 #sub, prod = generate_reaction_def(scount, pcount, metabolites, low, high)
                 sub, prod = self._generator.get_reactions_tensor(i)
             else:
-                sub, prod = substrates, products
+                sub, prod = substrates[i], products[i]
                 self._is_generated = False
             sub = torch.Tensor(sub).to(device)  # so far there is no self.device in pytorch Modules
             prod = torch.Tensor(prod).to(device)  # so far there is no self.device in pytorch Modules
@@ -248,7 +248,7 @@ def compare_tensor_sets(s1,s2):
     return rslt / rcount
 
 m_count = 8 #size of metabolic profile
-reactions_count = 2#1
+reactions_count = 1
 dataset_size = 1
 minibatch_size = 10
 sub_min = 2
@@ -356,20 +356,34 @@ def write_data_summary(structure_list):
 
 def create_dataset():
     metabolites = range(m_count)
+
+    # testing 1 reaction - no common in input/output
     # reactions = Process_new(reactions_count, metabolites,
     #                         # scount=s_count, pcount=p_count,
     #                         # low=1.0,high=1.0
-    #                         substrates=[1, 1, 1, 0, 0, 0, 0, 0],
-    #                         products=[0, 0, 0, 1, 1, 1, 0, 0],
+    #                         substrates=[[1, 1, 1, 0, 0, 0, 0, 0]],
+    #                         products=[[0, 0, 0, 1, 1, 1, 0, 0]],
     #                         step=step, iterations=iterations,
     #                         ).to(device)
+
+    # testing 1 reaction - one common in input/output
     reactions = Process_new(reactions_count, metabolites,
                             # scount=s_count, pcount=p_count,
                             # low=1.0,high=1.0
-                            substrates= [1, 1, 1, 0, 0, 0, 0, 0],
-                            products=   [0, 1, 0, 1, 1, 1, 0, 0],
+                            substrates= [[1, 1, 1, 0, 0, 0, 0, 0]],
+                            products=   [[0, 1, 0, 1, 1, 1, 0, 0]],
                             step=step, iterations=iterations,
                             ).to(device)
+
+    #testing 2 reactions - no common in input/output
+    # reactions = Process_new(reactions_count, metabolites,
+    #                         # scount=s_count, pcount=p_count,
+    #                         # low=1.0,high=1.0
+    #                         substrates=[[1, 1, 1, 0, 0, 0, 0, 0],   [0, 1, 1, 0, 0, 0, 0, 0]],
+    #                         products=[  [0, 0, 0, 1, 1, 1, 0, 0],   [1, 0, 0, 1, 1, 1, 0, 0]],
+    #                         step=step, iterations=iterations,
+    #                         ).to(device)
+
     print_reactions(reactions)
 
     # creation of dataset(?)
