@@ -8,6 +8,7 @@ Z_dim = 100 #input layer for the generator
 H_dim = 128 #middle layer
 #X_dim is the output layer of generator
 
+
 default_model = nn.Sequential(
             nn.Linear(Z_dim, H_dim),
             nn.ReLU(),
@@ -16,7 +17,7 @@ default_model = nn.Sequential(
         )
 
 class Generator(nn.Module):
-    def __init__(self, X_dim, model=default_model):
+    def __init__(self, m_count, reaction_count, model=default_model):
         super().__init__()
         # self.model = nn.Sequential(
         #     nn.Linear(Z_dim, H_dim),
@@ -25,15 +26,24 @@ class Generator(nn.Module):
         #     nn.Sigmoid()
         # )
         self.model = model
+        self.reaction_count = reaction_count
+        self.m_count = m_count
+        self.output_result = None #will determine if the gan was already activated
 
     def forward(self, input):
         return self.model(input)
 
-    def get_reactions_tensor(self):
+    def get_result(self):
         z = self.get_random_input_layer()
         output = self(z)
-        output = output.resize(2,8) #todo change to local variables - 8 because of m_count and 2 because of input and output. multiply by r_count
-        return output
+        self.output_result = output.resize(self.reaction_count*2 ,self.m_count)
+
+    def get_reactions_tensor(self,i):
+        if(self.output_result is None):
+            self.get_result()
+        output = self.output_result
+        #output = output.resize(2,8)
+        return output[i*2],output[i*2+1]
 
     def get_random_input_layer(self):
         return torch.randn(1, 100)
@@ -56,7 +66,7 @@ class Generator(nn.Module):
         self.model = gan_model
 
 if __name__ == '__main__':
-    gan_generator = Generator(2*50*10)
+    gan_generator = Generator(2*50*10, 1)
     result = gan_generator(gan_generator.get_random_input_layer()).detach()
     result = gan_generator.turn_to_one_or_zero(result)
     result = list(range(1000))

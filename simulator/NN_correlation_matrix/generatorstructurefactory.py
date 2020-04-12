@@ -21,8 +21,8 @@ class GeneratorStructureFactory(nn.Module):
 
     def create_strucute_list(self):
         structure_list = []
-        # structure_list.append(self.structure_1())
-        # structure_list.append(self.structure_2())
+        structure_list.append(self.structure_1())
+        structure_list.append(self.structure_2())
         # structure_list.append(self.structure_3())
         # structure_list.append(self.structure_4())
         # structure_list.append(self.structure_5())
@@ -33,9 +33,9 @@ class GeneratorStructureFactory(nn.Module):
         # structure_list.append(self.structure_10())
         # structure_list.append(self.structure_11())
 
-        # for i in range(2):
+        # for i in range(10):
         #     structure = self.structure_11()
-        #     structure.set_name("model" + str(i))
+        #     structure.set_name("model " + str(i))
         #     structure_list.append(structure)
 
         return structure_list
@@ -247,13 +247,12 @@ class GeneratorStructure():
     def set_name(self, name):
         self._name = name
 
-    #todo: maybe change in future because of multireaction
     def set_score(self, input_error, out_error):
-        self.input_error = input_error
-        self.out_error = out_error
+        self.input_error_dict = input_error
+        self.out_error_dict = out_error
 
     def get_score(self):
-        return self.input_error, self.out_error
+        return self.input_error_dict, self.out_error_dict
 
     def set_last_mse_loss(self, mse_loss):
         self.mse_loss = mse_loss
