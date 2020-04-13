@@ -26,9 +26,9 @@ class Sub2Vec(AbstractConfigClass):
     '''
 
     def setup(self):
-        self.randomWalk_threshold = self.config_parser.eval(self.__class__.__name__, 'random_walk_threshold')
-        self.random_walk_graphs_to_create = self.config_parser.eval(self.__class__.__name__,
-                                                                    'random_walk_graphs_to_create')
+        self.randomWalk_length = self.config_parser.eval(self.__class__.__name__, 'random_walk_length')
+        self.random_walk_num = self.config_parser.eval(self.__class__.__name__,
+                                                                    'random_walk_number')
         self.subGraphs_directory_path = self.getPath(
             relative_path=self.config_parser.eval(self.__class__.__name__, 'subGraphs_directory_path'))
         self.random_walk_directory_path_output = self.getPath(
@@ -66,8 +66,8 @@ class Sub2Vec(AbstractConfigClass):
     '''Doing Random Walk on the sub graphs'''
 
     def randomWalk(self):
-        random_walk_object = rw.RandomWalk(threshold=self.randomWalk_threshold,
-                                           number_of_graphs=self.random_walk_graphs_to_create)
+        random_walk_object = rw.RandomWalk(threshold=self.randomWalk_length,
+                                           number_of_graphs=self.random_walk_num)
         for k in self.subGraphs_list:
             g = k[1]
             g.graph["name"] = k[0]

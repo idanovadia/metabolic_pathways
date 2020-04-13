@@ -11,9 +11,11 @@ class Result():
 
     def getPandas(self,df,**kwargs):
         correlation_tresh=kwargs['correlation_treshold']
-        randomwalk_tresh=kwargs['random_walk_treshold']
+        randomwalk_tresh=kwargs['random_walk_length']
+        randomwalk_num_of_times=kwargs['random walk num of times']
         df=df.append(pd.Series([correlation_tresh,
                                 randomwalk_tresh,
+                                randomwalk_num_of_times,
                                 self.classifier,
                                 self.validation,
                                 self.scores['train']['accuracy'],
