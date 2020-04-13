@@ -1,6 +1,8 @@
 import pandas as pd
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 from configparser import ConfigParser
+import numpy as np
+
 
 class CorrMaxtrix(AbstractConfigClass):
     def __init__(self):
@@ -14,6 +16,7 @@ class CorrMaxtrix(AbstractConfigClass):
 
     def exec(self):
         self.corr()
+        # self.powerCorrMatrix(2)
         self.saveFile()
 
     def corr(self):
@@ -24,3 +27,6 @@ class CorrMaxtrix(AbstractConfigClass):
 
     def saveFile(self):
         self.pearsonCorr.to_excel(self.output_path_folder + "/" + self.output_file_name)
+
+    def powerCorrMatrix(self,p):
+        self.pearsonCorr = np.power((self.pearsonCorr.to_numpy()),p)
