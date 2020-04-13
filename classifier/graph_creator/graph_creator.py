@@ -84,10 +84,12 @@ class GraphCreator(AbstractConfigClass):
     ''' main function '''
 
     def create(self):
-        # self.creteSetNodes()
         self.createMainGraph()
-        # self.generateWightsByThreshold()
-        # self.removeEdgesByList()
+
+        # self.powerGraph()
+        # self.setPowerAdjacencyMatrix()
+        # self.setAddPAMWithAM()
+
         self.writeMainGraph()
         self.subGraphsCreator()
         # self.addRandomNeighbors()
@@ -238,6 +240,38 @@ class GraphCreator(AbstractConfigClass):
     #     plt.show()
     # ############################################################################################################################################
 
+# --------------------------------------------------------------------------------------
+    # power Graph- main
+    def powerGraph(self):
+        self.main_graph = nx.power(self.main_graph, 2)
+
+    #   return  AdjacencyMatrix power 2  - main
+    def setPowerAdjacencyMatrix(self):
+        self.main_graph = self.from_numpy_matrix(self.powerAdjacencyMatrix(2))
+
+    # return AdjacencyMatrix power 2 + AdjacencyMatrix  - main
+    def setAddPAMWithAM(self):
+        self.main_graph = self.from_numpy_matrix(self.addPAMWithAM())
+
+    # add AdjacencyMatrix power 2 + AdjacencyMatrix
+    def addPAMWithAM(self):
+        return self.powerAdjacencyMatrix(2) + self.to_numpy_matrix(self.main_graph)
+
+    # convert AdjacencyMatrix to graph
+    def from_numpy_matrix(self,matrix):
+        return nx.from_numpy_matrix(matrix)
+
+    # power AdjacencyMatrix
+    def powerAdjacencyMatrix(self,p):
+        return np.power(self.to_numpy_matrix(self.main_graph), p)
+
+    # convert graph to AdjacencyMatrix
+    def to_numpy_matrix(self,g):
+        return nx.to_numpy_matrix(g)
+
+
+
+# --------------------------------------------------------------------------------------
     def NeighborsByPriority(self):
         subgraphs_with_neighbors = []
         for i in self.subGraphs_list:
