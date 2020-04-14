@@ -13,11 +13,13 @@ class Result():
         correlation_tresh=kwargs['correlation_treshold']
         randomwalk_tresh=kwargs['random_walk_length']
         randomwalk_num_of_times=kwargs['random walk num of times']
+        improvements=kwargs['improvements']
         df=df.append(pd.Series([correlation_tresh,
                                 randomwalk_tresh,
                                 randomwalk_num_of_times,
                                 self.classifier,
                                 self.validation,
+                                improvements,
                                 self.scores['train']['accuracy'],
                                 self.scores['train']['f1 score'],
                                 self.scores['train']['precision'],

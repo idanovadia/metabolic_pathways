@@ -95,12 +95,13 @@ class classifier(AbstractConfigClass):
         return result
 
     def outputResult(self):
-        columns = ['correlation threshold','rw length','rw num of times','classifier', 'validation', 'train accuracy', 'train F1 score','train Precision','train Recall','train FP', ' train FN','train TP','train TN','test accuracy', 'test F1 score','test Precision','test Recall','test FP', ' test FN','test TP','test TN']
+        columns = ['correlation threshold','rw length','rw num of times','classifier', 'validation','improvements', 'train accuracy', 'train F1 score','train Precision','train Recall','train FP', ' train FN','train TP','train TN','test accuracy', 'test F1 score','test Precision','test Recall','test FP', ' test FN','test TP','test TN']
         # df = pd.DataFrame(columns=columns)
 # s(df)
         added_cols = {'correlation_treshold':self.config_parser.eval('GraphCreator', "threshold"),
                       'random_walk_length':self.config_parser.eval('Sub2Vec', 'random_walk_length'),
-                      'random walk num of times':self.config_parser.eval('Sub2Vec', 'random_walk_number')}
+                      'random walk num of times':self.config_parser.eval('Sub2Vec', 'random_walk_number'),
+                      'improvements':'Graph Creator:'+str(self.config_parser.eval('GraphCreator', 'extensions')).replace('}','').replace('{','')}
         if os.path.exists(self.csv_output_directory+os.sep+self.output_file_name+'.xlsx'):
             self.result_dataframe=pd.read_excel(self.csv_output_directory+os.sep+self.output_file_name+'.xlsx')
         else :

@@ -53,7 +53,7 @@ class GraphCreator(AbstractConfigClass):
         extensions_dict={}
         extensions_dict['power_graph']=self.powerGraph
         extensions_dict['adj_matrix_power'] = self.setPowerAdjacencyMatrix
-        extensions_dict['adj_matrix_and_add'] = self.addPAMWithAM
+        extensions_dict['adj_matrix_and_add'] = self.setAddPAMWithAM
         for extension , value in self.extensions.items():
             extensions_dict[extension](value)
             print(extension)
