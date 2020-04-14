@@ -2,13 +2,10 @@ import random
 from queue import PriorityQueue
 import pandas as pd
 import numpy as np
-import sklearn
-import matplotlib.pyplot as plt
 import networkx as nx
 import os
+import json
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
-from configparser import ConfigParser
-from distributed.worker import weight
 
 ''' Using to create the main graph from the correlation matrix and the sub graph lists  '''
 
@@ -42,9 +39,24 @@ class GraphCreator(AbstractConfigClass):
         self.main_graph = nx.Graph()
         self.set_nodes = set()
         self.removeEdges = []
+        self.extensions=json.loads(self.config_parser.get(self.__class__.__name__, 'extensions'))
 
     def exec(self):
-        self.create()
+        self.createMainGraph()
+        self.run_extensions()
+        self.writeMainGraph()
+        self.subGraphsCreator()
+        self.WriteAll()
+
+    def run_extensions(self):
+                            #add extensions here
+        extensions_dict={}
+        extensions_dict['power_graph']=self.powerGraph
+        extensions_dict['adj_matrix_power'] = self.setPowerAdjacencyMatrix
+        extensions_dict['adj_matrix_and_add'] = self.addPAMWithAM
+        for extension , value in self.extensions.items():
+            extensions_dict[extension](value)
+            print(extension)
 
     '''
      Object of sub graph.  
@@ -81,24 +93,24 @@ class GraphCreator(AbstractConfigClass):
             subGraph.graph['type'] = self.type
             return subGraph
 
-    ''' main function '''
+    # ''' main function '''
 
-    def create(self):
-        self.createMainGraph()
-
-        # self.powerGraph()
-        # self.setPowerAdjacencyMatrix()
-        # self.setAddPAMWithAM()
-
-        self.writeMainGraph()
-        self.subGraphsCreator()
-        # self.addRandomNeighbors()
-        # self.NeighborsByPriority()
-        self.WriteAll()
-
-        # nx.draw(self.main_graph,with_labels=True)
-        # plt.savefig("filename.png")
-        # self.plotGraph()
+    # def create(self):
+    #     self.createMainGraph()
+    #
+    #     # self.powerGraph()
+    #     # self.setPowerAdjacencyMatrix()
+    #     self.setAddPAMWithAM()
+    #
+    #     self.writeMainGraph()
+    #     self.subGraphsCreator()
+    #     # self.addRandomNeighbors()
+    #     # self.NeighborsByPriority()
+    #     self.WriteAll()
+    #
+    #     # nx.draw(self.main_graph,with_labels=True)
+    #     # plt.savefig("filename.png")
+    #     # self.plotGraph()
 
     ''' create list of sub graphs  '''
 
@@ -242,20 +254,20 @@ class GraphCreator(AbstractConfigClass):
 
 # --------------------------------------------------------------------------------------
     # power Graph- main
-    def powerGraph(self):
-        self.main_graph = nx.power(self.main_graph, 2)
+    def powerGraph(self,p):
+        self.main_graph = nx.power(self.main_graph, p)
 
     #   return  AdjacencyMatrix power 2  - main
-    def setPowerAdjacencyMatrix(self):
-        self.main_graph = self.from_numpy_matrix(self.powerAdjacencyMatrix(2))
+    def setPowerAdjacencyMatrix(self,p):
+        self.main_graph = self.from_numpy_matrix(self.powerAdjacencyMatrix(p))
 
     # return AdjacencyMatrix power 2 + AdjacencyMatrix  - main
-    def setAddPAMWithAM(self):
-        self.main_graph = self.from_numpy_matrix(self.addPAMWithAM())
+    def setAddPAMWithAM(self,p):
+        self.main_graph = self.from_numpy_matrix(self.addPAMWithAM(p))
 
     # add AdjacencyMatrix power 2 + AdjacencyMatrix
-    def addPAMWithAM(self):
-        return self.powerAdjacencyMatrix(2) + self.to_numpy_matrix(self.main_graph)
+    def addPAMWithAM(self,p):
+        return self.powerAdjacencyMatrix(p) + self.to_numpy_matrix(self.main_graph)
 
     # convert AdjacencyMatrix to graph
     def from_numpy_matrix(self,matrix):
@@ -263,7 +275,7 @@ class GraphCreator(AbstractConfigClass):
 
     # power AdjacencyMatrix
     def powerAdjacencyMatrix(self,p):
-        return np.power(self.to_numpy_matrix(self.main_graph), p)
+        return np.linalg.matrix_power(self.to_numpy_matrix(self.main_graph),p)
 
     # convert graph to AdjacencyMatrix
     def to_numpy_matrix(self,g):
