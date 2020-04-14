@@ -21,8 +21,8 @@ class GeneratorStructureFactory(nn.Module):
 
     def create_strucute_list(self):
         structure_list = []
-        structure_list.append(self.structure_1())
-        structure_list.append(self.structure_2())
+        # structure_list.append(self.structure_1())
+        # structure_list.append(self.structure_2())
         # structure_list.append(self.structure_3())
         # structure_list.append(self.structure_4())
         # structure_list.append(self.structure_5())
@@ -32,6 +32,9 @@ class GeneratorStructureFactory(nn.Module):
         # structure_list.append(self.structure_9())
         # structure_list.append(self.structure_10())
         # structure_list.append(self.structure_11())
+        structure_list.append(self.structure_12())
+        structure_list.append(self.structure_13())
+        structure_list.append(self.structure_14())
 
         # for i in range(10):
         #     structure = self.structure_11()
@@ -229,6 +232,54 @@ class GeneratorStructureFactory(nn.Module):
             nn.Sigmoid(),
         )
         name = "11"
+        return GeneratorStructure(name, model)
+
+    def structure_12(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim * 2),
+            nn.Linear(Z_dim * 2, Z_dim * 4),
+            nn.Linear(Z_dim * 4, Z_dim * 8),
+            nn.Linear(Z_dim * 8, Z_dim * 16),
+            nn.Linear(Z_dim * 16, Z_dim * 8),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.Linear(Z_dim * 4, Z_dim * 2),
+            nn.Linear(Z_dim * 2, self._out_dim),
+            nn.Sigmoid(),
+        )
+        name = "12"
+        return GeneratorStructure(name, model)
+
+    def structure_13(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim * 2),
+            nn.Linear(Z_dim * 2, Z_dim * 4),
+            nn.Linear(Z_dim * 4, Z_dim * 8),
+            nn.Linear(Z_dim * 8, Z_dim * 16),
+            nn.Linear(Z_dim * 16, Z_dim * 32),
+            nn.Linear(Z_dim * 32, Z_dim * 16),
+            nn.Linear(Z_dim * 16, Z_dim * 8),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.Linear(Z_dim * 4, Z_dim * 2),
+            nn.Linear(Z_dim * 2, self._out_dim),
+            nn.Sigmoid(),
+        )
+        name = "13"
+        return GeneratorStructure(name, model)
+
+    def structure_14(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim * 8),
+            nn.Linear(Z_dim * 8, Z_dim * 32),
+            nn.Linear(Z_dim * 32, Z_dim * 64),
+            nn.Linear(Z_dim * 64, Z_dim * 128),
+            nn.Linear(Z_dim * 128, Z_dim * 64),
+            nn.Linear(Z_dim * 64, Z_dim * 32),
+            nn.Linear(Z_dim * 32, Z_dim * 8),
+            nn.Linear(Z_dim * 8, Z_dim),
+            nn.Linear(Z_dim, self._out_dim),
+            nn.Sigmoid(),
+        )
+        name = "14"
         return GeneratorStructure(name, model)
 
 

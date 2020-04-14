@@ -250,10 +250,10 @@ def compare_tensor_sets(s1,s2):
 m_count = 8 #size of metabolic profile
 reactions_count = 1
 dataset_size = 1
-minibatch_size = 10
+minibatch_size = 10#100
 sub_min = 2
 sub_max = 2.01
-epochs = 50#200
+epochs = 200#50#200
 step = 0.5
 iterations = 100
 s_count=3
@@ -320,11 +320,11 @@ def write_date_epoch(gan_structure, loss, ploss, rloss, epoch, time):
     if epoch == 0:
         wb.create_sheet(sheet_name, 0)
         active = wb[sheet_name]
-        line_append = ["epoch","time", "mse-loss", "ploss", "rloss", "minibatch_size", "learning rate"]
+        line_append = ["epoch","time", "mse-loss", "ploss", "rloss", "minibatch_size", "learning rate", "dataset size"]
         active.append(line_append)
 
     active = wb[sheet_name]
-    line_append = [epoch, time, loss.item(), ploss, rloss, minibatch_size, step]
+    line_append = [epoch, time, loss.item(), ploss, rloss, minibatch_size, step, dataset_size]
     active.append(line_append)
 
     # Save workbook to write
@@ -471,9 +471,10 @@ class Test():
 
                 optimizer.zero_grad()
 
-                ym, yc = model(x)
+                #ym, yc = model(x)
+                ym, yc = model(rand_x)
                 loss = F.mse_loss(yc, y)
-                loss_list.append(loss)
+                #loss_list.append(loss) moved it down because when we had many datasets it didn't work - only works with one dataset
                 loss.backward(retain_graph=True)
                 optimizer.step()
 
@@ -496,6 +497,7 @@ class Test():
                 rloss = rloss / 1 / dataset_size
                 info_string = "{}\t time:{:2.3g} \t mse:{} \t p-loss:{} \t r-loss :{}".format(epoch, T,loss, ploss, rloss)
                 write_date_epoch(gan_structure, loss, ploss, rloss,epoch,T)
+                loss_list.append(loss)
                 print(info_string)
                 if ploss < (10 ** (-20)):
                     print("stop")
