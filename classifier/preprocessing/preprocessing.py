@@ -27,7 +27,6 @@ class Preprocessing(AbstractConfigClass):
 
     def fillNaToMean(self):
         csv_pd = pd.read_excel(self.input_file_path, index_col=0, header=0)
-        print(csv_pd.head())
         csv_pd_T = csv_pd.T
         csv_pd_T = csv_pd_T.fillna(0)
         # for index, row in enumerate(csv_pd_T):
