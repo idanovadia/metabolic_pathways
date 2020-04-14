@@ -32,9 +32,10 @@ class GeneratorStructureFactory(nn.Module):
         # structure_list.append(self.structure_9())
         # structure_list.append(self.structure_10())
         # structure_list.append(self.structure_11())
-        structure_list.append(self.structure_12())
-        structure_list.append(self.structure_13())
-        structure_list.append(self.structure_14())
+        # structure_list.append(self.structure_12())
+        # structure_list.append(self.structure_13())
+        # structure_list.append(self.structure_14())
+        #structure_list.append(self.structure_15())
 
         # for i in range(10):
         #     structure = self.structure_11()
@@ -280,6 +281,25 @@ class GeneratorStructureFactory(nn.Module):
             nn.Sigmoid(),
         )
         name = "14"
+        return GeneratorStructure(name, model)
+
+    #based on 11, but with sigmoid between each layer
+    def structure_15(self):
+        model = nn.Sequential(
+            nn.Linear(Z_dim, Z_dim * 2),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 2, Z_dim * 4),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 4, Z_dim * 8),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 8, Z_dim * 4),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 4, Z_dim * 2),
+            nn.Sigmoid(),
+            nn.Linear(Z_dim * 2, self._out_dim),
+            nn.Sigmoid(),
+        )
+        name = "15"
         return GeneratorStructure(name, model)
 
 

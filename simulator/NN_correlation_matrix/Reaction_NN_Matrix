@@ -117,6 +117,8 @@ class MultiReaction_new(torch.nn.Module):
         self._is_generated = True
         for i in range(rcount):
             if substrates == None:
+                if i == 0:
+                    self._generator.clear_output_layer()
                 #sub, prod = generate_reaction_def(scount, pcount, metabolites, low, high)
                 sub, prod = self._generator.get_reactions_tensor(i)
             else:
@@ -131,6 +133,7 @@ class MultiReaction_new(torch.nn.Module):
         # random.shuffle(self._reactions)
         if self._is_generated:
             self._reactions =  torch.nn.ModuleList()
+            self._generator.clear_output_layer()
             for i in range(reactions_count):
                 sub, prod = self._generator.get_reactions_tensor(i)
                 sub = torch.Tensor(sub).to(device)
@@ -253,7 +256,7 @@ dataset_size = 1
 minibatch_size = 10#100
 sub_min = 2
 sub_max = 2.01
-epochs = 200#50#200
+epochs = 50#200
 step = 0.5
 iterations = 100
 s_count=3

@@ -38,12 +38,18 @@ class Generator(nn.Module):
         output = self(z)
         self.output_result = output.resize(self.reaction_count*2 ,self.m_count)
 
+    def clear_output_layer(self):
+        self.output_result = None
+
     def get_reactions_tensor(self,i):
         if(self.output_result is None):
             self.get_result()
         output = self.output_result
         #output = output.resize(2,8)
         return output[i*2],output[i*2+1]
+        # z = self.get_random_input_layer()
+        # output = self(z)
+        # return output.resize(2,8)
 
     def get_random_input_layer(self):
         return torch.randn(1, 100)
