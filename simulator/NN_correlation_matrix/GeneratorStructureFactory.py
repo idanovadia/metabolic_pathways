@@ -35,12 +35,12 @@ class GeneratorStructureFactory(nn.Module):
         # structure_list.append(self.structure_12())
         # structure_list.append(self.structure_13())
         # structure_list.append(self.structure_14())
-        #structure_list.append(self.structure_15())
+        # structure_list.append(self.structure_15())
 
-        # for i in range(10):
-        #     structure = self.structure_11()
-        #     structure.set_name("model " + str(i))
-        #     structure_list.append(structure)
+        for i in range(10):
+            structure = self.structure_11()
+            structure.set_name("model 11 (" + str(i) + ")")
+            structure_list.append(structure)
 
         return structure_list
 

@@ -5,15 +5,14 @@ import copy
 import time
 import matplotlib.pyplot as plt
 import numpy as np
-from openpyxl import Workbook, load_workbook
 from sklearn import cluster
 import networkx as nx
-from openpyxl.drawing.image import Image
 
 
 from simulator.NN_correlation_matrix.Reaction import Reaction
-from simulator.NN_correlation_matrix.gan_NN_Matrix_simulator import Generator
-from simulator.NN_correlation_matrix.generatorstructurefactory import GeneratorStructureFactory
+from simulator.NN_correlation_matrix.Gan_NN_Matrix_simulator import Generator
+from simulator.NN_correlation_matrix.GeneratorStructureFactory import GeneratorStructureFactory
+from simulator.NN_correlation_matrix.ResultSaver import ResultSaver
 
 gan_model_global = None #variable to make setting of model easier
 
@@ -251,9 +250,9 @@ def compare_tensor_sets(s1,s2):
     return rslt / rcount
 
 m_count = 8 #size of metabolic profile
-reactions_count = 1
-dataset_size = 1
-minibatch_size = 10#100
+reactions_count = 2
+dataset_size = 20#50#10#1
+minibatch_size = 400#10#100
 sub_min = 2
 sub_max = 2.01
 epochs = 50#200
@@ -261,100 +260,14 @@ step = 0.5
 iterations = 100
 s_count=3
 p_count=3
-saving_path = "C:\\Users\\Ido\\PycharmProjects\\metabolic_pathways\\simulator\\NN_correlation_matrix\\Results\\"
-excel_path = saving_path + "result.xlsx"
+result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
+
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #device = "cpu"
 
 
-def write_date_final_epoch(gan_structure, model_output, real_output, loss_list):
-    wb = load_workbook(excel_path)
-    sheet_name = gan_structure.get_name()
-    filepath = saving_path + 'final_images\\' + sheet_name + '_final_image.png'
 
-    # Create the matrix for yc result
-    plt.close()
-    plt.title('correlation matrix for model ' + gan_structure.get_name())
-    npimg = model_output.detach().cpu().numpy()
-    plt.imshow(npimg, cmap="Greys")
-    plt.savefig(filepath, dpi = 50)
-
-    #Create the original matrix graph
-    plt.close()
-    plt.title('original matrix')
-    npimg = real_output.cpu().numpy()
-    plt.imshow(npimg, cmap="Greys")
-    plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '.png', dpi=50)
-
-    # plot the graph of epchos-MSE
-    plt.close()
-    plt.title("Epochs with MSE")
-    plt.plot(range(epochs), loss_list)
-    plt.xlabel('Epochs')
-    plt.ylabel('MSE loss')
-    plt.savefig(saving_path + 'graphs\\' + sheet_name + '.png', dpi=50)
-
-
-    # Add photos to excel sheet
-    # Activate worksheet
-    active = wb[sheet_name]
-
-    # Insert plot into worksheet
-    # Select active sheet and cell reference
-    img = Image(filepath)
-    active.add_image(img, 'I1')
-
-    img_orginial_matrix = Image(saving_path + 'original_matrix_images\\' + sheet_name + '.png')
-    active.add_image(img_orginial_matrix, 'N1')
-
-    img_grraph = Image(saving_path + 'graphs\\' + sheet_name + '.png')
-    active.add_image(img_grraph, 'I15')
-
-
-
-    # Save workbook
-    wb.save(excel_path)
-
-
-def write_date_epoch(gan_structure, loss, ploss, rloss, epoch, time):
-    wb = load_workbook(excel_path)
-    sheet_name = gan_structure.get_name()
-    if epoch == 0:
-        wb.create_sheet(sheet_name, 0)
-        active = wb[sheet_name]
-        line_append = ["epoch","time", "mse-loss", "ploss", "rloss", "minibatch_size", "learning rate", "dataset size"]
-        active.append(line_append)
-
-    active = wb[sheet_name]
-    line_append = [epoch, time, loss.item(), ploss, rloss, minibatch_size, step, dataset_size]
-    active.append(line_append)
-
-    # Save workbook to write
-    wb.save(excel_path)
-
-
-def write_data_summary(structure_list):
-    wb = load_workbook(excel_path)
-    sheet_name = "Summary"
-    wb.create_sheet(sheet_name, 0)
-    active = wb[sheet_name]
-    line_append = ["model", "mse loss"]# "input error", "output error"]
-    for i in range(reactions_count):
-        line_append.append("Reaction " + str(i + 1) + " input error")
-        line_append.append("Reaction " + str(i + 1) + " output error")
-    active.append(line_append)
-    for structure in structure_list:
-        in_err_dict, out_err_dict = structure.get_score()
-        line_append = [structure.get_name(), structure.get_last_mse_loss().detach().item()]# ,in_err + '%', out_err + '%']
-        for i in range(reactions_count):
-            in_err = in_err_dict[i]
-            out_err = out_err_dict[i]
-            line_append.append(in_err + '%')
-            line_append.append(out_err + '%')
-        active.append(line_append)
-
-    wb.save(excel_path)
 
 
 def create_dataset():
@@ -370,22 +283,22 @@ def create_dataset():
     #                         ).to(device)
 
     # testing 1 reaction - one common in input/output
-    reactions = Process_new(reactions_count, metabolites,
-                            # scount=s_count, pcount=p_count,
-                            # low=1.0,high=1.0
-                            substrates= [[1, 1, 1, 0, 0, 0, 0, 0]],
-                            products=   [[0, 1, 0, 1, 1, 1, 0, 0]],
-                            step=step, iterations=iterations,
-                            ).to(device)
-
-    #testing 2 reactions - no common in input/output
     # reactions = Process_new(reactions_count, metabolites,
     #                         # scount=s_count, pcount=p_count,
     #                         # low=1.0,high=1.0
-    #                         substrates=[[1, 1, 1, 0, 0, 0, 0, 0],   [0, 1, 1, 0, 0, 0, 0, 0]],
-    #                         products=[  [0, 0, 0, 1, 1, 1, 0, 0],   [1, 0, 0, 1, 1, 1, 0, 0]],
+    #                         substrates= [[1, 1, 1, 0, 0, 0, 0, 0]],
+    #                         products=   [[0, 1, 0, 1, 1, 1, 0, 0]],
     #                         step=step, iterations=iterations,
     #                         ).to(device)
+
+    #testing 2 reactions - no common in input/output
+    reactions = Process_new(reactions_count, metabolites,
+                            # scount=s_count, pcount=p_count,
+                            # low=1.0,high=1.0
+                            substrates=[[1, 1, 1, 0, 0, 0, 0, 0],   [0, 1, 1, 0, 0, 0, 0, 1]],
+                            products=[  [0, 0, 0, 1, 1, 1, 0, 0],   [1, 0, 0, 1, 1, 1, 0, 0]],
+                            step=step, iterations=iterations,
+                            ).to(device)
 
     print_reactions(reactions)
 
@@ -411,8 +324,6 @@ def create_dataset():
 class Test():
 
     def run_tests(self):
-        wb = Workbook()
-        wb.save(excel_path)
 
         generator_structure_factory = GeneratorStructureFactory(m_count*2*reactions_count)
         structure_list = generator_structure_factory.get_structure_list()
@@ -440,7 +351,8 @@ class Test():
                 str_print += '\t Reaction ' + str(i+1) + " - In Err: " + in_err_dict[i] + "%. Out Err: " + out_err_dict[i] + "% \n"
             print(str_print)
 
-        write_data_summary(structure_list)
+        #write_data_summary(structure_list)
+        result_saver.write_data_summary(structure_list)
 
     def run_one_test(self, gan_structure):
         dataset, reactions = create_dataset()
@@ -499,7 +411,8 @@ class Test():
                 ploss = ploss / 1 / dataset_size
                 rloss = rloss / 1 / dataset_size
                 info_string = "{}\t time:{:2.3g} \t mse:{} \t p-loss:{} \t r-loss :{}".format(epoch, T,loss, ploss, rloss)
-                write_date_epoch(gan_structure, loss, ploss, rloss,epoch,T)
+                #write_date_epoch(gan_structure, loss, ploss, rloss,epoch,T)
+                result_saver.write_data_epoch(gan_structure, loss, ploss, rloss, epoch, T)
                 loss_list.append(loss)
                 print(info_string)
                 if ploss < (10 ** (-20)):
@@ -511,7 +424,8 @@ class Test():
 
             if epoch == epochs-1: #last epoch
                 gan_structure.set_last_mse_loss(loss)
-                write_date_final_epoch(gan_structure, yc, y, loss_list)
+                #write_date_final_epoch(gan_structure, yc, y, loss_list)
+                result_saver.write_date_final_epoch(gan_structure, yc, y, loss_list)
 
         predicted = model.get_reactions_tensor()
         predicted = predicted.round().int()
