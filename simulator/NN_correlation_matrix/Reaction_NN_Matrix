@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn import cluster
 import networkx as nx
+from numba import jit, cuda
 
 
 from simulator.NN_correlation_matrix.Reaction import Reaction
@@ -262,9 +263,9 @@ s_count=3
 p_count=3
 result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
 
-
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #device = "cpu"
+print("Device is " + str(device))
 
 
 def create_random_reactions(reactions_count, metabolic_count):
@@ -343,6 +344,7 @@ def create_dataset():
 
 class Test():
 
+    #@jit(target="cuda")
     def run_tests(self):
 
         generator_structure_factory = GeneratorStructureFactory(m_count*2*reactions_count)
@@ -374,6 +376,7 @@ class Test():
         #write_data_summary(structure_list)
         result_saver.write_data_summary(structure_list)
 
+    #@jit(target="cuda")
     def run_one_test(self, gan_structure):
         dataset, reactions = create_dataset()
         gan_model = gan_structure.get_model()
