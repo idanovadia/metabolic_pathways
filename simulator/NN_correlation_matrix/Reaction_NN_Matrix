@@ -249,10 +249,10 @@ def compare_tensor_sets(s1,s2):
         rslt+=mses[j]
     return rslt / rcount
 
-m_count = 8 #size of metabolic profile
-reactions_count = 2
+m_count = 200#8 #size of metabolic profile
+reactions_count = 50
 dataset_size = 20#50#10#1
-minibatch_size = 400#10#100
+minibatch_size = 400#10#100 #number of random initial substrates
 sub_min = 2
 sub_max = 2.01
 epochs = 50#200
@@ -267,7 +267,17 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #device = "cpu"
 
 
-
+def create_random_reactions(reactions_count, metabolic_count):
+    substrates = []
+    products = []
+    for i in range(reactions_count):
+        #substrate = random.sample(range(2), metabolic_count)
+        substrate = [random.randrange(0, 2, 1) for i in range(metabolic_count)]
+        #product = random.sample(range(2), metabolic_count)
+        product = [random.randrange(0, 2, 1) for i in range(metabolic_count)]
+        substrates.append(substrate)
+        products.append(product)
+    return substrates, products
 
 
 def create_dataset():
@@ -292,11 +302,21 @@ def create_dataset():
     #                         ).to(device)
 
     #testing 2 reactions - no common in input/output
+    # reactions = Process_new(reactions_count, metabolites,
+    #                         # scount=s_count, pcount=p_count,
+    #                         # low=1.0,high=1.0
+    #                         substrates=[[1, 1, 1, 0, 0, 0, 0, 0],   [0, 1, 1, 0, 0, 0, 0, 1]],
+    #                         products=[  [0, 0, 0, 1, 1, 1, 0, 0],   [1, 0, 0, 1, 1, 1, 0, 0]],
+    #                         step=step, iterations=iterations,
+    #                         ).to(device)
+
+    # testing x reactions - random reactions
+    subs, prods = create_random_reactions(reactions_count, m_count)
     reactions = Process_new(reactions_count, metabolites,
                             # scount=s_count, pcount=p_count,
                             # low=1.0,high=1.0
-                            substrates=[[1, 1, 1, 0, 0, 0, 0, 0],   [0, 1, 1, 0, 0, 0, 0, 1]],
-                            products=[  [0, 0, 0, 1, 1, 1, 0, 0],   [1, 0, 0, 1, 1, 1, 0, 0]],
+                            substrates=subs,
+                            products=prods,
                             step=step, iterations=iterations,
                             ).to(device)
 
@@ -433,12 +453,13 @@ class Test():
         predict_for_cal = predicted #need this for my calculate_error function, the next line converts it for string for some reason
         predicted = [repr(t) for t in list(predicted)]
         predicted.sort()
-
+        gan_structure.add_to_predicted_reactions_list(predict_for_cal)
 
         original = reactions.get_reactions_tensor().int()
         original_for_cal = original
         original = [repr(t) for t in list(original)]
         original.sort()
+        gan_structure.add_to_original_reactions_list(original_for_cal)
 
         verdict = [x==y for x,y in zip(original, predicted)]
         print(verdict)
@@ -450,7 +471,9 @@ class Test():
             print("predicted:")
             print(predicted[i])
 
+
         self.calculate_error(original_for_cal, predict_for_cal, gan_structure)
+        result_saver.save_reactions(gan_structure)
 
     def calculate_error(self, original, predicted, gan_structure):
         calc_in_error_dict = {}

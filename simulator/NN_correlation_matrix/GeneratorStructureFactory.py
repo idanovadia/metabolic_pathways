@@ -308,6 +308,8 @@ class GeneratorStructure():
     def __init__(self, name, model):
         self._name = name
         self._model = model
+        self.original_reactions = []
+        self.predicted_reactions = []
 
     def get_model(self):
         return self._model
@@ -330,6 +332,15 @@ class GeneratorStructure():
 
     def get_last_mse_loss(self):
         return self.mse_loss
+
+    def add_to_original_reactions_list(self, reaction):
+        self.original_reactions.append(reaction)
+
+    def add_to_predicted_reactions_list(self, reaction):
+        self.predicted_reactions.append(reaction)
+
+    def get_reactions_lists(self):
+        return self.original_reactions, self.predicted_reactions
 
 
 

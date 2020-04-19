@@ -99,3 +99,16 @@ class ResultSaver:
             active.append(line_append)
 
         wb.save(excel_path)
+
+    def save_reactions(self, gan_structure):
+        wb = load_workbook(excel_path)
+        sheet_name = gan_structure.get_name()
+        active = wb[sheet_name]
+
+        # add original and predicted
+        original_lst, predicted_lst = gan_structure.get_reactions_lists()
+        active.append([""])  # blank line
+        active.append(["original reactions: ", str(original_lst)])
+        active.append(["predicted reactions: ", str(predicted_lst)])
+
+        wb.save(excel_path)
