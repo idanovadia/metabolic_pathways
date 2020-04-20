@@ -6,6 +6,7 @@ from classifier.correlation_matrix_creator.correlation_matrix_creator import Cor
 from classifier.graph_creator.graph_creator import GraphCreator
 from classifier.sub2vec.sub2vec import Sub2Vec
 from classifier.Classification.classification import classifier
+from classifier.Plotter.Plotter import Plotter
 
 modules_dict = {}
 modules_dict['Preprocessing'] = Preprocessing
@@ -13,6 +14,7 @@ modules_dict['CorrMaxtrix'] = CorrMaxtrix
 modules_dict['GraphCreator'] = GraphCreator
 modules_dict['Sub2Vec'] = Sub2Vec
 modules_dict['classifier'] = classifier
+modules_dict['Plotter'] = Plotter
 
 pipeline = []
 

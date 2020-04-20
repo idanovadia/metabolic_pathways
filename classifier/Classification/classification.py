@@ -101,7 +101,7 @@ class classifier(AbstractConfigClass):
         added_cols = {'correlation_treshold':self.config_parser.eval('GraphCreator', "threshold"),
                       'random_walk_length':self.config_parser.eval('Sub2Vec', 'random_walk_length'),
                       'random walk num of times':self.config_parser.eval('Sub2Vec', 'random_walk_number'),
-                      'improvements':'Graph Creator:'+str(self.config_parser.eval('GraphCreator', 'extensions')).replace('}','').replace('{','')}
+                      'improvements':str(self.config_parser.eval('GraphCreator', 'extensions')).replace('}','').replace('{','').replace(':','=').replace("'", "")}
         if os.path.exists(self.csv_output_directory+os.sep+self.output_file_name+'.xlsx'):
             self.result_dataframe=pd.read_excel(self.csv_output_directory+os.sep+self.output_file_name+'.xlsx')
         else :

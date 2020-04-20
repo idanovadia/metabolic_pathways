@@ -55,8 +55,9 @@ class GraphCreator(AbstractConfigClass):
         extensions_dict['adj_matrix_power'] = self.setPowerAdjacencyMatrix
         extensions_dict['adj_matrix_and_add'] = self.setAddPAMWithAM
         for extension , value in self.extensions.items():
-            extensions_dict[extension](value)
-            print(extension)
+            if extension in extensions_dict:
+                extensions_dict[extension](value)
+                print(extension)
 
     '''
      Object of sub graph.  
