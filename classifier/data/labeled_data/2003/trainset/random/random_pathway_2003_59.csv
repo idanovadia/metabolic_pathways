@@ -1,0 +1,14 @@
+"","L-asparagine","alpha;-tocopherol","fumarate","gaba","L-isoleucine","L-leucine","maltitol","L-methionine","putrescine","sucrose","L-aspartate","fructose","D-threo-isocitrate"
+"L-asparagine",0,0,0,1,1,1,0,1,0,0,1,0,1
+"alpha;-tocopherol",0,0,0,0,0,0,0,0,0,0,0,0,0
+"fumarate",0,0,0,0,0,1,0,0,0,0,0,0,0
+"gaba",1,0,0,0,1,1,0,1,0,1,1,0,0
+"L-isoleucine",1,0,0,1,0,1,0,1,0,1,1,0,0
+"L-leucine",1,0,1,1,1,0,0,1,0,0,0,0,0
+"maltitol",0,0,0,0,0,0,0,0,0,0,0,1,0
+"L-methionine",1,0,0,1,1,1,0,0,0,0,1,0,0
+"putrescine",0,0,0,0,0,0,0,0,0,0,0,0,0
+"sucrose",0,0,0,1,1,0,0,0,0,0,0,0,1
+"L-aspartate",1,0,0,1,1,0,0,1,0,0,0,0,0
+"fructose",0,0,0,0,0,0,1,0,0,0,0,0,1
+"D-threo-isocitrate",1,0,0,0,0,0,0,0,0,1,0,1,0

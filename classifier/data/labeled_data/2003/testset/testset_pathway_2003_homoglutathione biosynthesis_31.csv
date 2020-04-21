@@ -1,0 +1,5 @@
+"","beta;-alanine","L-cysteine","L-glutamate","phosphate"
+"beta;-alanine",0,1,1,1
+"L-cysteine",1,0,1,1
+"L-glutamate",1,1,0,1
+"phosphate",1,1,1,0

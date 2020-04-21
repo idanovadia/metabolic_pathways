@@ -1,0 +1,10 @@
+"","2-oxoglutarate","L-cysteine","L-homoserine","L-lysine","L-methionine","L-threonine","L-aspartate","L-glutamate","phosphate"
+"2-oxoglutarate",0,0,1,0,1,0,0,1,1
+"L-cysteine",0,0,1,1,1,1,0,1,1
+"L-homoserine",1,1,0,1,1,1,1,1,1
+"L-lysine",0,1,1,0,1,1,1,0,1
+"L-methionine",1,1,1,1,0,1,1,1,1
+"L-threonine",0,1,1,1,1,0,0,0,1
+"L-aspartate",0,0,1,1,1,0,0,1,1
+"L-glutamate",1,1,1,0,1,0,1,0,1
+"phosphate",1,1,1,1,1,1,1,1,0

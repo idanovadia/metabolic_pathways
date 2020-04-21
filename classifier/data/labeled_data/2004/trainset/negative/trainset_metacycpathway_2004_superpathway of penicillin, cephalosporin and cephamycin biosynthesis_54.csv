@@ -1,0 +1,6 @@
+"","L-cysteine","2-oxoglutarate","phosphate","succinate","L-valine"
+"L-cysteine",0,0,0,1,1
+"2-oxoglutarate",0,0,1,0,0
+"phosphate",0,1,0,0,1
+"succinate",1,0,0,0,0
+"L-valine",1,0,1,0,0

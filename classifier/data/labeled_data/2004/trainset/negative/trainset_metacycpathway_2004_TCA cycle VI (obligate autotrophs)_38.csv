@@ -1,0 +1,10 @@
+"","L-aspartate","citrate","fumarate","L-glutamate","2-oxoglutarate","D-threo-isocitrate","(S)-malate","phosphate","succinate"
+"L-aspartate",0,1,0,1,0,0,0,1,0
+"citrate",1,0,0,1,0,1,1,0,0
+"fumarate",0,0,0,0,0,0,0,0,1
+"L-glutamate",1,1,0,0,0,0,0,1,0
+"2-oxoglutarate",0,0,0,0,0,0,0,1,0
+"D-threo-isocitrate",0,1,0,0,0,0,0,0,0
+"(S)-malate",0,1,0,0,0,0,0,0,0
+"phosphate",1,0,0,1,1,0,0,0,0
+"succinate",0,0,1,0,0,0,0,0,0

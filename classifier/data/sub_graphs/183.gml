@@ -1,4 +1,36 @@
 graph [
   label "negative"
   type "trainset"
+  node [
+    id 0
+    label "l-tryptophan"
+  ]
+  node [
+    id 1
+    label "glucose"
+  ]
+  node [
+    id 2
+    label "l-glutamate"
+  ]
+  edge [
+    source 0
+    target 0
+    weight 14.51167546033682
+  ]
+  edge [
+    source 1
+    target 1
+    weight 4.119428691871143
+  ]
+  edge [
+    source 1
+    target 2
+    weight 2.7784071802438657
+  ]
+  edge [
+    source 2
+    target 2
+    weight 2.852806316807519
+  ]
 ]

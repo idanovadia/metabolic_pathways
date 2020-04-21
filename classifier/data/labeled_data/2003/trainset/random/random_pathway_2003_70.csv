@@ -1,0 +1,16 @@
+"","2-oxoglutarate","beta;-alanine","erythritol","D-gluconate","glucose_6_phosphate","Glycerate_3_Phosphate","L-leucine","L-methionine","saccharate","L-serine","uracil","glucose","D-threo-isocitrate","GDP-alpha;-D-mannose","phosphate"
+"2-oxoglutarate",0,0,0,0,1,0,0,1,0,0,0,0,0,0,1
+"beta;-alanine",0,0,0,0,1,1,1,1,0,1,0,0,0,0,1
+"erythritol",0,0,0,1,1,0,0,1,0,0,1,0,0,0,0
+"D-gluconate",0,0,1,0,0,0,0,0,1,0,1,0,0,0,0
+"glucose_6_phosphate",1,1,1,0,0,0,0,1,0,1,1,0,0,0,1
+"Glycerate_3_Phosphate",0,1,0,0,0,0,0,0,0,0,0,0,0,0,1
+"L-leucine",0,1,0,0,0,0,0,1,0,1,0,0,0,0,1
+"L-methionine",1,1,1,0,1,0,1,0,0,1,0,0,0,0,1
+"saccharate",0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+"L-serine",0,1,0,0,1,0,1,1,0,0,0,0,0,0,1
+"uracil",0,0,1,1,1,0,0,0,0,0,0,0,0,0,0
+"glucose",0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+"D-threo-isocitrate",0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+"GDP-alpha;-D-mannose",0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+"phosphate",1,1,0,0,1,1,1,1,0,1,0,0,0,1,0
