@@ -39,7 +39,7 @@ class GraphCreator(AbstractConfigClass):
         self.main_graph = nx.Graph()
         self.set_nodes = set()
         self.removeEdges = []
-        self.extensions=json.loads(self.config_parser.get(self.__class__.__name__, 'extensions'))
+        self.extensions = json.loads(self.config_parser.get(self.__class__.__name__, 'extensions'))
 
     def exec(self):
         self.createMainGraph()
@@ -49,12 +49,12 @@ class GraphCreator(AbstractConfigClass):
         self.WriteAll()
 
     def run_extensions(self):
-                            #add extensions here
-        extensions_dict={}
-        extensions_dict['power_graph']=self.powerGraph
+        # add extensions here
+        extensions_dict = {}
+        extensions_dict['power_graph'] = self.powerGraph
         extensions_dict['adj_matrix_power'] = self.setPowerAdjacencyMatrix
         extensions_dict['adj_matrix_and_add'] = self.setAddPAMWithAM
-        for extension , value in self.extensions.items():
+        for extension, value in self.extensions.items():
             extensions_dict[extension](value)
             print(extension)
 
@@ -252,38 +252,39 @@ class GraphCreator(AbstractConfigClass):
     #     plt.show()
     # ############################################################################################################################################
 
-# --------------------------------------------------------------------------------------
+    # --------------------------------------------------------------------------------------
     # power Graph- main
-    def powerGraph(self,p):
+    def powerGraph(self, p):
         self.main_graph = nx.power(self.main_graph, p)
 
     #   return  AdjacencyMatrix power 2  - main
-    def setPowerAdjacencyMatrix(self,p):
+    def setPowerAdjacencyMatrix(self, p):
+        nodes = self.main_graph.nodes
         self.main_graph = self.from_numpy_matrix(self.powerAdjacencyMatrix(p))
+        self.main_graph = nx.relabel_nodes(self.main_graph, {i: j for i, j in enumerate(list(nodes))})
+        print("S")
 
     # return AdjacencyMatrix power 2 + AdjacencyMatrix  - main
-    def setAddPAMWithAM(self,p):
+    def setAddPAMWithAM(self, p):
         self.main_graph = self.from_numpy_matrix(self.addPAMWithAM(p))
 
     # add AdjacencyMatrix power 2 + AdjacencyMatrix
-    def addPAMWithAM(self,p):
+    def addPAMWithAM(self, p):
         return self.powerAdjacencyMatrix(p) + self.to_numpy_matrix(self.main_graph)
 
     # convert AdjacencyMatrix to graph
-    def from_numpy_matrix(self,matrix):
+    def from_numpy_matrix(self, matrix):
         return nx.from_numpy_matrix(matrix)
 
     # power AdjacencyMatrix
-    def powerAdjacencyMatrix(self,p):
-        return np.linalg.matrix_power(self.to_numpy_matrix(self.main_graph),p)
+    def powerAdjacencyMatrix(self, p):
+        return np.linalg.matrix_power(self.to_numpy_matrix(self.main_graph), p)
 
     # convert graph to AdjacencyMatrix
-    def to_numpy_matrix(self,g):
-        return nx.to_numpy_matrix(g)
+    def to_numpy_matrix(self, g):
+        return nx.to_numpy_matrix(g, nodelist=g.nodes)
 
-
-
-# --------------------------------------------------------------------------------------
+    # --------------------------------------------------------------------------------------
     def NeighborsByPriority(self):
         subgraphs_with_neighbors = []
         for i in self.subGraphs_list:
