@@ -34,6 +34,8 @@ class classifier(AbstractConfigClass):
         self.fillClassifiersDirectory()
         self.resultdict = []
         self.result_dataframe=pd.DataFrame()
+        self.train_size=0
+        self.test_size=0
 
     def exec(self):
         self.valid.exec()
@@ -62,18 +64,21 @@ class classifier(AbstractConfigClass):
                 for x_train, y_train, x_test, y_test in val_gen:
                     cls.fit(x_train, y_train)
                     predictions.append([cls.predict(x_train), y_train, cls.predict(x_test), y_test])
+                    self.train_size+=len(x_train)
+                    self.test_size += len(x_test)
 
-
-                scores = self.calculateScore(predictions)
+                scores = self.calculateScore(predictions,train_size=len(x_train),test_size=len(x_test))
                 self.resultdict.append(Result(cls.name, val.name, scores))
-                # self.resultdict[(cls.name,val.name)]={'train':trainsum/count,'test':testsum/count}
+                self.train_size=0
+                self.test_size=0
 
     def printdict(self):
         print(self.resultdict)
 
-    def calculateScore(self, predictions):
-        result = {"train": {}, "test": {}}
-
+    def calculateScore(self, predictions,train_size,test_size):
+        result = {"train": {}, "test": {},"train size":0,"test_size":0}
+        result["train size"]=train_size
+        result["test size"] = test_size
         for metric in self.metrics.metrics_dir:
             count = 0
             test_sum = 0
@@ -95,13 +100,15 @@ class classifier(AbstractConfigClass):
         return result
 
     def outputResult(self):
-        columns = ['correlation threshold','rw length','rw num of times','classifier', 'validation','improvements', 'train accuracy', 'train F1 score','train Precision','train Recall','train FP', ' train FN','train TP','train TN','test accuracy', 'test F1 score','test Precision','test Recall','test FP', ' test FN','test TP','test TN']
-        # df = pd.DataFrame(columns=columns)
-# s(df)
+        columns = ['Correlation threshold','RW Length','RW num of times','Classifier', 'Validation','Improvements', 'train accuracy', 'train F1 score','train Precision','train Recall','train FP', ' train FN','train TP','train TN','test accuracy', 'test F1 score','test Precision','test Recall','test FP', ' test FN','test TP','test TN','train size','test size','embedding size','doc2vec hyperparameters']
         added_cols = {'correlation_treshold':self.config_parser.eval('GraphCreator', "threshold"),
                       'random_walk_length':self.config_parser.eval('Sub2Vec', 'random_walk_length'),
                       'random walk num of times':self.config_parser.eval('Sub2Vec', 'random_walk_number'),
-                      'improvements':'Graph Creator:'+str(self.config_parser.eval('GraphCreator', 'extensions')).replace('}','').replace('{','')}
+                      'improvements':str(self.config_parser.eval('GraphCreator', 'extensions')).replace('}','').replace('{','').replace(':','=').replace("'", ""),
+                      'embedding_size':json.loads(self.config_parser.get('Sub2Vec', 'doc2vec_args'))['vector_size'],
+                      'doc2vec hyper parameters':json.loads(self.config_parser.get('Sub2Vec', 'doc2vec_args'))}
+        if added_cols['improvements']=="":
+            added_cols['improvements']="None"
         if os.path.exists(self.csv_output_directory+os.sep+self.output_file_name+'.xlsx'):
             self.result_dataframe=pd.read_excel(self.csv_output_directory+os.sep+self.output_file_name+'.xlsx')
         else :

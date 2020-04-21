@@ -1,0 +1,9 @@
+"","alpha;-tocopherol","benzoate","GDP-beta;-L-fucose","D-gluconate","D-glycerate","L-isoleucine","succinate","threonate"
+"alpha;-tocopherol",0,0,0,0,0,0,1,0
+"benzoate",0,0,0,0,1,1,1,0
+"GDP-beta;-L-fucose",0,0,0,0,0,0,0,0
+"D-gluconate",0,0,0,0,1,0,0,0
+"D-glycerate",0,1,0,1,0,0,1,1
+"L-isoleucine",0,1,0,0,0,0,0,1
+"succinate",1,1,0,0,1,0,0,1
+"threonate",0,0,0,0,1,1,1,0

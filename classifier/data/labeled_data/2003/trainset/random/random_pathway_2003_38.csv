@@ -1,0 +1,10 @@
+"","2-oxoglutarate","beta;-alanine","D-gluconate","saccharate","shikimate","L-tryptophan","citrate","L-glutamate","L-glutamine"
+"2-oxoglutarate",0,0,0,0,0,0,0,1,0
+"beta;-alanine",0,0,0,0,0,1,1,1,1
+"D-gluconate",0,0,0,1,0,0,0,0,0
+"saccharate",0,0,1,0,0,0,0,0,0
+"shikimate",0,0,0,0,0,0,0,0,0
+"L-tryptophan",0,1,0,0,0,0,1,0,1
+"citrate",0,1,0,0,0,1,0,1,1
+"L-glutamate",1,1,0,0,0,0,1,0,1
+"L-glutamine",0,1,0,0,0,1,1,1,0

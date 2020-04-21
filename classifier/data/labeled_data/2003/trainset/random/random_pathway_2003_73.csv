@@ -1,0 +1,17 @@
+"","L-asparagine","alpha;-tocopherol","erythritol","gaba","glycerol","glycine","L-isoleucine","L-lysine","maltose","L-phenylalanine","putrescine","L-tryptophan","L-aspartate","glucose","L-glutamine","phosphate"
+"L-asparagine",0,0,0,1,1,1,1,1,0,1,0,1,1,0,1,1
+"alpha;-tocopherol",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"erythritol",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"gaba",1,0,0,0,1,1,1,1,0,1,0,1,1,0,1,1
+"glycerol",1,0,0,1,0,1,1,1,0,0,0,0,0,0,0,0
+"glycine",1,0,0,1,1,0,1,1,0,1,0,1,0,0,1,1
+"L-isoleucine",1,0,0,1,1,1,0,1,0,1,0,1,1,0,1,1
+"L-lysine",1,0,0,1,1,1,1,0,0,1,0,1,1,0,1,1
+"maltose",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"L-phenylalanine",1,0,0,1,0,1,1,1,0,0,0,1,1,0,1,1
+"putrescine",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+"L-tryptophan",1,0,0,1,0,1,1,1,0,1,0,0,0,0,1,1
+"L-aspartate",1,0,0,1,0,0,1,1,0,1,0,0,0,0,1,1
+"glucose",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"L-glutamine",1,0,0,1,0,1,1,1,0,1,0,1,1,0,0,1
+"phosphate",1,0,0,1,0,1,1,1,0,1,1,1,1,0,1,0

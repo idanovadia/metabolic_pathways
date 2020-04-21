@@ -1,0 +1,11 @@
+"","dehydroascorbate (bicyclic form)","fumarate","glucose_6_phosphate","L-glutamine","glycine","L-isoleucine","GDP-alpha;-D-mannose","putrescine","L-serine","L-valine"
+"dehydroascorbate (bicyclic form)",0,0,0,0,0,0,0,0,0,0
+"fumarate",0,0,0,0,0,0,0,0,0,0
+"glucose_6_phosphate",0,0,0,0,0,0,0,0,0,0
+"L-glutamine",0,0,0,0,0,0,0,0,0,0
+"glycine",0,0,0,0,0,1,0,0,1,1
+"L-isoleucine",0,0,0,0,1,0,1,0,1,1
+"GDP-alpha;-D-mannose",0,0,0,0,0,1,0,0,0,0
+"putrescine",0,0,0,0,0,0,0,0,0,0
+"L-serine",0,0,0,0,1,1,0,0,0,1
+"L-valine",0,0,0,0,1,1,0,0,1,0

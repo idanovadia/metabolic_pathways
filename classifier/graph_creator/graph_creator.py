@@ -54,9 +54,10 @@ class GraphCreator(AbstractConfigClass):
         extensions_dict['power_graph'] = self.powerGraph
         extensions_dict['adj_matrix_power'] = self.setPowerAdjacencyMatrix
         extensions_dict['adj_matrix_and_add'] = self.setAddPAMWithAM
-        for extension, value in self.extensions.items():
-            extensions_dict[extension](value)
-            print(extension)
+        for extension , value in self.extensions.items():
+            if extension in extensions_dict:
+                extensions_dict[extension](value)
+                print(extension)
 
     '''
      Object of sub graph.  
@@ -262,11 +263,13 @@ class GraphCreator(AbstractConfigClass):
         nodes = self.main_graph.nodes
         self.main_graph = self.from_numpy_matrix(self.powerAdjacencyMatrix(p))
         self.main_graph = nx.relabel_nodes(self.main_graph, {i: j for i, j in enumerate(list(nodes))})
-        print("S")
+
 
     # return AdjacencyMatrix power 2 + AdjacencyMatrix  - main
     def setAddPAMWithAM(self, p):
+        nodes = self.main_graph.nodes
         self.main_graph = self.from_numpy_matrix(self.addPAMWithAM(p))
+        self.main_graph = nx.relabel_nodes(self.main_graph, {i: j for i, j in enumerate(list(nodes))})
 
     # add AdjacencyMatrix power 2 + AdjacencyMatrix
     def addPAMWithAM(self, p):

@@ -1,0 +1,9 @@
+"","L-alanine","2-oxoglutarate","fumarate","(S)-malate","succinate","L-aspartate","L-glutamate","phosphate"
+"L-alanine",0,1,0,0,1,0,0,0
+"2-oxoglutarate",1,0,0,0,0,0,1,1
+"fumarate",0,0,0,0,1,0,0,0
+"(S)-malate",0,0,0,0,0,0,0,0
+"succinate",1,0,1,0,0,0,0,0
+"L-aspartate",0,0,0,0,0,0,1,1
+"L-glutamate",0,1,0,0,0,1,0,1
+"phosphate",0,1,0,0,0,1,1,0

@@ -1,0 +1,14 @@
+"","alpha;-tocopherol","L-cysteine","glycine","L-methionine","L-serine","shikimate","threonate","alpha;,alpha;-trehalose","L-tryptophan","L-valine","fructose","D-threo-isocitrate","phosphate"
+"alpha;-tocopherol",0,0,0,0,0,0,0,0,0,0,0,0,0
+"L-cysteine",0,0,1,1,1,0,1,0,1,1,0,1,1
+"glycine",0,1,0,1,1,0,1,0,1,1,0,0,1
+"L-methionine",0,1,1,0,1,0,1,0,1,1,0,0,1
+"L-serine",0,1,1,1,0,0,1,0,1,1,0,0,1
+"shikimate",0,0,0,0,0,0,0,0,0,0,0,0,0
+"threonate",0,1,1,1,1,0,0,1,1,0,0,1,0
+"alpha;,alpha;-trehalose",0,0,0,0,0,0,1,0,0,0,0,0,0
+"L-tryptophan",0,1,1,1,1,0,1,0,0,1,0,1,1
+"L-valine",0,1,1,1,1,0,0,0,1,0,0,0,1
+"fructose",0,0,0,0,0,0,0,0,0,0,0,1,0
+"D-threo-isocitrate",0,1,0,0,0,0,1,0,1,0,1,0,0
+"phosphate",0,1,1,1,1,0,0,0,1,1,0,0,0
