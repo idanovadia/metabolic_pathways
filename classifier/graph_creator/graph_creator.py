@@ -263,11 +263,13 @@ class GraphCreator(AbstractConfigClass):
         nodes = self.main_graph.nodes
         self.main_graph = self.from_numpy_matrix(self.powerAdjacencyMatrix(p))
         self.main_graph = nx.relabel_nodes(self.main_graph, {i: j for i, j in enumerate(list(nodes))})
-        print("S")
+
 
     # return AdjacencyMatrix power 2 + AdjacencyMatrix  - main
     def setAddPAMWithAM(self, p):
+        nodes = self.main_graph.nodes
         self.main_graph = self.from_numpy_matrix(self.addPAMWithAM(p))
+        self.main_graph = nx.relabel_nodes(self.main_graph, {i: j for i, j in enumerate(list(nodes))})
 
     # add AdjacencyMatrix power 2 + AdjacencyMatrix
     def addPAMWithAM(self, p):

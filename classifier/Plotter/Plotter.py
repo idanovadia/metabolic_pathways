@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import json
 import os
 import re
+import math
 
 
 
@@ -46,19 +47,19 @@ class Plotter(AbstractConfigClass):
         df = pd.read_excel(self.getPath(data))
         cols=columns.split(',')
 
-        return [(df.groupby(groupby)[cols[0]].agg(lambda x: x.unique().mean()).values) , (df.groupby(groupby)[cols[1]].agg(lambda x: x.unique().mean()).values)]
+        return [df.groupby(groupby)[x].agg(lambda x: x.unique().mean()).values for x in cols]
 
-    def group_bar(self,classes,values,title,labels,ylabel,width=0.35):
-        values1 , values2=values[0] , values[1]
-        label1 , label2 = labels.split(',')[0],labels.split(',')[1]
+    def group_bar(self,classes,values,title,labels,ylabel,width=0.3):
+        values1, values2 = values[0], values[1]
+        label1, label2 = labels.split(',')[0], labels.split(',')[1]
 
         x = np.arange(len(classes))
 
-
-        fig, ax = plt.subplots()
+        fig, ax = plt.subplots(figsize=(10, 10))
         rects1 = ax.bar(x - width / 2, values1, width, label=label1)
         rects2 = ax.bar(x + width / 2, values2, width, label=label2)
-        rects=[rects1,rects2]
+        rects = [rects1, rects2]
+        ax.set_yticks(np.arange(min(values1.min(),values2.min())-min(values1.min(),values2.min())/2,max(values1.max(),values2.max()+0.7), step=0.1))
         ax.set_ylabel(ylabel)
         ax.set_title(title)
         ax.set_xticks(x)
@@ -73,15 +74,11 @@ class Plotter(AbstractConfigClass):
                             textcoords="offset points",
                             ha='center', va='bottom')
 
-        txt = '\n'+'\n'+'\n'+'\n'+"I need the caption to be present a little below X-axis"
-        plt.figtext(0.5, 0.01, txt, wrap=True, horizontalalignment='center', fontsize=12)
-        # fig.tight_layout()
+        # txt = '\n'+'\n'+'\n'+'\n'+"I need the caption to be present a little below X-axis"
+        # plt.figtext(0.5, 0.01, txt, wrap=True, horizontalalignment='center', fontsize=12)
+        fig.tight_layout()
 
         plt.show()
-
-        i=5
-        pass
-
 
 
     def autolabel(self,rects,ax):

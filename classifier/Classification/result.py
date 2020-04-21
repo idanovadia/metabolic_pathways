@@ -14,6 +14,9 @@ class Result():
         randomwalk_tresh=kwargs['random_walk_length']
         randomwalk_num_of_times=kwargs['random walk num of times']
         improvements=kwargs['improvements']
+        embedding_size=kwargs['embedding_size']
+        doc2vec_hyperparameters=kwargs['doc2vec hyper parameters']
+
         df=df.append(pd.Series([correlation_tresh,
                                 randomwalk_tresh,
                                 randomwalk_num_of_times,
@@ -35,7 +38,11 @@ class Result():
                                 self.scores['test']['FP'],
                                 self.scores['test']['FN'],
                                 self.scores['test']['TP'],
-                                self.scores['test']['TN']
+                                self.scores['test']['TN'],
+                                self.scores["train size"],
+                                self.scores["test size"],
+                                embedding_size,
+                                doc2vec_hyperparameters
                                 ], index=df.columns ),ignore_index=True)
         # ['classifier', 'validation', 'train accuracy', 'train F1',
         #        'train Precision', 'train Recall', 'train FP', ' train FN', 'train TP',
