@@ -49,17 +49,18 @@ class Plotter(AbstractConfigClass):
 
         return [df.groupby(groupby)[x].agg(lambda x: x.unique().mean()).values for x in cols]
 
-    def group_bar(self,classes,values,title,labels,ylabel,width=0.3):
+    def group_bar(self,classes,values,title,labels,ylabel,width=0.35):
         values1, values2 = values[0], values[1]
         label1, label2 = labels.split(',')[0], labels.split(',')[1]
 
         x = np.arange(len(classes))
 
-        fig, ax = plt.subplots(figsize=(10, 10))
+        fig, ax = plt.subplots(figsize=(10, 7))
         rects1 = ax.bar(x - width / 2, values1, width, label=label1)
         rects2 = ax.bar(x + width / 2, values2, width, label=label2)
         rects = [rects1, rects2]
-        ax.set_yticks(np.arange(min(values1.min(),values2.min())-min(values1.min(),values2.min())/2,max(values1.max(),values2.max()+0.7), step=0.1))
+        ax.set_yticks(np.arange(0, 1, step=0.3))
+        plt.ylim(0,1)
         ax.set_ylabel(ylabel)
         ax.set_title(title)
         ax.set_xticks(x)
@@ -72,7 +73,7 @@ class Plotter(AbstractConfigClass):
                             xy=(bar.get_x() + bar.get_width() / 2, height),
                             xytext=(0, 3),  # 3 points vertical offset
                             textcoords="offset points",
-                            ha='center', va='bottom')
+                            ha='center', va='bottom',)
 
         # txt = '\n'+'\n'+'\n'+'\n'+"I need the caption to be present a little below X-axis"
         # plt.figtext(0.5, 0.01, txt, wrap=True, horizontalalignment='center', fontsize=12)
