@@ -31,7 +31,7 @@ class Plotter(AbstractConfigClass):
                 classes=self.getclasses(self.data[data]['file'],self.present[inv]['groupby'])
                 values=self.getMeanperClass(self.data[data]['file'],self.present[inv]['groupby'],self.present[inv]['compare_columns'])
                 if type=='group_bar':
-                    self.group_bar(classes,values,self.present[inv]['title'],self.present[inv]['compare_columns'])
+                    self.group_bar(classes,values,self.present[inv]['title'],self.present[inv]['compare_columns'],self.present[inv]['ylabel'])
 
 
     def generateData(self):
@@ -48,20 +48,19 @@ class Plotter(AbstractConfigClass):
 
         return [(df.groupby(groupby)[cols[0]].agg(lambda x: x.unique().mean()).values) , (df.groupby(groupby)[cols[1]].agg(lambda x: x.unique().mean()).values)]
 
-    def group_bar(self,classes,values,title,labels,width=0.35,):
+    def group_bar(self,classes,values,title,labels,ylabel,width=0.35):
         values1 , values2=values[0] , values[1]
         label1 , label2 = labels.split(',')[0],labels.split(',')[1]
 
-        x = np.arange(len(classes))  # the label locations
+        x = np.arange(len(classes))
 
 
         fig, ax = plt.subplots()
         rects1 = ax.bar(x - width / 2, values1, width, label=label1)
         rects2 = ax.bar(x + width / 2, values2, width, label=label2)
         rects=[rects1,rects2]
-        # Add some text for labels, title and custom x-axis tick labels, etc.
-        ax.set_ylabel('Scores')
-        ax.set_title('Scores by group and gender')
+        ax.set_ylabel(ylabel)
+        ax.set_title(title)
         ax.set_xticks(x)
         ax.set_xticklabels(classes)
         ax.legend()
@@ -74,7 +73,9 @@ class Plotter(AbstractConfigClass):
                             textcoords="offset points",
                             ha='center', va='bottom')
 
-        fig.tight_layout()
+        txt = '\n'+'\n'+'\n'+'\n'+"I need the caption to be present a little below X-axis"
+        plt.figtext(0.5, 0.01, txt, wrap=True, horizontalalignment='center', fontsize=12)
+        # fig.tight_layout()
 
         plt.show()
 
