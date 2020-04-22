@@ -1,27 +1,53 @@
 graph [
-  label "positive"
-  type "trainset"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "l-alanine"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "succinate"
+    label "l-alanine"
+  ]
+  node [
+    id 2
+    label "phosphate"
+  ]
+  node [
+    id 3
+    label "l-glutamate"
+  ]
+  node [
+    id 4
+    label "l-aspartate"
+  ]
+  node [
+    id 5
+    label "(s)-malate"
   ]
   edge [
     source 0
-    target 0
-    weight 22.125959368767543
-  ]
-  edge [
-    source 0
-    target 1
-    weight 17.29753996381745
+    target 5
+    weight 0.3248062489421025
   ]
   edge [
     source 1
-    target 1
-    weight 15.046764663511496
+    target 5
+    weight 0.52767586406752
+  ]
+  edge [
+    source 2
+    target 4
+    weight 0.6011486587004862
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.6510037877502363
+  ]
+  edge [
+    source 3
+    target 4
+    weight 0.6056390159084215
   ]
 ]

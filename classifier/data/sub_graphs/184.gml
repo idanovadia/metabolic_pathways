@@ -3,34 +3,42 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
-    label "gdp-alpha;-d-mannose"
+    label "l-cysteine"
+  ]
+  node [
+    id 3
+    label "l-serine"
+  ]
+  node [
+    id 4
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 0
-    weight 6.778636804802379
-  ]
-  edge [
-    source 1
-    target 1
-    weight 2.852806316807519
+    target 4
+    weight 0.6510037877502363
   ]
   edge [
     source 1
     target 2
-    weight 2.914700861600446
+    weight 0.4111791560150839
+  ]
+  edge [
+    source 1
+    target 3
+    weight 0.405716148338836
   ]
   edge [
     source 2
-    target 2
-    weight 4.157522071494891
+    target 3
+    weight 0.7032509826257202
   ]
 ]

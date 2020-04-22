@@ -1,27 +1,17 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "l-alanine"
+    label "benzoate"
   ]
   node [
     id 1
-    label "l-lysine"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 22.125959368767543
+    label "l-phenylalanine"
   ]
   edge [
     source 0
     target 1
-    weight 21.74605146223193
-  ]
-  edge [
-    source 1
-    target 1
-    weight 23.378382196544784
+    weight 0.6752308628578606
   ]
 ]

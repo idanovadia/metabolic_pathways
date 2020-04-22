@@ -1,13 +1,13 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "gdp-alpha;-d-mannose"
   ]
   node [
     id 1
-    label "l-lysine"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
@@ -15,22 +15,7 @@ graph [
   ]
   edge [
     source 0
-    target 0
-    weight 6.778636804802379
-  ]
-  edge [
-    source 0
-    target 1
-    weight 10.899062271697511
-  ]
-  edge [
-    source 1
-    target 1
-    weight 23.378382196544784
-  ]
-  edge [
-    source 2
     target 2
-    weight 2.852806316807519
+    weight 0.4756327147119258
   ]
 ]

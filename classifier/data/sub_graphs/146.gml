@@ -1,50 +1,40 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-serine"
+    label "shikimate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "benzoate"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-alanine"
   ]
   node [
     id 3
-    label "glycine"
+    label "l-tryptophan"
   ]
   edge [
     source 0
-    target 3
-    weight 23.074302097590046
-  ]
-  edge [
-    source 0
-    target 0
-    weight 23.155492042544257
+    target 2
+    weight 0.3798405827229721
   ]
   edge [
     source 1
     target 2
-    weight 2.8011648507590357
+    weight 0.588158926719598
   ]
   edge [
     source 1
-    target 1
-    weight 3.8070856410356746
+    target 3
+    weight 0.460140496555413
   ]
   edge [
     source 2
-    target 2
-    weight 2.852806316807519
-  ]
-  edge [
-    source 3
     target 3
-    weight 24.729517834719893
+    weight 0.5403694072428842
   ]
 ]

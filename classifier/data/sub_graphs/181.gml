@@ -3,20 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-serine"
+    label "uracil"
   ]
-  edge [
-    source 0
-    target 0
-    weight 4.157522071494891
+  node [
+    id 2
+    label "beta;-alanine"
   ]
   edge [
     source 1
-    target 1
-    weight 23.155492042544257
+    target 2
+    weight 0.4743560180923546
   ]
 ]

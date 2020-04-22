@@ -1,22 +1,21 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "galactose"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "phosphate"
+  ]
+  node [
+    id 2
+    label "alpha;,alpha;-trehalose"
   ]
   edge [
     source 0
-    target 0
-    weight 6.778636804802379
-  ]
-  edge [
-    source 1
     target 1
-    weight 2.852806316807519
+    weight 0.5884905612973588
   ]
 ]

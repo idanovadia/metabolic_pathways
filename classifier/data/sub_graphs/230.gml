@@ -1,27 +1,17 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "beta;-alanine"
+    label "glucose"
   ]
   node [
     id 1
-    label "l-cysteine"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 19.871489842896292
+    label "gdp-alpha;-d-mannose"
   ]
   edge [
     source 0
     target 1
-    weight 19.929427586182786
-  ]
-  edge [
-    source 1
-    target 1
-    weight 21.7397840391954
+    weight 0.8362263468292753
   ]
 ]

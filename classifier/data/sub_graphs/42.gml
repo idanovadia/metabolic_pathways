@@ -1,79 +1,39 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-alanine"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "l-cysteine"
+    label "l-alanine"
   ]
   node [
     id 2
-    label "glycine"
+    label "l-glutamate"
   ]
   node [
     id 3
-    label "l-methionine"
+    label "l-aspartate"
   ]
   node [
     id 4
-    label "phosphate"
+    label "(s)-malate"
   ]
   edge [
     source 0
-    target 0
-    weight 22.125959368767543
-  ]
-  edge [
-    source 0
-    target 1
-    weight 21.0991319289857
-  ]
-  edge [
-    source 0
-    target 2
-    weight 22.37205745836029
-  ]
-  edge [
-    source 0
-    target 3
-    weight 21.9152948245096
-  ]
-  edge [
-    source 1
-    target 1
-    weight 21.7397840391954
-  ]
-  edge [
-    source 1
-    target 2
-    weight 22.44274200013904
-  ]
-  edge [
-    source 1
-    target 3
-    weight 22.03834671866942
-  ]
-  edge [
-    source 2
-    target 2
-    weight 24.729517834719893
-  ]
-  edge [
-    source 2
-    target 3
-    weight 23.481900866152316
-  ]
-  edge [
-    source 3
-    target 3
-    weight 23.913916432233197
-  ]
-  edge [
-    source 4
     target 4
-    weight 3.8070856410356746
+    weight 0.3248062489421025
+  ]
+  edge [
+    source 1
+    target 4
+    weight 0.52767586406752
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.6056390159084215
   ]
 ]

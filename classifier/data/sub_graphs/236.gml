@@ -1,27 +1,35 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "d-glycerate"
+    label "l-methionine"
   ]
   node [
     id 1
-    label "(s)-malate"
+    label "l-serine"
+  ]
+  node [
+    id 2
+    label "phosphate"
+  ]
+  node [
+    id 3
+    label "glycine"
   ]
   edge [
     source 0
-    target 0
-    weight 13.973492622597815
+    target 3
+    weight 0.8039017729589526
   ]
   edge [
     source 0
     target 1
-    weight 15.895437766744035
+    weight 0.7930880805620052
   ]
   edge [
     source 1
-    target 1
-    weight 20.543719001209293
+    target 3
+    weight 0.8435878621427529
   ]
 ]

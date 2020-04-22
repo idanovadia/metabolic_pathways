@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "shikimate"
   ]
   node [
     id 1
@@ -15,55 +15,25 @@ graph [
   ]
   node [
     id 3
-    label "shikimate"
+    label "l-tyrosine"
   ]
   node [
     id 4
-    label "l-tyrosine"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 0
-    weight 2.852806316807519
-  ]
-  edge [
-    source 0
-    target 1
-    weight 2.8011648507590357
+    target 3
+    weight 0.3188374742582401
   ]
   edge [
     source 1
-    target 1
-    weight 3.8070856410356746
-  ]
-  edge [
-    source 2
-    target 2
-    weight 6.778636804802379
+    target 4
+    weight 0.6510037877502363
   ]
   edge [
     source 2
     target 3
-    weight 6.106299312103692
-  ]
-  edge [
-    source 2
-    target 4
-    weight 9.574948938805402
-  ]
-  edge [
-    source 3
-    target 3
-    weight 7.80329300512462
-  ]
-  edge [
-    source 3
-    target 4
-    weight 10.714803766680147
-  ]
-  edge [
-    source 4
-    target 4
-    weight 17.93441842896209
+    weight 0.3464914106866316
   ]
 ]

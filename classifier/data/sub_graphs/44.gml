@@ -1,55 +1,31 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-methionine"
+    label "l-lysine"
   ]
   node [
     id 1
-    label "l-homoserine"
+    label "l-tryptophan"
   ]
   node [
     id 2
-    label "l-cysteine"
-  ]
-  node [
-    id 3
-    label "phosphate"
+    label "l-phenylalanine"
   ]
   edge [
     source 0
     target 2
-    weight 22.03834671866942
+    weight 0.8288554544840866
   ]
   edge [
     source 0
     target 1
-    weight 22.36640363176362
-  ]
-  edge [
-    source 0
-    target 0
-    weight 23.913916432233197
+    weight 0.6319284415874113
   ]
   edge [
     source 1
     target 2
-    weight 21.3308087779643
-  ]
-  edge [
-    source 1
-    target 1
-    weight 22.561538281526797
-  ]
-  edge [
-    source 2
-    target 2
-    weight 21.7397840391954
-  ]
-  edge [
-    source 3
-    target 3
-    weight 3.8070856410356746
+    weight 0.5992700509333997
   ]
 ]

@@ -36,9 +36,32 @@ class RandomWalk():
             nodes = self.getNeighbors(node, sub_graph)
             if len(nodes) == 0:
                 break
-            count, node = self.getNextNode(count, nodes, rw_nodes_list)
+            count, node = self.getNextNodeByWeights(count, nodes, rw_nodes_list, sub_graph, node)
+            # count, node = self.getNextNode(count, nodes, rw_nodes_list)
+
         # sub_graph.graph["name"] = str(sub_name) + "_" + sub_graph.graph["name"]
         return sub_graph.subgraph(rw_nodes_list).copy()
+
+    def getNextNodeByWeights(self, count, nodes, rw_nodes_list, sub_graph, node):
+        sum_of_weights = self.getSumOfWeights(sub_graph, node)
+        random_number = randint(0, sum_of_weights)
+        new_node = random.choice(nodes)
+        counter_of_weights = round(sub_graph[node]._atlas[new_node]['weight'] * 100)
+        while random_number > counter_of_weights:
+            nodes.remove(new_node)
+            new_node = random.choice(nodes)
+            counter_of_weights += round(sub_graph[node]._atlas[new_node]['weight'] * 100)
+        count += 1
+        return count, new_node
+
+
+    def getSumOfWeights(self, sub_graph, node):
+        sum_of_weights = 0
+        a_dict = sub_graph._adj.get(node)
+        for key, value in a_dict.items():
+            sum_of_weights += round(value['weight'] * 100)
+        return sum_of_weights
+
 
     def getFirstNode(self, count, nodes, rw_nodes_list, root):
         rw_nodes_list.append(root)
@@ -52,6 +75,7 @@ class RandomWalk():
         nodes.remove(node)
         count += 1
         return count, node
+
 
     def getNeighbors(self, node, sub_graph):
         return list(sub_graph.adj[node].keys())

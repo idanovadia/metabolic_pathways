@@ -1,36 +1,31 @@
 graph [
-  label "testset"
-  type "2001"
+  label "negative"
+  type "trainset"
   node [
     id 0
-    label "glucose"
+    label "l-lysine"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-arginine"
   ]
   node [
     id 2
-    label "glycine"
+    label "l-alanine"
   ]
   edge [
     source 0
-    target 0
-    weight 4.119428691871143
+    target 2
+    weight 0.588887828830241
   ]
   edge [
     source 0
     target 1
-    weight 2.7784071802438657
+    weight 0.7383488648867993
   ]
   edge [
     source 1
-    target 1
-    weight 2.852806316807519
-  ]
-  edge [
-    source 2
     target 2
-    weight 24.729517834719893
+    weight 0.5069688742884643
   ]
 ]

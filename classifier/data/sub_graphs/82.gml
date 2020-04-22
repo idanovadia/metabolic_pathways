@@ -1,22 +1,25 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "benzoate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "glucose"
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 2
+    label "l-alanine"
+  ]
+  node [
+    id 3
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 0
-    weight 20.707354641454884
-  ]
-  edge [
-    source 1
-    target 1
-    weight 4.119428691871143
+    target 3
+    weight 0.6510037877502363
   ]
 ]

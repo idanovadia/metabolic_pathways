@@ -1,27 +1,12 @@
 graph [
-  label "positive"
-  type "trainset"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "phosphate"
+    label "gdp-alpha;-d-mannose"
   ]
   node [
     id 1
-    label "citrate"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 3.2517957653926777
-  ]
-  edge [
-    source 0
-    target 0
-    weight 3.8070856410356746
-  ]
-  edge [
-    source 1
-    target 1
-    weight 3.6920112013185653
+    label "d-glycerate"
   ]
 ]

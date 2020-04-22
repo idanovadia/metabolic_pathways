@@ -1,22 +1,30 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "d-ribofuranose"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-tyrosine"
+  ]
+  node [
+    id 2
+    label "l-alanine"
+  ]
+  node [
+    id 3
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 0
-    weight 25.61658378054868
+    target 1
+    weight 0.3464914106866316
   ]
   edge [
     source 1
-    target 1
-    weight 3.8070856410356746
+    target 2
+    weight 0.5043718061860422
   ]
 ]

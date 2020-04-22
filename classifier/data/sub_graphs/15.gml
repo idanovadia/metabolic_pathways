@@ -1,22 +1,17 @@
 graph [
-  label "positive"
-  type "trainset"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "l-serine"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "uracil"
   ]
   edge [
     source 0
-    target 0
-    weight 6.778636804802379
-  ]
-  edge [
-    source 1
     target 1
-    weight 2.852806316807519
+    weight 0.5757439281780684
   ]
 ]
