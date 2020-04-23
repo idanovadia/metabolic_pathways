@@ -90,6 +90,8 @@ class GraphCreator(AbstractConfigClass):
 
         def CreateSubGraph(self, main_graph):
             subGraph = main_graph.subgraph(self.nodes_list).copy()
+            if len(list(subGraph.nodes)) == 0:
+                subGraph.add_nodes_from(self.nodes_list)
             subGraph.graph['label'] = self.classify
             subGraph.graph['type'] = self.type
             return subGraph
