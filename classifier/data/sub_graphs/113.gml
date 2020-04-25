@@ -1,112 +1,120 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-glutamine"
-  ]
-  node [
-    id 1
-    label "l-glutamate"
-  ]
-  node [
-    id 2
-    label "l-aspartate"
-  ]
-  node [
-    id 3
     label "fumarate"
   ]
   node [
-    id 4
-    label "phosphate"
-  ]
-  node [
-    id 5
+    id 1
     label "2-oxoglutarate"
   ]
   node [
+    id 2
+    label "l-alanine"
+  ]
+  node [
+    id 3
+    label "phosphate"
+  ]
+  node [
+    id 4
+    label "succinate"
+  ]
+  node [
+    id 5
+    label "l-serine"
+  ]
+  node [
     id 6
-    label "l-arginine"
+    label "l-glutamate"
+  ]
+  node [
+    id 7
+    label "l-aspartate"
+  ]
+  node [
+    id 8
+    label "(s)-malate"
   ]
   edge [
     source 0
     target 2
-    weight 1.6805228191081816
+    weight 0.4795207245919059
   ]
   edge [
     source 0
     target 1
-    weight 1.649439976581621
+    weight 0.4263434855086067
   ]
   edge [
     source 0
-    target 0
-    weight 1.6568610959960839
+    target 8
+    weight 0.5100248837176506
+  ]
+  edge [
+    source 0
+    target 5
+    weight 0.5364194507938012
   ]
   edge [
     source 0
     target 4
-    weight 1.813342329710697
+    weight 0.5624770794060734
   ]
   edge [
     source 1
-    target 2
-    weight 2.4527806859384746
+    target 8
+    weight 0.3248062489421025
   ]
   edge [
     source 1
-    target 1
-    weight 2.852806316807519
-  ]
-  edge [
-    source 1
-    target 4
-    weight 2.8011648507590357
+    target 5
+    weight 0.405716148338836
   ]
   edge [
     source 2
-    target 2
-    weight 2.8587005619305828
+    target 8
+    weight 0.52767586406752
+  ]
+  edge [
+    source 2
+    target 5
+    weight 0.5832377536907697
   ]
   edge [
     source 2
     target 4
-    weight 2.9141282762119483
+    weight 0.5154836860390344
+  ]
+  edge [
+    source 3
+    target 7
+    weight 0.6011486587004862
   ]
   edge [
     source 3
     target 6
-    weight 15.281259657489535
-  ]
-  edge [
-    source 3
-    target 5
-    weight 8.981981401429461
-  ]
-  edge [
-    source 3
-    target 3
-    weight 16.163375431110502
+    weight 0.6510037877502363
   ]
   edge [
     source 4
-    target 4
-    weight 3.8070856410356746
+    target 8
+    weight 0.5122229946934221
   ]
   edge [
-    source 5
-    target 6
-    weight 9.21408629632479
-  ]
-  edge [
-    source 5
+    source 4
     target 5
-    weight 6.778636804802379
+    weight 0.4766458924310171
+  ]
+  edge [
+    source 5
+    target 8
+    weight 0.6485243401162355
   ]
   edge [
     source 6
-    target 6
-    weight 16.691904595591488
+    target 7
+    weight 0.6056390159084215
   ]
 ]

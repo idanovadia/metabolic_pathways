@@ -104,7 +104,7 @@ class classifier(AbstractConfigClass):
         added_cols = {'correlation_treshold':self.config_parser.eval('GraphCreator', "threshold"),
                       'random_walk_length':self.config_parser.eval('Sub2Vec', 'random_walk_length'),
                       'random walk num of times':self.config_parser.eval('Sub2Vec', 'random_walk_number'),
-                      'improvements':str(self.config_parser.eval('GraphCreator', 'extensions')).replace('}','').replace('{','').replace(':','=').replace("'", ""),
+                      'improvements':self.getImprovments(),
                       'embedding_size':json.loads(self.config_parser.get('Sub2Vec', 'doc2vec_args'))['vector_size'],
                       'doc2vec hyper parameters':json.loads(self.config_parser.get('Sub2Vec', 'doc2vec_args'))}
         if added_cols['improvements']=="":
@@ -119,3 +119,17 @@ class classifier(AbstractConfigClass):
 
         self.result_dataframe.to_excel(self.csv_output_directory + "/" + self.output_file_name+".xlsx",index=False)
         print(self.result_dataframe.head(1).to_string)
+
+    def getImprovments(self):
+        extensions=[str(self.config_parser.eval('GraphCreator', 'extensions')).replace('}','').replace('{','').replace(':','=').replace("'", ""),
+                    str(self.config_parser.eval('Sub2Vec', 'rw_extensions'))
+                    ]
+        last=""
+        result=""
+        for extension in extensions:
+            if last=="":
+                result+=extension
+            else:
+                result+=','+extension
+            last=extension
+        return result

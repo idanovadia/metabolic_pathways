@@ -1,55 +1,35 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-glutamine"
+    label "fumarate"
   ]
   node [
     id 1
-    label "l-valine"
+    label "l-tyrosine"
   ]
   node [
     id 2
-    label "l-leucine"
+    label "2-oxoglutarate"
   ]
   node [
     id 3
-    label "l-isoleucine"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 0
-    weight 1.6568610959960839
-  ]
-  edge [
-    source 1
-    target 3
-    weight 22.149949430421064
-  ]
-  edge [
-    source 1
     target 2
-    weight 24.81744025243976
+    weight 0.4263434855086067
   ]
   edge [
-    source 1
+    source 0
     target 1
-    weight 25.101301822946173
+    weight 0.480832649206715
   ]
   edge [
-    source 2
-    target 3
-    weight 22.54537520625581
-  ]
-  edge [
-    source 2
+    source 1
     target 2
-    weight 26.25262581447529
-  ]
-  edge [
-    source 3
-    target 3
-    weight 21.156672120714756
+    weight 0.3464914106866316
   ]
 ]

@@ -3,20 +3,29 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glucose"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-valine"
+    label "glucose"
+  ]
+  node [
+    id 2
+    label "gdp-alpha;-d-mannose"
   ]
   edge [
     source 0
-    target 0
-    weight 4.119428691871143
+    target 1
+    weight 0.5997968146524117
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.6477135913764945
   ]
   edge [
     source 1
-    target 1
-    weight 25.101301822946173
+    target 2
+    weight 0.8362263468292753
   ]
 ]

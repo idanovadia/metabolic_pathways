@@ -1,5 +1,5 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
@@ -7,21 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-phenylalanine"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 20.707354641454884
+    label "succinate"
   ]
   edge [
     source 0
     target 1
-    weight 23.52569843555969
-  ]
-  edge [
-    source 1
-    target 1
-    weight 28.81592857137403
+    weight 0.4367800079008436
   ]
 ]

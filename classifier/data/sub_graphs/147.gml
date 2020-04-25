@@ -1,46 +1,59 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "shikimate"
   ]
   node [
     id 1
-    label "succinate"
+    label "benzoate"
   ]
   node [
     id 2
-    label "putrescine"
+    label "l-alanine"
   ]
-  edge [
-    source 0
-    target 0
-    weight 6.778636804802379
+  node [
+    id 3
+    label "succinate"
+  ]
+  node [
+    id 4
+    label "l-tryptophan"
   ]
   edge [
     source 0
     target 2
-    weight 10.610157802452461
+    weight 0.3798405827229721
   ]
   edge [
     source 0
-    target 1
-    weight 8.83328384421181
+    target 3
+    weight 0.3514634397470082
   ]
   edge [
     source 1
     target 2
-    weight 17.603268384409052
+    weight 0.588158926719598
   ]
   edge [
     source 1
-    target 1
-    weight 15.046764663511496
+    target 3
+    weight 0.4367800079008436
+  ]
+  edge [
+    source 1
+    target 4
+    weight 0.460140496555413
   ]
   edge [
     source 2
-    target 2
-    weight 22.814691863789687
+    target 3
+    weight 0.5154836860390344
+  ]
+  edge [
+    source 2
+    target 4
+    weight 0.5403694072428842
   ]
 ]

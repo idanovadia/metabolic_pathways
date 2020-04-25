@@ -3,25 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "d-glycerate"
+    label "galactose"
   ]
   node [
     id 1
-    label "glycerol"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 13.973492622597815
+    label "phosphate"
   ]
   edge [
     source 0
     target 1
-    weight 11.81342103481353
-  ]
-  edge [
-    source 1
-    target 1
-    weight 11.20275510806543
+    weight 0.5884905612973588
   ]
 ]

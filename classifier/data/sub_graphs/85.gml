@@ -1,108 +1,54 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "l-glutamine"
   ]
   node [
     id 1
-    label "l-valine"
+    label "phosphate"
   ]
   node [
     id 2
-    label "l-threonine"
+    label "l-asparagine"
   ]
   node [
     id 3
-    label "l-isoleucine"
+    label "l-glutamate"
   ]
   node [
     id 4
-    label "l-leucine"
-  ]
-  node [
-    id 5
-    label "2-oxoglutarate"
+    label "l-aspartate"
   ]
   edge [
     source 0
-    target 0
-    weight 2.852806316807519
-  ]
-  edge [
-    source 1
-    target 5
-    weight 11.284646522485076
-  ]
-  edge [
-    source 1
-    target 3
-    weight 22.149949430421064
-  ]
-  edge [
-    source 1
     target 4
-    weight 24.81744025243976
+    weight 0.4514014676011702
   ]
   edge [
-    source 1
-    target 2
-    weight 25.0238660867876
+    source 0
+    target 3
+    weight 0.5889560002830893
   ]
   edge [
-    source 1
+    source 0
     target 1
-    weight 25.101301822946173
+    weight 0.5207469450961464
   ]
   edge [
-    source 2
-    target 5
-    weight 11.597384630970677
+    source 1
+    target 4
+    weight 0.6011486587004862
   ]
   edge [
-    source 2
+    source 1
     target 3
-    weight 22.80777532116642
-  ]
-  edge [
-    source 2
-    target 4
-    weight 25.584422702188572
-  ]
-  edge [
-    source 2
-    target 2
-    weight 26.43507449892432
-  ]
-  edge [
-    source 3
-    target 5
-    weight 10.369835380353264
-  ]
-  edge [
-    source 3
-    target 3
-    weight 21.156672120714756
+    weight 0.6510037877502363
   ]
   edge [
     source 3
     target 4
-    weight 22.54537520625581
-  ]
-  edge [
-    source 4
-    target 5
-    weight 11.553177449278706
-  ]
-  edge [
-    source 4
-    target 4
-    weight 26.25262581447529
-  ]
-  edge [
-    source 5
-    target 5
-    weight 6.778636804802379
+    weight 0.6056390159084215
   ]
 ]

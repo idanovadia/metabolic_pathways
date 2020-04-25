@@ -1,27 +1,35 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "uracil"
+    label "l-phenylalanine"
   ]
   node [
     id 1
-    label "beta;-alanine"
+    label "l-serine"
+  ]
+  node [
+    id 2
+    label "phosphate"
+  ]
+  node [
+    id 3
+    label "glycine"
+  ]
+  edge [
+    source 0
+    target 3
+    weight 0.8087450020798062
   ]
   edge [
     source 0
     target 1
-    weight 18.359416436658982
-  ]
-  edge [
-    source 0
-    target 0
-    weight 18.766743355726543
+    weight 0.8366053612707007
   ]
   edge [
     source 1
-    target 1
-    weight 19.871489842896292
+    target 3
+    weight 0.8435878621427529
   ]
 ]

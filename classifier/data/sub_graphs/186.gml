@@ -3,44 +3,48 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-alanine"
+    label "l-methionine"
   ]
   node [
     id 1
-    label "l-phenylalanine"
+    label "l-tyrosine"
   ]
   node [
     id 2
-    label "l-tryptophan"
+    label "l-alanine"
   ]
-  edge [
-    source 0
-    target 0
-    weight 22.125959368767543
-  ]
-  edge [
-    source 0
-    target 1
-    weight 24.14986759501905
+  node [
+    id 3
+    label "l-cysteine"
   ]
   edge [
     source 0
     target 2
-    weight 17.022176708257952
+    weight 0.6288725447908934
   ]
   edge [
-    source 1
+    source 0
+    target 3
+    weight 0.6853509232746886
+  ]
+  edge [
+    source 0
     target 1
-    weight 28.81592857137403
+    weight 0.7657222335493962
   ]
   edge [
     source 1
     target 2
-    weight 19.339191718109227
+    weight 0.5043718061860422
+  ]
+  edge [
+    source 1
+    target 3
+    weight 0.529497355748019
   ]
   edge [
     source 2
-    target 2
-    weight 14.51167546033682
+    target 3
+    weight 0.6955937024459136
   ]
 ]

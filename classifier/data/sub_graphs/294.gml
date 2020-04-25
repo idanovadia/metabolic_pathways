@@ -1,5 +1,5 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
@@ -8,39 +8,5 @@ graph [
   node [
     id 1
     label "succinate"
-  ]
-  node [
-    id 2
-    label "glycine"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 6.778636804802379
-  ]
-  edge [
-    source 0
-    target 2
-    weight 11.497648150356515
-  ]
-  edge [
-    source 0
-    target 1
-    weight 8.83328384421181
-  ]
-  edge [
-    source 1
-    target 2
-    weight 18.22506513822535
-  ]
-  edge [
-    source 1
-    target 1
-    weight 15.046764663511496
-  ]
-  edge [
-    source 2
-    target 2
-    weight 24.729517834719893
   ]
 ]

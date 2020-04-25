@@ -1,70 +1,72 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "phosphate"
-  ]
-  node [
-    id 1
     label "l-glutamine"
   ]
   node [
+    id 1
+    label "fumarate"
+  ]
+  node [
     id 2
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   node [
     id 3
+    label "phosphate"
+  ]
+  node [
+    id 4
+    label "glycine"
+  ]
+  node [
+    id 5
+    label "l-glutamate"
+  ]
+  node [
+    id 6
     label "l-aspartate"
   ]
   edge [
     source 0
+    target 6
+    weight 0.4514014676011702
+  ]
+  edge [
+    source 0
+    target 5
+    weight 0.5889560002830893
+  ]
+  edge [
+    source 0
     target 3
-    weight 2.9141282762119483
-  ]
-  edge [
-    source 0
-    target 2
-    weight 2.8011648507590357
-  ]
-  edge [
-    source 0
-    target 1
-    weight 1.813342329710697
-  ]
-  edge [
-    source 0
-    target 0
-    weight 3.8070856410356746
-  ]
-  edge [
-    source 1
-    target 3
-    weight 1.6805228191081816
+    weight 0.5207469450961464
   ]
   edge [
     source 1
     target 2
-    weight 1.649439976581621
+    weight 0.4263434855086067
   ]
   edge [
     source 1
-    target 1
-    weight 1.6568610959960839
-  ]
-  edge [
-    source 2
-    target 3
-    weight 2.4527806859384746
-  ]
-  edge [
-    source 2
-    target 2
-    weight 2.852806316807519
+    target 4
+    weight 0.5642817812921104
   ]
   edge [
     source 3
-    target 3
-    weight 2.8587005619305828
+    target 6
+    weight 0.6011486587004862
+  ]
+  edge [
+    source 3
+    target 5
+    weight 0.6510037877502363
+  ]
+  edge [
+    source 5
+    target 6
+    weight 0.6056390159084215
   ]
 ]

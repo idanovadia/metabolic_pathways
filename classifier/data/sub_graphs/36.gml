@@ -1,36 +1,12 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "l-aspartate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-cysteine"
-  ]
-  node [
-    id 2
-    label "l-asparagine"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 2.8587005619305828
-  ]
-  edge [
-    source 1
-    target 2
-    weight 21.430271492633672
-  ]
-  edge [
-    source 1
-    target 1
-    weight 21.7397840391954
-  ]
-  edge [
-    source 2
-    target 2
-    weight 22.427130479607214
+    label "l-tryptophan"
   ]
 ]

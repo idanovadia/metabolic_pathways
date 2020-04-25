@@ -1,55 +1,21 @@
 graph [
-  label "positive"
-  type "trainset"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "l-serine"
+    label "putrescine"
   ]
   node [
     id 1
-    label "phosphate"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
-    label "l-methionine"
-  ]
-  node [
-    id 3
-    label "glycine"
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 3
-    weight 23.074302097590046
-  ]
-  edge [
-    source 0
-    target 2
-    weight 22.74573078120536
-  ]
-  edge [
-    source 0
-    target 0
-    weight 23.155492042544257
-  ]
-  edge [
-    source 1
     target 1
-    weight 3.8070856410356746
-  ]
-  edge [
-    source 2
-    target 3
-    weight 23.481900866152316
-  ]
-  edge [
-    source 2
-    target 2
-    weight 23.913916432233197
-  ]
-  edge [
-    source 3
-    target 3
-    weight 24.729517834719893
+    weight 0.4107455068846682
   ]
 ]

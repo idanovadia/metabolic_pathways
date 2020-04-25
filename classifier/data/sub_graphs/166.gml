@@ -1,55 +1,39 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "shikimate"
   ]
   node [
     id 1
-    label "l-glutamine"
+    label "phosphate"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   node [
     id 3
-    label "phosphate"
+    label "l-phenylalanine"
+  ]
+  node [
+    id 4
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 0
-    weight 6.778636804802379
-  ]
-  edge [
-    source 1
-    target 2
-    weight 1.649439976581621
-  ]
-  edge [
-    source 1
-    target 1
-    weight 1.6568610959960839
-  ]
-  edge [
-    source 1
     target 3
-    weight 1.813342329710697
+    weight 0.4268278232522483
   ]
   edge [
-    source 2
-    target 2
-    weight 2.852806316807519
+    source 1
+    target 4
+    weight 0.6510037877502363
   ]
   edge [
     source 2
     target 3
-    weight 2.8011648507590357
-  ]
-  edge [
-    source 3
-    target 3
-    weight 3.8070856410356746
+    weight 0.4123799161204509
   ]
 ]

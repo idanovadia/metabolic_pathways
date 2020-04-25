@@ -3,77 +3,61 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
-  ]
-  node [
-    id 1
-    label "(s)-malate"
-  ]
-  node [
-    id 2
     label "l-isoleucine"
   ]
   node [
+    id 1
+    label "maltose"
+  ]
+  node [
+    id 2
+    label "uracil"
+  ]
+  node [
     id 3
-    label "2-oxoglutarate"
+    label "galactose"
   ]
   node [
     id 4
-    label "glycerate_3_phosphate"
+    label "(s)-malate"
+  ]
+  node [
+    id 5
+    label "citrate"
   ]
   edge [
     source 0
-    target 0
-    weight 2.852806316807519
-  ]
-  edge [
-    source 1
-    target 3
-    weight 10.18015688424951
-  ]
-  edge [
-    source 1
     target 4
-    weight 13.350903527121254
+    weight 0.6452781967830801
   ]
   edge [
-    source 1
-    target 2
-    weight 19.965327117367277
-  ]
-  edge [
-    source 1
+    source 0
     target 1
-    weight 20.543719001209293
+    weight 0.5187220891857288
   ]
   edge [
-    source 2
-    target 3
-    weight 10.369835380353264
-  ]
-  edge [
-    source 2
-    target 4
-    weight 13.423668609007297
-  ]
-  edge [
-    source 2
+    source 0
     target 2
-    weight 21.156672120714756
+    weight 0.4930467267353029
+  ]
+  edge [
+    source 1
+    target 4
+    weight 0.619450120674566
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.5734341278623796
+  ]
+  edge [
+    source 2
+    target 4
+    weight 0.5256596403282765
   ]
   edge [
     source 3
-    target 3
-    weight 6.778636804802379
-  ]
-  edge [
-    source 3
-    target 4
-    weight 7.0050646067498175
-  ]
-  edge [
-    source 4
-    target 4
-    weight 9.500402870094847
+    target 5
+    weight 0.5100108841943595
   ]
 ]

@@ -1,22 +1,21 @@
 graph [
-  label "positive"
-  type "trainset"
+  label "testset"
+  type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "glucose"
+    label "l-valine"
   ]
   node [
     id 1
-    label "udp-alpha;-d-galacturonate"
+    label "glucose"
+  ]
+  node [
+    id 2
+    label "l-isoleucine"
   ]
   edge [
     source 0
-    target 0
-    weight 4.119428691871143
-  ]
-  edge [
-    source 1
-    target 1
-    weight 19.947672252941626
+    target 2
+    weight 0.8674932232268686
   ]
 ]

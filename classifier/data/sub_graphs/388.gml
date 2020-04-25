@@ -3,68 +3,85 @@ graph [
   type "trainset"
   node [
     id 0
-    label "dehydroascorbate (bicyclic form)"
+    label "beta;-alanine"
   ]
   node [
     id 1
-    label "l-tyrosine"
+    label "l-alanine"
   ]
   node [
     id 2
-    label "l-cysteine"
+    label "alpha;-tocopherol"
   ]
   node [
     id 3
-    label "l-lysine"
+    label "glycerate_3_phosphate"
   ]
-  edge [
-    source 0
-    target 2
-    weight 23.417507762183963
+  node [
+    id 4
+    label "fructose"
   ]
-  edge [
-    source 0
-    target 0
-    weight 26.75391715269797
+  node [
+    id 5
+    label "l-aspartate"
   ]
-  edge [
-    source 0
-    target 3
-    weight 24.042978594339292
+  node [
+    id 6
+    label "alpha;,alpha;-trehalose"
   ]
   edge [
     source 0
     target 1
-    weight 20.68378609965178
+    weight 0.4533043899379032
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.5898485691674905
+  ]
+  edge [
+    source 0
+    target 3
+    weight 0.4116814340554733
+  ]
+  edge [
+    source 0
+    target 6
+    weight 0.5430575256179176
   ]
   edge [
     source 1
     target 2
-    weight 18.92185618137658
+    weight 0.6098175065214301
   ]
   edge [
     source 1
     target 3
-    weight 19.67301933077306
+    weight 0.3704063160913273
   ]
   edge [
     source 1
-    target 1
-    weight 17.93441842896209
-  ]
-  edge [
-    source 2
-    target 2
-    weight 21.7397840391954
+    target 6
+    weight 0.5980463308121475
   ]
   edge [
     source 2
     target 3
-    weight 21.937117556361315
+    weight 0.4190964302701642
+  ]
+  edge [
+    source 2
+    target 6
+    weight 0.7707843244414465
   ]
   edge [
     source 3
-    target 3
-    weight 23.378382196544784
+    target 6
+    weight 0.3507787193826447
+  ]
+  edge [
+    source 4
+    target 5
+    weight 0.4501359581778627
   ]
 ]

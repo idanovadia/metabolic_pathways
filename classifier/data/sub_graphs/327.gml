@@ -1,27 +1,26 @@
 graph [
-  label "negative"
+  label "positive"
   type "trainset"
   node [
     id 0
-    label "l-cysteine"
+    label "putrescine"
   ]
   node [
     id 1
-    label "l-valine"
+    label "2-oxoglutarate"
   ]
-  edge [
-    source 0
-    target 0
-    weight 21.7397840391954
+  node [
+    id 2
+    label "succinate"
   ]
   edge [
     source 0
     target 1
-    weight 22.703300964598398
+    weight 0.4107455068846682
   ]
   edge [
-    source 1
-    target 1
-    weight 25.101301822946173
+    source 0
+    target 2
+    weight 0.4572790332591343
   ]
 ]

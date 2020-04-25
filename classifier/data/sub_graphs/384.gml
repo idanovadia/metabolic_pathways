@@ -3,53 +3,85 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "benzoate"
   ]
   node [
     id 1
-    label "dehydroascorbate (bicyclic form)"
+    label "l-isoleucine"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "sucrose"
   ]
   node [
     id 3
-    label "glycerol"
+    label "l-serine"
+  ]
+  node [
+    id 4
+    label "l-arginine"
+  ]
+  node [
+    id 5
+    label "fructose"
+  ]
+  node [
+    id 6
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 0
-    weight 6.778636804802379
+    target 4
+    weight 0.4329441652163354
   ]
   edge [
     source 0
     target 1
-    weight 11.479361753554006
+    weight 0.5595290976426377
   ]
   edge [
     source 0
     target 3
-    weight 7.477201213226464
+    weight 0.63541716715581
+  ]
+  edge [
+    source 0
+    target 2
+    weight 0.4851832446846929
   ]
   edge [
     source 1
-    target 1
-    weight 26.75391715269797
+    target 4
+    weight 0.6304774274893195
   ]
   edge [
     source 1
     target 3
-    weight 16.273109307658153
+    weight 0.8258656390723816
+  ]
+  edge [
+    source 1
+    target 2
+    weight 0.5878583240374896
   ]
   edge [
     source 2
-    target 2
-    weight 2.852806316807519
+    target 4
+    weight 0.3909614997244138
+  ]
+  edge [
+    source 2
+    target 3
+    weight 0.6313604355193286
   ]
   edge [
     source 3
-    target 3
-    weight 11.20275510806543
+    target 4
+    weight 0.6019927940005843
+  ]
+  edge [
+    source 5
+    target 6
+    weight 0.387525633041843
   ]
 ]
