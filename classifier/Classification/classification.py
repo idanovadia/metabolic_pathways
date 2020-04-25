@@ -67,7 +67,7 @@ class classifier(AbstractConfigClass):
                     self.train_size+=len(x_train)
                     self.test_size += len(x_test)
 
-                scores = self.calculateScore(predictions,train_size=len(x_train),test_size=len(x_test))
+                scores = self.calculateScore(predictions,train_size=self.train_size,test_size=self.test_size)
                 self.resultdict.append(Result(cls.name, val.name, scores))
                 self.train_size=0
                 self.test_size=0
