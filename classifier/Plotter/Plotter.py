@@ -27,12 +27,15 @@ class Plotter(AbstractConfigClass):
 
     def exec(self):
         for inv in self.present:
-            for data in self.data:
-                type=self.present[inv]['type']
-                classes=self.getclasses(self.data[data]['file'],self.present[inv]['groupby'])
-                values=self.getMeanperClass(self.data[data]['file'],self.present[inv]['groupby'],self.present[inv]['compare_columns'])
-                if type=='group_bar':
-                    self.group_bar(classes,values,self.present[inv]['title'],self.present[inv]['compare_columns'],self.present[inv]['ylabel'])
+            data=self.data[self.present[inv]['data']]['file']
+            type=self.present[inv]['type']
+            classes=self.getclasses(data,self.present[inv]['groupby'])
+            values=self.getMeanperClass(data,self.present[inv]['groupby'],self.present[inv]['compare_columns'])
+            if type=='group_bar':
+                self.group_bar(classes,values,self.present[inv]['title'],self.present[inv]['compare_columns'],self.present[inv]['ylabel'])
+            elif type=='line':
+                self.line(classes, values, self.present[inv]['title'], self.present[inv]['labels'],
+                               self.present[inv]['ylabel'],self.present[inv]['xlabel'])
 
 
     def generateData(self):
@@ -80,6 +83,26 @@ class Plotter(AbstractConfigClass):
         fig.tight_layout()
 
         plt.show()
+
+    def line(self,classes,values,title,labels,ylabel,xlabel):
+        labels=labels.split(",")
+
+        for i in range(len(labels)):
+            x=[x for x in classes]
+            y=[y for y in values[i]]
+            x.reverse()
+            plt.plot(x, y, label=labels[i])
+
+        plt.xlabel(xlabel)
+        plt.ylabel(ylabel)
+
+        plt.title(title)
+
+        plt.legend()
+
+        plt.show()
+
+
 
 
     def autolabel(self,rects,ax):
