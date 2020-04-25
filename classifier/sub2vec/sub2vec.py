@@ -40,7 +40,11 @@ class Sub2Vec(AbstractConfigClass):
         self.rw_list_of_graphs_train_positive = []
         self.rw_list_of_graphs_train_negative = []
         self.rw_list_of_graphs_test = []
+        self.rw_args = json.loads(self.config_parser.get(self.__class__.__name__, 'randomwalk_args'))
+        self.rw_extensions = self.config_parser.eval(self.__class__.__name__, 'rw_extensions').split(",")
         self.doc2vec_args=json.loads(self.config_parser.get(self.__class__.__name__, 'doc2vec_args'))
+
+
 
     def exec(self):
         self.generateSubGraphs()
@@ -67,7 +71,7 @@ class Sub2Vec(AbstractConfigClass):
 
     def randomWalk(self):
         random_walk_object = rw.RandomWalk(threshold=self.randomWalk_length,
-                                           number_of_graphs=self.random_walk_num)
+                                           number_of_graphs=self.random_walk_num,args=self.rw_args,extensions=self.rw_extensions)
         for k in self.subGraphs_list:
             g = k[1]
             g.graph["name"] = k[0]

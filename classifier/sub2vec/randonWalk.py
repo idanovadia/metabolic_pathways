@@ -5,9 +5,11 @@ import random
 
 class RandomWalk():
 
-    def __init__(self, threshold, number_of_graphs):
+    def __init__(self, threshold, number_of_graphs,args,extensions):
         self.threshold = threshold
         self.number_of_graphs = number_of_graphs
+        self.args=args
+        self.extensions=extensions
 
     # def graphComparator(self, graph_1, graph_2):
     #     if sorted(list(graph_1.nodes)) == sorted(list(graph_2.nodes)):
@@ -36,21 +38,27 @@ class RandomWalk():
             nodes = self.getNeighbors(node, sub_graph)
             if len(nodes) == 0:
                 break
-            count, node = self.getNextNodeByWeights(count, nodes, rw_nodes_list, sub_graph, node)
-            # count, node = self.getNextNode(count, nodes, rw_nodes_list)
+            if 'weighted_randomwalk' in self.extensions:
+
+                count, node = self.getNextNodeByWeights(count, nodes, rw_nodes_list, sub_graph, node)
+            else:
+                count, node = self.getNextNode(count, nodes, rw_nodes_list)
 
         # sub_graph.graph["name"] = str(sub_name) + "_" + sub_graph.graph["name"]
         return sub_graph.subgraph(rw_nodes_list).copy()
+
+
 
     def getNextNodeByWeights(self, count, nodes, rw_nodes_list, sub_graph, node):
         sum_of_weights = self.getSumOfWeights(sub_graph, node)
         random_number = randint(0, sum_of_weights)
         new_node = random.choice(nodes)
-        counter_of_weights = round(sub_graph[node]._atlas[new_node]['weight'] * 100)
+        multiplier=self.args['weigted_next_node_multiplier']
+        counter_of_weights = round(sub_graph[node]._atlas[new_node]['weight'] * multiplier)
         while random_number > counter_of_weights:
             nodes.remove(new_node)
             new_node = random.choice(nodes)
-            counter_of_weights += round(sub_graph[node]._atlas[new_node]['weight'] * 100)
+            counter_of_weights += round(sub_graph[node]._atlas[new_node]['weight'] * multiplier)
         count += 1
         return count, new_node
 
