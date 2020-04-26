@@ -46,6 +46,7 @@ class GraphCreator(AbstractConfigClass):
         self.run_extensions()
         self.writeMainGraph()
         self.subGraphsCreator()
+        self.addNeighborsToAllSubgraphs()
         self.WriteAll()
 
     def run_extensions(self):
@@ -176,21 +177,22 @@ class GraphCreator(AbstractConfigClass):
     # ############################################################################################################################################
     ''' Adding neighbors to each sub graph  '''
 
-    def addRandomNeighbors(self):
+    def addNeighborsToAllSubgraphs(self):
         subgraphs_with_neighbors = []
         for i in self.subGraphs_list:
-            subgraphs_with_neighbors.append(self.addNeighborsByThreshold(i))
+            subgraphs_with_neighbors.append(self.addAllNeighbors(i))
         self.subGraphs_list = subgraphs_with_neighbors
 
     ''' add neighbors to sub graph'''
 
-    def addNeighborsByThreshold(self, g_):
+    def addAllNeighbors(self, g_):
         new_g = g_.copy()
-        for count in range(self.number_of_neighbors):
-            neighbors = self.addNeighbors(new_g)
+        self.number_of_neighbors = len(list(new_g.nodes))
+        for node in list(new_g.nodes):
+            neighbors = self.addNeighbors(g=new_g, node=node)
             if len(neighbors) == 0:
                 break
-            new_g = self.generateNweGraph(list(new_g.nodes), random.choice(tuple(neighbors)))
+            new_g = self.generateNewGraph(nodes=list(new_g.nodes), node=node)
         label = str(g_.graph['label'])
         type = str(g_.graph['type'])
         new_g.graph['label'] = label
@@ -199,17 +201,15 @@ class GraphCreator(AbstractConfigClass):
 
     ''' create the new graph from main graph and the neighbors '''
 
-    def generateNweGraph(self, nodes, node):
+    def generateNewGraph(self, nodes, node):
         nodes.append(node)
         return self.main_graph.subgraph(nodes).copy()
 
     ''' find all the neighbors in sub graph '''
 
-    def addNeighbors(self, g):
+    def addNeighbors(self, g, node):
         neighbors = set()
-        for vertex in g.nodes:
-            neighbors.update(self.getNeighbors(vertex, self.main_graph))
-        # neighbors.remove(g.nodes)
+        neighbors.update(self.getNeighbors(node, self.main_graph))
         neighbors.difference_update(list(g.nodes))
         return neighbors
 
@@ -303,7 +303,7 @@ class GraphCreator(AbstractConfigClass):
             if len(neighbors.queue) == 0:
                 break
             new_node = self.getNextNode(neighbors, new_g.nodes)
-            new_g = self.generateNweGraph(list(new_g.nodes), new_node)
+            new_g = self.generateNewGraph(list(new_g.nodes), new_node)
         return new_g
 
     def addNeighbors_PriorityQueue(self, g):

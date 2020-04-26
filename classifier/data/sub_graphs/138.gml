@@ -5,8 +5,4 @@ graph [
     id 0
     label "glucose"
   ]
-  node [
-    id 1
-    label "l-tryptophan"
-  ]
 ]

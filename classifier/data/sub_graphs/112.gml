@@ -3,10 +3,10 @@ graph [
   type "trainset"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "d-glycerate"
   ]
   node [
     id 1
-    label "d-glycerate"
+    label "gdp-alpha;-d-mannose"
   ]
 ]
