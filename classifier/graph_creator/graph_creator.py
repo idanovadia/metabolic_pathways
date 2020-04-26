@@ -34,30 +34,39 @@ class GraphCreator(AbstractConfigClass):
             self.config_parser.eval(self.__class__.__name__, "main_graph_output_directory"))
         self.sub_graphs_output_directory_path = self.getPath(
             self.config_parser.eval(self.__class__.__name__, "sub_graphs_output_directory"))
-        self.number_of_neighbors = int(self.config_parser.eval(self.__class__.__name__, "number_Of_neighbors"))
         self.subGraphs_list = []
         self.main_graph = nx.Graph()
         self.set_nodes = set()
         self.removeEdges = []
-        self.extensions = json.loads(self.config_parser.get(self.__class__.__name__, 'extensions'))
+        self.adj_matrix_extensions = json.loads(self.config_parser.get(self.__class__.__name__, 'adj_matrix_extensions'))
+        self.graph_extensions = self.config_parser.eval(self.__class__.__name__, "graph_extensions").split(",")
+
 
     def exec(self):
         self.createMainGraph()
-        self.run_extensions()
+        self.run_adj_matrix_extensions()
         self.writeMainGraph()
         self.subGraphsCreator()
-        self.addNeighborsToAllSubgraphs()
+        self.run_graph_extensions()
         self.WriteAll()
 
-    def run_extensions(self):
+    def run_adj_matrix_extensions(self):
         # add extensions here
-        extensions_dict = {}
-        extensions_dict['power_graph'] = self.powerGraph
-        extensions_dict['adj_matrix_power'] = self.setPowerAdjacencyMatrix
-        extensions_dict['adj_matrix_and_add'] = self.setAddPAMWithAM
-        for extension , value in self.extensions.items():
-            if extension in extensions_dict:
-                extensions_dict[extension](value)
+        adj_extensions_dict = {}
+        adj_extensions_dict['power_graph'] = self.powerGraph
+        adj_extensions_dict['adj_matrix_power'] = self.setPowerAdjacencyMatrix
+        adj_extensions_dict['adj_matrix_and_add'] = self.setAddPAMWithAM
+        for extension , value in self.adj_matrix_extensions.items():
+            if extension in adj_extensions_dict:
+                adj_extensions_dict[extension](value)
+                print(extension)
+
+    def run_graph_extensions(self):
+        graph_extensions_dict = {}
+        graph_extensions_dict['add_neighbors_from_adj_matrix'] = self.addNeighborsToAllSubgraphs
+        for extension in self.graph_extensions:
+            if extension in graph_extensions_dict:
+                graph_extensions_dict[extension]()
                 print(extension)
 
     '''
@@ -322,3 +331,6 @@ class GraphCreator(AbstractConfigClass):
             node = neighbors.queue[count]
             count += 1
         return node[0] * -1
+
+
+
