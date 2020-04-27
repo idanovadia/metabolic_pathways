@@ -121,7 +121,8 @@ class classifier(AbstractConfigClass):
         print(self.result_dataframe.head(1).to_string)
 
     def getImprovments(self):
-        extensions=[str(self.config_parser.eval('GraphCreator', 'extensions')).replace('}','').replace('{','').replace(':','=').replace("'", ""),
+        extensions=[str(self.config_parser.eval('GraphCreator', 'adj_matrix_extensions')).replace('}','').replace('{','').replace(':','=').replace("'", ""),
+                    self.config_parser.eval('GraphCreator','graph_extensions'),
                     str(self.config_parser.eval('Sub2Vec', 'rw_extensions'))
                     ]
         last=""

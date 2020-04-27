@@ -9,9 +9,4 @@ graph [
     id 1
     label "glycine"
   ]
-  edge [
-    source 0
-    target 1
-    weight 0.6764879810200911
-  ]
 ]

@@ -9,9 +9,4 @@ graph [
     id 1
     label "d-glycerate"
   ]
-  edge [
-    source 0
-    target 1
-    weight 0.5576849502170195
-  ]
 ]

@@ -9,9 +9,4 @@ graph [
     id 1
     label "l-cysteine"
   ]
-  edge [
-    source 0
-    target 1
-    weight 0.589273553545353
-  ]
 ]

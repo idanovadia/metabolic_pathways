@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-arginine"
+    label "putrescine"
   ]
   node [
     id 1
@@ -11,21 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "putrescine"
-  ]
-  edge [
-    source 0
-    target 1
-    weight 0.7383488648867993
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.5560988845611036
+    label "l-arginine"
   ]
   edge [
     source 1
     target 2
-    weight 0.6385909901460664
+    weight 0.7383488648867993
   ]
 ]
