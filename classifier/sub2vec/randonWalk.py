@@ -11,6 +11,7 @@ class RandomWalk():
         self.args=args
         self.extensions=extensions
 
+
     # def graphComparator(self, graph_1, graph_2):
     #     if sorted(list(graph_1.nodes)) == sorted(list(graph_2.nodes)):
     #         return True
@@ -20,12 +21,18 @@ class RandomWalk():
         rwList = []
         for counter, j in enumerate(graph.nodes):
             for i in range(self.number_of_graphs):
+                if 'rw_on_main_graph' in self.extensions:
+                    new_graph=self.randomWalk_on_main_graph()
                 new_graph = self.randomWalk(graph, j, i)
                 new_graph.graph["name"] = str(i) + "_" + str(counter) + "_" + new_graph.graph["name"]
                 rwList.append(new_graph)
         list_of_graphs.append(rwList)
         return list_of_graphs
-
+    def randomWalk_on_main_graph(self,main_graph,root):
+        self.empty_nodes_list = False
+        rw_nodes_list = []
+        count = 0
+        nodes=list(main_graph.node(root))
     # Get sub-graph in nx format
     def randomWalk(self, sub_graph, root, sub_name):
         self.empty_nodes_list = False
