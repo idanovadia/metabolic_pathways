@@ -79,7 +79,7 @@ class RandomWalk():
         sum_of_weights = self.getSumOfWeights(sub_graph, node)
         random_number = randint(0, sum_of_weights)
         new_node = random.choice(nodes)
-        multiplier=self.args['weigted_next_node_multiplier']
+        multiplier=self.args['weighted_next_node_multiplier']
         counter_of_weights = round(sub_graph[node]._atlas[new_node]['weight'] * multiplier)
         while random_number > counter_of_weights:
             nodes.remove(new_node)
