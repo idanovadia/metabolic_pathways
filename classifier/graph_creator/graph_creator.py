@@ -158,8 +158,9 @@ class GraphCreator(AbstractConfigClass):
         i, j = 0, 1
         for _, row in csv_pd.iterrows():
             for i in range(j, len(row)):
-                if row[i] >= float(self.threshold_weights):
-                    self.main_graph.add_edge(u_of_edge=str(row.name).lower(), v_of_edge=str(columns_headers[i]).lower(),
+                if abs(row[i])>= float(self.threshold_weights):
+                    self.main_graph.add_edge(u_of_edge=str(row.name).lower(),
+                                             v_of_edge=str(columns_headers[i]).lower(),
                                              weight=row[i])
             j += 1
 

@@ -76,7 +76,7 @@ class RandomWalk():
 
     def getNextNodeByWeights(self, count, nodes, rw_nodes_list, sub_graph, node):
         rw_nodes_list.append(node)
-        sum_of_weights = self.getSumOfWeights(sub_graph, node)
+        sum_of_weights = abs(self.getSumOfWeights(sub_graph, node))
         random_number = randint(0, sum_of_weights)
         new_node = random.choice(nodes)
         multiplier=self.args['weighted_next_node_multiplier']
@@ -84,7 +84,7 @@ class RandomWalk():
         while random_number > counter_of_weights:
             nodes.remove(new_node)
             new_node = random.choice(nodes)
-            counter_of_weights += round(sub_graph[node]._atlas[new_node]['weight'] * multiplier)
+            counter_of_weights += abs(round(sub_graph[node]._atlas[new_node]['weight'] * multiplier))
         count += 1
         return count, new_node
 
