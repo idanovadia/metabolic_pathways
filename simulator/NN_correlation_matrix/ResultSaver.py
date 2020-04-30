@@ -31,7 +31,7 @@ class ResultSaver:
         plt.close()
         plt.title('original matrix')
         npimg = real_output.cpu().numpy()
-        plt.imshow(npimg, cmap="Greys")
+        plt.imshow(npimg, cmap="Greys") #YlGnBu
         plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '.png', dpi=50)
 
         # plot the graph of epchos-MSE
@@ -112,3 +112,41 @@ class ResultSaver:
         active.append(["predicted reactions: ", str(predicted_lst)])
 
         wb.save(excel_path)
+
+    def save_two_random(self, y1, y2, itreation, mse_loss):
+        two_random_path = saving_path + "\\result_random.xlsx"
+        sheet_name = str(itreation)
+        if itreation == 0:
+            wb = Workbook()
+            wb.save(two_random_path)
+        wb = load_workbook(two_random_path)
+        wb.create_sheet(sheet_name, 0)
+
+        # Create first matrix
+        plt.close()
+        plt.title('First Matrix')
+        npimg = y1.cpu().numpy()
+        plt.imshow(npimg, cmap="YlGnBu")  # YlGnBu
+        plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '1.png', dpi=50)
+
+        # Create second matrix
+        plt.close()
+        plt.title('First Matrix')
+        npimg = y2.cpu().numpy()
+        plt.imshow(npimg, cmap="YlGnBu")  # YlGnBu
+        plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '2.png', dpi=50)
+
+        # Add photos to excel sheet
+        # Activate worksheet
+        active = wb[sheet_name]
+        active.append([mse_loss])
+
+        # Insert plot into worksheet
+        # Select active sheet and cell reference
+        img = Image(saving_path + 'original_matrix_images\\' + sheet_name + '1.png')
+        active.add_image(img, 'A3')
+
+        img_second_matrix = Image(saving_path + 'original_matrix_images\\' + sheet_name + '2.png')
+        active.add_image(img_second_matrix, 'F3')
+
+        wb.save(two_random_path)

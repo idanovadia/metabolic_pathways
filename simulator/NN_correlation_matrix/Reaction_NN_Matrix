@@ -250,8 +250,8 @@ def compare_tensor_sets(s1,s2):
         rslt+=mses[j]
     return rslt / rcount
 
-m_count = 200#8 #size of metabolic profile
-reactions_count = 50
+m_count = 50#200 #8 #size of metabolic profile
+reactions_count = 50#2 #50
 dataset_size = 20#50#10#1
 minibatch_size = 400#10#100 #number of random initial substrates
 sub_min = 2
@@ -281,7 +281,7 @@ def create_random_reactions(reactions_count, metabolic_count):
     return substrates, products
 
 
-def create_dataset():
+def create_dataset(data_size):
     metabolites = range(m_count)
 
     # testing 1 reaction - no common in input/output
@@ -326,7 +326,7 @@ def create_dataset():
     # creation of dataset(?)
     with torch.no_grad():
         dataset = []
-        for i in range(dataset_size):
+        for i in range(data_size):
             batch_x = torch.Tensor(size=(minibatch_size, m_count)).to(device)
             batch_x.uniform_(sub_min, sub_max)
             print(batch_x)
@@ -341,6 +341,8 @@ def create_dataset():
                 show_graph(yc, threshold=0.3)
 
     return dataset, reactions
+
+#dataset, reactions = create_dataset(dataset_size) #This line will create the *same* dataset for all experiments
 
 class Test():
 
@@ -378,7 +380,7 @@ class Test():
 
     #@jit(target="cuda")
     def run_one_test(self, gan_structure):
-        dataset, reactions = create_dataset()
+        dataset, reactions = create_dataset(dataset_size) #this line will create the dateset for each experiment
         gan_model = gan_structure.get_model()
         global gan_model_global
         gan_model_global = gan_model
@@ -499,5 +501,32 @@ class Test():
 
         gan_structure.set_score(calc_in_error_dict, calc_out_error_dict)
 
-test = Test()
-test.run_tests()
+#create 2 random matrix and check the mse difference between them
+def two_random_matrix_test(iterations_num):
+    sum = 0
+    loss_list = []
+    for i in range(iterations_num):
+        dataset,_ = create_dataset(1)
+        dataset2,_ = create_dataset(1)
+        for x1, y1 in dataset:
+            for x2, y2 in dataset2:
+                loss = F.mse_loss(y1, y2)
+                loss_item = loss.item()
+                sum += loss_item
+                loss_list.append(loss_item)
+                print("loss is " + str(loss_item))
+                result_saver.save_two_random(y1,y2,i, loss_item)
+
+    average = sum / iterations_num
+    sum_squared_diff = 0
+    for loss in loss_list:
+        sum_squared_diff += (average - loss) ** 2
+    st_dev = sum_squared_diff / iterations_num
+    print("Metabolices = " + str(m_count) + ". Reactions = " + str(reactions_count))
+    print("Average loss is " + str(average))
+    print("Standard deviation loss is " + str(st_dev))
+
+# test = Test()
+# test.run_tests()
+
+two_random_matrix_test(100)
