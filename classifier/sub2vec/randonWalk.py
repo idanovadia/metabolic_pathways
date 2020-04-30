@@ -83,6 +83,8 @@ class RandomWalk():
         counter_of_weights = round(sub_graph[node]._atlas[new_node]['weight'] * multiplier)
         while random_number > counter_of_weights:
             nodes.remove(new_node)
+            if len(nodes)==0:
+                break
             new_node = random.choice(nodes)
             counter_of_weights += abs(round(sub_graph[node]._atlas[new_node]['weight'] * multiplier))
         count += 1
