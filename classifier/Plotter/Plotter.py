@@ -58,7 +58,7 @@ class Plotter(AbstractConfigClass):
 
         x = np.arange(len(classes))
 
-        fig, ax = plt.subplots(figsize=(10, 7))
+        fig, ax = plt.subplots(figsize=(15, 12))
         rects1 = ax.bar(x - width / 2, values1, width, label=label1)
         rects2 = ax.bar(x + width / 2, values2, width, label=label2)
         rects = [rects1, rects2]
