@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 from openpyxl.drawing.image import Image
 from openpyxl import Workbook, load_workbook
 
-saving_path = "C:\\Users\\Ido\\PycharmProjects\\metabolic_pathways\\simulator\\NN_correlation_matrix\\Results\\"
+#saving_path = "C:\\Users\\Ido\\PycharmProjects\\metabolic_pathways\\simulator\\NN_correlation_matrix\\Results\\"
+saving_path = "Results/"
 excel_path = saving_path + "result.xlsx"
 
 class ResultSaver:
