@@ -118,7 +118,6 @@ class classifier(AbstractConfigClass):
             self.result_dataframe = result.getPandas(self.result_dataframe,**added_cols)
 
         self.result_dataframe.to_excel(self.csv_output_directory + "/" + self.output_file_name+".xlsx",index=False)
-        print(self.result_dataframe.head(1).to_string)
 
     def getImprovments(self):
         extensions=[str(self.config_parser.eval('GraphCreator', 'adj_matrix_extensions')).replace('}','').replace('{','').replace(':','=').replace("'", ""),
