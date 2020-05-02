@@ -8,6 +8,8 @@ Z_dim = 100 #input layer for the generator
 H_dim = 128 #middle layer
 #X_dim is the output layer of generator
 
+global device
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 default_model = nn.Sequential(
             nn.Linear(Z_dim, H_dim),
@@ -31,10 +33,11 @@ class Generator(nn.Module):
         self.output_result = None #will determine if the gan was already activated
 
     def forward(self, input):
-        return self.model(input)
+        x = self.model(input)
+        return x
 
     def get_result(self):
-        z = self.get_random_input_layer()
+        z = self.get_random_input_layer().to(device)
         output = self(z)
         self.output_result = output.resize(self.reaction_count*2 ,self.m_count)
 

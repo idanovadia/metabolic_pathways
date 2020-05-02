@@ -3,10 +3,14 @@
 #   return the value in this new function as a GeneratorStructure which gets name and model in init
 #   Afterwards add " structure_list.append(self.yourList()) " to the function of create_strucute_list
 
-
+import torch
 import torch.nn as nn
+
 Z_dim = 100 #input layer for the generator
 H_dim = 128
+
+global device
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 class GeneratorStructureFactory(nn.Module):
 
@@ -308,6 +312,7 @@ class GeneratorStructure():
     def __init__(self, name, model):
         self._name = name
         self._model = model
+        self._model = model.to(device)
         self.original_reactions = []
         self.predicted_reactions = []
 

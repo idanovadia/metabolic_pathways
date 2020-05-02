@@ -81,31 +81,31 @@ def generate_reaction_def(sub_count, prod_count, metabolites, low=0, high=1):
 
 
 
-class MultiReaction(torch.nn.Module):
-    def __init__(self, rcount, metabolites, scount=2, pcount=2, step=0.0001, low=0.0, high=1.0, substrates=None,
-                 products=None):
-        super(MultiReaction, self).__init__()
-        self._reactions = torch.nn.ModuleList()
-        for i in range(rcount):
-            if substrates == None:
-                sub, prod = generate_reaction_def(scount, pcount, metabolites, low, high)
-            else:
-                sub, prod = substrates, products
-            sub = torch.Tensor(sub).to(device)  # so far there is no self.device in pytorch Modules
-            prod = torch.Tensor(prod).to(device)  # so far there is no self.device in pytorch Modules
-            r = Reaction(sub, prod, step=step)
-            self._reactions.append(r)
-
-    def forward(self, x):
-        # random.shuffle(self._reactions)
-        for m in self._reactions:
-            x = m(x)
-        return x
-
-    def get_reactions_tensor(self):
-        rslt = [r.get_def_tensor().unsqueeze(dim=0) for r in self._reactions]
-        rslt = torch.cat(rslt, dim=0)
-        return rslt
+# class MultiReaction(torch.nn.Module):
+#     def __init__(self, rcount, metabolites, scount=2, pcount=2, step=0.0001, low=0.0, high=1.0, substrates=None,
+#                  products=None):
+#         super(MultiReaction, self).__init__()
+#         self._reactions = torch.nn.ModuleList()
+#         for i in range(rcount):
+#             if substrates == None:
+#                 sub, prod = generate_reaction_def(scount, pcount, metabolites, low, high)
+#             else:
+#                 sub, prod = substrates, products
+#             sub = torch.Tensor(sub).to(device)  # so far there is no self.device in pytorch Modules
+#             prod = torch.Tensor(prod).to(device)  # so far there is no self.device in pytorch Modules
+#             r = Reaction(sub, prod, step=step)
+#             self._reactions.append(r)
+#
+#     def forward(self, x):
+#         # random.shuffle(self._reactions)
+#         for m in self._reactions:
+#             x = m(x)
+#         return x
+#
+#     def get_reactions_tensor(self):
+#         rslt = [r.get_def_tensor().unsqueeze(dim=0) for r in self._reactions]
+#         rslt = torch.cat(rslt, dim=0)
+#         return rslt
 
 class MultiReaction_new(torch.nn.Module):
     def __init__(self, rcount, metabolites, scount=2, pcount=2, step=0.0001, low=0.0, high=1.0, substrates=None,
@@ -126,6 +126,8 @@ class MultiReaction_new(torch.nn.Module):
                 self._is_generated = False
             sub = torch.Tensor(sub).to(device)  # so far there is no self.device in pytorch Modules
             prod = torch.Tensor(prod).to(device)  # so far there is no self.device in pytorch Modules
+            # sub = torch.as_tensor(sub).to(device) #uncommon this to use GPU. Common up
+            # prod = torch.as_tensor(prod).to(device)
             r = Reaction(sub, prod, step=step)
             self._reactions.append(r)
 
@@ -138,7 +140,9 @@ class MultiReaction_new(torch.nn.Module):
                 sub, prod = self._generator.get_reactions_tensor(i)
                 sub = torch.Tensor(sub).to(device)
                 prod = torch.Tensor(prod).to(device)
-                r = Reaction(sub, prod, step=step)
+                # sub = torch.as_tensor(sub).to(device) #uncommon this to use GPU. Common up
+                # prod = torch.as_tensor(prod).to(device)
+                r = Reaction(sub, prod, step=step).to(device)
                 self._reactions.append(r)
 
         for m in self._reactions:
@@ -168,32 +172,33 @@ def correlation_matrix(b):
     mr = torch.rsqrt(torch.sum(vb ** 2, dim=0))
     mr = mr.unsqueeze(dim=0)
     corr = torch.mm(vb.t(), vb) * torch.mm(mr.t(), mr)
+    #corr.requires_grad_() #uncommon to use GPU
     return corr
 
-class Process(torch.nn.Module):
-    def __init__(self, rcount, metabolites, scount=2, pcount=2, low=0.0, high=1.0, substrates=None, products=None,
-                 step=0.0001, iterations=100):
-        super(Process, self).__init__()
-        self._mr = MultiReaction(rcount, metabolites, scount=scount, pcount=pcount, step=step, low=low, high=high,
-                                 substrates=substrates, products=products)
-        self._iterations = iterations
-
-    def forward(self, x):
-        iterations_for_sample = torch.randint(low=0, high=self._iterations, size=(minibatch_size,), device=device,
-                                              requires_grad=False)
-        for i in range(self._iterations):
-            doit = (iterations_for_sample > i).float()
-            doit = doit.unsqueeze(dim=1)
-            doit = torch.cat([doit] * m_count, dim=1)
-            y = self._mr(x)
-            x = y * doit + x * (1 - doit)
-
-        c = correlation_matrix(x)
-        c = c - torch.eye(m_count).to(device)
-        return x, c
-
-    def get_reactions_tensor(self):
-        return self._mr.get_reactions_tensor()
+# class Process(torch.nn.Module):
+#     def __init__(self, rcount, metabolites, scount=2, pcount=2, low=0.0, high=1.0, substrates=None, products=None,
+#                  step=0.0001, iterations=100):
+#         super(Process, self).__init__()
+#         self._mr = MultiReaction(rcount, metabolites, scount=scount, pcount=pcount, step=step, low=low, high=high,
+#                                  substrates=substrates, products=products)
+#         self._iterations = iterations
+#
+#     def forward(self, x):
+#         iterations_for_sample = torch.randint(low=0, high=self._iterations, size=(minibatch_size,), device=device,
+#                                               requires_grad=False)
+#         for i in range(self._iterations):
+#             doit = (iterations_for_sample > i).float()
+#             doit = doit.unsqueeze(dim=1)
+#             doit = torch.cat([doit] * m_count, dim=1)
+#             y = self._mr(x)
+#             x = y * doit + x * (1 - doit)
+#
+#         c = correlation_matrix(x)
+#         c = c - torch.eye(m_count).to(device)
+#         return x, c
+#
+#     def get_reactions_tensor(self):
+#         return self._mr.get_reactions_tensor()
 
 class Process_new(torch.nn.Module):
     def __init__(self, rcount, metabolites, scount=2, pcount=2, low=0.0, high=1.0, substrates=None, products=None,
@@ -386,8 +391,8 @@ class Test():
         gan_model_global = gan_model
         metabolites = range(m_count)
 
-        model = Process_new(reactions_count, metabolites, scount=m_count, pcount=m_count, step=step, iterations=iterations).to(
-            device)
+        model = Process_new(reactions_count, metabolites, scount=m_count, pcount=m_count, step=step, iterations=iterations)
+        model = model.to(device)
 
         optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
         ##optimizer = torch.optim.Adadelta(model.parameters(), lr=1.0, rho=0.9, eps=1e-06, weight_decay=1.0)
@@ -406,8 +411,9 @@ class Test():
         loss_list = []
         for epoch in range(epochs):
             for x, y in dataset:
-                rand_x = torch.Tensor(size=(minibatch_size, m_count)).to(device)
+                rand_x = torch.Tensor(size=(minibatch_size, m_count))
                 rand_x.uniform_(sub_min, sub_max)
+                rand_x = rand_x.to(device)
 
                 optimizer.zero_grad()
 
