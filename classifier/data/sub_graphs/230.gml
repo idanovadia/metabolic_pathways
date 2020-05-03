@@ -11,7 +11,17 @@ graph [
   ]
   edge [
     source 0
+    target 0
+    weight 21.56242121142256
+  ]
+  edge [
+    source 0
     target 1
-    weight 0.8362263468292753
+    weight 21.499279422031034
+  ]
+  edge [
+    source 1
+    target 1
+    weight 21.24900312133649
   ]
 ]
