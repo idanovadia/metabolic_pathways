@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-valine"
   ]
   node [
     id 2
-    label "l-valine"
+    label "phosphate"
   ]
   edge [
     source 0
@@ -20,18 +20,13 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight -16.3565708813388
   ]
   edge [
     source 0
-    target 2
-    weight 22.469134873507336
-  ]
-  edge [
-    source 1
     target 1
-    weight 15.7520647759978
+    weight 22.469134873507336
   ]
   edge [
     source 1
@@ -39,8 +34,13 @@ graph [
     weight -20.140221755575176
   ]
   edge [
+    source 1
+    target 1
+    weight 27.36585274542989
+  ]
+  edge [
     source 2
     target 2
-    weight 27.36585274542989
+    weight 15.7520647759978
   ]
 ]

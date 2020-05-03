@@ -11,15 +11,15 @@ graph [
   ]
   node [
     id 2
-    label "udp-alpha;-d-galacturonate"
+    label "phosphate"
   ]
   node [
     id 3
-    label "phosphate"
+    label "udp-alpha;-d-galacturonate"
   ]
   edge [
     source 0
-    target 2
+    target 3
     weight 15.429468710752687
   ]
   edge [
@@ -34,12 +34,12 @@ graph [
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight -12.679604391854461
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight -21.8728517391902
   ]
   edge [
@@ -49,13 +49,8 @@ graph [
   ]
   edge [
     source 1
-    target 3
-    weight 18.453302707893283
-  ]
-  edge [
-    source 2
     target 2
-    weight 22.474206002097066
+    weight 18.453302707893283
   ]
   edge [
     source 2
@@ -63,8 +58,13 @@ graph [
     weight -18.515786557091683
   ]
   edge [
+    source 2
+    target 2
+    weight 15.7520647759978
+  ]
+  edge [
     source 3
     target 3
-    weight 15.7520647759978
+    weight 22.474206002097066
   ]
 ]

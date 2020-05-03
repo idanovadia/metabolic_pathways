@@ -3,16 +3,11 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "glucose"
+    label "l-isoleucine"
   ]
   node [
     id 1
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 21.56242121142256
+    label "glucose"
   ]
   edge [
     source 0
@@ -20,8 +15,13 @@ graph [
     weight -21.601803102212006
   ]
   edge [
+    source 0
+    target 0
+    weight 23.002981842010477
+  ]
+  edge [
     source 1
     target 1
-    weight 23.002981842010477
+    weight 21.56242121142256
   ]
 ]

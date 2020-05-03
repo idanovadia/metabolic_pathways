@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "phosphate"
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-aspartate"
   ]
   node [
     id 3
@@ -19,7 +19,7 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 9.633104280177962
   ]
   edge [
@@ -34,18 +34,8 @@ graph [
   ]
   edge [
     source 0
-    target 2
-    weight 11.847975610028005
-  ]
-  edge [
-    source 1
     target 1
-    weight 10.183746452137978
-  ]
-  edge [
-    source 1
-    target 3
-    weight 7.873985857925924
+    weight 11.847975610028005
   ]
   edge [
     source 1
@@ -53,14 +43,24 @@ graph [
     weight 12.86928785649936
   ]
   edge [
-    source 2
+    source 1
     target 3
     weight 9.66018353346851
   ]
   edge [
+    source 1
+    target 1
+    weight 15.7520647759978
+  ]
+  edge [
     source 2
     target 2
-    weight 15.7520647759978
+    weight 10.183746452137978
+  ]
+  edge [
+    source 2
+    target 3
+    weight 7.873985857925924
   ]
   edge [
     source 3

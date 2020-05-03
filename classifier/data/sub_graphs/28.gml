@@ -3,11 +3,16 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "l-cysteine"
+    label "beta;-alanine"
   ]
   node [
     id 1
-    label "beta;-alanine"
+    label "l-cysteine"
+  ]
+  edge [
+    source 0
+    target 0
+    weight 21.62450997369468
   ]
   edge [
     source 0
@@ -15,13 +20,8 @@ graph [
     weight 22.58926885190979
   ]
   edge [
-    source 0
-    target 0
-    weight 23.971287135413803
-  ]
-  edge [
     source 1
     target 1
-    weight 21.62450997369468
+    weight 23.971287135413803
   ]
 ]

@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-glutamine"
   ]
   node [
     id 3
-    label "l-glutamine"
+    label "phosphate"
   ]
   edge [
     source 0
@@ -29,12 +29,12 @@ graph [
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight 7.3490696585206
   ]
   edge [
     source 0
-    target 2
+    target 3
     weight 11.847975610028005
   ]
   edge [
@@ -44,13 +44,18 @@ graph [
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight 10.897301807386315
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 18.453302707893283
+  ]
+  edge [
+    source 2
+    target 2
+    weight 5.7904819877876275
   ]
   edge [
     source 2
@@ -58,13 +63,8 @@ graph [
     weight 9.66018353346851
   ]
   edge [
-    source 2
-    target 2
-    weight 15.7520647759978
-  ]
-  edge [
     source 3
     target 3
-    weight 5.7904819877876275
+    weight 15.7520647759978
   ]
 ]

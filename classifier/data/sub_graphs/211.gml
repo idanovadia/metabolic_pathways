@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-arginine"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
@@ -11,12 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "2-oxoglutarate"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 18.41432560515222
+    label "l-arginine"
   ]
   edge [
     source 0
@@ -25,13 +20,18 @@ graph [
   ]
   edge [
     source 0
+    target 0
+    weight 8.510428233550497
+  ]
+  edge [
+    source 0
     target 1
-    weight -11.805484666248717
+    weight -8.085372180908987
   ]
   edge [
     source 1
     target 2
-    weight -8.085372180908987
+    weight -11.805484666248717
   ]
   edge [
     source 1
@@ -41,6 +41,6 @@ graph [
   edge [
     source 2
     target 2
-    weight 8.510428233550497
+    weight 18.41432560515222
   ]
 ]

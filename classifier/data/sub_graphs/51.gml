@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-lysine"
   ]
   node [
     id 1
@@ -11,31 +11,31 @@ graph [
   ]
   node [
     id 2
-    label "l-lysine"
+    label "l-methionine"
   ]
   node [
     id 3
-    label "l-methionine"
+    label "phosphate"
   ]
   edge [
     source 0
     target 1
-    weight -19.38228785665947
-  ]
-  edge [
-    source 0
-    target 2
-    weight -19.35052000893339
-  ]
-  edge [
-    source 0
-    target 3
-    weight -19.657278083268167
+    weight 24.8885243624042
   ]
   edge [
     source 0
     target 0
-    weight 15.7520647759978
+    weight 25.435160101739392
+  ]
+  edge [
+    source 0
+    target 2
+    weight 25.917849551169386
+  ]
+  edge [
+    source 0
+    target 3
+    weight -19.35052000893339
   ]
   edge [
     source 1
@@ -45,26 +45,26 @@ graph [
   edge [
     source 1
     target 2
-    weight 24.8885243624042
+    weight 25.273322080880675
   ]
   edge [
     source 1
     target 3
-    weight 25.273322080880675
+    weight -19.38228785665947
   ]
   edge [
     source 2
     target 2
-    weight 25.435160101739392
+    weight 26.183388231416007
   ]
   edge [
     source 2
     target 3
-    weight 25.917849551169386
+    weight -19.657278083268167
   ]
   edge [
     source 3
     target 3
-    weight 26.183388231416007
+    weight 15.7520647759978
   ]
 ]

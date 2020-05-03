@@ -7,20 +7,20 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
-    label "2-oxoglutarate"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 14.58488295353373
+    label "l-glutamate"
   ]
   edge [
     source 0
     target 1
+    weight 14.58488295353373
+  ]
+  edge [
+    source 0
+    target 2
     weight -13.961944388817926
   ]
   edge [
@@ -30,17 +30,17 @@ graph [
   ]
   edge [
     source 1
+    target 1
+    weight 8.510428233550497
+  ]
+  edge [
+    source 1
     target 2
     weight -8.085372180908987
   ]
   edge [
-    source 1
-    target 1
-    weight 8.753994917186438
-  ]
-  edge [
     source 2
     target 2
-    weight 8.510428233550497
+    weight 8.753994917186438
   ]
 ]

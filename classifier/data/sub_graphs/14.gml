@@ -3,24 +3,34 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "l-tryptophan"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
-    label "l-glutamate"
-  ]
-  node [
-    id 2
     label "l-alanine"
   ]
   node [
+    id 2
+    label "l-glutamate"
+  ]
+  node [
     id 3
-    label "2-oxoglutarate"
+    label "l-tryptophan"
+  ]
+  edge [
+    source 0
+    target 1
+    weight 14.31539790221893
+  ]
+  edge [
+    source 0
+    target 0
+    weight 8.510428233550497
   ]
   edge [
     source 0
     target 2
-    weight 20.060854940536416
+    weight -8.085372180908987
   ]
   edge [
     source 0
@@ -28,14 +38,9 @@ graph [
     weight 11.722405321021453
   ]
   edge [
-    source 0
+    source 1
     target 1
-    weight -11.315459037696105
-  ]
-  edge [
-    source 0
-    target 0
-    weight 16.381393702524417
+    weight 24.73792319074559
   ]
   edge [
     source 1
@@ -45,26 +50,21 @@ graph [
   edge [
     source 1
     target 3
-    weight -8.085372180908987
-  ]
-  edge [
-    source 1
-    target 1
-    weight 8.753994917186438
+    weight 20.060854940536416
   ]
   edge [
     source 2
     target 2
-    weight 24.73792319074559
+    weight 8.753994917186438
   ]
   edge [
     source 2
     target 3
-    weight 14.31539790221893
+    weight -11.315459037696105
   ]
   edge [
     source 3
     target 3
-    weight 8.510428233550497
+    weight 16.381393702524417
   ]
 ]

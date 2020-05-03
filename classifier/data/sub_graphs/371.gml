@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "l-tyrosine"
+    label "l-serine"
   ]
   node [
     id 3
-    label "l-serine"
+    label "l-tyrosine"
   ]
   edge [
     source 0
@@ -24,7 +24,7 @@ graph [
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight 24.46082124206204
   ]
   edge [
@@ -34,12 +34,12 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 3
     weight 21.4405690366079
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight 24.683312510302997
   ]
   edge [
@@ -49,8 +49,13 @@ graph [
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 21.437240671056113
+  ]
+  edge [
+    source 2
+    target 2
+    weight 25.116518210590478
   ]
   edge [
     source 2
@@ -58,13 +63,8 @@ graph [
     weight 22.14350721590986
   ]
   edge [
-    source 2
-    target 2
-    weight 19.530490471969046
-  ]
-  edge [
     source 3
     target 3
-    weight 25.116518210590478
+    weight 19.530490471969046
   ]
 ]

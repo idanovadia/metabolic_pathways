@@ -3,11 +3,16 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "glucose"
+    label "galactose"
   ]
   node [
     id 1
-    label "galactose"
+    label "glucose"
+  ]
+  edge [
+    source 0
+    target 0
+    weight 19.72949678222293
   ]
   edge [
     source 0
@@ -15,13 +20,8 @@ graph [
     weight 20.746151859922513
   ]
   edge [
-    source 0
-    target 0
-    weight 21.56242121142256
-  ]
-  edge [
     source 1
     target 1
-    weight 19.72949678222293
+    weight 21.56242121142256
   ]
 ]

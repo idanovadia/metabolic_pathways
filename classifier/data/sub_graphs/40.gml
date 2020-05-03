@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "phosphate"
+    label "citrate"
   ]
   node [
     id 2
-    label "citrate"
+    label "phosphate"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight -19.419231486917006
   ]
   edge [
@@ -25,8 +25,13 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight -19.35052000893339
+  ]
+  edge [
+    source 1
+    target 1
+    weight 15.793190282186139
   ]
   edge [
     source 1
@@ -34,13 +39,8 @@ graph [
     weight 15.91738043757312
   ]
   edge [
-    source 1
-    target 1
-    weight 15.7520647759978
-  ]
-  edge [
     source 2
     target 2
-    weight 15.793190282186139
+    weight 15.7520647759978
   ]
 ]

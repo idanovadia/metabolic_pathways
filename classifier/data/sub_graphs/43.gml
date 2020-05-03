@@ -7,15 +7,15 @@ graph [
   ]
   node [
     id 1
-    label "l-tryptophan"
+    label "l-isoleucine"
   ]
   node [
     id 2
-    label "l-isoleucine"
+    label "l-tryptophan"
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight 24.23166511359495
   ]
   edge [
@@ -25,8 +25,13 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 20.337009738808487
+  ]
+  edge [
+    source 1
+    target 1
+    weight 23.002981842010477
   ]
   edge [
     source 1
@@ -34,13 +39,8 @@ graph [
     weight 19.050543834436525
   ]
   edge [
-    source 1
-    target 1
-    weight 16.381393702524417
-  ]
-  edge [
     source 2
     target 2
-    weight 23.002981842010477
+    weight 16.381393702524417
   ]
 ]
