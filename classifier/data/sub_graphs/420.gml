@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "gaba"
+    label "l-tyrosine"
   ]
   node [
     id 1
-    label "l-tyrosine"
+    label "gaba"
   ]
   node [
     id 2
@@ -16,12 +16,7 @@ graph [
   edge [
     source 0
     target 2
-    weight -24.689469029395347
-  ]
-  edge [
-    source 0
-    target 0
-    weight 27.976336940926306
+    weight -20.288272313895575
   ]
   edge [
     source 0
@@ -29,14 +24,19 @@ graph [
     weight 23.22960645873857
   ]
   edge [
+    source 0
+    target 0
+    weight 19.530490471969046
+  ]
+  edge [
     source 1
     target 2
-    weight -20.288272313895575
+    weight -24.689469029395347
   ]
   edge [
     source 1
     target 1
-    weight 19.530490471969046
+    weight 27.976336940926306
   ]
   edge [
     source 2

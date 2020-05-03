@@ -4,12 +4,12 @@ import itertools
 
 GraphCreator_threshold = ["-0.9", "-0.7", "0.4", "0.7", '0.9']
 # GraphCreator_threshold = ["-0.9", "-0.7", "-0.5", "-0.3", "-0.1", "0.1", "0.3", "0.4", "0.7", '0.9']
-GraphCreator_adj_matrix_extensions = ["", {"adj_matrix_and_add": 2}, {"power_graph": 2}, {"adj_matrix_and_add": 2}]
+GraphCreator_adj_matrix_extensions = [{"adj_matrix_and_add": 2}, {"power_graph": 2}, {"adj_matrix_and_add": 2}]
 GraphCreator_graph_extensions = ["", "add_neighbors_from_adj_matrix"]
 
 # Sub2Vec
 
-Sub2Vec_random_walk_length = ["10","20","30"]
+Sub2Vec_random_walk_length = ["10", "20", "30"]
 # Sub2Vec_random_walk_length = ["1", "5", "10", "15", "20", "25", "30"]
 Sub2Vec_random_walk_number = ["1", "3", "5", "8"]
 Sub2Vec_doc2vec_args = [

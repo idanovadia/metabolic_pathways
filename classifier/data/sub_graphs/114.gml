@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-tyrosine"
   ]
   node [
     id 2
-    label "l-tyrosine"
+    label "l-glutamate"
   ]
   node [
     id 3
@@ -24,7 +24,7 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight -14.012266800814336
   ]
   edge [
@@ -34,18 +34,8 @@ graph [
   ]
   edge [
     source 0
-    target 2
-    weight 21.6071693899791
-  ]
-  edge [
-    source 1
     target 1
-    weight 8.753994917186438
-  ]
-  edge [
-    source 1
-    target 3
-    weight 11.847975610028005
+    weight 21.6071693899791
   ]
   edge [
     source 1
@@ -53,14 +43,24 @@ graph [
     weight -12.092560319156826
   ]
   edge [
-    source 2
+    source 1
     target 3
     weight -16.769096944618315
   ]
   edge [
+    source 1
+    target 1
+    weight 19.530490471969046
+  ]
+  edge [
     source 2
     target 2
-    weight 19.530490471969046
+    weight 8.753994917186438
+  ]
+  edge [
+    source 2
+    target 3
+    weight 11.847975610028005
   ]
   edge [
     source 3

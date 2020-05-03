@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "uracil"
+    label "d-ribofuranose"
   ]
   node [
     id 1
-    label "d-ribofuranose"
+    label "uracil"
   ]
   node [
     id 2
@@ -16,7 +16,12 @@ graph [
   edge [
     source 0
     target 2
-    weight -17.649330038401445
+    weight -20.774743988655743
+  ]
+  edge [
+    source 0
+    target 0
+    weight 28.31967315668326
   ]
   edge [
     source 0
@@ -24,19 +29,14 @@ graph [
     weight 24.23715693408998
   ]
   edge [
-    source 0
-    target 0
-    weight 20.62869930422023
-  ]
-  edge [
     source 1
     target 2
-    weight -20.774743988655743
+    weight -17.649330038401445
   ]
   edge [
     source 1
     target 1
-    weight 28.31967315668326
+    weight 20.62869930422023
   ]
   edge [
     source 2

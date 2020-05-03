@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
@@ -11,55 +11,50 @@ graph [
   ]
   node [
     id 2
-    label "l-aspartate"
+    label "l-glutamate"
   ]
   node [
     id 3
-    label "2-oxoglutarate"
+    label "l-asparagine"
   ]
   node [
     id 4
-    label "l-asparagine"
-  ]
-  edge [
-    source 0
-    target 4
-    weight -13.839142574491127
-  ]
-  edge [
-    source 0
-    target 2
-    weight 9.633104280177962
+    label "l-aspartate"
   ]
   edge [
     source 0
     target 3
-    weight -8.085372180908987
+    weight 14.340446312343637
   ]
   edge [
     source 0
-    target 1
-    weight -11.896684024363044
+    target 4
+    weight -8.903712644677476
   ]
   edge [
     source 0
     target 0
-    weight 8.753994917186438
+    weight 8.510428233550497
   ]
   edge [
-    source 1
-    target 4
-    weight 20.971550829290067
+    source 0
+    target 1
+    weight 12.414313042899614
   ]
   edge [
-    source 1
+    source 0
     target 2
-    weight -13.099361523488376
+    weight -8.085372180908987
   ]
   edge [
     source 1
     target 3
-    weight 12.414313042899614
+    weight 20.971550829290067
+  ]
+  edge [
+    source 1
+    target 4
+    weight -13.099361523488376
   ]
   edge [
     source 1
@@ -67,33 +62,38 @@ graph [
     weight 18.04094590556886
   ]
   edge [
+    source 1
+    target 2
+    weight -11.896684024363044
+  ]
+  edge [
+    source 2
+    target 3
+    weight -13.839142574491127
+  ]
+  edge [
     source 2
     target 4
-    weight -15.235674335252986
+    weight 9.633104280177962
   ]
   edge [
     source 2
     target 2
-    weight 10.183746452137978
+    weight 8.753994917186438
   ]
   edge [
-    source 2
+    source 3
     target 3
-    weight -8.903712644677476
+    weight 24.611326026985534
   ]
   edge [
     source 3
     target 4
-    weight 14.340446312343637
-  ]
-  edge [
-    source 3
-    target 3
-    weight 8.510428233550497
+    weight -15.235674335252986
   ]
   edge [
     source 4
     target 4
-    weight 24.611326026985534
+    weight 10.183746452137978
   ]
 ]

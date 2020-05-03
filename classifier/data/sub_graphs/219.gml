@@ -3,16 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "benzoate"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 23.013867102118198
+    label "benzoate"
   ]
   edge [
     source 0
@@ -20,8 +15,13 @@ graph [
     weight -22.075745761526573
   ]
   edge [
+    source 0
+    target 0
+    weight 21.56242121142256
+  ]
+  edge [
     source 1
     target 1
-    weight 21.56242121142256
+    weight 23.013867102118198
   ]
 ]

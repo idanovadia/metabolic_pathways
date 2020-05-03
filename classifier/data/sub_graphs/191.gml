@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "l-methionine"
+    label "l-tyrosine"
   ]
   node [
     id 3
-    label "l-tyrosine"
+    label "l-methionine"
   ]
   edge [
     source 0
@@ -29,12 +29,12 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 3
     weight 25.027505737813513
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight 21.4405690366079
   ]
   edge [
@@ -44,18 +44,13 @@ graph [
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 25.273322080880675
   ]
   edge [
     source 1
-    target 3
-    weight 21.6071693899791
-  ]
-  edge [
-    source 2
     target 2
-    weight 26.183388231416007
+    weight 21.6071693899791
   ]
   edge [
     source 2
@@ -63,8 +58,13 @@ graph [
     weight 22.681577684020482
   ]
   edge [
+    source 2
+    target 2
+    weight 19.530490471969046
+  ]
+  edge [
     source 3
     target 3
-    weight 19.530490471969046
+    weight 26.183388231416007
   ]
 ]

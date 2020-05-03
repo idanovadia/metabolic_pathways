@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "uracil"
+    label "beta;-alanine"
   ]
   node [
     id 1
-    label "beta;-alanine"
+    label "uracil"
   ]
   node [
     id 2
@@ -15,28 +15,28 @@ graph [
   ]
   edge [
     source 0
+    target 0
+    weight 21.62450997369468
+  ]
+  edge [
+    source 0
+    target 2
+    weight -17.634259340761595
+  ]
+  edge [
+    source 0
     target 1
     weight 20.79447457216292
   ]
   edge [
-    source 0
+    source 1
     target 2
     weight -17.649330038401445
   ]
   edge [
-    source 0
-    target 0
-    weight 20.62869930422023
-  ]
-  edge [
     source 1
     target 1
-    weight 21.62450997369468
-  ]
-  edge [
-    source 1
-    target 2
-    weight -17.634259340761595
+    weight 20.62869930422023
   ]
   edge [
     source 2

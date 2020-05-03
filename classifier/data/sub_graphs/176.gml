@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-serine"
+    label "phosphate"
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-serine"
   ]
   edge [
     source 0
@@ -20,13 +20,18 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 1
     weight -14.174335712842064
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight 17.762918431449453
+  ]
+  edge [
+    source 1
+    target 1
+    weight 15.7520647759978
   ]
   edge [
     source 1
@@ -34,13 +39,8 @@ graph [
     weight -19.14290378795913
   ]
   edge [
-    source 1
-    target 1
-    weight 25.116518210590478
-  ]
-  edge [
     source 2
     target 2
-    weight 15.7520647759978
+    weight 25.116518210590478
   ]
 ]

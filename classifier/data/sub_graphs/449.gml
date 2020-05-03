@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-phenylalanine"
+    label "sucrose"
   ]
   node [
     id 2
-    label "sucrose"
+    label "l-phenylalanine"
   ]
   edge [
     source 0
@@ -20,18 +20,13 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 2
     weight -15.697119631377946
   ]
   edge [
     source 0
-    target 2
-    weight -10.810492283864319
-  ]
-  edge [
-    source 1
     target 1
-    weight 31.64201408133038
+    weight -10.810492283864319
   ]
   edge [
     source 1
@@ -39,8 +34,13 @@ graph [
     weight 21.75114141809476
   ]
   edge [
+    source 1
+    target 1
+    weight 15.296522764340923
+  ]
+  edge [
     source 2
     target 2
-    weight 15.296522764340923
+    weight 31.64201408133038
   ]
 ]

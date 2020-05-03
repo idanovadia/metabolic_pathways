@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "l-serine"
+    label "d-glycerate"
   ]
   node [
     id 2
@@ -19,11 +19,11 @@ graph [
   ]
   node [
     id 4
-    label "d-glycerate"
+    label "l-serine"
   ]
   edge [
     source 0
-    target 4
+    target 1
     weight 20.229905291773623
   ]
   edge [
@@ -43,33 +43,28 @@ graph [
   ]
   edge [
     source 0
-    target 1
+    target 4
     weight 26.098772341733977
+  ]
+  edge [
+    source 1
+    target 1
+    weight 16.134048606320935
+  ]
+  edge [
+    source 1
+    target 3
+    weight 19.167582086939476
+  ]
+  edge [
+    source 1
+    target 2
+    weight -15.612338511511041
   ]
   edge [
     source 1
     target 4
     weight 19.357490204090478
-  ]
-  edge [
-    source 1
-    target 3
-    weight 23.874602482382546
-  ]
-  edge [
-    source 1
-    target 2
-    weight -19.14290378795913
-  ]
-  edge [
-    source 1
-    target 1
-    weight 25.116518210590478
-  ]
-  edge [
-    source 2
-    target 4
-    weight -15.612338511511041
   ]
   edge [
     source 2
@@ -82,9 +77,9 @@ graph [
     weight 15.7520647759978
   ]
   edge [
-    source 3
+    source 2
     target 4
-    weight 19.167582086939476
+    weight -19.14290378795913
   ]
   edge [
     source 3
@@ -92,8 +87,13 @@ graph [
     weight 22.963721234367775
   ]
   edge [
+    source 3
+    target 4
+    weight 23.874602482382546
+  ]
+  edge [
     source 4
     target 4
-    weight 16.134048606320935
+    weight 25.116518210590478
   ]
 ]

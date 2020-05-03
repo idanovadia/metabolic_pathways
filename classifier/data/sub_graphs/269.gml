@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-ascorbate"
   ]
   node [
     id 3
-    label "l-ascorbate"
+    label "phosphate"
   ]
   edge [
     source 0
@@ -24,7 +24,7 @@ graph [
   ]
   edge [
     source 0
-    target 3
+    target 2
     weight -14.381342063587601
   ]
   edge [
@@ -34,12 +34,12 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 3
     weight 17.64846866118201
   ]
   edge [
     source 1
-    target 3
+    target 2
     weight -14.879802224876308
   ]
   edge [
@@ -49,8 +49,13 @@ graph [
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 18.370951011110048
+  ]
+  edge [
+    source 2
+    target 2
+    weight 10.479605284137472
   ]
   edge [
     source 2
@@ -58,13 +63,8 @@ graph [
     weight -12.679604391854461
   ]
   edge [
-    source 2
-    target 2
-    weight 15.7520647759978
-  ]
-  edge [
     source 3
     target 3
-    weight 10.479605284137472
+    weight 15.7520647759978
   ]
 ]

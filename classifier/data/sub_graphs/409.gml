@@ -3,16 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "citrate"
+    label "succinate"
   ]
   node [
     id 1
-    label "succinate"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 15.793190282186139
+    label "citrate"
   ]
   edge [
     source 0
@@ -20,8 +15,13 @@ graph [
     weight -16.123412279983096
   ]
   edge [
+    source 0
+    target 0
+    weight 17.074822076084693
+  ]
+  edge [
     source 1
     target 1
-    weight 17.074822076084693
+    weight 15.793190282186139
   ]
 ]

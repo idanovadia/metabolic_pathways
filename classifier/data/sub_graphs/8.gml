@@ -3,15 +3,20 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "l-glutamate"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
+    label "l-glutamate"
   ]
   node [
     id 2
     label "l-tryptophan"
+  ]
+  edge [
+    source 0
+    target 0
+    weight 21.56242121142256
   ]
   edge [
     source 0
@@ -20,23 +25,18 @@ graph [
   ]
   edge [
     source 0
-    target 0
-    weight 8.753994917186438
-  ]
-  edge [
-    source 0
     target 2
-    weight -11.315459037696105
+    weight -18.50108272900991
   ]
   edge [
     source 1
     target 1
-    weight 21.56242121142256
+    weight 8.753994917186438
   ]
   edge [
     source 1
     target 2
-    weight -18.50108272900991
+    weight -11.315459037696105
   ]
   edge [
     source 2

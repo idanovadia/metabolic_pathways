@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
@@ -11,45 +11,45 @@ graph [
   ]
   node [
     id 2
-    label "l-serine"
+    label "l-glutamate"
   ]
   node [
     id 3
-    label "l-threonine"
+    label "l-serine"
   ]
   node [
     id 4
-    label "2-oxoglutarate"
-  ]
-  edge [
-    source 0
-    target 4
-    weight -8.085372180908987
+    label "l-threonine"
   ]
   edge [
     source 0
     target 0
-    weight 8.753994917186438
-  ]
-  edge [
-    source 0
-    target 1
-    weight -14.391171368418151
+    weight 8.510428233550497
   ]
   edge [
     source 0
     target 2
-    weight -13.807513765385877
+    weight -8.085372180908987
+  ]
+  edge [
+    source 0
+    target 1
+    weight 14.98479700373941
   ]
   edge [
     source 0
     target 3
-    weight -14.921958447411457
+    weight 14.484721944094792
+  ]
+  edge [
+    source 0
+    target 4
+    weight 15.505177538143226
   ]
   edge [
     source 1
-    target 4
-    weight 14.98479700373941
+    target 2
+    weight -14.391171368418151
   ]
   edge [
     source 1
@@ -58,42 +58,42 @@ graph [
   ]
   edge [
     source 1
-    target 2
+    target 3
     weight 26.098772341733977
   ]
   edge [
     source 1
-    target 3
+    target 4
     weight 28.003250880445325
   ]
   edge [
     source 2
-    target 4
-    weight 14.484721944094792
+    target 2
+    weight 8.753994917186438
   ]
   edge [
     source 2
-    target 2
+    target 3
+    weight -13.807513765385877
+  ]
+  edge [
+    source 2
+    target 4
+    weight -14.921958447411457
+  ]
+  edge [
+    source 3
+    target 3
     weight 25.116518210590478
   ]
   edge [
-    source 2
-    target 3
-    weight 26.955474393462293
-  ]
-  edge [
     source 3
     target 4
-    weight 15.505177538143226
-  ]
-  edge [
-    source 3
-    target 3
-    weight 28.862067838265958
+    weight 26.955474393462293
   ]
   edge [
     source 4
     target 4
-    weight 8.510428233550497
+    weight 28.862067838265958
   ]
 ]
