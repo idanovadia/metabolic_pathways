@@ -3,15 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "alpha;,alpha;-trehalose"
-  ]
-  node [
-    id 1
     label "beta;-alanine"
   ]
   node [
+    id 1
+    label "l-alanine"
+  ]
+  node [
     id 2
-    label "fructose"
+    label "glycerate_3_phosphate"
   ]
   node [
     id 3
@@ -19,11 +19,38 @@ graph [
   ]
   node [
     id 4
-    label "l-alanine"
+    label "fructose"
+  ]
+  node [
+    id 5
+    label "l-aspartate"
+  ]
+  node [
+    id 6
+    label "alpha;,alpha;-trehalose"
+  ]
+  edge [
+    source 0
+    target 1
   ]
   edge [
     source 0
     target 3
-    weight 0.7707843244414465
+  ]
+  edge [
+    source 0
+    target 6
+  ]
+  edge [
+    source 1
+    target 3
+  ]
+  edge [
+    source 1
+    target 6
+  ]
+  edge [
+    source 3
+    target 6
   ]
 ]

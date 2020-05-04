@@ -3,10 +3,14 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "glucose"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-tryptophan"
+  ]
+  node [
+    id 2
+    label "glucose"
   ]
 ]

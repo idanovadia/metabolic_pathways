@@ -7,15 +7,26 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-threonine"
   ]
   node [
     id 2
-    label "l-threonine"
+    label "phosphate"
+  ]
+  node [
+    id 3
+    label "l-aspartate"
+  ]
+  node [
+    id 4
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 5
+    label "l-glutamate"
   ]
   edge [
     source 0
-    target 2
-    weight 0.8173615410491871
+    target 1
   ]
 ]

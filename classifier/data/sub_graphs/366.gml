@@ -9,4 +9,8 @@ graph [
     id 1
     label "gdp-beta;-l-fucose"
   ]
+  node [
+    id 2
+    label "d-gluconate"
+  ]
 ]

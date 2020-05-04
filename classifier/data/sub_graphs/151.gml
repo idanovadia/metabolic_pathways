@@ -9,4 +9,12 @@ graph [
     id 1
     label "l-phenylalanine"
   ]
+  node [
+    id 2
+    label "l-tryptophan"
+  ]
+  edge [
+    source 0
+    target 1
+  ]
 ]

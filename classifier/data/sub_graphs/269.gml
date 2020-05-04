@@ -3,15 +3,22 @@ graph [
   type "trainset"
   node [
     id 0
-    label "galactose"
+    label "phosphate"
   ]
   node [
     id 1
+    label "l-ascorbate"
+  ]
+  node [
+    id 2
     label "gdp-alpha;-d-mannose"
   ]
+  node [
+    id 3
+    label "galactose"
+  ]
   edge [
-    source 0
-    target 1
-    weight 0.8522832379314891
+    source 2
+    target 3
   ]
 ]

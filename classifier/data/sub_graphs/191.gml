@@ -7,19 +7,38 @@ graph [
   ]
   node [
     id 1
-    label "l-methionine"
+    label "l-cysteine"
   ]
   node [
     id 2
-    label "l-tyrosine"
+    label "l-methionine"
   ]
   node [
     id 3
-    label "l-cysteine"
+    label "l-tyrosine"
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 0
+    target 3
   ]
   edge [
     source 1
     target 2
-    weight 0.7657222335493962
+  ]
+  edge [
+    source 1
+    target 3
+  ]
+  edge [
+    source 2
+    target 3
   ]
 ]

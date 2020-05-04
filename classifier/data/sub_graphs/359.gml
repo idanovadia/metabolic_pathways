@@ -3,10 +3,10 @@ graph [
   type "trainset"
   node [
     id 0
-    label "beta;-alanine"
+    label "uracil"
   ]
   node [
     id 1
-    label "uracil"
+    label "beta;-alanine"
   ]
 ]

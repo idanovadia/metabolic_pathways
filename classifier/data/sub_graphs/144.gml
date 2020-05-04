@@ -7,23 +7,46 @@ graph [
   ]
   node [
     id 1
-    label "putrescine"
+    label "fumarate"
   ]
   node [
     id 2
-    label "l-lysine"
+    label "putrescine"
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "l-lysine"
   ]
   node [
     id 4
-    label "fumarate"
+    label "l-glutamine"
+  ]
+  node [
+    id 5
+    label "phosphate"
+  ]
+  node [
+    id 6
+    label "l-aspartate"
+  ]
+  node [
+    id 7
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 8
+    label "l-glutamate"
+  ]
+  edge [
+    source 0
+    target 3
   ]
   edge [
     source 0
     target 2
-    weight 0.7383488648867993
+  ]
+  edge [
+    source 2
+    target 3
   ]
 ]

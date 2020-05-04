@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 1
@@ -11,18 +11,58 @@ graph [
   ]
   node [
     id 2
-    label "gdp-beta;-l-fucose"
-  ]
-  node [
-    id 3
     label "l-leucine"
   ]
   node [
+    id 3
+    label "glycerate_3_phosphate"
+  ]
+  node [
     id 4
-    label "udp-alpha;-d-galacturonate"
+    label "benzoate"
   ]
   node [
     id 5
-    label "benzoate"
+    label "l-glutamine"
+  ]
+  node [
+    id 6
+    label "udp-alpha;-d-galacturonate"
+  ]
+  node [
+    id 7
+    label "l-aspartate"
+  ]
+  node [
+    id 8
+    label "gdp-alpha;-d-mannose"
+  ]
+  edge [
+    source 0
+    target 4
+  ]
+  edge [
+    source 1
+    target 4
+  ]
+  edge [
+    source 1
+    target 6
+  ]
+  edge [
+    source 1
+    target 2
+  ]
+  edge [
+    source 2
+    target 4
+  ]
+  edge [
+    source 2
+    target 6
+  ]
+  edge [
+    source 4
+    target 6
   ]
 ]

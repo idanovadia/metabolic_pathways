@@ -11,10 +11,10 @@ graph [
   ]
   node [
     id 2
-    label "succinate"
+    label "l-tryptophan"
   ]
   node [
     id 3
-    label "l-tryptophan"
+    label "succinate"
   ]
 ]

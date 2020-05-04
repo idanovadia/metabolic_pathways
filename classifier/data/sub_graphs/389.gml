@@ -3,37 +3,58 @@ graph [
   type "trainset"
   node [
     id 0
-    label "alpha;,alpha;-trehalose"
-  ]
-  node [
-    id 1
-    label "citrate"
-  ]
-  node [
-    id 2
-    label "gaba"
-  ]
-  node [
-    id 3
     label "l-leucine"
   ]
   node [
-    id 4
+    id 1
+    label "maltitol"
+  ]
+  node [
+    id 2
     label "l-phenylalanine"
   ]
+  node [
+    id 3
+    label "sucrose"
+  ]
+  node [
+    id 4
+    label "inositol"
+  ]
+  node [
+    id 5
+    label "gaba"
+  ]
+  node [
+    id 6
+    label "alpha;,alpha;-trehalose"
+  ]
+  node [
+    id 7
+    label "citrate"
+  ]
   edge [
-    source 2
-    target 3
-    weight 0.7842295387080541
+    source 0
+    target 2
+  ]
+  edge [
+    source 0
+    target 5
+  ]
+  edge [
+    source 0
+    target 6
   ]
   edge [
     source 2
-    target 4
-    weight 0.8509510835359132
+    target 5
   ]
   edge [
-    source 3
-    target 4
-    weight 0.8707006578322569
+    source 2
+    target 6
+  ]
+  edge [
+    source 5
+    target 6
   ]
 ]

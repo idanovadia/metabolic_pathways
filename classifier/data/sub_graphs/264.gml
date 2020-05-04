@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   node [
     id 1
@@ -11,11 +11,14 @@ graph [
   ]
   node [
     id 2
+    label "l-glutamate"
+  ]
+  node [
+    id 3
     label "l-isoleucine"
   ]
   edge [
     source 1
-    target 2
-    weight 0.8117751078239503
+    target 3
   ]
 ]

@@ -13,9 +13,24 @@ graph [
     id 2
     label "l-valine"
   ]
+  node [
+    id 3
+    label "l-aspartate"
+  ]
+  node [
+    id 4
+    label "phosphate"
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 0
+    target 2
+  ]
   edge [
     source 1
     target 2
-    weight 0.7741925869687609
   ]
 ]

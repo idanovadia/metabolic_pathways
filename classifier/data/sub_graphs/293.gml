@@ -11,15 +11,22 @@ graph [
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "phosphate"
   ]
   node [
     id 3
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 4
+    label "l-glutamate"
+  ]
+  node [
+    id 5
     label "glycine"
   ]
   edge [
     source 0
-    target 3
-    weight 0.8435878621427529
+    target 5
   ]
 ]

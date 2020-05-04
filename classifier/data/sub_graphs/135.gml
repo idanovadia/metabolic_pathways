@@ -7,19 +7,34 @@ graph [
   ]
   node [
     id 1
-    label "l-arginine"
+    label "beta;-alanine"
   ]
   node [
     id 2
-    label "beta;-alanine"
+    label "l-arginine"
   ]
   node [
     id 3
     label "glycine"
   ]
   edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 0
+    target 3
+  ]
+  edge [
+    source 1
+    target 2
+  ]
+  edge [
+    source 1
+    target 3
+  ]
+  edge [
     source 2
     target 3
-    weight 0.8209324162178232
   ]
 ]

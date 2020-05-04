@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "fructose"
+    label "l-isoleucine"
   ]
   node [
     id 1
-    label "l-isoleucine"
+    label "l-arginine"
   ]
   node [
     id 2
@@ -15,19 +15,30 @@ graph [
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "sucrose"
   ]
   node [
     id 4
-    label "l-arginine"
+    label "benzoate"
   ]
   node [
     id 5
-    label "benzoate"
+    label "fructose"
+  ]
+  node [
+    id 6
+    label "l-glutamate"
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 0
+    target 2
   ]
   edge [
     source 1
     target 2
-    weight 0.8258656390723816
   ]
 ]

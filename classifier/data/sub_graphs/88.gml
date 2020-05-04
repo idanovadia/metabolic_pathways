@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "(s)-malate"
+    label "fumarate"
   ]
   node [
     id 1
@@ -11,6 +11,10 @@ graph [
   ]
   node [
     id 2
-    label "fumarate"
+    label "succinate"
+  ]
+  node [
+    id 3
+    label "(s)-malate"
   ]
 ]

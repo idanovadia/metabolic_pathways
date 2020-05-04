@@ -3,14 +3,18 @@ graph [
   type "trainset"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 1
-    label "gdp-beta;-l-fucose"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
     label "l-glutamate"
+  ]
+  node [
+    id 3
+    label "gdp-alpha;-d-mannose"
   ]
 ]

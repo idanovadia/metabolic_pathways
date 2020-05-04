@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-threonine"
+    label "l-leucine"
   ]
   node [
     id 1
@@ -11,44 +11,42 @@ graph [
   ]
   node [
     id 2
-    label "l-leucine"
+    label "l-threonine"
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "l-valine"
   ]
   node [
     id 4
-    label "l-valine"
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 5
+    label "l-glutamate"
+  ]
+  edge [
+    source 0
+    target 2
   ]
   edge [
     source 0
     target 1
-    weight 0.8117751078239503
   ]
   edge [
     source 0
-    target 2
-    weight 0.8421669500271493
-  ]
-  edge [
-    source 0
-    target 4
-    weight 0.8333132788752211
+    target 3
   ]
   edge [
     source 1
     target 2
-    weight 0.9396072216819914
   ]
   edge [
     source 1
-    target 4
-    weight 0.8674932232268686
+    target 3
   ]
   edge [
     source 2
-    target 4
-    weight 0.9154607840850747
+    target 3
   ]
 ]

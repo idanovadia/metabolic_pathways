@@ -3,10 +3,10 @@ graph [
   type "trainset"
   node [
     id 0
-    label "(s)-malate"
+    label "d-glycerate"
   ]
   node [
     id 1
-    label "d-glycerate"
+    label "(s)-malate"
   ]
 ]

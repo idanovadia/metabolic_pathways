@@ -162,6 +162,8 @@ class GraphCreator(AbstractConfigClass):
                     self.main_graph.add_edge(u_of_edge=str(row.name).lower(),
                                              v_of_edge=str(columns_headers[i]).lower(),
                                              weight=row[i])
+                elif row.name not in self.main_graph.nodes():
+                    self.main_graph.add_node(str(row.name).lower())
             j += 1
 
     '''

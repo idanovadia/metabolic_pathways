@@ -3,69 +3,138 @@ graph [
   type "trainset"
   node [
     id 0
-    label "putrescine"
-  ]
-  node [
-    id 1
-    label "saccharate"
-  ]
-  node [
-    id 2
-    label "l-cysteine"
-  ]
-  node [
-    id 3
-    label "glucose_6_phosphate"
-  ]
-  node [
-    id 4
-    label "l-isoleucine"
-  ]
-  node [
-    id 5
-    label "l-serine"
-  ]
-  node [
-    id 6
     label "gdp-beta;-l-fucose"
   ]
   node [
+    id 1
+    label "l-isoleucine"
+  ]
+  node [
+    id 2
+    label "l-serine"
+  ]
+  node [
+    id 3
+    label "maltitol"
+  ]
+  node [
+    id 4
+    label "glucose_6_phosphate"
+  ]
+  node [
+    id 5
+    label "glycerate_3_phosphate"
+  ]
+  node [
+    id 6
+    label "saccharate"
+  ]
+  node [
     id 7
+    label "putrescine"
+  ]
+  node [
+    id 8
+    label "succinate"
+  ]
+  node [
+    id 9
+    label "l-tryptophan"
+  ]
+  node [
+    id 10
     label "l-valine"
+  ]
+  node [
+    id 11
+    label "phosphate"
+  ]
+  node [
+    id 12
+    label "l-cysteine"
   ]
   edge [
     source 0
-    target 3
-    weight 0.7326864045747914
+    target 4
+  ]
+  edge [
+    source 0
+    target 6
   ]
   edge [
     source 1
-    target 3
-    weight 0.76192111271555
+    target 12
+  ]
+  edge [
+    source 1
+    target 4
+  ]
+  edge [
+    source 1
+    target 2
+  ]
+  edge [
+    source 1
+    target 10
+  ]
+  edge [
+    source 1
+    target 7
   ]
   edge [
     source 2
-    target 3
-    weight 0.7163705360722853
+    target 12
   ]
   edge [
     source 2
-    target 5
-    weight 0.7032509826257202
+    target 4
+  ]
+  edge [
+    source 2
+    target 10
+  ]
+  edge [
+    source 2
+    target 7
   ]
   edge [
     source 4
-    target 5
-    weight 0.8258656390723816
+    target 12
   ]
   edge [
     source 4
     target 7
-    weight 0.8674932232268686
   ]
   edge [
-    source 5
+    source 4
+    target 6
+  ]
+  edge [
+    source 4
+    target 10
+  ]
+  edge [
+    source 6
+    target 12
+  ]
+  edge [
+    source 6
     target 7
-    weight 0.788602145387315
+  ]
+  edge [
+    source 6
+    target 10
+  ]
+  edge [
+    source 7
+    target 12
+  ]
+  edge [
+    source 7
+    target 10
+  ]
+  edge [
+    source 10
+    target 12
   ]
 ]

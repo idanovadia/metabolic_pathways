@@ -26,6 +26,3 @@ Change the needed parameters in the config.ini file (listed below)
 
 
 ## Contacts
-
-[https://hexway.io](https://hexway.io)<br>
-[@_hexway](https://twitter.com/_hexway)
