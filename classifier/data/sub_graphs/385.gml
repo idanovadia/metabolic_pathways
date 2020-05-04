@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "d-gluconate"
+    label "maltitol"
   ]
   node [
     id 1
@@ -11,106 +11,26 @@ graph [
   ]
   node [
     id 2
-    label "l-tryptophan"
-  ]
-  node [
-    id 3
     label "l-tyrosine"
   ]
   node [
-    id 4
-    label "glucose"
-  ]
-  node [
-    id 5
+    id 3
     label "glycerol"
   ]
   node [
+    id 4
+    label "l-tryptophan"
+  ]
+  node [
+    id 5
+    label "glucose"
+  ]
+  node [
     id 6
-    label "maltitol"
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 5
+    label "d-gluconate"
   ]
   edge [
     source 1
     target 2
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 5
-    target 6
   ]
 ]

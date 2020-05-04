@@ -13,12 +13,4 @@ graph [
     id 2
     label "l-tyrosine"
   ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 1
-    target 2
-  ]
 ]

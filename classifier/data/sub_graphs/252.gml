@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-threonine"
   ]
   node [
     id 2
@@ -15,7 +15,7 @@ graph [
   ]
   node [
     id 3
-    label "l-threonine"
+    label "l-glutamate"
   ]
   node [
     id 4
@@ -23,38 +23,14 @@ graph [
   ]
   edge [
     source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
     target 1
   ]
   edge [
-    source 1
+    source 0
     target 4
   ]
   edge [
     source 1
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 3
     target 4
   ]
 ]

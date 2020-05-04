@@ -7,19 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-lysine"
+    label "l-isoleucine"
   ]
   node [
     id 2
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 1
+    label "l-lysine"
   ]
   edge [
     source 1

@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-lysine"
+    label "l-alanine"
   ]
   node [
     id 1
@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "l-cysteine"
+    label "glycerol"
   ]
   node [
     id 3
-    label "l-alanine"
+    label "l-lysine"
   ]
   node [
     id 4
@@ -23,15 +23,7 @@ graph [
   ]
   node [
     id 5
-    label "glycerol"
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 2
+    label "l-cysteine"
   ]
   edge [
     source 0
@@ -43,35 +35,7 @@ graph [
   ]
   edge [
     source 0
-    target 1
-  ]
-  edge [
-    source 1
     target 3
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 4
   ]
   edge [
     source 3

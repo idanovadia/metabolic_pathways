@@ -3,23 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-threonine"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-homoserine"
+    label "l-threonine"
   ]
   node [
     id 2
-    label "phosphate"
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 2
+    label "l-homoserine"
   ]
   edge [
     source 1

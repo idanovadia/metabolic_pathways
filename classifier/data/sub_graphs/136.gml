@@ -3,23 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-valine"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-arginine"
+    label "l-valine"
   ]
   node [
     id 2
-    label "phosphate"
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 2
+    label "l-arginine"
   ]
   edge [
     source 1

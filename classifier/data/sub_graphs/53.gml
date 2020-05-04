@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "l-alanine"
   ]
   node [
     id 1
@@ -15,7 +15,7 @@ graph [
   ]
   node [
     id 3
-    label "l-alanine"
+    label "l-aspartate"
   ]
   node [
     id 4
@@ -23,62 +23,10 @@ graph [
   ]
   node [
     id 5
-    label "l-aspartate"
-  ]
-  edge [
-    source 0
-    target 3
+    label "l-glutamate"
   ]
   edge [
     source 0
     target 1
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 4
-    target 5
   ]
 ]

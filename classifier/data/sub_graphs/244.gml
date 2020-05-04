@@ -7,14 +7,10 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamine"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "l-glutamate"
-  ]
-  edge [
-    source 1
-    target 2
+    label "l-glutamine"
   ]
 ]

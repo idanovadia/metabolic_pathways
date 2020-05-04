@@ -9,8 +9,4 @@ graph [
     id 1
     label "l-glutamine"
   ]
-  edge [
-    source 0
-    target 1
-  ]
 ]

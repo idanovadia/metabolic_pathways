@@ -7,50 +7,22 @@ graph [
   ]
   node [
     id 1
-    label "glycine"
+    label "l-glutamine"
   ]
   node [
     id 2
-    label "l-glutamate"
-  ]
-  node [
-    id 3
     label "2-oxoglutarate"
   ]
   node [
+    id 3
+    label "l-glutamate"
+  ]
+  node [
     id 4
-    label "l-glutamine"
+    label "glycine"
   ]
   edge [
     source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 2
     target 4
   ]
 ]

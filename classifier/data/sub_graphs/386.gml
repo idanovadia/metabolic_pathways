@@ -3,47 +3,31 @@ graph [
   type "trainset"
   node [
     id 0
-    label "erythritol"
-  ]
-  node [
-    id 1
-    label "dehydroascorbate (bicyclic form)"
-  ]
-  node [
-    id 2
-    label "l-glutamate"
-  ]
-  node [
-    id 3
     label "l-leucine"
   ]
   node [
-    id 4
+    id 1
+    label "glycerol"
+  ]
+  node [
+    id 2
     label "benzoate"
   ]
   node [
-    id 5
+    id 3
+    label "dehydroascorbate (bicyclic form)"
+  ]
+  node [
+    id 4
     label "l-glutamine"
   ]
   node [
+    id 5
+    label "erythritol"
+  ]
+  node [
     id 6
-    label "glycerol"
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 0
-    target 3
+    label "l-glutamate"
   ]
   edge [
     source 0
@@ -51,35 +35,11 @@ graph [
   ]
   edge [
     source 0
-    target 5
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 1
     target 3
   ]
   edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
+    source 0
     target 5
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 6
   ]
   edge [
     source 2
@@ -91,22 +51,6 @@ graph [
   ]
   edge [
     source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
     target 5
   ]
 ]

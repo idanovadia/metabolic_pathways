@@ -9,8 +9,4 @@ graph [
     id 1
     label "shikimate"
   ]
-  edge [
-    source 0
-    target 1
-  ]
 ]

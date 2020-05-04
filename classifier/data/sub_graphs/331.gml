@@ -3,26 +3,14 @@ graph [
   type "trainset"
   node [
     id 0
-    label "putrescine"
-  ]
-  node [
-    id 1
     label "l-aspartate"
   ]
   node [
-    id 2
+    id 1
     label "phosphate"
   ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 1
-    target 2
+  node [
+    id 2
+    label "putrescine"
   ]
 ]

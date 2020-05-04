@@ -7,11 +7,11 @@ graph [
   ]
   node [
     id 1
-    label "l-serine"
+    label "l-cysteine"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-serine"
   ]
   node [
     id 3
@@ -19,23 +19,11 @@ graph [
   ]
   node [
     id 4
-    label "l-cysteine"
+    label "2-oxoglutarate"
   ]
   node [
     id 5
-    label "2-oxoglutarate"
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 3
+    label "l-glutamate"
   ]
   edge [
     source 0
@@ -47,38 +35,6 @@ graph [
   ]
   edge [
     source 1
-    target 5
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
     target 2
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 4
-    target 5
   ]
 ]

@@ -11,46 +11,14 @@ graph [
   ]
   node [
     id 2
-    label "phosphate"
-  ]
-  node [
-    id 3
     label "l-proline"
   ]
   node [
-    id 4
+    id 3
     label "2-oxoglutarate"
   ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 3
-    target 4
+  node [
+    id 4
+    label "phosphate"
   ]
 ]

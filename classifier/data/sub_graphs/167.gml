@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "l-isoleucine"
   ]
   node [
     id 1
@@ -11,7 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-glutamate"
   ]
   node [
     id 3
@@ -19,66 +19,22 @@ graph [
   ]
   node [
     id 4
-    label "glycine"
+    label "phosphate"
   ]
   node [
     id 5
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 2
+    label "glycine"
   ]
   edge [
     source 0
     target 1
   ]
   edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
+    source 0
     target 5
   ]
   edge [
     source 1
-    target 2
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 4
     target 5
   ]
 ]

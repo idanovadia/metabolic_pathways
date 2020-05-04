@@ -3,23 +3,23 @@ graph [
   type "trainset"
   node [
     id 0
-    label "galactose"
-  ]
-  node [
-    id 1
-    label "alpha;,alpha;-trehalose"
-  ]
-  node [
-    id 2
     label "threonate"
   ]
   node [
+    id 1
+    label "galactose"
+  ]
+  node [
+    id 2
+    label "glucose_6_phosphate"
+  ]
+  node [
     id 3
-    label "l-tryptophan"
+    label "sucrose"
   ]
   node [
     id 4
-    label "l-valine"
+    label "l-tryptophan"
   ]
   node [
     id 5
@@ -27,23 +27,11 @@ graph [
   ]
   node [
     id 6
-    label "sucrose"
+    label "l-valine"
   ]
   node [
     id 7
-    label "glucose_6_phosphate"
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 6
+    label "alpha;,alpha;-trehalose"
   ]
   edge [
     source 0
@@ -51,42 +39,10 @@ graph [
   ]
   edge [
     source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 1
     target 7
   ]
   edge [
     source 1
-    target 6
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 2
     target 5
   ]
   edge [
@@ -95,50 +51,6 @@ graph [
   ]
   edge [
     source 2
-    target 6
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 5
-    target 7
-  ]
-  edge [
-    source 5
     target 6
   ]
   edge [

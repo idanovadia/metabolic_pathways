@@ -11,7 +11,7 @@ graph [
   ]
   node [
     id 2
-    label "phosphate"
+    label "l-glutamine"
   ]
   node [
     id 3
@@ -19,38 +19,6 @@ graph [
   ]
   node [
     id 4
-    label "l-glutamine"
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
+    label "phosphate"
   ]
 ]
