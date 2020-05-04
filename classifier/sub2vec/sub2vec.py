@@ -35,12 +35,14 @@ class Sub2Vec(AbstractConfigClass):
             relative_path=self.config_parser.eval(self.__class__.__name__, 'random_walk_directory_path_output'))
         self.classifier_files_directory = self.getPath(
             relative_path=self.config_parser.eval(self.__class__.__name__, 'classifier_files_directory'))
+        self.statistics_output_path=self.getPath(relative_path=self.config_parser.eval(self.__class__.__name__, 'statistics_output_path'))
+
         self.subGraphs_list = []
         self.rw_list_of_graphs_train = []
         self.rw_list_of_graphs_train_positive = []
         self.rw_list_of_graphs_train_negative = []
         self.rw_list_of_graphs_test = []
-        self.main_graph=nx.read_gml(self.getPath(relative_path=self.config_parser.eval(self.__class__.__name__, 'main_graph_path')))
+
         self.rw_args = json.loads(self.config_parser.get(self.__class__.__name__, 'randomwalk_args'))
         self.rw_extensions = self.config_parser.eval(self.__class__.__name__, 'rw_extensions').split(",")
         self.doc2vec_args=json.loads(self.config_parser.get(self.__class__.__name__, 'doc2vec_args'))
@@ -52,6 +54,7 @@ class Sub2Vec(AbstractConfigClass):
         self.randomWalk()
         # self.chooseBestSubgraphs()
         # self.WriteAll()
+        self.statistics()
         self.doc2vec()
         self.generateTrain()
         self.generateLabel("train_label.xlsx", self.rw_list_of_graphs_train)
@@ -71,6 +74,8 @@ class Sub2Vec(AbstractConfigClass):
     '''Doing Random Walk on the sub graphs'''
 
     def randomWalk(self):
+        self.main_graph = nx.read_gml(
+            self.getPath(relative_path=self.config_parser.eval(self.__class__.__name__, 'main_graph_path')))
         random_walk_object = rw.RandomWalk(threshold=self.randomWalk_length,
                                            number_of_graphs=self.random_walk_num,args=self.rw_args,extensions=self.rw_extensions,main_graph=self.main_graph)
         for k in self.subGraphs_list:
@@ -159,5 +164,61 @@ class Sub2Vec(AbstractConfigClass):
     def writeFile(self, G):
         nx.write_gml(G=G, path=os.path.join(self.random_walk_directory_path_output, G.name))
         # nx.write_gml(G=G, path=os.path.join(self.random_walk_directory_path_output, str(id) + ".gml"))
+
+    def statistics(self):
+        columns = ["correlation threshold","rw length","rw number of times","extensions", "Main Graph: number of nodes", "Main Graph: number of edges", "number of subgraphs",
+                   "avg number of sentences per subgraph", "avg number of words per sentence", "doc2vec args"]
+        correlation_treshold=self.config_parser.eval("GraphCreator", 'threshold')
+        ext=self.getImprovments()
+        number_of_nodes=len(self.main_graph.nodes())
+        number_of_edges=self.main_graph.number_of_edges()
+        avg_number_of_sentences_per_subgraph=self.avgSentencesPerGraph()
+        avg_number_of_words_per_sentence=self.avgNumberOfWordsPerSentence()
+        number_of_subgraphs=len(self.rw_list_of_graphs_train)
+
+        if os.path.exists(self.statistics_output_path+os.sep+"statistics"+'.xlsx'):
+            df=pd.read_excel(self.statistics_output_path+os.sep+"statistics"+'.xlsx',index=False)
+        else :
+            df=pd.DataFrame(columns=columns)
+        df = df.append(pd.Series([correlation_treshold,self.randomWalk_length,self.random_walk_num,ext,
+                                      number_of_nodes,
+                                      number_of_edges,
+                                      number_of_subgraphs,
+                                      avg_number_of_sentences_per_subgraph,
+                                      avg_number_of_words_per_sentence,
+                                      self.doc2vec_args], index=df.columns), ignore_index=True)
+
+        df.to_excel(self.statistics_output_path + os.sep+ "statistics" + ".xlsx", index=False)
+
+
+    def avgSentencesPerGraph(self):
+        return sum([len(subgraph) for subgraph in self.rw_list_of_graphs_train])/len(self.rw_list_of_graphs_train)
+
+    def avgNumberOfWordsPerSentence(self):
+        number_of_sentences=len([sentence for subgraph in self.rw_list_of_graphs_train for sentence in subgraph])
+        number_of_words=0
+        for subgraph in self.rw_list_of_graphs_train:
+            for sentence in subgraph:
+                number_of_words+=len(sentence.nodes())
+
+
+        return number_of_words/number_of_sentences
+
+    def getImprovments(self):
+        extensions=[str(self.config_parser.eval('GraphCreator', 'adj_matrix_extensions')).replace('}','').replace('{','').replace(':','=').replace("'", ""),
+                    self.config_parser.eval('GraphCreator','graph_extensions'),
+                    str(self.config_parser.eval('Sub2Vec', 'rw_extensions'))
+                    ]
+        last=""
+        result=""
+        for extension in extensions:
+            if last=="":
+                result+=extension
+            else:
+                result+=','+extension
+            last=extension
+        return result
+
+
 
 
