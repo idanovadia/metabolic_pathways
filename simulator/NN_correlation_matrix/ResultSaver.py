@@ -90,8 +90,8 @@ class ResultSaver:
         active.append(line_append)
         for structure in structure_list:
             in_err_dict, out_err_dict = structure.get_score()
-            line_append = [structure.get_name(),
-                           structure.get_last_mse_loss().detach().item()]  # ,in_err + '%', out_err + '%']
+            line_append = [structure.get_name(), structure.get_last_mse_loss()]
+                           #structure.get_last_mse_loss().detach().item()]  # ,in_err + '%', out_err + '%']
             for i in range(self.reactions_count):
                 in_err = in_err_dict[i]
                 out_err = out_err_dict[i]

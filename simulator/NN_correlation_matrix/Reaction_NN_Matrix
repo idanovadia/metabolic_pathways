@@ -401,7 +401,6 @@ class Test():
         # optimizer = torch.optim.ASGD(model.parameters(), lr=0.1, lambd=0.0001, alpha=0.75, t0=1000000.0, weight_decay=0.01)
         # optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9, dampening=0, weight_decay=0, nesterov=False)
 
-
         ploss = 0.0
         rloss = 0.0
         with torch.no_grad():
@@ -444,17 +443,20 @@ class Test():
                 info_string = "{}\t time:{:2.3g} \t mse:{} \t p-loss:{} \t r-loss :{}".format(epoch, T,loss, ploss, rloss)
                 #write_date_epoch(gan_structure, loss, ploss, rloss,epoch,T)
                 result_saver.write_data_epoch(gan_structure, loss, ploss, rloss, epoch, T)
-                loss_list.append(loss)
+                #loss_list.append(loss)
+                loss_list.append(ploss)
                 print(info_string)
                 if ploss < (10 ** (-20)):
                     print("stop")
                     break
+                final_ploss = ploss
                 ploss = 0.0
                 rloss = 0.0
                 T = time.time()
 
             if epoch == epochs-1: #last epoch
-                gan_structure.set_last_mse_loss(loss)
+                #gan_structure.set_last_mse_loss(loss)
+                gan_structure.set_last_mse_loss(final_ploss)
                 #write_date_final_epoch(gan_structure, yc, y, loss_list)
                 result_saver.write_date_final_epoch(gan_structure, yc, y, loss_list)
 
@@ -535,3 +537,6 @@ class Test():
 test = Test()
 test.run_tests()
 # test.two_random_matrix_test(100)
+
+#todo: add clustering
+#todo: excel for combining products
