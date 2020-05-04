@@ -3,68 +3,94 @@ graph [
   type "trainset"
   node [
     id 0
-    label "beta;-alanine"
-  ]
-  node [
-    id 1
     label "l-methionine"
   ]
   node [
-    id 2
-    label "uracil"
-  ]
-  node [
-    id 3
-    label "threonate"
-  ]
-  node [
-    id 4
-    label "l-phenylalanine"
-  ]
-  node [
-    id 5
-    label "glucose"
-  ]
-  node [
-    id 6
-    label "galactose"
-  ]
-  node [
-    id 7
+    id 1
     label "gdp-beta;-l-fucose"
   ]
   node [
-    id 8
+    id 2
+    label "galactose"
+  ]
+  node [
+    id 3
     label "l-arginine"
   ]
+  node [
+    id 4
+    label "beta;-alanine"
+  ]
+  node [
+    id 5
+    label "threonate"
+  ]
+  node [
+    id 6
+    label "l-phenylalanine"
+  ]
+  node [
+    id 7
+    label "glycerate_3_phosphate"
+  ]
+  node [
+    id 8
+    label "inositol"
+  ]
+  node [
+    id 9
+    label "succinate"
+  ]
+  node [
+    id 10
+    label "glucose"
+  ]
+  node [
+    id 11
+    label "uracil"
+  ]
   edge [
     source 0
-    target 1
-    weight 0.7286112438046651
+    target 6
+  ]
+  edge [
+    source 0
+    target 3
   ]
   edge [
     source 0
     target 4
-    weight 0.7900110837359453
   ]
   edge [
     source 1
-    target 8
-    weight 0.7134365798079342
+    target 6
   ]
   edge [
     source 1
+    target 11
+  ]
+  edge [
+    source 2
+    target 10
+  ]
+  edge [
+    source 3
+    target 6
+  ]
+  edge [
+    source 3
     target 4
-    weight 0.8446683851032818
   ]
   edge [
     source 4
-    target 8
-    weight 0.7172263512362668
+    target 6
   ]
   edge [
     source 5
     target 6
-    weight 0.7874216966063861
+  ]
+  edge [
+    source 6
+    target 11
   ]
 ]

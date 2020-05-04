@@ -3,27 +3,38 @@ graph [
   type "trainset"
   node [
     id 0
-    label "alpha;-tocopherol"
+    label "l-leucine"
   ]
   node [
     id 1
-    label "uracil"
+    label "alpha;-tocopherol"
   ]
   node [
     id 2
-    label "d-glycerate"
-  ]
-  node [
-    id 3
     label "dehydroascorbate (bicyclic form)"
   ]
   node [
+    id 3
+    label "uracil"
+  ]
+  node [
     id 4
-    label "l-leucine"
+    label "d-glycerate"
+  ]
+  node [
+    id 5
+    label "2-oxoglutarate"
   ]
   edge [
     source 0
-    target 3
-    weight 0.8286429403657696
+    target 2
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 1
+    target 2
   ]
 ]

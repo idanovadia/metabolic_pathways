@@ -7,10 +7,18 @@ graph [
   ]
   node [
     id 1
-    label "l-lysine"
+    label "phosphate"
   ]
   node [
     id 2
     label "l-glutamate"
+  ]
+  node [
+    id 3
+    label "l-lysine"
+  ]
+  edge [
+    source 0
+    target 3
   ]
 ]

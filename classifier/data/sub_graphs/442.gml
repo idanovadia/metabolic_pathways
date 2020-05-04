@@ -14,8 +14,11 @@ graph [
     label "l-arginine"
   ]
   edge [
+    source 0
+    target 1
+  ]
+  edge [
     source 1
     target 2
-    weight 0.7383488648867993
   ]
 ]

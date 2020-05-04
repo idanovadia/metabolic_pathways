@@ -7,15 +7,26 @@ graph [
   ]
   node [
     id 1
-    label "l-lysine"
+    label "phosphate"
   ]
   node [
     id 2
+    label "l-lysine"
+  ]
+  node [
+    id 3
     label "l-methionine"
   ]
   edge [
-    source 1
+    source 0
+    target 3
+  ]
+  edge [
+    source 0
     target 2
-    weight 0.8285406483445502
+  ]
+  edge [
+    source 2
+    target 3
   ]
 ]

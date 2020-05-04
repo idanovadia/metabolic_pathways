@@ -3,15 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "(s)-malate"
+    label "l-isoleucine"
   ]
   node [
     id 1
-    label "citrate"
+    label "galactose"
   ]
   node [
     id 2
-    label "maltose"
+    label "(s)-malate"
   ]
   node [
     id 3
@@ -19,10 +19,22 @@ graph [
   ]
   node [
     id 4
-    label "l-isoleucine"
+    label "citrate"
   ]
   node [
     id 5
-    label "galactose"
+    label "maltose"
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 1
+    target 4
+  ]
+  edge [
+    source 2
+    target 5
   ]
 ]

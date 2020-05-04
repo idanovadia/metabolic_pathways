@@ -7,19 +7,46 @@ graph [
   ]
   node [
     id 1
-    label "l-lysine"
+    label "shikimate"
   ]
   node [
     id 2
-    label "l-cysteine"
+    label "glycerol"
   ]
   node [
     id 3
+    label "l-lysine"
+  ]
+  node [
+    id 4
     label "l-valine"
   ]
+  node [
+    id 5
+    label "l-cysteine"
+  ]
   edge [
-    source 1
+    source 0
+    target 5
+  ]
+  edge [
+    source 0
+    target 4
+  ]
+  edge [
+    source 0
     target 3
-    weight 0.7741925869687609
+  ]
+  edge [
+    source 3
+    target 5
+  ]
+  edge [
+    source 3
+    target 4
+  ]
+  edge [
+    source 4
+    target 5
   ]
 ]

@@ -7,6 +7,10 @@ graph [
   ]
   node [
     id 1
+    label "l-aspartate"
+  ]
+  node [
+    id 2
     label "l-arginine"
   ]
 ]

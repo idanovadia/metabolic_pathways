@@ -11,10 +11,26 @@ graph [
   ]
   node [
     id 2
-    label "l-cysteine"
+    label "l-valine"
   ]
   node [
     id 3
-    label "l-valine"
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 4
+    label "l-cysteine"
+  ]
+  edge [
+    source 0
+    target 4
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 2
+    target 4
   ]
 ]

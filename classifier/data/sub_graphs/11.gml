@@ -12,6 +12,5 @@ graph [
   edge [
     source 0
     target 1
-    weight 0.7127713604789605
   ]
 ]

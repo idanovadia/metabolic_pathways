@@ -7,10 +7,18 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   node [
     id 2
+    label "l-glutamate"
+  ]
+  node [
+    id 3
     label "l-tyrosine"
+  ]
+  edge [
+    source 0
+    target 3
   ]
 ]

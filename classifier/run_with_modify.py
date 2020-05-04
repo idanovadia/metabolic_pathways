@@ -1,4 +1,3 @@
-
 from classifier.configuration.config_class import config_class
 from classifier.graphPresentation.graphPresentation import GraphPresentation
 from classifier.preprocessing.preprocessing import Preprocessing

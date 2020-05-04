@@ -3,96 +3,186 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-cysteine"
-  ]
-  node [
-    id 1
-    label "maltose"
-  ]
-  node [
-    id 2
-    label "l-lysine"
-  ]
-  node [
-    id 3
-    label "uracil"
-  ]
-  node [
-    id 4
     label "d-threo-isocitrate"
   ]
   node [
-    id 5
-    label "l-serine"
-  ]
-  node [
-    id 6
-    label "dehydroascorbate (bicyclic form)"
-  ]
-  node [
-    id 7
+    id 1
     label "l-leucine"
   ]
   node [
-    id 8
+    id 2
+    label "l-serine"
+  ]
+  node [
+    id 3
     label "l-phenylalanine"
   ]
   node [
+    id 4
+    label "glycerate_3_phosphate"
+  ]
+  node [
+    id 5
+    label "glycerol"
+  ]
+  node [
+    id 6
+    label "benzoate"
+  ]
+  node [
+    id 7
+    label "dehydroascorbate (bicyclic form)"
+  ]
+  node [
+    id 8
+    label "l-lysine"
+  ]
+  node [
     id 9
-    label "udp-alpha;-d-galacturonate"
+    label "uracil"
   ]
   node [
     id 10
-    label "benzoate"
+    label "udp-alpha;-d-galacturonate"
   ]
-  edge [
-    source 0
-    target 8
-    weight 0.7707557676172315
+  node [
+    id 11
+    label "phosphate"
   ]
-  edge [
-    source 0
-    target 5
-    weight 0.7032509826257202
+  node [
+    id 12
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 13
+    label "l-cysteine"
+  ]
+  node [
+    id 14
+    label "maltose"
   ]
   edge [
     source 1
     target 6
-    weight 0.7657991680341341
+  ]
+  edge [
+    source 1
+    target 13
+  ]
+  edge [
+    source 1
+    target 7
+  ]
+  edge [
+    source 1
+    target 3
+  ]
+  edge [
+    source 1
+    target 10
+  ]
+  edge [
+    source 1
+    target 8
+  ]
+  edge [
+    source 1
+    target 2
+  ]
+  edge [
+    source 1
+    target 14
+  ]
+  edge [
+    source 2
+    target 13
   ]
   edge [
     source 2
     target 7
-    weight 0.7849455097073349
+  ]
+  edge [
+    source 2
+    target 3
   ]
   edge [
     source 2
     target 8
-    weight 0.8288554544840866
   ]
   edge [
-    source 2
-    target 5
-    weight 0.7433623295847455
+    source 3
+    target 6
   ]
   edge [
-    source 5
+    source 3
+    target 13
+  ]
+  edge [
+    source 3
     target 7
-    weight 0.8036695335408897
   ]
   edge [
-    source 5
+    source 3
     target 8
-    weight 0.8366053612707007
+  ]
+  edge [
+    source 3
+    target 14
+  ]
+  edge [
+    source 3
+    target 10
+  ]
+  edge [
+    source 3
+    target 9
   ]
   edge [
     source 6
-    target 8
-    weight 0.7443566582707851
+    target 13
+  ]
+  edge [
+    source 6
+    target 7
+  ]
+  edge [
+    source 6
+    target 10
+  ]
+  edge [
+    source 6
+    target 14
+  ]
+  edge [
+    source 7
+    target 13
+  ]
+  edge [
+    source 7
+    target 14
+  ]
+  edge [
+    source 7
+    target 10
   ]
   edge [
     source 7
     target 8
-    weight 0.8707006578322569
+  ]
+  edge [
+    source 8
+    target 13
+  ]
+  edge [
+    source 10
+    target 13
+  ]
+  edge [
+    source 10
+    target 14
+  ]
+  edge [
+    source 13
+    target 14
   ]
 ]

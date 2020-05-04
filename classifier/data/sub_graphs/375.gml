@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "fructose"
+    label "l-serine"
   ]
   node [
     id 1
@@ -11,14 +11,30 @@ graph [
   ]
   node [
     id 2
-    label "l-serine"
+    label "fructose"
   ]
   node [
     id 3
-    label "udp-alpha;-d-galacturonate"
+    label "benzoate"
   ]
   node [
     id 4
-    label "benzoate"
+    label "udp-alpha;-d-galacturonate"
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 1
+    target 3
+  ]
+  edge [
+    source 1
+    target 4
+  ]
+  edge [
+    source 3
+    target 4
   ]
 ]

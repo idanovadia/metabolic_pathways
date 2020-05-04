@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "maltitol"
   ]
   node [
     id 1
-    label "fructose"
+    label "sucrose"
   ]
   node [
     id 2
@@ -15,34 +15,50 @@ graph [
   ]
   node [
     id 3
-    label "maltose"
+    label "glycerate_3_phosphate"
   ]
   node [
     id 4
-    label "glucose"
+    label "inositol"
   ]
   node [
     id 5
+    label "fructose"
+  ]
+  node [
+    id 6
     label "l-glutamate"
   ]
-  edge [
-    source 0
-    target 1
-    weight 0.8225441112982442
+  node [
+    id 7
+    label "glucose"
   ]
-  edge [
-    source 0
-    target 4
-    weight 0.8362263468292753
+  node [
+    id 8
+    label "l-aspartate"
   ]
-  edge [
-    source 1
-    target 4
-    weight 0.9451280120922334
+  node [
+    id 9
+    label "gdp-alpha;-d-mannose"
+  ]
+  node [
+    id 10
+    label "maltose"
   ]
   edge [
     source 2
-    target 3
-    weight 0.7361326428183336
+    target 10
+  ]
+  edge [
+    source 5
+    target 7
+  ]
+  edge [
+    source 5
+    target 9
+  ]
+  edge [
+    source 7
+    target 9
   ]
 ]

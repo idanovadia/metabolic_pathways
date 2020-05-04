@@ -5,4 +5,8 @@ graph [
     id 0
     label "(s)-malate"
   ]
+  node [
+    id 1
+    label "shikimate"
+  ]
 ]

@@ -3,91 +3,138 @@ graph [
   type "trainset"
   node [
     id 0
-    label "beta;-alanine"
-  ]
-  node [
-    id 1
-    label "l-tyrosine"
-  ]
-  node [
-    id 2
-    label "l-lysine"
-  ]
-  node [
-    id 3
-    label "uracil"
-  ]
-  node [
-    id 4
     label "d-threo-isocitrate"
   ]
   node [
-    id 5
-    label "threonate"
-  ]
-  node [
-    id 6
-    label "l-phenylalanine"
-  ]
-  node [
-    id 7
-    label "udp-alpha;-d-galacturonate"
-  ]
-  node [
-    id 8
+    id 1
     label "gdp-beta;-l-fucose"
   ]
   node [
-    id 9
+    id 2
+    label "threonate"
+  ]
+  node [
+    id 3
+    label "beta;-alanine"
+  ]
+  node [
+    id 4
     label "fumarate"
   ]
   node [
+    id 5
+    label "l-phenylalanine"
+  ]
+  node [
+    id 6
+    label "sucrose"
+  ]
+  node [
+    id 7
+    label "shikimate"
+  ]
+  node [
+    id 8
+    label "l-tyrosine"
+  ]
+  node [
+    id 9
+    label "l-tryptophan"
+  ]
+  node [
     id 10
+    label "l-lysine"
+  ]
+  node [
+    id 11
+    label "l-glutamine"
+  ]
+  node [
+    id 12
+    label "udp-alpha;-d-galacturonate"
+  ]
+  node [
+    id 13
+    label "succinate"
+  ]
+  node [
+    id 14
+    label "uracil"
+  ]
+  node [
+    id 15
     label "l-valine"
   ]
   edge [
-    source 0
-    target 2
-    weight 0.7339322771739403
-  ]
-  edge [
-    source 0
-    target 6
-    weight 0.7900110837359453
-  ]
-  edge [
-    source 0
-    target 10
-    weight 0.7376187369416969
+    source 1
+    target 5
   ]
   edge [
     source 1
-    target 2
-    weight 0.7966281384642048
-  ]
-  edge [
-    source 1
-    target 6
-    weight 0.7832158514012088
-  ]
-  edge [
-    source 1
-    target 10
-    weight 0.7131094485116178
+    target 14
   ]
   edge [
     source 2
-    target 6
-    weight 0.8288554544840866
+    target 5
   ]
   edge [
     source 2
-    target 10
-    weight 0.7741925869687609
+    target 12
   ]
   edge [
-    source 6
+    source 3
+    target 5
+  ]
+  edge [
+    source 3
     target 10
-    weight 0.8295602113900087
+  ]
+  edge [
+    source 3
+    target 8
+  ]
+  edge [
+    source 3
+    target 15
+  ]
+  edge [
+    source 4
+    target 5
+  ]
+  edge [
+    source 5
+    target 10
+  ]
+  edge [
+    source 5
+    target 8
+  ]
+  edge [
+    source 5
+    target 15
+  ]
+  edge [
+    source 5
+    target 12
+  ]
+  edge [
+    source 5
+    target 14
+  ]
+  edge [
+    source 8
+    target 10
+  ]
+  edge [
+    source 8
+    target 15
+  ]
+  edge [
+    source 10
+    target 15
+  ]
+  edge [
+    source 12
+    target 15
   ]
 ]

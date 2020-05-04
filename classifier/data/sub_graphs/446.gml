@@ -3,124 +3,210 @@ graph [
   type "trainset"
   node [
     id 0
-    label "erythritol"
-  ]
-  node [
-    id 1
-    label "l-tyrosine"
-  ]
-  node [
-    id 2
-    label "l-glutamate"
-  ]
-  node [
-    id 3
-    label "gdp-alpha;-d-mannose"
-  ]
-  node [
-    id 4
-    label "glucose_6_phosphate"
-  ]
-  node [
-    id 5
-    label "l-lysine"
-  ]
-  node [
-    id 6
     label "l-asparagine"
   ]
   node [
-    id 7
-    label "l-isoleucine"
-  ]
-  node [
-    id 8
-    label "threonate"
-  ]
-  node [
-    id 9
-    label "l-phenylalanine"
-  ]
-  node [
-    id 10
+    id 1
     label "gdp-beta;-l-fucose"
   ]
   node [
-    id 11
+    id 2
+    label "l-isoleucine"
+  ]
+  node [
+    id 3
+    label "threonate"
+  ]
+  node [
+    id 4
     label "fumarate"
   ]
   node [
-    id 12
+    id 5
+    label "l-phenylalanine"
+  ]
+  node [
+    id 6
+    label "glucose_6_phosphate"
+  ]
+  node [
+    id 7
+    label "l-tyrosine"
+  ]
+  node [
+    id 8
+    label "glycerol"
+  ]
+  node [
+    id 9
+    label "inositol"
+  ]
+  node [
+    id 10
     label "benzoate"
   ]
-  edge [
-    source 0
-    target 4
-    weight 0.8356241728745393
+  node [
+    id 11
+    label "l-aspartate"
+  ]
+  node [
+    id 12
+    label "l-tryptophan"
+  ]
+  node [
+    id 13
+    label "l-lysine"
+  ]
+  node [
+    id 14
+    label "erythritol"
+  ]
+  node [
+    id 15
+    label "l-glutamate"
+  ]
+  node [
+    id 16
+    label "phosphate"
+  ]
+  node [
+    id 17
+    label "gdp-alpha;-d-mannose"
   ]
   edge [
     source 0
-    target 9
-    weight 0.7226904648644844
+    target 6
   ]
   edge [
     source 0
-    target 8
-    weight 0.7507379506502267
+    target 5
+  ]
+  edge [
+    source 0
+    target 14
+  ]
+  edge [
+    source 0
+    target 13
+  ]
+  edge [
+    source 0
+    target 7
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 1
+    target 10
   ]
   edge [
     source 1
     target 6
-    weight 0.7110514223194135
-  ]
-  edge [
-    source 1
-    target 7
-    weight 0.7217904495106646
   ]
   edge [
     source 1
     target 5
-    weight 0.7966281384642048
   ]
   edge [
     source 1
-    target 9
-    weight 0.7832158514012088
+    target 14
+  ]
+  edge [
+    source 2
+    target 6
+  ]
+  edge [
+    source 2
+    target 5
+  ]
+  edge [
+    source 2
+    target 14
+  ]
+  edge [
+    source 2
+    target 13
+  ]
+  edge [
+    source 2
+    target 7
+  ]
+  edge [
+    source 3
+    target 6
+  ]
+  edge [
+    source 3
+    target 5
+  ]
+  edge [
+    source 3
+    target 14
   ]
   edge [
     source 4
-    target 9
-    weight 0.7582711814204329
+    target 10
+  ]
+  edge [
+    source 4
+    target 6
+  ]
+  edge [
+    source 4
+    target 5
+  ]
+  edge [
+    source 5
+    target 10
   ]
   edge [
     source 5
     target 6
-    weight 0.8043067137164215
+  ]
+  edge [
+    source 5
+    target 14
+  ]
+  edge [
+    source 5
+    target 13
   ]
   edge [
     source 5
     target 7
-    weight 0.7492417396482305
   ]
   edge [
-    source 5
-    target 9
-    weight 0.8288554544840866
+    source 6
+    target 10
+  ]
+  edge [
+    source 6
+    target 14
+  ]
+  edge [
+    source 6
+    target 13
   ]
   edge [
     source 6
     target 7
-    weight 0.7240027054443852
-  ]
-  edge [
-    source 6
-    target 9
-    weight 0.8292318297638391
   ]
   edge [
     source 7
-    target 9
-    weight 0.8222283860641268
+    target 14
+  ]
+  edge [
+    source 7
+    target 13
+  ]
+  edge [
+    source 10
+    target 14
+  ]
+  edge [
+    source 13
+    target 14
   ]
 ]

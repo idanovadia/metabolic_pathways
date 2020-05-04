@@ -7,10 +7,14 @@ graph [
   ]
   node [
     id 1
-    label "l-tyrosine"
+    label "fructose"
   ]
   node [
     id 2
-    label "fructose"
+    label "l-tyrosine"
+  ]
+  edge [
+    source 0
+    target 2
   ]
 ]

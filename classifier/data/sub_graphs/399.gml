@@ -3,33 +3,50 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-methionine"
-  ]
-  node [
-    id 1
     label "d-threo-isocitrate"
   ]
   node [
+    id 1
+    label "l-methionine"
+  ]
+  node [
     id 2
-    label "l-tyrosine"
+    label "l-isoleucine"
   ]
   node [
     id 3
-    label "l-isoleucine"
+    label "maltitol"
+  ]
+  node [
+    id 4
+    label "l-tyrosine"
+  ]
+  node [
+    id 5
+    label "d-gluconate"
+  ]
+  node [
+    id 6
+    label "inositol"
+  ]
+  node [
+    id 7
+    label "succinate"
+  ]
+  node [
+    id 8
+    label "phosphate"
   ]
   edge [
-    source 0
-    target 3
-    weight 0.8102918746284294
-  ]
-  edge [
-    source 0
+    source 1
     target 2
-    weight 0.7657222335493962
+  ]
+  edge [
+    source 1
+    target 4
   ]
   edge [
     source 2
-    target 3
-    weight 0.7217904495106646
+    target 4
   ]
 ]

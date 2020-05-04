@@ -11,21 +11,22 @@ graph [
   ]
   node [
     id 2
+    label "phosphate"
+  ]
+  node [
+    id 3
     label "glycine"
   ]
   edge [
     source 0
-    target 2
-    weight 0.8435878621427529
+    target 1
   ]
   edge [
     source 0
-    target 1
-    weight 0.8366053612707007
+    target 3
   ]
   edge [
     source 1
-    target 2
-    weight 0.8087450020798062
+    target 3
   ]
 ]

@@ -7,6 +7,10 @@ graph [
   ]
   node [
     id 1
+    label "l-tryptophan"
+  ]
+  node [
+    id 2
     label "glycine"
   ]
 ]

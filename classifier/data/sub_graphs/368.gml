@@ -7,15 +7,22 @@ graph [
   ]
   node [
     id 1
-    label "dehydroascorbate (bicyclic form)"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 2
-    label "gdp-beta;-l-fucose"
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 3
+    label "dehydroascorbate (bicyclic form)"
   ]
   edge [
     source 0
-    target 1
-    weight 0.7104833286285996
+    target 3
+  ]
+  edge [
+    source 1
+    target 3
   ]
 ]

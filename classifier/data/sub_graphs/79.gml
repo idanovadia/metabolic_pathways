@@ -9,4 +9,8 @@ graph [
     id 1
     label "l-valine"
   ]
+  edge [
+    source 0
+    target 1
+  ]
 ]

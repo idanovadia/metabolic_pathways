@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "(s)-malate"
+    label "l-asparagine"
   ]
   node [
     id 1
@@ -11,15 +11,15 @@ graph [
   ]
   node [
     id 2
-    label "d-glycerate"
+    label "l-isoleucine"
   ]
   node [
     id 3
-    label "l-asparagine"
+    label "(s)-malate"
   ]
   node [
     id 4
-    label "l-isoleucine"
+    label "inositol"
   ]
   node [
     id 5
@@ -29,14 +29,36 @@ graph [
     id 6
     label "udp-alpha;-d-galacturonate"
   ]
+  node [
+    id 7
+    label "d-glycerate"
+  ]
+  node [
+    id 8
+    label "2-oxoglutarate"
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 0
+    target 3
+  ]
   edge [
     source 1
     target 6
-    weight 0.7180877633995704
+  ]
+  edge [
+    source 1
+    target 3
+  ]
+  edge [
+    source 2
+    target 3
   ]
   edge [
     source 3
-    target 4
-    weight 0.7240027054443852
+    target 6
   ]
 ]

@@ -3,19 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "erythritol"
+    label "gdp-beta;-l-fucose"
   ]
   node [
     id 1
-    label "l-cysteine"
+    label "l-phenylalanine"
   ]
   node [
     id 2
-    label "d-glycerate"
+    label "shikimate"
   ]
   node [
     id 3
-    label "l-phenylalanine"
+    label "succinate"
   ]
   node [
     id 4
@@ -23,16 +23,42 @@ graph [
   ]
   node [
     id 5
-    label "gdp-beta;-l-fucose"
+    label "erythritol"
+  ]
+  node [
+    id 6
+    label "d-glycerate"
+  ]
+  node [
+    id 7
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 8
+    label "l-cysteine"
   ]
   edge [
     source 0
-    target 3
-    weight 0.7226904648644844
+    target 1
+  ]
+  edge [
+    source 0
+    target 5
   ]
   edge [
     source 1
-    target 3
-    weight 0.7707557676172315
+    target 8
+  ]
+  edge [
+    source 1
+    target 5
+  ]
+  edge [
+    source 5
+    target 8
+  ]
+  edge [
+    source 5
+    target 6
   ]
 ]

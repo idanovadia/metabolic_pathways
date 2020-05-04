@@ -3,42 +3,62 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-cysteine"
-  ]
-  node [
-    id 1
     label "l-methionine"
   ]
   node [
-    id 2
-    label "l-lysine"
-  ]
-  node [
-    id 3
+    id 1
     label "l-threonine"
   ]
   node [
-    id 4
+    id 2
     label "l-glutamate"
+  ]
+  node [
+    id 3
+    label "succinate"
+  ]
+  node [
+    id 4
+    label "l-lysine"
+  ]
+  node [
+    id 5
+    label "phosphate"
+  ]
+  node [
+    id 6
+    label "l-aspartate"
+  ]
+  node [
+    id 7
+    label "2-oxoglutarate"
+  ]
+  node [
+    id 8
+    label "l-cysteine"
   ]
   edge [
     source 0
-    target 3
-    weight 0.722790409488207
+    target 8
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 0
+    target 4
   ]
   edge [
     source 1
-    target 2
-    weight 0.8285406483445502
+    target 8
   ]
   edge [
     source 1
-    target 3
-    weight 0.8363266960737059
+    target 4
   ]
   edge [
-    source 2
-    target 3
-    weight 0.8366009433099568
+    source 4
+    target 8
   ]
 ]
