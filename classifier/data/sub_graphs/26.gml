@@ -3,7 +3,7 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "l-asparagine"
   ]
   node [
     id 1
@@ -11,89 +11,46 @@ graph [
   ]
   node [
     id 2
-    label "l-asparagine"
+    label "l-glutamine"
   ]
   node [
     id 3
-    label "l-aspartate"
+    label "2-oxoglutarate"
   ]
   node [
     id 4
-    label "l-glutamine"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 14.340446312343637
+    label "l-aspartate"
   ]
   edge [
     source 0
     target 3
-    weight -8.903712644677476
   ]
   edge [
     source 0
-    target 0
-    weight 8.510428233550497
+    target 4
   ]
   edge [
     source 0
     target 1
-    weight -8.085372180908987
   ]
   edge [
     source 0
+    target 2
+  ]
+  edge [
+    source 1
     target 4
-    weight -6.560030785470758
   ]
   edge [
     source 1
     target 2
-    weight -13.839142574491127
-  ]
-  edge [
-    source 1
-    target 3
-    weight 9.633104280177962
-  ]
-  edge [
-    source 1
-    target 1
-    weight 8.753994917186438
-  ]
-  edge [
-    source 1
-    target 4
-    weight 7.3490696585206
-  ]
-  edge [
-    source 2
-    target 2
-    weight 24.611326026985534
-  ]
-  edge [
-    source 2
-    target 3
-    weight -15.235674335252986
   ]
   edge [
     source 2
     target 4
-    weight -11.227919493987345
-  ]
-  edge [
-    source 3
-    target 3
-    weight 10.183746452137978
   ]
   edge [
     source 3
     target 4
-    weight 7.873985857925924
-  ]
-  edge [
-    source 4
-    target 4
-    weight 5.7904819877876275
   ]
 ]

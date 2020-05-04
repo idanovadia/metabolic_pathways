@@ -3,25 +3,14 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-tyrosine"
+    label "phosphate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "l-tyrosine"
   ]
   edge [
     source 0
     target 1
-    weight -16.769096944618315
-  ]
-  edge [
-    source 0
-    target 0
-    weight 19.530490471969046
-  ]
-  edge [
-    source 1
-    target 1
-    weight 15.7520647759978
   ]
 ]

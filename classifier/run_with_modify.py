@@ -30,24 +30,27 @@ for module in config.sections():
 
 
 def config_params(class_name, param_name, val):
-    classification_args = json.loads(config.get(class_name, param_name))
+    # classification_args = json.loads(config.get(class_name, param_name))
     config.set(class_name, param_name, val)
-    config.set(class_name, param_name, json.dumps(classification_args))
+    # config.set(class_name, param_name, json.dumps(classification_args))
 
-def graph_extension(class_name, param_name, val):
+
+def adj_matrix_extensions(class_name, param_name, val):
     for key_, value_ in val.items():
-        classification_args = json.loads(config.get(class_name, param_name))
+        # classification_args = json.loads(config.get(class_name, param_name))
+        classification_args = {}
         classification_args[key_] = value_
         config.set(class_name, param_name, json.dumps(classification_args))
+
 
 # example for changing random_forest_n_estimators value in each run by 100 until it reaches 500.
 return_list = iniParams.return_list
 for value in return_list:
 
     # GraphCreator
-    config_params('GraphCreator', 'threshold', value[0])
-    graph_extension('GraphCreator', 'adj_matrix_extensions', value[1])
     config_params('GraphCreator', 'graph_extensions', value[2])
+    config_params('GraphCreator', 'threshold', value[0])
+    adj_matrix_extensions('GraphCreator', 'adj_matrix_extensions', value[1])
     # Sub2Vec
     config_params('Sub2Vec', 'random_walk_length', value[3])
     config_params('Sub2Vec', 'random_walk_number', value[4])

@@ -7,40 +7,22 @@ graph [
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-arginine"
   ]
   node [
     id 2
-    label "l-arginine"
+    label "l-alanine"
+  ]
+  edge [
+    source 0
+    target 2
   ]
   edge [
     source 0
     target 1
-    weight 24.8885243624042
-  ]
-  edge [
-    source 0
-    target 2
-    weight 21.751610205262338
-  ]
-  edge [
-    source 0
-    target 0
-    weight 25.435160101739392
-  ]
-  edge [
-    source 1
-    target 1
-    weight 24.73792319074559
   ]
   edge [
     source 1
     target 2
-    weight 21.03080582439065
-  ]
-  edge [
-    source 2
-    target 2
-    weight 18.41432560515222
   ]
 ]

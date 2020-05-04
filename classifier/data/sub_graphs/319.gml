@@ -3,25 +3,14 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glucose"
+    label "sucrose"
   ]
   node [
     id 1
-    label "sucrose"
-  ]
-  edge [
-    source 0
-    target 0
-    weight 21.56242121142256
+    label "glucose"
   ]
   edge [
     source 0
     target 1
-    weight -17.713164993720003
-  ]
-  edge [
-    source 1
-    target 1
-    weight 15.296522764340923
   ]
 ]
