@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from openpyxl.drawing.image import Image
 from openpyxl import Workbook, load_workbook
+import torch
 
 #saving_path = "C:\\Users\\Ido\\PycharmProjects\\metabolic_pathways\\simulator\\NN_correlation_matrix\\Results\\"
 saving_path = "Results/"
@@ -20,19 +21,20 @@ class ResultSaver:
         wb = load_workbook(excel_path)
         sheet_name = gan_structure.get_name()
         filepath = saving_path + 'final_images\\' + sheet_name + '_final_image.png'
+        color = "YlGnBu"
 
         # Create the matrix for yc result
         plt.close()
         plt.title('correlation matrix for model ' + gan_structure.get_name())
         npimg = model_output.detach().cpu().numpy()
-        plt.imshow(npimg, cmap="Greys")
+        plt.imshow(npimg, cmap=color)
         plt.savefig(filepath, dpi=50)
 
         # Create the original matrix graph
         plt.close()
         plt.title('original matrix')
         npimg = real_output.cpu().numpy()
-        plt.imshow(npimg, cmap="Greys") #YlGnBu
+        plt.imshow(npimg, cmap=color) #Greys
         plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '.png', dpi=50)
 
         # plot the graph of epchos-MSE
@@ -151,3 +153,8 @@ class ResultSaver:
         active.add_image(img_second_matrix, 'F3')
 
         wb.save(two_random_path)
+
+    def save_model(self, model, gan_structure):
+        name = gan_structure.get_name()
+        #torch.save(model.state_dict(), saving_path + "\\Saved Models\\" + name + ".pt")
+        torch.save(model, saving_path + "\\Saved Models\\" + name + ".pt")

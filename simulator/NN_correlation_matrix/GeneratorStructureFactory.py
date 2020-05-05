@@ -306,6 +306,19 @@ class GeneratorStructureFactory(nn.Module):
         name = "15"
         return GeneratorStructure(name, model)
 
+    # depends on output layer
+    def structure_16(self):
+        current_layer = Z_dim
+        layers_list = []
+        while self._out_dim > current_layer:
+            layers_list.append(nn.Linear(current_layer, current_layer * 2))
+            current_layer = current_layer * 2
+        layers_list.append(nn.Linear(current_layer, self._out_dim))
+        layers_list.append(nn.Sigmoid())
+        model = nn.Sequential(*layers_list)
+        name = "16"
+        return GeneratorStructure(name, model)
+
 
 class GeneratorStructure():
 

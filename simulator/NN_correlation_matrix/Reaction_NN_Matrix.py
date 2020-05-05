@@ -13,6 +13,7 @@ from numba import jit, cuda
 from simulator.NN_correlation_matrix.Reaction import Reaction
 from simulator.NN_correlation_matrix.Gan_NN_Matrix_simulator import Generator
 from simulator.NN_correlation_matrix.GeneratorStructureFactory import GeneratorStructureFactory
+from simulator.NN_correlation_matrix.ResultProcessor import ResultProcessor
 from simulator.NN_correlation_matrix.ResultSaver import ResultSaver
 
 gan_model_global = None #variable to make setting of model easier
@@ -266,7 +267,7 @@ step = 0.5
 iterations = 100
 s_count=3
 p_count=3
-result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
+result_saver = None #removed to function so results won't get restarted for no reason
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #device = "cpu"
@@ -353,6 +354,9 @@ class Test():
 
     #@jit(target="cuda")
     def run_tests(self):
+
+        global result_saver
+        result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
 
         generator_structure_factory = GeneratorStructureFactory(m_count*2*reactions_count)
         structure_list = generator_structure_factory.get_structure_list()
@@ -459,6 +463,7 @@ class Test():
                 gan_structure.set_last_mse_loss(final_ploss)
                 #write_date_final_epoch(gan_structure, yc, y, loss_list)
                 result_saver.write_date_final_epoch(gan_structure, yc, y, loss_list)
+                result_saver.save_model(model, gan_structure)
 
         predicted = model.get_reactions_tensor()
         predicted = predicted.round().int()
@@ -534,9 +539,19 @@ class Test():
         print("Average loss is " + str(average))
         print("Standard deviation loss is " + str(st_dev))
 
-test = Test()
-test.run_tests()
-# test.two_random_matrix_test(100)
+    def export_to_classifier(self, model_name):
+        result_processor = ResultProcessor(m_count, minibatch_size, sub_min, sub_max)
+        model = torch.load(result_processor.get_saving_path() + "\\Saved Models\\" + model_name)
+        model.eval()
+        result_processor.set_model(model)
+        result_processor.run_model()
+
+
+if __name__ == "__main__":
+    test = Test()
+    # test.run_tests()
+    # test.two_random_matrix_test(100)
+    test.export_to_classifier("11.pt")
 
 #todo: add clustering
 #todo: excel for combining products
