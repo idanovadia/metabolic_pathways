@@ -39,10 +39,13 @@ class ResultProcessor:
         ym, yc = self.model(rand_x)
         # self.draw_matrix(yc,0) #todo: uncommon this
 
-        matrix = yc.detach().numpy()
-        self.write_matrix_data(matrix)
+        reactions = self.model.get_reactions_tensor()
+        self.write_reactions_data(reactions)
 
-    #todo: complete this
+        # matrix = yc.detach().numpy() #todo: uncommon this
+        # self.write_matrix_data(matrix)
+
+    #write matrix data to excel
     def write_matrix_data(self, matrix):
         wb = Workbook()
         sheet_name = "matrix"
@@ -92,3 +95,31 @@ class ResultProcessor:
 
     def set_model(self, model):
         self.model = model
+
+    #Write each reaction to a different excel file
+    def write_reactions_data(self, reactions):
+        reactions = reactions.round().int()
+        print(reactions)
+        for i in range(len(reactions)):
+            reaction = reactions[i]
+            wb = Workbook()
+            sheet_name = "reaction" + str(i)
+            wb.create_sheet(sheet_name, 0)
+            active = wb[sheet_name]
+
+            metabolic_list_num = []
+            for j in range(self.m_count):
+                if reaction[0][j] == 1:
+                    metabolic_list_num.append(j)
+                elif reaction[1][j] == 1: #doing else if because we don't want to add same metabolic twice
+                    metabolic_list_num.append(j)
+
+            metabolic_list = self.turn_metabolic_id_to_name(metabolic_list_num)
+
+            line_append = metabolic_list_num #todo: change from metabolic_list_num to metabolic_list
+            active.append(line_append)
+            wb.save(self.outputs_path + "\\Reactions\\reaction" + str(i) + ".xlsx")
+
+    #todo: complete this
+    def turn_metabolic_id_to_name(self, metabolic_list_num):
+        pass
