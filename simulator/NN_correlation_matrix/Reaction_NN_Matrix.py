@@ -554,4 +554,3 @@ if __name__ == "__main__":
     test.export_to_classifier("11.pt")
 
 #todo: add clustering
-#todo: excel for combining products
