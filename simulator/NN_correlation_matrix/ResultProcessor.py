@@ -10,9 +10,6 @@ global device
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 
-def write_matrix_data(matrix):
-    pass
-
 
 class ResultProcessor:
 
@@ -40,17 +37,36 @@ class ResultProcessor:
 
         # ym, yc = model(x)
         ym, yc = self.model(rand_x)
-        self.draw_matrix(yc,0)
+        # self.draw_matrix(yc,0) #todo: uncommon this
 
-        matrix = yc.detach().numpy
-        write_matrix_data(matrix,)
+        matrix = yc.detach().numpy()
+        self.write_matrix_data(matrix)
+
+    #todo: complete this
+    def write_matrix_data(self, matrix):
+        wb = Workbook()
+        sheet_name = "matrix"
+        wb.create_sheet(sheet_name, 0)
+        active = wb[sheet_name]
+
+        #adding first raw of metabolites name
+        metabolites = list(range(self.m_count))
+        metabolites = ["X"] + metabolites #we insert 'X' so the table will look good
+        line_append = metabolites
+        active.append(line_append)
+
+        for i in range(len(matrix)):
+            line_append = [i] + matrix[i].tolist()
+            active.append(line_append)
+
+        wb.save(self.outputs_path + "\\result_p.xlsx")
 
     def draw_matrix(self, model_output, id):
         filepath = self.outputs_path + "\\matrix" + str(id) + ".png"
         color = "YlGnBu"
         dpi_size = 100
         wb = Workbook()
-        sheet_name = "matrix"
+        sheet_name = "matrix visual"
 
         # Create the matrix for yc result
         plt.close()
