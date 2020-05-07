@@ -9,4 +9,8 @@ graph [
     id 1
     label "glucose"
   ]
+  edge [
+    source 0
+    target 1
+  ]
 ]

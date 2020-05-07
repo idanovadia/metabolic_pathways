@@ -3,15 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-methionine"
+    label "phosphate"
   ]
   node [
     id 1
-    label "putrescine"
+    label "l-methionine"
   ]
   node [
     id 2
-    label "l-glutamine"
+    label "putrescine"
   ]
   node [
     id 3
@@ -19,10 +19,26 @@ graph [
   ]
   node [
     id 4
-    label "phosphate"
+    label "l-glutamine"
   ]
   edge [
     source 0
     target 1
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 0
+    target 4
+  ]
+  edge [
+    source 1
+    target 2
+  ]
+  edge [
+    source 2
+    target 4
   ]
 ]

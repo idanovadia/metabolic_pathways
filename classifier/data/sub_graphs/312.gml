@@ -17,4 +17,12 @@ graph [
     id 3
     label "l-serine"
   ]
+  edge [
+    source 0
+    target 3
+  ]
+  edge [
+    source 0
+    target 2
+  ]
 ]

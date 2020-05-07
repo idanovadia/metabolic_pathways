@@ -7,14 +7,38 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "glucose"
   ]
   node [
     id 2
-    label "l-glutamine"
+    label "l-glutamate"
   ]
   node [
     id 3
-    label "glucose"
+    label "l-glutamine"
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 0
+    target 3
+  ]
+  edge [
+    source 1
+    target 2
+  ]
+  edge [
+    source 1
+    target 3
+  ]
+  edge [
+    source 2
+    target 3
   ]
 ]

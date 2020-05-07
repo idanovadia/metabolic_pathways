@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-isoleucine"
+    label "phosphate"
   ]
   node [
     id 1
@@ -19,7 +19,7 @@ graph [
   ]
   node [
     id 4
-    label "phosphate"
+    label "l-isoleucine"
   ]
   node [
     id 5
@@ -27,14 +27,30 @@ graph [
   ]
   edge [
     source 0
+    target 5
+  ]
+  edge [
+    source 0
+    target 4
+  ]
+  edge [
+    source 0
     target 1
   ]
   edge [
     source 0
+    target 2
+  ]
+  edge [
+    source 1
     target 5
   ]
   edge [
     source 1
+    target 4
+  ]
+  edge [
+    source 4
     target 5
   ]
 ]

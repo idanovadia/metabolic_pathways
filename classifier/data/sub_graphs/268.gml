@@ -11,11 +11,15 @@ graph [
   ]
   node [
     id 2
-    label "l-isoleucine"
+    label "l-valine"
   ]
   node [
     id 3
-    label "l-valine"
+    label "l-isoleucine"
+  ]
+  edge [
+    source 0
+    target 3
   ]
   edge [
     source 0
@@ -26,16 +30,12 @@ graph [
     target 2
   ]
   edge [
-    source 0
+    source 1
     target 3
   ]
   edge [
     source 1
     target 2
-  ]
-  edge [
-    source 1
-    target 3
   ]
   edge [
     source 2

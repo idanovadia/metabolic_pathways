@@ -17,4 +17,16 @@ graph [
     id 3
     label "putrescine"
   ]
+  edge [
+    source 0
+    target 3
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 2
+    target 3
+  ]
 ]

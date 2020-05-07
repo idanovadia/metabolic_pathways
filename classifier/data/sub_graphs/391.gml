@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-cysteine"
+    label "phosphate"
   ]
   node [
     id 1
-    label "l-arginine"
+    label "l-glutamate"
   ]
   node [
     id 2
@@ -19,19 +19,19 @@ graph [
   ]
   node [
     id 4
-    label "benzoate"
+    label "l-arginine"
   ]
   node [
     id 5
-    label "succinate"
+    label "benzoate"
   ]
   node [
     id 6
-    label "phosphate"
+    label "l-cysteine"
   ]
   node [
     id 7
-    label "l-glutamate"
+    label "succinate"
   ]
   edge [
     source 0
@@ -39,6 +39,62 @@ graph [
   ]
   edge [
     source 0
+    target 5
+  ]
+  edge [
+    source 0
+    target 6
+  ]
+  edge [
+    source 0
+    target 7
+  ]
+  edge [
+    source 0
+    target 3
+  ]
+  edge [
+    source 0
     target 1
+  ]
+  edge [
+    source 3
+    target 4
+  ]
+  edge [
+    source 3
+    target 5
+  ]
+  edge [
+    source 3
+    target 6
+  ]
+  edge [
+    source 3
+    target 7
+  ]
+  edge [
+    source 4
+    target 5
+  ]
+  edge [
+    source 4
+    target 6
+  ]
+  edge [
+    source 4
+    target 7
+  ]
+  edge [
+    source 5
+    target 6
+  ]
+  edge [
+    source 5
+    target 7
+  ]
+  edge [
+    source 6
+    target 7
   ]
 ]

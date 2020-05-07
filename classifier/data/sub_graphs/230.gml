@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "glucose"
   ]
   node [
     id 1
-    label "glucose"
+    label "gdp-alpha;-d-mannose"
   ]
   edge [
     source 0

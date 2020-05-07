@@ -7,18 +7,18 @@ graph [
   ]
   node [
     id 1
-    label "l-threonine"
+    label "l-glutamate"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-threonine"
   ]
   node [
     id 3
     label "l-isoleucine"
   ]
   edge [
-    source 1
+    source 2
     target 3
   ]
 ]

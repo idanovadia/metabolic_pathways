@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glycine"
+    label "l-arginine"
   ]
   node [
     id 1
-    label "l-arginine"
+    label "glycine"
   ]
   edge [
     source 0

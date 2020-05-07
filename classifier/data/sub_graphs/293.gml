@@ -3,23 +3,23 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-serine"
-  ]
-  node [
-    id 1
-    label "d-glycerate"
-  ]
-  node [
-    id 2
     label "phosphate"
   ]
   node [
+    id 1
+    label "l-glutamate"
+  ]
+  node [
+    id 2
+    label "d-glycerate"
+  ]
+  node [
     id 3
-    label "2-oxoglutarate"
+    label "l-serine"
   ]
   node [
     id 4
-    label "l-glutamate"
+    label "2-oxoglutarate"
   ]
   node [
     id 5
@@ -27,6 +27,30 @@ graph [
   ]
   edge [
     source 0
+    target 2
+  ]
+  edge [
+    source 0
+    target 5
+  ]
+  edge [
+    source 0
+    target 3
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 2
+    target 5
+  ]
+  edge [
+    source 2
+    target 3
+  ]
+  edge [
+    source 3
     target 5
   ]
 ]
