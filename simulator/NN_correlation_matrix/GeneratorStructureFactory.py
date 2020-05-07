@@ -40,6 +40,7 @@ class GeneratorStructureFactory(nn.Module):
         # structure_list.append(self.structure_13())
         # structure_list.append(self.structure_14())
         # structure_list.append(self.structure_15())
+        # structure_list.append(self.structure_16())
 
         # for i in range(10):
         #     structure = self.structure_11()
