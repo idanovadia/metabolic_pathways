@@ -21,6 +21,7 @@ class ResultProcessor:
         self.minibatch_size = minibatch_size
         self.sub_min = sub_min
         self.sub_max = sub_max
+        self.wb = Workbook()
 
 
     def load_model(self, name):
@@ -47,7 +48,8 @@ class ResultProcessor:
 
     #write matrix data to excel
     def write_matrix_data(self, matrix):
-        wb = Workbook()
+        #wb = Workbook()
+        wb = self.wb
         sheet_name = "matrix"
         wb.create_sheet(sheet_name, 0)
         active = wb[sheet_name]
@@ -68,8 +70,9 @@ class ResultProcessor:
         filepath = self.outputs_path + "\\matrix" + str(id) + ".png"
         color = "YlGnBu"
         dpi_size = 100
-        wb = Workbook()
-        sheet_name = "matrix visual"
+        wb = self.wb
+        #wb = Workbook()
+        sheet_name = "matrix_visual"
 
         # Create the matrix for yc result
         plt.close()
