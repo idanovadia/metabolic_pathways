@@ -7,15 +7,19 @@ graph [
   ]
   node [
     id 1
-    label "l-lysine"
+    label "l-arginine"
   ]
   node [
     id 2
-    label "l-arginine"
+    label "l-lysine"
   ]
   edge [
     source 0
     target 1
+  ]
+  edge [
+    source 0
+    target 2
   ]
   edge [
     source 1

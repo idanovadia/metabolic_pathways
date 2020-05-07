@@ -7,14 +7,22 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-tryptophan"
   ]
   node [
     id 2
-    label "l-phenylalanine"
+    label "l-glutamate"
   ]
   node [
     id 3
-    label "l-tryptophan"
+    label "l-phenylalanine"
+  ]
+  edge [
+    source 1
+    target 3
+  ]
+  edge [
+    source 2
+    target 3
   ]
 ]

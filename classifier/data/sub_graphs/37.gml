@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-serine"
+    label "citrate"
   ]
   node [
     id 1
@@ -11,6 +11,10 @@ graph [
   ]
   node [
     id 2
-    label "citrate"
+    label "l-serine"
+  ]
+  edge [
+    source 0
+    target 2
   ]
 ]

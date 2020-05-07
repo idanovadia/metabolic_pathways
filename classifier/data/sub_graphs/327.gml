@@ -7,10 +7,14 @@ graph [
   ]
   node [
     id 1
-    label "putrescine"
+    label "succinate"
   ]
   node [
     id 2
-    label "succinate"
+    label "putrescine"
+  ]
+  edge [
+    source 1
+    target 2
   ]
 ]

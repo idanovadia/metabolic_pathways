@@ -3,10 +3,10 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "(s)-malate"
+    label "shikimate"
   ]
   node [
     id 1
-    label "shikimate"
+    label "(s)-malate"
   ]
 ]

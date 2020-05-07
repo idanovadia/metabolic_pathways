@@ -3,14 +3,18 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "l-glutamate"
+    label "l-tryptophan"
   ]
   node [
     id 1
-    label "l-tryptophan"
+    label "l-glutamate"
   ]
   node [
     id 2
     label "glycine"
+  ]
+  edge [
+    source 0
+    target 2
   ]
 ]

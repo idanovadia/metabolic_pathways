@@ -9,4 +9,8 @@ graph [
     id 1
     label "udp-alpha;-d-galacturonate"
   ]
+  edge [
+    source 0
+    target 1
+  ]
 ]

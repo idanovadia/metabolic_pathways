@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "d-threo-isocitrate"
+    label "citrate"
   ]
   node [
     id 1
@@ -11,22 +11,50 @@ graph [
   ]
   node [
     id 2
-    label "(s)-malate"
+    label "d-threo-isocitrate"
   ]
   node [
     id 3
-    label "succinate"
+    label "(s)-malate"
   ]
   node [
     id 4
-    label "citrate"
+    label "succinate"
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 0
+    target 3
   ]
   edge [
     source 0
     target 4
   ]
   edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 1
+    target 3
+  ]
+  edge [
+    source 1
+    target 4
+  ]
+  edge [
     source 1
     target 2
+  ]
+  edge [
+    source 2
+    target 3
+  ]
+  edge [
+    source 3
+    target 4
   ]
 ]

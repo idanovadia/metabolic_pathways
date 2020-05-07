@@ -13,4 +13,8 @@ graph [
     id 2
     label "glycine"
   ]
+  edge [
+    source 1
+    target 2
+  ]
 ]

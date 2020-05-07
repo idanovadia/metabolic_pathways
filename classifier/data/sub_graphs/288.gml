@@ -13,4 +13,8 @@ graph [
     id 2
     label "l-glutamate"
   ]
+  edge [
+    source 0
+    target 2
+  ]
 ]

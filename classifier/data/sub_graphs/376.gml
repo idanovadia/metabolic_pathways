@@ -3,10 +3,14 @@ graph [
   type "trainset"
   node [
     id 0
-    label "saccharate"
+    label "fructose"
   ]
   node [
     id 1
-    label "fructose"
+    label "saccharate"
+  ]
+  edge [
+    source 0
+    target 1
   ]
 ]

@@ -7,11 +7,19 @@ graph [
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "glucose"
   ]
   node [
     id 2
-    label "glucose"
+    label "gdp-alpha;-d-mannose"
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 0
+    target 2
   ]
   edge [
     source 1

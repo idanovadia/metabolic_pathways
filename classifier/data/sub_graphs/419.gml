@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "d-threo-isocitrate"
+    label "fumarate"
   ]
   node [
     id 1
-    label "l-asparagine"
+    label "maltitol"
   ]
   node [
     id 2
@@ -15,70 +15,98 @@ graph [
   ]
   node [
     id 3
-    label "l-leucine"
-  ]
-  node [
-    id 4
-    label "l-isoleucine"
-  ]
-  node [
-    id 5
-    label "fumarate"
-  ]
-  node [
-    id 6
-    label "maltitol"
-  ]
-  node [
-    id 7
-    label "sucrose"
-  ]
-  node [
-    id 8
-    label "l-aspartate"
-  ]
-  node [
-    id 9
-    label "alpha;-tocopherol"
-  ]
-  node [
-    id 10
-    label "fructose"
-  ]
-  node [
-    id 11
     label "putrescine"
   ]
   node [
-    id 12
+    id 4
+    label "l-leucine"
+  ]
+  node [
+    id 5
+    label "l-asparagine"
+  ]
+  node [
+    id 6
+    label "sucrose"
+  ]
+  node [
+    id 7
+    label "fructose"
+  ]
+  node [
+    id 8
+    label "d-threo-isocitrate"
+  ]
+  node [
+    id 9
+    label "l-aspartate"
+  ]
+  node [
+    id 10
     label "gaba"
+  ]
+  node [
+    id 11
+    label "alpha;-tocopherol"
+  ]
+  node [
+    id 12
+    label "l-isoleucine"
+  ]
+  edge [
+    source 0
+    target 5
+  ]
+  edge [
+    source 0
+    target 11
+  ]
+  edge [
+    source 0
+    target 7
   ]
   edge [
     source 0
     target 10
   ]
   edge [
-    source 1
+    source 0
+    target 12
+  ]
+  edge [
+    source 0
+    target 4
+  ]
+  edge [
+    source 0
     target 2
   ]
   edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
+    source 0
     target 3
   ]
   edge [
-    source 1
-    target 12
+    source 0
+    target 6
   ]
   edge [
-    source 1
+    source 2
+    target 5
+  ]
+  edge [
+    source 2
     target 11
   ]
   edge [
     source 2
+    target 7
+  ]
+  edge [
+    source 2
+    target 10
+  ]
+  edge [
+    source 2
     target 12
   ]
   edge [
@@ -88,18 +116,34 @@ graph [
   edge [
     source 2
     target 3
+  ]
+  edge [
+    source 2
+    target 6
+  ]
+  edge [
+    source 2
+    target 8
   ]
   edge [
     source 2
     target 9
   ]
   edge [
-    source 2
+    source 3
+    target 5
+  ]
+  edge [
+    source 3
     target 11
   ]
   edge [
     source 3
-    target 4
+    target 7
+  ]
+  edge [
+    source 3
+    target 10
   ]
   edge [
     source 3
@@ -107,7 +151,15 @@ graph [
   ]
   edge [
     source 3
-    target 11
+    target 4
+  ]
+  edge [
+    source 3
+    target 6
+  ]
+  edge [
+    source 3
+    target 8
   ]
   edge [
     source 3
@@ -115,19 +167,131 @@ graph [
   ]
   edge [
     source 4
-    target 12
+    target 5
   ]
   edge [
     source 4
     target 11
   ]
   edge [
-    source 9
+    source 4
+    target 7
+  ]
+  edge [
+    source 4
+    target 10
+  ]
+  edge [
+    source 4
     target 12
+  ]
+  edge [
+    source 4
+    target 6
+  ]
+  edge [
+    source 4
+    target 8
+  ]
+  edge [
+    source 4
+    target 9
+  ]
+  edge [
+    source 5
+    target 11
+  ]
+  edge [
+    source 5
+    target 7
+  ]
+  edge [
+    source 5
+    target 10
+  ]
+  edge [
+    source 5
+    target 12
+  ]
+  edge [
+    source 5
+    target 6
+  ]
+  edge [
+    source 5
+    target 8
+  ]
+  edge [
+    source 5
+    target 9
+  ]
+  edge [
+    source 6
+    target 11
+  ]
+  edge [
+    source 6
+    target 7
+  ]
+  edge [
+    source 6
+    target 10
+  ]
+  edge [
+    source 6
+    target 12
+  ]
+  edge [
+    source 7
+    target 11
+  ]
+  edge [
+    source 7
+    target 10
+  ]
+  edge [
+    source 7
+    target 8
+  ]
+  edge [
+    source 7
+    target 12
+  ]
+  edge [
+    source 7
+    target 9
+  ]
+  edge [
+    source 8
+    target 11
+  ]
+  edge [
+    source 8
+    target 10
+  ]
+  edge [
+    source 8
+    target 12
+  ]
+  edge [
+    source 8
+    target 9
   ]
   edge [
     source 9
     target 11
+  ]
+  edge [
+    source 9
+    target 10
+  ]
+  edge [
+    source 10
+    target 11
+  ]
+  edge [
+    source 10
+    target 12
   ]
   edge [
     source 11

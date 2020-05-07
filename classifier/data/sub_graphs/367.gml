@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "dehydroascorbate (bicyclic form)"
+    label "l-tyrosine"
   ]
   node [
     id 1
@@ -11,11 +11,11 @@ graph [
   ]
   node [
     id 2
-    label "l-lysine"
+    label "dehydroascorbate (bicyclic form)"
   ]
   node [
     id 3
-    label "l-tyrosine"
+    label "l-lysine"
   ]
   edge [
     source 0

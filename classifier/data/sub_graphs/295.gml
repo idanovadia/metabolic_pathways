@@ -17,4 +17,12 @@ graph [
     id 3
     label "l-proline"
   ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 0
+    target 3
+  ]
 ]
