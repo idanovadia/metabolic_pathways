@@ -1,16 +1,17 @@
 import itertools
+import numpy
 
 # GraphCreator
 
-GraphCreator_threshold = ["0.7", "-0.7"]
+GraphCreator_threshold = [str(x) for x in numpy.arange(0,-1.1,-0.1)]
 # GraphCreator_threshold = ["-0.9", "-0.7", "-0.5", "-0.3", "-0.1", "0.1", "0.3", "0.4", "0.7", '0.9']
-GraphCreator_adj_matrix_extensions = [{"power_graph": 2}]
-# GraphCreator_adj_matrix_extensions = [{"":""},{"adj_matrix_and_add": 2}, {"power_graph": 2}, {"adj_matrix_and_add": 2}]
+# GraphCreator_adj_matrix_extensions = [{"power_graph": 2}]
+GraphCreator_adj_matrix_extensions = [{"":""},{"adj_matrix_and_add": 2}, {"power_graph": 2}, {"adj_matrix_and_add": 2}]
 GraphCreator_graph_extensions = ["'add_neighbors_from_adj_matrix'", "'"]
 
 # Sub2Vec
 
-Sub2Vec_random_walk_length = ["20"]
+Sub2Vec_random_walk_length = ["30"]
 # Sub2Vec_random_walk_length = ["1", "5", "10", "15", "20", "25", "30"]
 Sub2Vec_random_walk_number = ["5"]
 Sub2Vec_doc2vec_args = [

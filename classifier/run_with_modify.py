@@ -8,6 +8,7 @@ from classifier.Classification.classification import classifier
 from classifier.Plotter.Plotter import Plotter
 import json
 import sys
+import numpy as np
 
 modules_dict = {}
 modules_dict['Preprocessing'] = Preprocessing
@@ -30,10 +31,10 @@ for module in config.sections():
 
 
 #example for changing random_forest_n_estimators value in each run by 100 until it reaches 500.
-for value in range(1,500,2):
-    classification_args=json.loads(config.get('classifier', 'classifiers_args'))
-    classification_args['random_forest_n_estimators']=value
-    config.set('classifier', 'classifiers_args',json.dumps(classification_args) )
+for value in [str(x) for x in np.arange(-1,1.1,0.1)]:
+    threshold=config.get("GraphCreator","threshold")
+    config.set('GraphCreator', 'threshold',value)
+    print('\t'+"running threshold {}".format(value))
     for i in range(num_of_runs):
         print("run number {}".format(i))
         for element in pipeline:
