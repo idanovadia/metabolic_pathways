@@ -15,7 +15,7 @@ class prediction(AbstractConfigClass):
             relative_path=self.config_parser.eval(self.__class__.__name__, 'y_test'))
 
     def exec(self):
-        self.load_model(path=self.model_path)
+        self.load_model(input_path=self.model_path)
         self.predict()
 
     def load_model(self,input_path):
@@ -24,5 +24,5 @@ class prediction(AbstractConfigClass):
         f.close()
 
     def predict(self):
-        print(self.model.predict())
+        print(self.model.predict(self.x_test))
 

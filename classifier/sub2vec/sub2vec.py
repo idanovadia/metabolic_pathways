@@ -142,7 +142,7 @@ class Sub2Vec(AbstractConfigClass):
 
     def generateLabel(self, file, list):
         labels = []
-        [labels.append("positive") if g[0].graph['label'] == "positive" else labels.append("negative") for g in list]
+        [labels.append("positive") if (len(g)>0 and g[0].graph['label'] == "positive") else labels.append("negative") for g in list]
         csv = pd.DataFrame(labels)
         self.saveFile(csv, self.classifier_files_directory, file)
 

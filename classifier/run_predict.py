@@ -15,7 +15,7 @@ modules_dict = {}
 # modules_dict['CorrMaxtrix'] = CorrMaxtrix
 modules_dict['GraphCreator'] = GraphCreator
 modules_dict['Sub2Vec'] = Sub2Vec
-modules_dict['predict'] = prediction
+modules_dict['prediction'] = prediction
 modules_dict['Plotter'] = Plotter
 
 pipeline = []
