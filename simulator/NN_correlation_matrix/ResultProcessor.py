@@ -37,13 +37,13 @@ class ResultProcessor:
 
         # ym, yc = model(x)
         ym, yc = self.model(rand_x)
-        # self.draw_matrix(yc,0) #todo: uncommon this
+        self.draw_matrix(yc,0)
 
         reactions = self.model.get_reactions_tensor()
         self.write_reactions_data(reactions)
 
-        # matrix = yc.detach().numpy() #todo: uncommon this
-        # self.write_matrix_data(matrix)
+        matrix = yc.detach().numpy()
+        self.write_matrix_data(matrix)
 
     #write matrix data to excel
     def write_matrix_data(self, matrix):
