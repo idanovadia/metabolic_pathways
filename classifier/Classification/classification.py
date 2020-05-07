@@ -7,6 +7,7 @@ from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 from classifier.Classification.result import Result
 from classifier.Metrics.metrics import Metrics
 import timeit
+import pickle
 from classifier.Validation.validation import validation
 import json
 import os
@@ -24,6 +25,8 @@ class classifier(AbstractConfigClass):
         self.output_file_name = self.config_parser.eval(self.__class__.__name__, "output_file_name")
         self.classifiers_list = self.config_parser.eval(self.__class__.__name__, 'classifiers_list').split(',')
         self.classifiers_args = json.loads(self.config_parser.get(self.__class__.__name__, 'classifiers_args'))
+        self.output_model_path = self.getPath(
+            relative_path=self.config_parser.eval(self.__class__.__name__, 'output_model_path'))
         self.classifiers_dict = {}
         self.classifiers_dir = []
         self.valid = validation()
@@ -42,6 +45,7 @@ class classifier(AbstractConfigClass):
         self.metrics.exec()
         self.classify()
         self.outputResult()
+        self.outputModel()
 
     def initClassifiersnDict(self):
         self.classifiers_dict['RandomForest'] = RandomForestWrapper
@@ -133,3 +137,7 @@ class classifier(AbstractConfigClass):
                 result+=','+extension
             last=extension
         return result
+
+    def outputModel(self):
+        for cls in self.classifiers_dir:
+                pickle.dump(cls, open(self.output_model_path+os.sep+cls.name, 'wb'))
