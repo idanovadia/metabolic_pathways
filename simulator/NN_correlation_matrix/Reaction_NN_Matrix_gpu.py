@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 import networkx as nx
 # from numba import jit, cuda
 
-
 from simulator.NN_correlation_matrix.Reaction import Reaction
 from simulator.NN_correlation_matrix.Gan_NN_Matrix_simulator import Generator
 from simulator.NN_correlation_matrix.GeneratorStructureFactory import GeneratorStructureFactory
@@ -125,10 +124,8 @@ class MultiReaction_new(torch.nn.Module):
             else:
                 sub, prod = substrates[i], products[i]
                 self._is_generated = False
-            sub = torch.Tensor(sub).to(device)  # so far there is no self.device in pytorch Modules
-            prod = torch.Tensor(prod).to(device)  # so far there is no self.device in pytorch Modules
-            # sub = torch.as_tensor(sub).to(device) #uncommon this to use GPU. Common up
-            # prod = torch.as_tensor(prod).to(device)
+            sub = torch.as_tensor(sub).to(device)  # so far there is no self.device in pytorch Modules
+            prod = torch.as_tensor(prod).to(device)  # so far there is no self.device in pytorch Modules
             r = Reaction(sub, prod, step=step)
             self._reactions.append(r)
 
@@ -139,10 +136,8 @@ class MultiReaction_new(torch.nn.Module):
             self._generator.clear_output_layer()
             for i in range(reactions_count):
                 sub, prod = self._generator.get_reactions_tensor(i)
-                sub = torch.Tensor(sub).to(device)
-                prod = torch.Tensor(prod).to(device)
-                # sub = torch.as_tensor(sub).to(device) #uncommon this to use GPU. Common up
-                # prod = torch.as_tensor(prod).to(device)
+                sub = torch.as_tensor(sub).to(device)
+                prod = torch.as_tensor(prod).to(device)
                 r = Reaction(sub, prod, step=step).to(device)
                 self._reactions.append(r)
 
@@ -173,7 +168,7 @@ def correlation_matrix(b):
     mr = torch.rsqrt(torch.sum(vb ** 2, dim=0))
     mr = mr.unsqueeze(dim=0)
     corr = torch.mm(vb.t(), vb) * torch.mm(mr.t(), mr)
-    #corr.requires_grad_() #uncommon to use GPU
+    corr.requires_grad_()
     return corr
 
 # class Process(torch.nn.Module):
@@ -256,10 +251,10 @@ def compare_tensor_sets(s1,s2):
         rslt+=mses[j]
     return rslt / rcount
 
-m_count = 8#50#200 #8 #size of metabolic profile
-reactions_count = 2#50#2 #50
-dataset_size = 20#50#10#1
-minibatch_size = 400#10#100 #number of random initial substrates
+m_count = 8#50 #200 #8 #size of metabolic profile
+reactions_count = 2#50 #2 #50
+dataset_size = 20#10#20#50#10#1
+minibatch_size = 400#100#400#10#100 #number of random initial substrates
 sub_min = 2
 sub_max = 2.01
 epochs = 50#200
@@ -267,7 +262,7 @@ step = 0.5
 iterations = 100
 s_count=3
 p_count=3
-result_saver = None #removed to function so results won't get restarted for no reason
+result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #device = "cpu"
@@ -355,9 +350,6 @@ class Test():
     #@jit(target="cuda")
     def run_tests(self):
 
-        global result_saver
-        result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
-
         generator_structure_factory = GeneratorStructureFactory(m_count*2*reactions_count)
         structure_list = generator_structure_factory.get_structure_list()
         for structure in structure_list:
@@ -404,6 +396,7 @@ class Test():
         # optimizer = torch.optim.Adamax(model.parameters(), lr=0.002, betas=(0.9, 0.999), eps=1e-08, weight_decay=0)
         # optimizer = torch.optim.ASGD(model.parameters(), lr=0.1, lambd=0.0001, alpha=0.75, t0=1000000.0, weight_decay=0.01)
         # optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9, dampening=0, weight_decay=0, nesterov=False)
+
 
         ploss = 0.0
         rloss = 0.0
@@ -463,7 +456,7 @@ class Test():
                 gan_structure.set_last_mse_loss(final_ploss)
                 #write_date_final_epoch(gan_structure, yc, y, loss_list)
                 result_saver.write_date_final_epoch(gan_structure, yc, y, loss_list)
-                result_saver.save_model(model, gan_structure)
+                result_saver.save_model(gan_structure)
 
         predicted = model.get_reactions_tensor()
         predicted = predicted.round().int()
@@ -539,18 +532,7 @@ class Test():
         print("Average loss is " + str(average))
         print("Standard deviation loss is " + str(st_dev))
 
-    def export_to_classifier(self, model_name):
-        result_processor = ResultProcessor(m_count, minibatch_size, sub_min, sub_max)
-        model = torch.load(result_processor.get_saving_path() + "\\Saved Models\\" + model_name)
-        model.eval()
-        result_processor.set_model(model)
-        result_processor.run_model()
-
-
 if __name__ == "__main__":
     test = Test()
     # test.run_tests()
     # test.two_random_matrix_test(100)
-    test.export_to_classifier("11.pt")
-
-#todo: add clustering
