@@ -13,4 +13,12 @@ graph [
     id 2
     label "sucrose"
   ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 0
+    target 1
+  ]
 ]

@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-alanine"
+    label "l-tyrosine"
   ]
   node [
     id 1
-    label "l-tyrosine"
+    label "l-alanine"
   ]
   node [
     id 2
@@ -15,11 +15,11 @@ graph [
   ]
   edge [
     source 0
-    target 2
+    target 1
   ]
   edge [
     source 0
-    target 1
+    target 2
   ]
   edge [
     source 1

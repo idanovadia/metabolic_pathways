@@ -3,19 +3,19 @@ graph [
   type "trainset"
   node [
     id 0
-    label "threonate"
-  ]
-  node [
-    id 1
     label "l-glutamate"
   ]
   node [
-    id 2
+    id 1
     label "erythritol"
   ]
   node [
-    id 3
+    id 2
     label "d-glycerate"
+  ]
+  node [
+    id 3
+    label "threonate"
   ]
   node [
     id 4
@@ -23,10 +23,18 @@ graph [
   ]
   edge [
     source 0
+    target 1
+  ]
+  edge [
+    source 1
+    target 4
+  ]
+  edge [
+    source 1
     target 2
   ]
   edge [
-    source 0
+    source 1
     target 3
   ]
   edge [
@@ -36,5 +44,9 @@ graph [
   edge [
     source 2
     target 3
+  ]
+  edge [
+    source 3
+    target 4
   ]
 ]

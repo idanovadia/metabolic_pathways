@@ -3,10 +3,14 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glycerol"
+    label "l-threonine"
   ]
   node [
     id 1
-    label "l-threonine"
+    label "glycerol"
+  ]
+  edge [
+    source 0
+    target 1
   ]
 ]

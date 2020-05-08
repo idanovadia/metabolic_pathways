@@ -7,7 +7,7 @@ graph [
   ]
   node [
     id 1
-    label "l-ascorbate"
+    label "galactose"
   ]
   node [
     id 2
@@ -15,7 +15,27 @@ graph [
   ]
   node [
     id 3
-    label "galactose"
+    label "l-ascorbate"
+  ]
+  edge [
+    source 0
+    target 1
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 0
+    target 3
+  ]
+  edge [
+    source 1
+    target 2
+  ]
+  edge [
+    source 1
+    target 3
   ]
   edge [
     source 2

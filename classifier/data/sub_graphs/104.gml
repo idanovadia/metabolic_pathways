@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "fumarate"
+    label "l-tyrosine"
   ]
   node [
     id 1
@@ -11,10 +11,14 @@ graph [
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "fumarate"
   ]
   node [
     id 3
-    label "l-tyrosine"
+    label "l-glutamate"
+  ]
+  edge [
+    source 0
+    target 2
   ]
 ]

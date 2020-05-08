@@ -3,15 +3,15 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-isoleucine"
+    label "l-glutamate"
   ]
   node [
     id 1
-    label "glycerate_3_phosphate"
+    label "(s)-malate"
   ]
   node [
     id 2
-    label "(s)-malate"
+    label "glycerate_3_phosphate"
   ]
   node [
     id 3
@@ -19,10 +19,18 @@ graph [
   ]
   node [
     id 4
-    label "l-glutamate"
+    label "l-isoleucine"
   ]
   edge [
-    source 0
+    source 1
+    target 4
+  ]
+  edge [
+    source 1
     target 2
+  ]
+  edge [
+    source 2
+    target 4
   ]
 ]

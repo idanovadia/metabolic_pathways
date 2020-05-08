@@ -3,10 +3,10 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "phosphate"
   ]
   node [
     id 1
-    label "phosphate"
+    label "2-oxoglutarate"
   ]
 ]

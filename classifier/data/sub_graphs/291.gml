@@ -13,4 +13,8 @@ graph [
     id 2
     label "l-phenylalanine"
   ]
+  edge [
+    source 1
+    target 2
+  ]
 ]

@@ -11,10 +11,18 @@ graph [
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "succinate"
   ]
   node [
     id 3
-    label "succinate"
+    label "l-glutamate"
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 0
+    target 3
   ]
 ]

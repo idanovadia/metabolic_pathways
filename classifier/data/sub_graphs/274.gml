@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-leucine"
   ]
   node [
     id 1
@@ -11,10 +11,18 @@ graph [
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "phosphate"
   ]
   node [
     id 3
-    label "l-leucine"
+    label "l-glutamate"
+  ]
+  edge [
+    source 0
+    target 2
+  ]
+  edge [
+    source 2
+    target 3
   ]
 ]

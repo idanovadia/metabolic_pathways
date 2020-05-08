@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-cysteine"
+    label "beta;-alanine"
   ]
   node [
     id 1
-    label "beta;-alanine"
+    label "l-cysteine"
   ]
   edge [
     source 0

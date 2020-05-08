@@ -3,10 +3,14 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-serine"
+    label "uracil"
   ]
   node [
     id 1
-    label "uracil"
+    label "l-serine"
+  ]
+  edge [
+    source 0
+    target 1
   ]
 ]

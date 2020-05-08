@@ -3,11 +3,11 @@ graph [
   type "trainset"
   node [
     id 0
-    label "benzoate"
+    label "l-phenylalanine"
   ]
   node [
     id 1
-    label "l-phenylalanine"
+    label "benzoate"
   ]
   edge [
     source 0

@@ -7,10 +7,10 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "beta;-alanine"
   ]
   node [
     id 2
-    label "beta;-alanine"
+    label "l-glutamate"
   ]
 ]

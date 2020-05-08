@@ -3,11 +3,11 @@ graph [
   type "classifier/data/labeled_data/2001"
   node [
     id 0
-    label "glucose"
+    label "galactose"
   ]
   node [
     id 1
-    label "galactose"
+    label "glucose"
   ]
   edge [
     source 0
