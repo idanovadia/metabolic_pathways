@@ -31,6 +31,7 @@ for module in config.sections():
 
 def config_params(class_name, param_name, val):
     # classification_args = json.loads(config.get(class_name, param_name))
+    global config
     config.set(class_name, param_name, val)
     # config.set(class_name, param_name, json.dumps(classification_args))
 
