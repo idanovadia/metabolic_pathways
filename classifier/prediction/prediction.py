@@ -1,5 +1,6 @@
 import pickle
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
+import pandas as pd
 
 class prediction(AbstractConfigClass):
 
@@ -11,7 +12,7 @@ class prediction(AbstractConfigClass):
             relative_path=self.config_parser.eval(self.__class__.__name__, 'model_path'))
         self.x_test=self.csv_output_directory = self.getPath(
             relative_path=self.config_parser.eval(self.__class__.__name__, 'x_test'))
-        self.x_test = self.csv_output_directory = self.getPath(
+        self.y_test = self.csv_output_directory = self.getPath(
             relative_path=self.config_parser.eval(self.__class__.__name__, 'y_test'))
 
     def exec(self):
@@ -24,5 +25,5 @@ class prediction(AbstractConfigClass):
         f.close()
 
     def predict(self):
-        print(self.model.predict(self.x_test))
+        print(self.model.predict(pd.read_excel(self.x_test)))
 
