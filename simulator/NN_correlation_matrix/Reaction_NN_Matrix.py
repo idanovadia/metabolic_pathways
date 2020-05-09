@@ -516,6 +516,7 @@ class Test():
 
     #create 2 random matrix and check the mse difference between them
     def two_random_matrix_test(self,iterations_num):
+        global result_saver
         result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
         sum = 0
         loss_list = []
