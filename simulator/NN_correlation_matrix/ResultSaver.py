@@ -4,6 +4,8 @@ from openpyxl import Workbook, load_workbook
 import torch
 
 #saving_path = "C:\\Users\\Ido\\PycharmProjects\\metabolic_pathways\\simulator\\NN_correlation_matrix\\Results\\"
+from simulator.NN_correlation_matrix.CN_Cluster import CN_Cluster
+
 saving_path = "Results/"
 excel_path = saving_path + "result.xlsx"
 
@@ -22,20 +24,25 @@ class ResultSaver:
         sheet_name = gan_structure.get_name()
         filepath = saving_path + 'final_images\\' + sheet_name + '_final_image.png'
         color = "YlGnBu"
+        cluster = CN_Cluster(color)
+        size = 5
 
         # Create the matrix for yc result
-        plt.close()
-        plt.title('correlation matrix for model ' + gan_structure.get_name())
-        npimg = model_output.detach().cpu().numpy()
-        plt.imshow(npimg, cmap=color)
-        plt.savefig(filepath, dpi=50)
+        # plt.close()
+        # plt.title('correlation matrix for model ' + gan_structure.get_name())
+        # npimg = model_output.detach().cpu().numpy()
+        # plt.imshow(npimg, cmap=color)
+        # plt.savefig(filepath, dpi=50)
+        title = 'correlation matrix for model ' + gan_structure.get_name()
+        cluster.plot_corr(model_output.detach().cpu().numpy(), size, title, filepath)
 
         # Create the original matrix graph
-        plt.close()
-        plt.title('original matrix')
-        npimg = real_output.cpu().numpy()
-        plt.imshow(npimg, cmap=color) #Greys
-        plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '.png', dpi=50)
+        # plt.close()
+        # plt.title('original matrix')
+        # npimg = real_output.cpu().numpy()
+        # plt.imshow(npimg, cmap=color) #Greys
+        # plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '.png', dpi=50)
+        cluster.plot_corr(real_output.cpu().numpy(), size, 'original matrix', saving_path + 'original_matrix_images\\' + sheet_name + '.png')
 
         # plot the graph of epchos-MSE
         plt.close()
@@ -124,20 +131,27 @@ class ResultSaver:
             wb.save(two_random_path)
         wb = load_workbook(two_random_path)
         wb.create_sheet(sheet_name, 0)
+        color = "YlGnBu"
+        size = 5
+        cluster = CN_Cluster(color)
 
         # Create first matrix
-        plt.close()
-        plt.title('First Matrix')
-        npimg = y1.cpu().numpy()
-        plt.imshow(npimg, cmap="YlGnBu")  # YlGnBu
-        plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '1.png', dpi=50)
+        # plt.close()
+        # plt.title('First Matrix')
+        # npimg = y1.cpu().numpy()
+        # plt.imshow(npimg, cmap="YlGnBu")  # YlGnBu
+        # plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '1.png', dpi=50)
+        title = 'First Matrix'
+        cluster.plot_corr(y1.cpu().numpy(), size, title, saving_path + 'original_matrix_images\\' + sheet_name + '1.png')
 
         # Create second matrix
-        plt.close()
-        plt.title('First Matrix')
-        npimg = y2.cpu().numpy()
-        plt.imshow(npimg, cmap="YlGnBu")  # YlGnBu
-        plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '2.png', dpi=50)
+        # plt.close()
+        # plt.title('Second Matrix')
+        # npimg = y2.cpu().numpy()
+        # plt.imshow(npimg, cmap="YlGnBu")  # YlGnBu
+        # plt.savefig(saving_path + 'original_matrix_images\\' + sheet_name + '2.png', dpi=50)
+        title = 'Second Matrix'
+        cluster.plot_corr(y2.cpu().numpy(), size, title, saving_path + 'original_matrix_images\\' + sheet_name + '2.png')
 
         # Add photos to excel sheet
         # Activate worksheet

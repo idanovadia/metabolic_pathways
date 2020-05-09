@@ -551,8 +551,6 @@ class Test():
 
 if __name__ == "__main__":
     test = Test()
-    # test.run_tests()
+    test.run_tests()
     # test.two_random_matrix_test(100)
     test.export_to_classifier("11.pt")
-
-#todo: add clustering
