@@ -224,7 +224,7 @@ class Process_new(torch.nn.Module):
             x = y * doit + x * (1 - doit)
 
         c = correlation_matrix(x)
-        c = c - torch.eye(m_count).to(device)
+        # c = c - torch.eye(m_count).to(device)
         return x, c
 
     def get_reactions_tensor(self):
@@ -256,8 +256,8 @@ def compare_tensor_sets(s1,s2):
         rslt+=mses[j]
     return rslt / rcount
 
-m_count = 8#50#200 #8 #size of metabolic profile
-reactions_count = 2#50#2 #50
+m_count =20#50#200 #8 #size of metabolic profile
+reactions_count = 20#50#2 #50
 dataset_size = 20#50#10#1
 minibatch_size = 400#10#100 #number of random initial substrates
 sub_min = 2
@@ -516,6 +516,7 @@ class Test():
 
     #create 2 random matrix and check the mse difference between them
     def two_random_matrix_test(self,iterations_num):
+        result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
         sum = 0
         loss_list = []
         for i in range(iterations_num):
