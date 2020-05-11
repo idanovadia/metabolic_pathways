@@ -256,7 +256,7 @@ def compare_tensor_sets(s1,s2):
         rslt+=mses[j]
     return rslt / rcount
 
-m_count =20#50#200 #8 #size of metabolic profile
+m_count = 20#50#200 #8 #size of metabolic profile
 reactions_count = 20#50#2 #50
 dataset_size = 20#50#10#1
 minibatch_size = 400#10#100 #number of random initial substrates
@@ -537,6 +537,7 @@ class Test():
         for loss in loss_list:
             sum_squared_diff += (average - loss) ** 2
         st_dev = sum_squared_diff / iterations_num
+        result_saver.save_two_random_final_stats(str(m_count), str(reactions_count), str(average), str(st_dev))
         print("Metabolices = " + str(m_count) + ". Reactions = " + str(reactions_count))
         print("Average loss is " + str(average))
         print("Standard deviation loss is " + str(st_dev))
@@ -547,10 +548,11 @@ class Test():
         model.eval()
         result_processor.set_model(model)
         result_processor.run_model()
+        result_processor.create_semi_random_negative_instances()
 
 
 if __name__ == "__main__":
     test = Test()
-    test.run_tests()
+    # test.run_tests()
     # test.two_random_matrix_test(100)
     test.export_to_classifier("11.pt")

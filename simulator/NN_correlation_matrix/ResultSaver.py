@@ -168,6 +168,18 @@ class ResultSaver:
 
         wb.save(two_random_path)
 
+    def save_two_random_final_stats(self, m_count, reactions_count, avg, st_dev):
+        two_random_path = saving_path + "\\result_random.xlsx"
+        wb = load_workbook(two_random_path)
+        sheet_name = "stats"
+        wb.create_sheet(sheet_name, 0)
+        active = wb[sheet_name]
+
+        active.append(["Metabolices count", "Reactions count", "Average mse loss", "St_dev"])
+        active.append([m_count, reactions_count, avg, st_dev])
+
+        wb.save(two_random_path)
+
     def save_model(self, model, gan_structure):
         name = gan_structure.get_name()
         #torch.save(model.state_dict(), saving_path + "\\Saved Models\\" + name + ".pt")
