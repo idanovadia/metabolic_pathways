@@ -1,10 +1,14 @@
 #Class to process results from the output of the trained model
 #also in charge of providing the classifier with proper files
-
+import os
 import torch
 import matplotlib.pyplot as plt
 from openpyxl.drawing.image import Image
 from openpyxl import Workbook, load_workbook
+import random
+import xlrd
+import csv
+
 
 global device
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -32,15 +36,21 @@ class ResultProcessor:
         self.model = model
 
     def run_model(self):
-        rand_x = torch.Tensor(size=(self.minibatch_size, self.m_count))
-        rand_x.uniform_(self.sub_min, self.sub_max)
-        rand_x = rand_x.to(device)
+        reactions = None
+        reaction_num = 100
+        while reactions is None or len(reactions) < reaction_num:
+            rand_x = torch.Tensor(size=(self.minibatch_size, self.m_count))
+            rand_x.uniform_(self.sub_min, self.sub_max)
+            rand_x = rand_x.to(device)
 
-        # ym, yc = model(x)
-        ym, yc = self.model(rand_x)
-        self.draw_matrix(yc,0)
+            # ym, yc = model(x)
+            ym, yc = self.model(rand_x)
+            self.draw_matrix(yc,0)
 
-        reactions = self.model.get_reactions_tensor()
+            if reactions is None:
+                reactions = self.model.get_reactions_tensor()
+            else:
+                reactions = torch.cat([reactions, self.model.get_reactions_tensor()])
         self.write_reactions_data(reactions)
 
         matrix = yc.detach().numpy()
@@ -121,8 +131,96 @@ class ResultProcessor:
 
             line_append = metabolic_list_num #todo: change from metabolic_list_num to metabolic_list
             active.append(line_append)
-            wb.save(self.outputs_path + "\\Reactions\\reaction" + str(i) + ".xlsx")
+            wb.save(self.outputs_path + "\\Reactions\\Positive\\reaction" + str(i) + ".xlsx")
 
     #todo: complete this
     def turn_metabolic_id_to_name(self, metabolic_list_num):
         pass
+
+
+    def create_semi_random_negative_instances(self):
+        positive_reactions_list = self.read_all_positive_recations()
+
+        count_negative_reactions = len(positive_reactions_list) * 3
+        negative_reactions_lst = []
+        for i in range(count_negative_reactions):
+            found_negative = False
+            while(not found_negative):
+                negative_rec = self.generate_random_reaction()
+                if negative_rec not in positive_reactions_list: #and (negative_rec not in negative_reactions_lst): #does it matter if there are possible duplicates in the negative list?
+                    negative_reactions_lst.append(negative_rec)
+                    found_negative = True
+
+                    metabolic_list_names = self.turn_metabolic_id_to_name(negative_rec)
+
+                    line_append = negative_rec  # todo: change from metabolic_list_num to metabolic_list
+
+                    wb = Workbook()
+                    sheet_name = "neg_reaction" + str(i)
+                    wb.create_sheet(sheet_name, 0)
+                    active = wb[sheet_name]
+                    active.append(line_append)
+                    wb.save(self.outputs_path + "\\Reactions\\Negative\\neg_reaction" + str(i) + ".xlsx")
+
+
+
+    #generate random reaction for the negative sample
+    def generate_random_reaction(self):
+        metabolic_list_num = []
+        substrate = [random.randrange(0, 2, 1) for i in range(self.m_count)]
+        product = [random.randrange(0, 2, 1) for i in range(self.m_count)]
+        for j in range(self.m_count):
+            if substrate[j] == 1:
+                metabolic_list_num.append(j)
+            elif product[j] == 1:  # doing else if because we don't want to add same metabolic twice
+                metabolic_list_num.append(j)
+        return metabolic_list_num
+
+    def read_all_positive_recations(self):
+        positive_directory = self.outputs_path + "\\Reactions\\Positive\\"
+
+        # read all positive reactions
+        positive_reactions_list = []
+        for filename in os.listdir(positive_directory):
+            if filename.endswith(".xlsx"):
+                wb = load_workbook(positive_directory + filename)
+                sheet_name = filename.split(".")[0]  # remove the file extension
+                worksheet = wb[sheet_name]
+                first_row = worksheet[1]
+                reaction = []
+                for i in range(len(first_row)):
+                    reaction.append(first_row[i].value)
+                positive_reactions_list.append(reaction)
+
+        return positive_reactions_list
+
+    def convert_from_xlsx_to_cvs(self):
+        positive_directory = self.outputs_path + "\\Reactions\\Positive\\"
+        positive_csv_path = self.outputs_path + "\\Reactions\\Positive csv\\"
+
+        for filename in os.listdir(positive_directory):
+            wb = xlrd.open_workbook(positive_directory + os.sep + filename)
+            sh = wb.sheet_by_name(filename.replace(".xlsx", ""))
+            your_csv_file = open(positive_csv_path + filename.replace(".xlsx", ".csv"), 'w')
+            wr = csv.writer(your_csv_file, quoting=csv.QUOTE_ALL)
+
+            for rownum in range(sh.nrows):
+                wr.writerow(sh.row_values(rownum))
+
+            your_csv_file.close()
+
+        negative_directory = self.outputs_path + "\\Reactions\\Negative\\"
+        negative_csv_path = self.outputs_path + "\\Reactions\\Negative csv\\"
+
+        for filename in os.listdir(negative_directory):
+            wb = xlrd.open_workbook(negative_directory + os.sep + filename)
+            sh = wb.sheet_by_name(filename.replace(".xlsx", ""))
+            your_csv_file = open(negative_csv_path + filename.replace(".xlsx", ".csv"), 'w')
+            wr = csv.writer(your_csv_file, quoting=csv.QUOTE_ALL)
+
+            for rownum in range(sh.nrows):
+                wr.writerow(sh.row_values(rownum))
+
+            your_csv_file.close()
+
+

@@ -549,6 +549,7 @@ class Test():
         result_processor.set_model(model)
         result_processor.run_model()
         result_processor.create_semi_random_negative_instances()
+        result_processor.convert_from_xlsx_to_cvs()
 
 
 if __name__ == "__main__":
