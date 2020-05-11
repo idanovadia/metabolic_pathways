@@ -55,9 +55,9 @@ class Plotter(AbstractConfigClass):
         for c in classes:
             for t in (df[labels[0]].unique().round(1)):
                 new_df = df[df[labels[0]].round(1) == t]
-                self.create_roc(new_df, labels, c,ylabel,xlabel)
+                self.create_roc(new_df, labels, c,ylabel,xlabel,title+" - correlation threshold: "+str(t))
 
-    def create_roc(self, new_df, labels, class_,ylabel,xlabel):
+    def create_roc(self, new_df, labels, class_,ylabel,xlabel,title):
         import sklearn.metrics as metrics
         fpr, tpr = [0], [0]
         new_df = new_df[new_df['Improvements'] == class_][labels]
@@ -71,6 +71,7 @@ class Plotter(AbstractConfigClass):
         plt.plot([0, 1], [0, 1],fpr, tpr)
         plt.ylabel(ylabel)
         plt.xlabel(xlabel)
+        plt.title(title)
         plt.plot([0, 1], [0, 1], 'r--')
         plt.xlim([0, 1])
         plt.ylim([0, 1])
