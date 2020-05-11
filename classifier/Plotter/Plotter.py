@@ -1,3 +1,5 @@
+from pandas.util.testing import getPeriodData
+
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 import pandas as pd
 import numpy as np
@@ -35,9 +37,58 @@ class Plotter(AbstractConfigClass):
                 self.error_bar(classes, data, self.present[inv]['title'], self.present[inv]['compare_columns'],
                                self.present[inv]['ylabel'], self.present[inv]['xlabel'],
                                int(self.present[inv]['numberOfSamples']))
+            elif type == 'roc':
+                self.roc(classes, data, self.present[inv]['title'], self.present[inv]['compare_columns'],
+                         self.present[inv]['ylabel'], self.present[inv]['xlabel'],
+                         int(self.present[inv]['numberOfSamples']))
+
+    # Correlation
+    # threshold, test
+    # FP, test
+    # FN, test
+    # TP, test
+    # TN
+    def roc(self, classes, data, title, labels, ylabel, xlabel, number_of_samples):
+        df = self.getDate(data)
+        labels = str(labels).split(",");
+        # df = df[labels]
+        for c in classes:
+            for t in (df[labels[0]].unique().round(1)):
+                new_df = df[df[labels[0]].round(1) == t]
+                self.create_roc(new_df, labels, c,ylabel,xlabel,title+" - correlation threshold: "+str(t))
+
+    def create_roc(self, new_df, labels, class_,ylabel,xlabel,title):
+        import sklearn.metrics as metrics
+        fpr, tpr = [0], [0]
+        new_df = new_df[new_df['Improvements'] == class_][labels]
+        for index, row in new_df.iterrows():
+            fpr.append(self.fpr(fp=row["test FP"],tn=row["test TN"]))
+            tpr.append(self.fpr(fp=row["test TP"],tn=row[" test FN"]))
+        fpr.append(1)
+        tpr.append(1)
+        fpr.sort()
+        tpr.sort()
+        plt.plot([0, 1], [0, 1],fpr, tpr)
+        plt.ylabel(ylabel)
+        plt.xlabel(xlabel)
+        plt.title(title)
+        plt.plot([0, 1], [0, 1], 'r--')
+        plt.xlim([0, 1])
+        plt.ylim([0, 1])
+        # plt.scatter(fpr, tpr)
+        plt.show()
+
+    def fpr(self, fp, tn):
+        return fp / (fp + tn)
+
+    def tpr(self, tp, fn):
+        return tp / (tp + fn)
+
+    def getDate(self, data):
+        return pd.read_excel(self.getPath(data))
 
     def error_bar(self, classes, data, title, labels, ylabel, xlabel, number_of_samples):
-        df = pd.read_excel(self.getPath(data))
+        df = self.getDate(data)
         for c in classes:
             new_title = title + "\n" + c
             x_test, y_test, xerr_test, yerr_test = self.getLabelsArrays(df, c, str(labels).split(",")[0],
@@ -48,7 +99,6 @@ class Plotter(AbstractConfigClass):
             self.create_error_bar(x_test=x_test, y_test=y_test, xerr_test=xerr_test, yerr_test=yerr_test,
                                   x_train=x_train, y_train=y_train, xerr_train=xerr_train, yerr_train=yerr_train,
                                   xlabel=xlabel, ylabel=ylabel, title=new_title)
-        pass
 
     def getLabelsArrays(self, df, class_name, label_x, label_y, number_of_samples):
         x, y, xerr, yerr = [], [], [], []
@@ -90,7 +140,6 @@ class Plotter(AbstractConfigClass):
         name = str(title).split('\n')[0] + "-" + str(title).split('\n')[1]
         plt.savefig(self.getPath('classifier/data/Graphs_images') + "\\" + name + '.png')
         plt.show()
-
 
     def generateData(self):
         pass
