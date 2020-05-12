@@ -55,7 +55,7 @@ class Generator(nn.Module):
         # return output.resize(2,8)
 
     def get_random_input_layer(self):
-        return torch.randn(1, 100)
+        return torch.randn(1, Z_dim)#100)
 
     def turn_to_one_or_zero(self, values):
         new_values = []
