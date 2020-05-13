@@ -3,10 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
-  ]
-  node [
-    id 1
     label "shikimate"
+    MyDegree "z"
   ]
 ]

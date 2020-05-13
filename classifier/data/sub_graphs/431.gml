@@ -4,25 +4,16 @@ graph [
   node [
     id 0
     label "gaba"
+    MyDegree "z"
   ]
   node [
     id 1
     label "udp-alpha;-d-galacturonate"
+    MyDegree "z"
   ]
   node [
     id 2
     label "l-aspartate"
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 1
-    target 2
+    MyDegree "z"
   ]
 ]

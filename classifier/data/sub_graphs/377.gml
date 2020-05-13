@@ -3,46 +3,32 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-tyrosine"
+    label "l-lysine"
+    MyDegree "g"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "shikimate"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-lysine"
+    label "l-tyrosine"
+    MyDegree "g"
   ]
   node [
     id 3
     label "l-cysteine"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "shikimate"
-  ]
-  edge [
-    source 0
-    target 3
+    label "l-glutamate"
+    MyDegree "z"
   ]
   edge [
     source 0
     target 2
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 3
-    target 4
+    weight 0.7634702961816615
   ]
 ]

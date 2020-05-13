@@ -4,25 +4,21 @@ graph [
   node [
     id 0
     label "l-tryptophan"
+    MyDegree "z"
   ]
   node [
     id 1
     label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 2
     label "l-serine"
+    MyDegree "z"
   ]
   node [
     id 3
     label "l-glutamine"
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 1
-    target 3
+    MyDegree "z"
   ]
 ]

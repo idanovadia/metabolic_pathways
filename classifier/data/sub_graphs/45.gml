@@ -3,142 +3,62 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-lysine"
+    MyDegree "f"
   ]
   node [
     id 1
     label "l-threonine"
+    MyDegree "f"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "succinate"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "l-methionine"
+    label "l-aspartate"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "l-lysine"
+    label "l-glutamine"
+    MyDegree "z"
   ]
   node [
     id 5
     label "l-cysteine"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "succinate"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "l-aspartate"
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
   node [
     id 8
-    label "2-oxoglutarate"
-  ]
-  node [
-    id 9
-    label "l-glutamine"
+    label "l-methionine"
+    MyDegree "f"
   ]
   edge [
     source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 6
+    target 8
+    weight 0.7047606094071203
   ]
   edge [
     source 0
     target 1
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 9
+    weight 0.7035644013704999
   ]
   edge [
     source 1
-    target 5
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 1
-    target 7
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 2
-    target 9
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 5
-    target 6
-  ]
-  edge [
-    source 5
-    target 7
-  ]
-  edge [
-    source 7
-    target 9
+    target 8
+    weight 0.7135531951696401
   ]
 ]

@@ -3,418 +3,72 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "benzoate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-leucine"
+    label "l-lysine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "udp-alpha;-d-galacturonate"
+    label "l-leucine"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "l-serine"
+    label "maltose"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "l-lysine"
+    label "glycerate_3_phosphate"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "l-phenylalanine"
+    label "udp-alpha;-d-galacturonate"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "benzoate"
+    label "uracil"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "dehydroascorbate (bicyclic form)"
+    label "d-threo-isocitrate"
+    MyDegree "z"
   ]
   node [
     id 8
     label "l-cysteine"
+    MyDegree "z"
   ]
   node [
     id 9
-    label "d-threo-isocitrate"
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
   node [
     id 10
-    label "glycerate_3_phosphate"
+    label "l-phenylalanine"
+    MyDegree "z"
   ]
   node [
     id 11
-    label "maltose"
+    label "glycerol"
+    MyDegree "z"
   ]
   node [
     id 12
-    label "uracil"
+    label "l-serine"
+    MyDegree "z"
   ]
   node [
     id 13
-    label "2-oxoglutarate"
-  ]
-  node [
-    id 14
-    label "glycerol"
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 0
-    target 8
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 11
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 12
-  ]
-  edge [
-    source 0
-    target 9
-  ]
-  edge [
-    source 0
-    target 14
-  ]
-  edge [
-    source 0
-    target 10
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 1
-    target 8
-  ]
-  edge [
-    source 1
-    target 7
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 11
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 12
-  ]
-  edge [
-    source 1
-    target 14
-  ]
-  edge [
-    source 1
-    target 9
-  ]
-  edge [
-    source 1
-    target 10
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 2
-    target 8
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 11
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 12
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 14
-  ]
-  edge [
-    source 2
-    target 9
-  ]
-  edge [
-    source 2
-    target 10
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 8
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 11
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 12
-  ]
-  edge [
-    source 3
-    target 14
-  ]
-  edge [
-    source 3
-    target 9
-  ]
-  edge [
-    source 3
-    target 10
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 8
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 4
-    target 11
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 12
-  ]
-  edge [
-    source 4
-    target 14
-  ]
-  edge [
-    source 4
-    target 9
-  ]
-  edge [
-    source 4
-    target 10
-  ]
-  edge [
-    source 5
-    target 6
-  ]
-  edge [
-    source 5
-    target 8
-  ]
-  edge [
-    source 5
-    target 7
-  ]
-  edge [
-    source 5
-    target 11
-  ]
-  edge [
-    source 5
-    target 12
-  ]
-  edge [
-    source 5
-    target 9
-  ]
-  edge [
-    source 5
-    target 14
-  ]
-  edge [
-    source 5
-    target 10
-  ]
-  edge [
-    source 6
-    target 8
-  ]
-  edge [
-    source 6
-    target 7
-  ]
-  edge [
-    source 6
-    target 11
-  ]
-  edge [
-    source 6
-    target 12
-  ]
-  edge [
-    source 6
-    target 14
-  ]
-  edge [
-    source 6
-    target 9
-  ]
-  edge [
-    source 6
-    target 10
-  ]
-  edge [
-    source 7
-    target 8
-  ]
-  edge [
-    source 7
-    target 14
-  ]
-  edge [
-    source 7
-    target 11
-  ]
-  edge [
-    source 7
-    target 12
-  ]
-  edge [
-    source 7
-    target 9
-  ]
-  edge [
-    source 7
-    target 10
-  ]
-  edge [
-    source 8
-    target 11
-  ]
-  edge [
-    source 8
-    target 12
-  ]
-  edge [
-    source 8
-    target 14
-  ]
-  edge [
-    source 8
-    target 9
-  ]
-  edge [
-    source 8
-    target 10
-  ]
-  edge [
-    source 9
-    target 11
-  ]
-  edge [
-    source 9
-    target 12
-  ]
-  edge [
-    source 10
-    target 11
-  ]
-  edge [
-    source 10
-    target 12
-  ]
-  edge [
-    source 10
-    target 14
-  ]
-  edge [
-    source 11
-    target 12
-  ]
-  edge [
-    source 11
-    target 14
-  ]
-  edge [
-    source 12
-    target 14
+    label "dehydroascorbate (bicyclic form)"
+    MyDegree "z"
   ]
 ]

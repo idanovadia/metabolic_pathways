@@ -3,22 +3,17 @@ graph [
   type "trainset"
   node [
     id 0
-    label "beta;-alanine"
+    label "l-cysteine"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "beta;-alanine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-cysteine"
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 1
-    target 2
+    label "l-aspartate"
+    MyDegree "z"
   ]
 ]

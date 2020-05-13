@@ -1,28 +1,24 @@
 graph [
   label "testset"
-  type "classifier/data/labeled_data/2001"
+  type "classifier/data/labeled_data/2003"
   node [
     id 0
-    label "l-alanine"
+    label "l-phenylalanine"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-alanine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "l-phenylalanine"
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 1
-    target 3
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
 ]

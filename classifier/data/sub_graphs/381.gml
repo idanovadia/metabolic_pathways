@@ -4,81 +4,36 @@ graph [
   node [
     id 0
     label "l-lysine"
+    MyDegree "g"
   ]
   node [
     id 1
-    label "l-valine"
+    label "shikimate"
+    MyDegree "z"
   ]
   node [
     id 2
     label "l-alanine"
+    MyDegree "z"
   ]
   node [
     id 3
     label "l-cysteine"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "shikimate"
+    label "glycerol"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "glycerol"
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 1
+    label "l-valine"
+    MyDegree "g"
   ]
   edge [
     source 0
     target 5
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 4
+    weight 0.7290794229394217
   ]
 ]

@@ -3,118 +3,47 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-leucine"
+    label "benzoate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "beta;-alanine"
+    label "l-isoleucine"
+    MyDegree "g"
   ]
   node [
     id 2
-    label "alpha;,alpha;-trehalose"
+    label "l-leucine"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "benzoate"
+    label "alpha;,alpha;-trehalose"
+    MyDegree "z"
   ]
   node [
     id 4
     label "glucose_6_phosphate"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "2-oxoglutarate"
+    label "beta;-alanine"
+    MyDegree "g"
   ]
   node [
     id 6
-    label "glycerol"
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 6
+    label "glycerol"
+    MyDegree "z"
   ]
   edge [
     source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 7
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 6
-    target 7
+    target 5
+    weight 0.802411103764318
   ]
 ]

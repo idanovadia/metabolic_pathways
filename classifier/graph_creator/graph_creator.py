@@ -6,9 +6,8 @@ import networkx as nx
 import os
 import json
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
-
+import classifier.graph_creator.structural as structural
 ''' Using to create the main graph from the correlation matrix and the sub graph lists  '''
-
 
 class GraphCreator(AbstractConfigClass):
 
@@ -47,6 +46,7 @@ class GraphCreator(AbstractConfigClass):
         self.run_adj_matrix_extensions()
         self.writeMainGraph()
         self.subGraphsCreator()
+        self.structural()
         self.run_graph_extensions()
         self.WriteAll()
 
@@ -68,6 +68,9 @@ class GraphCreator(AbstractConfigClass):
             if extension in graph_extensions_dict:
                 graph_extensions_dict[extension]()
                 print(extension)
+
+    def structural(self):
+        self.subGraphs_list = structural.subGraphsCreator(self.subGraphs_list)
 
     '''
      Object of sub graph.  

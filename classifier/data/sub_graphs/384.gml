@@ -3,94 +3,47 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-glutamate"
+    label "benzoate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-serine"
+    label "fructose"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "sucrose"
+    label "l-isoleucine"
+    MyDegree "g"
   ]
   node [
     id 3
-    label "fructose"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "l-arginine"
+    label "sucrose"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "benzoate"
+    label "l-serine"
+    MyDegree "e"
   ]
   node [
     id 6
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 3
+    label "l-arginine"
+    MyDegree "e"
   ]
   edge [
     source 2
     target 6
+    weight 0.7217132968380662
   ]
   edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
+    source 2
     target 5
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 5
-    target 6
+    weight 0.8193239307877472
   ]
 ]

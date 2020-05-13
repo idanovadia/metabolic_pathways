@@ -3,122 +3,52 @@ graph [
   type "trainset"
   node [
     id 0
-    label "d-glycerate"
+    label "l-asparagine"
+    MyDegree "g"
   ]
   node [
     id 1
-    label "l-asparagine"
+    label "inositol"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "udp-alpha;-d-galacturonate"
+    label "(s)-malate"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "alpha;,alpha;-trehalose"
+    label "l-isoleucine"
+    MyDegree "g"
   ]
   node [
     id 4
-    label "glucose"
+    label "alpha;,alpha;-trehalose"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "(s)-malate"
+    label "d-glycerate"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "2-oxoglutarate"
+    label "glucose"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "inositol"
+    label "udp-alpha;-d-galacturonate"
+    MyDegree "z"
   ]
   node [
     id 8
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 5
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
   edge [
     source 0
     target 3
-  ]
-  edge [
-    source 0
-    target 8
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 8
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 8
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 8
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 8
-  ]
-  edge [
-    source 5
-    target 8
+    weight 0.7264102732547789
   ]
 ]

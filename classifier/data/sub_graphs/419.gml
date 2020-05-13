@@ -3,298 +3,82 @@ graph [
   type "trainset"
   node [
     id 0
-    label "fumarate"
+    label "alpha;-tocopherol"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "maltitol"
+    label "putrescine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-methionine"
+    label "l-asparagine"
+    MyDegree "f"
   ]
   node [
     id 3
-    label "putrescine"
+    label "fructose"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "l-leucine"
+    label "l-isoleucine"
+    MyDegree "f"
   ]
   node [
     id 5
-    label "l-asparagine"
+    label "l-leucine"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "sucrose"
+    label "gaba"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "fructose"
+    label "maltitol"
+    MyDegree "z"
   ]
   node [
     id 8
-    label "d-threo-isocitrate"
+    label "l-aspartate"
+    MyDegree "z"
   ]
   node [
     id 9
-    label "l-aspartate"
+    label "sucrose"
+    MyDegree "z"
   ]
   node [
     id 10
-    label "gaba"
+    label "d-threo-isocitrate"
+    MyDegree "z"
   ]
   node [
     id 11
-    label "alpha;-tocopherol"
+    label "fumarate"
+    MyDegree "z"
   ]
   node [
     id 12
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 11
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 10
-  ]
-  edge [
-    source 0
-    target 12
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 11
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 2
-    target 10
-  ]
-  edge [
-    source 2
-    target 12
+    label "l-methionine"
+    MyDegree "f"
   ]
   edge [
     source 2
     target 4
+    weight 0.7264102732547789
   ]
   edge [
     source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 2
-    target 8
-  ]
-  edge [
-    source 2
-    target 9
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 11
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 3
-    target 10
-  ]
-  edge [
-    source 3
     target 12
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 8
-  ]
-  edge [
-    source 3
-    target 9
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 11
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 4
-    target 10
+    weight 0.7738809726394363
   ]
   edge [
     source 4
     target 12
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 8
-  ]
-  edge [
-    source 4
-    target 9
-  ]
-  edge [
-    source 5
-    target 11
-  ]
-  edge [
-    source 5
-    target 7
-  ]
-  edge [
-    source 5
-    target 10
-  ]
-  edge [
-    source 5
-    target 12
-  ]
-  edge [
-    source 5
-    target 6
-  ]
-  edge [
-    source 5
-    target 8
-  ]
-  edge [
-    source 5
-    target 9
-  ]
-  edge [
-    source 6
-    target 11
-  ]
-  edge [
-    source 6
-    target 7
-  ]
-  edge [
-    source 6
-    target 10
-  ]
-  edge [
-    source 6
-    target 12
-  ]
-  edge [
-    source 7
-    target 11
-  ]
-  edge [
-    source 7
-    target 10
-  ]
-  edge [
-    source 7
-    target 8
-  ]
-  edge [
-    source 7
-    target 12
-  ]
-  edge [
-    source 7
-    target 9
-  ]
-  edge [
-    source 8
-    target 11
-  ]
-  edge [
-    source 8
-    target 10
-  ]
-  edge [
-    source 8
-    target 12
-  ]
-  edge [
-    source 8
-    target 9
-  ]
-  edge [
-    source 9
-    target 11
-  ]
-  edge [
-    source 9
-    target 10
-  ]
-  edge [
-    source 10
-    target 11
-  ]
-  edge [
-    source 10
-    target 12
-  ]
-  edge [
-    source 11
-    target 12
+    weight 0.7805477451124794
   ]
 ]

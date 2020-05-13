@@ -3,14 +3,17 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "l-lysine"
+    MyDegree "z"
   ]
   node [
     id 1
     label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-lysine"
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
 ]

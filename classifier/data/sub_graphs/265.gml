@@ -3,74 +3,37 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-isoleucine"
+    MyDegree "g"
   ]
   node [
     id 1
-    label "l-threonine"
+    label "l-homoserine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-threonine"
+    MyDegree "g"
   ]
   node [
     id 3
     label "l-aspartate"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "l-homoserine"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 5
     label "2-oxoglutarate"
-  ]
-  node [
-    id 6
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 3
+    MyDegree "z"
   ]
   edge [
     source 0
     target 2
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 4
-    target 6
+    weight 0.8221564326172607
   ]
 ]

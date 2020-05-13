@@ -3,14 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-cysteine"
+    label "l-valine"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-valine"
-  ]
-  edge [
-    source 0
-    target 1
+    label "l-cysteine"
+    MyDegree "z"
   ]
 ]

@@ -4,25 +4,16 @@ graph [
   node [
     id 0
     label "l-leucine"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "2-oxoglutarate"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "phosphate"
-  ]
-  node [
-    id 3
-    label "l-glutamate"
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 2
-    target 3
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
 ]

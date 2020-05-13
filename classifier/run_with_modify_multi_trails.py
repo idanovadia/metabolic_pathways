@@ -16,7 +16,7 @@ modules_dict['CorrMaxtrix'] = CorrMaxtrix
 modules_dict['GraphCreator'] = GraphCreator
 modules_dict['Sub2Vec'] = Sub2Vec
 modules_dict['classifier'] = classifier
-modules_dict['Plotter'] = Plotter
+# modules_dict['Plotter'] = Plotter
 
 pipeline = []
 config = config_class(sys.argv[1])

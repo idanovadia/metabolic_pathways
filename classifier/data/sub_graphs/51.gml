@@ -3,42 +3,22 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-lysine"
+    MyDegree "g"
   ]
   node [
     id 1
     label "l-alanine"
+    MyDegree "z"
   ]
   node [
     id 2
     label "l-methionine"
-  ]
-  node [
-    id 3
-    label "l-lysine"
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 3
+    MyDegree "g"
   ]
   edge [
     source 0
     target 2
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 2
-    target 3
+    weight 0.7047606094071203
   ]
 ]

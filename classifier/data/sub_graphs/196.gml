@@ -1,12 +1,9 @@
 graph [
-  label "positive"
+  label "negative"
   type "trainset"
   node [
     id 0
-    label "phosphate"
-  ]
-  node [
-    id 1
     label "2-oxoglutarate"
+    MyDegree "z"
   ]
 ]

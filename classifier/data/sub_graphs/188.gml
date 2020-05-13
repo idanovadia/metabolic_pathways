@@ -3,122 +3,47 @@ graph [
   type "trainset"
   node [
     id 0
-    label "citrate"
+    label "(s)-malate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "fumarate"
+    label "citrate"
+    MyDegree "g"
   ]
   node [
     id 2
-    label "phosphate"
+    label "succinate"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "l-aspartate"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "d-threo-isocitrate"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "(s)-malate"
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "l-aspartate"
+    label "d-threo-isocitrate"
+    MyDegree "g"
   ]
   node [
     id 7
-    label "succinate"
-  ]
-  node [
-    id 8
-    label "2-oxoglutarate"
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 4
+    label "fumarate"
+    MyDegree "z"
   ]
   edge [
     source 1
-    target 5
-  ]
-  edge [
-    source 1
-    target 7
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 2
     target 6
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 5
-    target 7
-  ]
-  edge [
-    source 5
-    target 6
+    weight 0.8144404889748331
   ]
 ]

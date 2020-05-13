@@ -3,34 +3,17 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "glycine"
+    MyDegree "z"
   ]
   node [
     id 1
     label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 2
     label "l-glutamine"
-  ]
-  node [
-    id 3
-    label "glycine"
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 1
-    target 2
+    MyDegree "z"
   ]
 ]

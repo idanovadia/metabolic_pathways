@@ -4,13 +4,11 @@ graph [
   node [
     id 0
     label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 1
     label "l-glutamine"
-  ]
-  edge [
-    source 0
-    target 1
+    MyDegree "z"
   ]
 ]

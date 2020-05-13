@@ -1,56 +1,24 @@
 graph [
   label "testset"
-  type "classifier/data/labeled_data/2001"
+  type "classifier/data/labeled_data/2003"
   node [
     id 0
-    label "phosphate"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-asparagine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-asparagine"
+    label "l-aspartate"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "l-aspartate"
-  ]
-  node [
-    id 4
     label "l-glutamine"
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 3
-    target 4
+    MyDegree "z"
   ]
 ]

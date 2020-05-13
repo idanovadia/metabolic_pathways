@@ -3,26 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "citrate"
+    label "l-lysine"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "phosphate"
-  ]
-  node [
-    id 2
-    label "l-lysine"
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 1
-    target 2
+    label "citrate"
+    MyDegree "z"
   ]
 ]

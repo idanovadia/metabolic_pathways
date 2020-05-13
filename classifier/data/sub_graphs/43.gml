@@ -3,26 +3,22 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-tryptophan"
+    label "l-lysine"
+    MyDegree "g"
   ]
   node [
     id 1
-    label "l-lysine"
+    label "l-isoleucine"
+    MyDegree "g"
   ]
   node [
     id 2
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 2
+    label "l-tryptophan"
+    MyDegree "z"
   ]
   edge [
     source 0
     target 1
-  ]
-  edge [
-    source 1
-    target 2
+    weight 0.7426012539967556
   ]
 ]
