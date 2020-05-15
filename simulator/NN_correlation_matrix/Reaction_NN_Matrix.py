@@ -286,6 +286,7 @@ def create_random_reactions(reactions_count, metabolic_count):
         products.append(product)
     return substrates, products
 
+#function will create non overlapping reactions in the way that substrate in place i is 1 and product in the place i+1 is 1
 def create_non_overlapping_reactions(reactions_count, metabolic_count):
     substrates = []
     products = []
