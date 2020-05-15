@@ -286,6 +286,26 @@ def create_random_reactions(reactions_count, metabolic_count):
         products.append(product)
     return substrates, products
 
+def create_non_overlapping_reactions(reactions_count, metabolic_count):
+    substrates = []
+    products = []
+    for i in range(reactions_count):
+        #doing this if so there won't be overlapping in the last pair, so instead will add the same
+        if i == reactions_count - 1:
+            substrate = [0] * metabolic_count
+            substrate[0] = 1
+            product = [0] * metabolic_count
+            product[1] = 1
+        else:
+            substrate = [0] * metabolic_count
+            substrate[i] = 1
+            product = [0] * metabolic_count
+            product[i + 1] = 1
+
+        substrates.append(substrate)
+        products.append(product)
+    return  substrates, products
+
 
 def create_dataset(data_size):
     metabolites = range(m_count)
@@ -319,6 +339,7 @@ def create_dataset(data_size):
 
     # testing x reactions - random reactions
     subs, prods = create_random_reactions(reactions_count, m_count)
+    # subs, prods = create_non_overlapping_reactions(reactions_count, m_count)
     reactions = Process_new(reactions_count, metabolites,
                             # scount=s_count, pcount=p_count,
                             # low=1.0,high=1.0
@@ -554,6 +575,6 @@ class Test():
 
 if __name__ == "__main__":
     test = Test()
-    # test.run_tests()
+    test.run_tests()
     # test.two_random_matrix_test(100)
-    test.export_to_classifier("11.pt")
+    # test.export_to_classifier("11.pt")
