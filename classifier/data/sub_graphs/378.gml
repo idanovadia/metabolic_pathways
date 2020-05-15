@@ -8,27 +8,27 @@ graph [
   ]
   node [
     id 1
-    label "fructose"
-    MyDegree "z"
-  ]
-  node [
-    id 2
     label "l-leucine"
     MyDegree "z"
   ]
   node [
+    id 2
+    label "fructose"
+    MyDegree "z"
+  ]
+  node [
     id 3
-    label "citrate"
+    label "erythritol"
     MyDegree "z"
   ]
   node [
     id 4
-    label "glycerate_3_phosphate"
+    label "citrate"
     MyDegree "z"
   ]
   node [
     id 5
-    label "erythritol"
+    label "glycerate_3_phosphate"
     MyDegree "z"
   ]
 ]

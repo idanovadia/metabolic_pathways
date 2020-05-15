@@ -8,12 +8,12 @@ graph [
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-aspartate"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-aspartate"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [

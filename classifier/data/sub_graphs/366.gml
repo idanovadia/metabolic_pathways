@@ -8,12 +8,12 @@ graph [
   ]
   node [
     id 1
-    label "d-gluconate"
+    label "gdp-beta;-l-fucose"
     MyDegree "z"
   ]
   node [
     id 2
-    label "gdp-beta;-l-fucose"
+    label "d-gluconate"
     MyDegree "z"
   ]
 ]

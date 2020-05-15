@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "benzoate"
+    label "succinate"
     MyDegree "z"
   ]
   node [
@@ -13,17 +13,17 @@ graph [
   ]
   node [
     id 2
-    label "shikimate"
+    label "benzoate"
     MyDegree "z"
   ]
   node [
     id 3
-    label "l-alanine"
+    label "shikimate"
     MyDegree "z"
   ]
   node [
     id 4
-    label "succinate"
+    label "l-alanine"
     MyDegree "z"
   ]
 ]

@@ -3,27 +3,27 @@ graph [
   type "trainset"
   node [
     id 0
-    label "(s)-malate"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "citrate"
-    MyDegree "g"
-  ]
-  node [
-    id 2
     label "succinate"
     MyDegree "z"
   ]
   node [
+    id 2
+    label "(s)-malate"
+    MyDegree "z"
+  ]
+  node [
     id 3
-    label "l-aspartate"
+    label "fumarate"
     MyDegree "z"
   ]
   node [
     id 4
-    label "l-glutamate"
+    label "citrate"
     MyDegree "z"
   ]
   node [
@@ -34,16 +34,11 @@ graph [
   node [
     id 6
     label "d-threo-isocitrate"
-    MyDegree "g"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "fumarate"
+    label "l-aspartate"
     MyDegree "z"
-  ]
-  edge [
-    source 1
-    target 6
-    weight 0.8144404889748331
   ]
 ]

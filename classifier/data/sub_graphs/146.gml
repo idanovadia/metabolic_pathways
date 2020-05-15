@@ -13,12 +13,12 @@ graph [
   ]
   node [
     id 2
-    label "l-alanine"
+    label "l-tryptophan"
     MyDegree "z"
   ]
   node [
     id 3
-    label "l-tryptophan"
+    label "l-alanine"
     MyDegree "z"
   ]
 ]

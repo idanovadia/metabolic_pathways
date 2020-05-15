@@ -4,26 +4,21 @@ graph [
   node [
     id 0
     label "glycine"
-    MyDegree "g"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "d-glycerate"
+    label "(s)-malate"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-serine"
-    MyDegree "g"
+    label "d-glycerate"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "(s)-malate"
+    label "l-serine"
     MyDegree "z"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.8692998515660723
   ]
 ]

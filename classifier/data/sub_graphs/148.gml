@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-methionine"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
@@ -13,7 +13,7 @@ graph [
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-methionine"
     MyDegree "z"
   ]
   node [

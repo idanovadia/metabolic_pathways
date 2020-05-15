@@ -3,42 +3,42 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glycine"
-    MyDegree "d"
+    label "l-asparagine"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-lysine"
-    MyDegree "d"
+    label "maltose"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "alpha;-tocopherol"
+    label "l-isoleucine"
     MyDegree "z"
   ]
   node [
     id 3
-    label "putrescine"
+    label "glucose"
     MyDegree "z"
   ]
   node [
     id 4
-    label "l-asparagine"
-    MyDegree "e"
+    label "glycine"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "l-tryptophan"
+    label "erythritol"
     MyDegree "z"
   ]
   node [
     id 6
-    label "l-isoleucine"
-    MyDegree "f"
+    label "l-tryptophan"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "maltose"
+    label "alpha;-tocopherol"
     MyDegree "z"
   ]
   node [
@@ -48,52 +48,32 @@ graph [
   ]
   node [
     id 9
-    label "glucose"
-    MyDegree "z"
-  ]
-  node [
-    id 10
-    label "l-aspartate"
-    MyDegree "z"
-  ]
-  node [
-    id 11
     label "l-glutamine"
     MyDegree "z"
   ]
   node [
-    id 12
-    label "l-phenylalanine"
-    MyDegree "d"
-  ]
-  node [
-    id 13
+    id 10
     label "glycerol"
     MyDegree "z"
   ]
   node [
-    id 14
-    label "erythritol"
+    id 11
+    label "putrescine"
     MyDegree "z"
   ]
-  edge [
-    source 0
-    target 6
-    weight 0.8111669817338236
+  node [
+    id 12
+    label "l-aspartate"
+    MyDegree "z"
   ]
-  edge [
-    source 1
-    target 6
-    weight 0.7426012539967556
+  node [
+    id 13
+    label "l-phenylalanine"
+    MyDegree "z"
   ]
-  edge [
-    source 4
-    target 6
-    weight 0.7264102732547789
-  ]
-  edge [
-    source 4
-    target 12
-    weight 0.7084986027898652
+  node [
+    id 14
+    label "l-lysine"
+    MyDegree "z"
   ]
 ]

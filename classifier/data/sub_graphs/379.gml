@@ -3,12 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "alpha;-tocopherol"
+    label "l-leucine"
     MyDegree "z"
   ]
   node [
     id 1
-    label "l-leucine"
+    label "uracil"
     MyDegree "z"
   ]
   node [
@@ -18,7 +18,7 @@ graph [
   ]
   node [
     id 3
-    label "uracil"
+    label "alpha;-tocopherol"
     MyDegree "z"
   ]
   node [

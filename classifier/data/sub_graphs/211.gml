@@ -8,12 +8,12 @@ graph [
   ]
   node [
     id 1
-    label "l-arginine"
+    label "2-oxoglutarate"
     MyDegree "z"
   ]
   node [
     id 2
-    label "2-oxoglutarate"
+    label "l-arginine"
     MyDegree "z"
   ]
 ]

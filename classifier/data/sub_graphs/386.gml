@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "benzoate"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
@@ -13,22 +13,22 @@ graph [
   ]
   node [
     id 2
-    label "l-glutamine"
+    label "erythritol"
     MyDegree "z"
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "benzoate"
     MyDegree "z"
   ]
   node [
     id 4
-    label "glycerol"
+    label "l-glutamine"
     MyDegree "z"
   ]
   node [
     id 5
-    label "erythritol"
+    label "glycerol"
     MyDegree "z"
   ]
   node [

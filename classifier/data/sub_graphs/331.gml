@@ -3,12 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "putrescine"
+    label "l-aspartate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "putrescine"
     MyDegree "z"
   ]
 ]

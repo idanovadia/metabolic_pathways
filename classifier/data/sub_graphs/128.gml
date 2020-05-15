@@ -3,12 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "shikimate"
+    label "(s)-malate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "(s)-malate"
+    label "shikimate"
     MyDegree "z"
   ]
 ]

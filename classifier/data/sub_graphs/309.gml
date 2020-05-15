@@ -3,12 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glucose"
+    label "l-tyrosine"
     MyDegree "z"
   ]
   node [
     id 1
-    label "l-tyrosine"
+    label "glucose"
     MyDegree "z"
   ]
 ]

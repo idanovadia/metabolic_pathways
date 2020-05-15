@@ -13,7 +13,7 @@ graph [
   ]
   node [
     id 2
-    label "inositol"
+    label "udp-alpha;-d-galacturonate"
     MyDegree "z"
   ]
   node [
@@ -28,7 +28,7 @@ graph [
   ]
   node [
     id 5
-    label "udp-alpha;-d-galacturonate"
+    label "inositol"
     MyDegree "z"
   ]
 ]

@@ -3,22 +3,22 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glucose"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "succinate"
+    label "glucose"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-glutamine"
+    label "succinate"
     MyDegree "z"
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "l-glutamine"
     MyDegree "z"
   ]
   node [

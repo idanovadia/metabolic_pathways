@@ -4,26 +4,26 @@ graph [
   node [
     id 0
     label "l-asparagine"
-    MyDegree "f"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "(s)-malate"
+    label "maltose"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-isoleucine"
-    MyDegree "f"
+    label "(s)-malate"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "maltitol"
+    label "l-isoleucine"
     MyDegree "z"
   ]
   node [
     id 4
-    label "maltose"
+    label "maltitol"
     MyDegree "z"
   ]
   node [
@@ -33,37 +33,22 @@ graph [
   ]
   node [
     id 6
-    label "l-glutamine"
+    label "l-valine"
     MyDegree "z"
   ]
   node [
     id 7
-    label "gdp-alpha;-d-mannose"
+    label "l-glutamine"
     MyDegree "z"
   ]
   node [
     id 8
-    label "l-valine"
-    MyDegree "f"
-  ]
-  node [
-    id 9
     label "gdp-beta;-l-fucose"
     MyDegree "z"
   ]
-  edge [
-    source 0
-    target 2
-    weight 0.7264102732547789
-  ]
-  edge [
-    source 0
-    target 8
-    weight 0.7250744140312165
-  ]
-  edge [
-    source 2
-    target 8
-    weight 0.8783750112276151
+  node [
+    id 9
+    label "gdp-alpha;-d-mannose"
+    MyDegree "z"
   ]
 ]

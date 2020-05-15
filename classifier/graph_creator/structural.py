@@ -5,6 +5,7 @@ import networkx as nx
 
 
 def getDegreeLabelledGraph(G, rangetoLabels):
+    G.remove_edges_from(G.selfloop_edges())
     degreeDict = G.degree(G.nodes())
     # print(degreeDict)
     # labelDict = {}

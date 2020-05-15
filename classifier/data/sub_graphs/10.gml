@@ -3,7 +3,7 @@ graph [
   type "classifier/data/labeled_data/2003"
   node [
     id 0
-    label "l-cysteine"
+    label "beta;-alanine"
     MyDegree "z"
   ]
   node [
@@ -13,7 +13,7 @@ graph [
   ]
   node [
     id 2
-    label "beta;-alanine"
+    label "l-cysteine"
     MyDegree "z"
   ]
 ]

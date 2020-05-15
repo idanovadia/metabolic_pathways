@@ -3,22 +3,17 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glycine"
-    MyDegree "g"
+    label "l-serine"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-serine"
-    MyDegree "g"
-  ]
-  node [
-    id 2
     label "l-phenylalanine"
     MyDegree "z"
   ]
-  edge [
-    source 0
-    target 1
-    weight 0.8692998515660723
+  node [
+    id 2
+    label "glycine"
+    MyDegree "z"
   ]
 ]

@@ -3,12 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "alpha;-tocopherol"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "dehydroascorbate (bicyclic form)"
+    label "l-valine"
     MyDegree "z"
   ]
   node [
@@ -23,12 +23,12 @@ graph [
   ]
   node [
     id 4
-    label "udp-alpha;-d-galacturonate"
+    label "l-serine"
     MyDegree "z"
   ]
   node [
     id 5
-    label "l-tyrosine"
+    label "fumarate"
     MyDegree "z"
   ]
   node [
@@ -38,37 +38,32 @@ graph [
   ]
   node [
     id 7
-    label "l-glutamate"
-    MyDegree "z"
-  ]
-  node [
-    id 8
-    label "sucrose"
-    MyDegree "z"
-  ]
-  node [
-    id 9
     label "d-threo-isocitrate"
     MyDegree "z"
   ]
   node [
+    id 8
+    label "udp-alpha;-d-galacturonate"
+    MyDegree "z"
+  ]
+  node [
+    id 9
+    label "alpha;-tocopherol"
+    MyDegree "z"
+  ]
+  node [
     id 10
-    label "l-valine"
-    MyDegree "g"
+    label "l-tyrosine"
+    MyDegree "z"
   ]
   node [
     id 11
-    label "l-serine"
-    MyDegree "g"
+    label "sucrose"
+    MyDegree "z"
   ]
   node [
     id 12
-    label "fumarate"
+    label "dehydroascorbate (bicyclic form)"
     MyDegree "z"
-  ]
-  edge [
-    source 10
-    target 11
-    weight 0.7317477254289431
   ]
 ]

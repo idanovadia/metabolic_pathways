@@ -4,21 +4,16 @@ graph [
   node [
     id 0
     label "l-lysine"
-    MyDegree "g"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-methionine"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-methionine"
-    MyDegree "g"
-  ]
-  edge [
-    source 0
-    target 2
-    weight 0.7047606094071203
+    label "l-alanine"
+    MyDegree "z"
   ]
 ]

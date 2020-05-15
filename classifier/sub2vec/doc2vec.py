@@ -40,7 +40,6 @@ class Doc2Vec:
         self.createTaggedDocuments()
 
     def structuralNodeList(self,g):
-        print(g.graph['name'])
         l = []
         for node in g.nodes:
             l.append(g.nodes[node]["MyDegree"])

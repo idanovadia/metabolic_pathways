@@ -3,13 +3,13 @@ graph [
   type "trainset"
   node [
     id 0
-    label "inositol"
+    label "l-isoleucine"
     MyDegree "z"
   ]
   node [
     id 1
-    label "l-isoleucine"
-    MyDegree "g"
+    label "succinate"
+    MyDegree "z"
   ]
   node [
     id 2
@@ -18,32 +18,27 @@ graph [
   ]
   node [
     id 3
-    label "succinate"
-    MyDegree "z"
-  ]
-  node [
-    id 4
-    label "l-tyrosine"
-    MyDegree "z"
-  ]
-  node [
-    id 5
     label "d-gluconate"
     MyDegree "z"
   ]
   node [
-    id 6
+    id 4
     label "d-threo-isocitrate"
     MyDegree "z"
   ]
   node [
-    id 7
+    id 5
     label "l-methionine"
-    MyDegree "g"
+    MyDegree "z"
   ]
-  edge [
-    source 1
-    target 7
-    weight 0.7805477451124794
+  node [
+    id 6
+    label "l-tyrosine"
+    MyDegree "z"
+  ]
+  node [
+    id 7
+    label "inositol"
+    MyDegree "z"
   ]
 ]

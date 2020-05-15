@@ -3,12 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "(s)-malate"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "2-oxoglutarate"
+    label "(s)-malate"
     MyDegree "z"
   ]
   node [
@@ -18,7 +18,7 @@ graph [
   ]
   node [
     id 3
-    label "l-glutamate"
+    label "2-oxoglutarate"
     MyDegree "z"
   ]
   node [

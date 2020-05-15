@@ -8,12 +8,12 @@ graph [
   ]
   node [
     id 1
-    label "gdp-alpha;-d-mannose"
+    label "l-glutamine"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-glutamine"
+    label "gdp-alpha;-d-mannose"
     MyDegree "z"
   ]
 ]

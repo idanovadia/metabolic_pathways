@@ -8,12 +8,12 @@ graph [
   ]
   node [
     id 1
-    label "l-aspartate"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "fumarate"
     MyDegree "z"
   ]
   node [
@@ -23,7 +23,7 @@ graph [
   ]
   node [
     id 4
-    label "fumarate"
+    label "l-aspartate"
     MyDegree "z"
   ]
 ]

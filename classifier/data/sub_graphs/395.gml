@@ -4,11 +4,11 @@ graph [
   node [
     id 0
     label "l-asparagine"
-    MyDegree "g"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "inositol"
+    label "l-isoleucine"
     MyDegree "z"
   ]
   node [
@@ -18,37 +18,32 @@ graph [
   ]
   node [
     id 3
-    label "l-isoleucine"
-    MyDegree "g"
-  ]
-  node [
-    id 4
-    label "alpha;,alpha;-trehalose"
-    MyDegree "z"
-  ]
-  node [
-    id 5
-    label "d-glycerate"
-    MyDegree "z"
-  ]
-  node [
-    id 6
     label "glucose"
     MyDegree "z"
   ]
   node [
-    id 7
+    id 4
+    label "d-glycerate"
+    MyDegree "z"
+  ]
+  node [
+    id 5
     label "udp-alpha;-d-galacturonate"
     MyDegree "z"
   ]
   node [
-    id 8
+    id 6
     label "2-oxoglutarate"
     MyDegree "z"
   ]
-  edge [
-    source 0
-    target 3
-    weight 0.7264102732547789
+  node [
+    id 7
+    label "alpha;,alpha;-trehalose"
+    MyDegree "z"
+  ]
+  node [
+    id 8
+    label "inositol"
+    MyDegree "z"
   ]
 ]

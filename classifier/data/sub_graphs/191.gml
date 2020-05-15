@@ -3,22 +3,22 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-alanine"
-    MyDegree "z"
-  ]
-  node [
-    id 1
     label "l-cysteine"
     MyDegree "z"
   ]
   node [
-    id 2
+    id 1
     label "l-tyrosine"
     MyDegree "z"
   ]
   node [
-    id 3
+    id 2
     label "l-methionine"
+    MyDegree "z"
+  ]
+  node [
+    id 3
+    label "l-alanine"
     MyDegree "z"
   ]
 ]

@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "shikimate"
+    label "succinate"
     MyDegree "z"
   ]
   node [
@@ -18,12 +18,12 @@ graph [
   ]
   node [
     id 3
-    label "succinate"
+    label "erythritol"
     MyDegree "z"
   ]
   node [
     id 4
-    label "l-cysteine"
+    label "gdp-beta;-l-fucose"
     MyDegree "z"
   ]
   node [
@@ -33,17 +33,17 @@ graph [
   ]
   node [
     id 6
-    label "l-phenylalanine"
+    label "l-cysteine"
     MyDegree "z"
   ]
   node [
     id 7
-    label "erythritol"
+    label "shikimate"
     MyDegree "z"
   ]
   node [
     id 8
-    label "gdp-beta;-l-fucose"
+    label "l-phenylalanine"
     MyDegree "z"
   ]
 ]

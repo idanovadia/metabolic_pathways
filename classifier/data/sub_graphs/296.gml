@@ -3,12 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-proline"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-proline"
     MyDegree "z"
   ]
 ]

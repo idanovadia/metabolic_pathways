@@ -3,12 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "gdp-alpha;-d-mannose"
+    label "gdp-beta;-l-fucose"
     MyDegree "z"
   ]
   node [
     id 1
-    label "gdp-beta;-l-fucose"
+    label "gdp-alpha;-d-mannose"
     MyDegree "z"
   ]
 ]

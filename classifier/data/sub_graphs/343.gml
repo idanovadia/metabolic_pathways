@@ -3,12 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "galactose"
+    label "udp-alpha;-d-galacturonate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "udp-alpha;-d-galacturonate"
+    label "galactose"
     MyDegree "z"
   ]
 ]

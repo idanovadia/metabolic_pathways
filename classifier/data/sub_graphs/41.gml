@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "benzoate"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
@@ -13,22 +13,22 @@ graph [
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "fumarate"
     MyDegree "z"
   ]
   node [
     id 3
-    label "2-oxoglutarate"
+    label "benzoate"
     MyDegree "z"
   ]
   node [
     id 4
-    label "l-phenylalanine"
+    label "2-oxoglutarate"
     MyDegree "z"
   ]
   node [
     id 5
-    label "fumarate"
+    label "l-phenylalanine"
     MyDegree "z"
   ]
 ]

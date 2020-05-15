@@ -3,18 +3,18 @@ graph [
   type "trainset"
   node [
     id 0
-    label "fructose"
-    MyDegree "e"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "inositol"
-    MyDegree "e"
+    label "maltose"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "maltose"
-    MyDegree "z"
+    label "glucose"
+    MyDegree "g"
   ]
   node [
     id 3
@@ -23,8 +23,8 @@ graph [
   ]
   node [
     id 4
-    label "glucose"
-    MyDegree "e"
+    label "fructose"
+    MyDegree "g"
   ]
   node [
     id 5
@@ -33,37 +33,32 @@ graph [
   ]
   node [
     id 6
-    label "l-aspartate"
-    MyDegree "z"
-  ]
-  node [
-    id 7
-    label "l-glutamate"
-    MyDegree "z"
-  ]
-  node [
-    id 8
     label "gdp-alpha;-d-mannose"
     MyDegree "z"
   ]
   node [
-    id 9
-    label "sucrose"
-    MyDegree "e"
+    id 7
+    label "l-aspartate"
+    MyDegree "z"
   ]
   node [
-    id 10
+    id 8
     label "glycerate_3_phosphate"
     MyDegree "z"
   ]
-  edge [
-    source 0
-    target 4
-    weight 0.9037530229991936
+  node [
+    id 9
+    label "inositol"
+    MyDegree "z"
+  ]
+  node [
+    id 10
+    label "sucrose"
+    MyDegree "z"
   ]
   edge [
-    source 1
-    target 9
-    weight 0.7193592078074433
+    source 2
+    target 4
+    weight 0.9037530229991936
   ]
 ]

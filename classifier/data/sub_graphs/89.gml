@@ -13,12 +13,12 @@ graph [
   ]
   node [
     id 2
-    label "l-aspartate"
+    label "l-methionine"
     MyDegree "z"
   ]
   node [
     id 3
-    label "l-methionine"
+    label "l-aspartate"
     MyDegree "z"
   ]
 ]

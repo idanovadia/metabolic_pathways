@@ -8,12 +8,12 @@ graph [
   ]
   node [
     id 1
-    label "fructose"
+    label "l-tyrosine"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-tyrosine"
+    label "fructose"
     MyDegree "z"
   ]
 ]

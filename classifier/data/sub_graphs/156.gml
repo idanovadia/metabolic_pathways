@@ -3,22 +3,22 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-leucine"
-    MyDegree "g"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "l-leucine"
     MyDegree "z"
   ]
   node [
     id 2
-    label "glucose"
+    label "l-valine"
     MyDegree "z"
   ]
   node [
     id 3
-    label "l-aspartate"
+    label "glucose"
     MyDegree "z"
   ]
   node [
@@ -28,22 +28,17 @@ graph [
   ]
   node [
     id 5
-    label "l-glutamate"
-    MyDegree "z"
-  ]
-  node [
-    id 6
     label "l-phenylalanine"
     MyDegree "z"
   ]
   node [
-    id 7
-    label "l-valine"
-    MyDegree "g"
+    id 6
+    label "l-alanine"
+    MyDegree "z"
   ]
-  edge [
-    source 0
-    target 7
-    weight 0.7087194937289966
+  node [
+    id 7
+    label "l-aspartate"
+    MyDegree "z"
   ]
 ]

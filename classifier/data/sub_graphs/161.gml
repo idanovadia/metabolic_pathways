@@ -8,12 +8,12 @@ graph [
   ]
   node [
     id 1
-    label "l-serine"
+    label "l-methionine"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-methionine"
+    label "l-serine"
     MyDegree "z"
   ]
 ]

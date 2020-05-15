@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-tryptophan"
+    label "l-serine"
     MyDegree "z"
   ]
   node [
@@ -13,12 +13,12 @@ graph [
   ]
   node [
     id 2
-    label "l-serine"
+    label "l-glutamine"
     MyDegree "z"
   ]
   node [
     id 3
-    label "l-glutamine"
+    label "l-tryptophan"
     MyDegree "z"
   ]
 ]

@@ -13,12 +13,12 @@ graph [
   ]
   node [
     id 2
-    label "uracil"
+    label "l-glutamine"
     MyDegree "z"
   ]
   node [
     id 3
-    label "l-glutamine"
+    label "uracil"
     MyDegree "z"
   ]
 ]

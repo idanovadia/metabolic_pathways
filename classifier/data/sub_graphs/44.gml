@@ -3,7 +3,7 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-lysine"
+    label "l-phenylalanine"
     MyDegree "z"
   ]
   node [
@@ -13,7 +13,7 @@ graph [
   ]
   node [
     id 2
-    label "l-phenylalanine"
+    label "l-lysine"
     MyDegree "z"
   ]
 ]

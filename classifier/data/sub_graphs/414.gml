@@ -3,67 +3,62 @@ graph [
   type "trainset"
   node [
     id 0
-    label "benzoate"
-    MyDegree "z"
-  ]
-  node [
-    id 1
-    label "alpha;-tocopherol"
-    MyDegree "z"
-  ]
-  node [
-    id 2
-    label "inositol"
-    MyDegree "z"
-  ]
-  node [
-    id 3
     label "l-leucine"
     MyDegree "z"
   ]
   node [
-    id 4
-    label "l-alanine"
-    MyDegree "z"
-  ]
-  node [
-    id 5
-    label "gaba"
-    MyDegree "z"
-  ]
-  node [
-    id 6
-    label "glucose_6_phosphate"
-    MyDegree "z"
-  ]
-  node [
-    id 7
-    label "d-glycerate"
-    MyDegree "z"
-  ]
-  node [
-    id 8
-    label "l-threonine"
-    MyDegree "g"
-  ]
-  node [
-    id 9
+    id 1
     label "glucose"
     MyDegree "z"
   ]
   node [
-    id 10
+    id 2
+    label "l-arginine"
+    MyDegree "z"
+  ]
+  node [
+    id 3
+    label "d-glycerate"
+    MyDegree "z"
+  ]
+  node [
+    id 4
     label "erythritol"
     MyDegree "z"
   ]
   node [
-    id 11
-    label "l-arginine"
-    MyDegree "g"
+    id 5
+    label "benzoate"
+    MyDegree "z"
   ]
-  edge [
-    source 8
-    target 11
-    weight 0.7051526933449549
+  node [
+    id 6
+    label "alpha;-tocopherol"
+    MyDegree "z"
+  ]
+  node [
+    id 7
+    label "gaba"
+    MyDegree "z"
+  ]
+  node [
+    id 8
+    label "glucose_6_phosphate"
+    MyDegree "z"
+  ]
+  node [
+    id 9
+    label "l-threonine"
+    MyDegree "z"
+  ]
+  node [
+    id 10
+    label "inositol"
+    MyDegree "z"
+  ]
+  node [
+    id 11
+    label "l-alanine"
+    MyDegree "z"
   ]
 ]

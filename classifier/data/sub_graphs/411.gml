@@ -3,32 +3,32 @@ graph [
   type "trainset"
   node [
     id 0
-    label "alpha;-tocopherol"
+    label "maltose"
     MyDegree "z"
   ]
   node [
     id 1
-    label "fructose"
+    label "l-isoleucine"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-isoleucine"
-    MyDegree "g"
-  ]
-  node [
-    id 3
-    label "l-alanine"
+    label "l-arginine"
     MyDegree "z"
   ]
   node [
-    id 4
+    id 3
     label "maltitol"
     MyDegree "z"
   ]
   node [
+    id 4
+    label "fructose"
+    MyDegree "z"
+  ]
+  node [
     id 5
-    label "maltose"
+    label "d-gluconate"
     MyDegree "z"
   ]
   node [
@@ -38,32 +38,27 @@ graph [
   ]
   node [
     id 7
-    label "shikimate"
+    label "alpha;-tocopherol"
     MyDegree "z"
   ]
   node [
     id 8
-    label "d-gluconate"
+    label "gdp-beta;-l-fucose"
     MyDegree "z"
   ]
   node [
     id 9
-    label "d-threo-isocitrate"
+    label "shikimate"
     MyDegree "z"
   ]
   node [
     id 10
-    label "l-arginine"
-    MyDegree "g"
+    label "d-threo-isocitrate"
+    MyDegree "z"
   ]
   node [
     id 11
-    label "gdp-beta;-l-fucose"
+    label "l-alanine"
     MyDegree "z"
-  ]
-  edge [
-    source 2
-    target 10
-    weight 0.7217132968380662
   ]
 ]

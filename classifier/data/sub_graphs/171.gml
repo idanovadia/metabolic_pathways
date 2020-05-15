@@ -3,12 +3,12 @@ graph [
   type "trainset"
   node [
     id 0
-    label "glycerol"
+    label "d-glycerate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "d-glycerate"
+    label "glycerol"
     MyDegree "z"
   ]
   node [

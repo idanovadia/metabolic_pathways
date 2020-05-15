@@ -3,17 +3,17 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-isopropylmaleate"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "l-leucine"
+    label "2-isopropylmaleate"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-glutamate"
+    label "l-leucine"
     MyDegree "z"
   ]
   node [

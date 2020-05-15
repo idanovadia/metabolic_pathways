@@ -8,12 +8,12 @@ graph [
   ]
   node [
     id 1
-    label "uracil"
+    label "l-glutamine"
     MyDegree "z"
   ]
   node [
     id 2
-    label "l-glutamine"
+    label "uracil"
     MyDegree "z"
   ]
 ]

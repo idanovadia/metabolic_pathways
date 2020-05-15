@@ -28,6 +28,7 @@ class GraphCreator(AbstractConfigClass):
     def setup(self):
         self.corr_matrix_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "corr_matrix_path"))
         self.labels_dir_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "labels_dir_path"))
+        self.sub2vecMethod = self.config_parser.eval(self.__class__.__name__, 'sub2vecMethod')
         self.threshold_weights = self.config_parser.eval(self.__class__.__name__, "threshold")
         self.main_graph_output_directory_path = self.getPath(
             self.config_parser.eval(self.__class__.__name__, "main_graph_output_directory"))
@@ -44,9 +45,10 @@ class GraphCreator(AbstractConfigClass):
     def exec(self):
         self.createMainGraph()
         self.run_adj_matrix_extensions()
-        self.writeMainGraph()
         self.subGraphsCreator()
-        self.structural()
+        if self.sub2vecMethod == 'structural':
+            self.structural()
+        self.writeMainGraph()
         self.run_graph_extensions()
         self.WriteAll()
 
@@ -70,6 +72,8 @@ class GraphCreator(AbstractConfigClass):
                 print(extension)
 
     def structural(self):
+        self.main_graph.remove_edges_from(self.main_graph.selfloop_edges())
+        self.addToMainGraphDegree()
         self.subGraphs_list = structural.subGraphsCreator(self.subGraphs_list)
 
     '''
@@ -337,6 +341,10 @@ class GraphCreator(AbstractConfigClass):
             node = neighbors.queue[count]
             count += 1
         return node[0] * -1
+
+    def addToMainGraphDegree(self):
+        self.main_graph = structural.subGraphsCreator([self.main_graph])[0]
+
 
 
 

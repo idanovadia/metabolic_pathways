@@ -3,22 +3,22 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-tryptophan"
+    label "l-glutamate"
     MyDegree "z"
   ]
   node [
     id 1
-    label "2-oxoglutarate"
+    label "saccharate"
     MyDegree "z"
   ]
   node [
     id 2
-    label "shikimate"
+    label "beta;-alanine"
     MyDegree "z"
   ]
   node [
     id 3
-    label "citrate"
+    label "2-oxoglutarate"
     MyDegree "z"
   ]
   node [
@@ -28,22 +28,22 @@ graph [
   ]
   node [
     id 5
-    label "l-glutamine"
+    label "l-tryptophan"
     MyDegree "z"
   ]
   node [
     id 6
-    label "l-glutamate"
+    label "citrate"
     MyDegree "z"
   ]
   node [
     id 7
-    label "beta;-alanine"
+    label "l-glutamine"
     MyDegree "z"
   ]
   node [
     id 8
-    label "saccharate"
+    label "shikimate"
     MyDegree "z"
   ]
 ]
