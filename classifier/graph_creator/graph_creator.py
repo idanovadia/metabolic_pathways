@@ -156,23 +156,28 @@ class GraphCreator(AbstractConfigClass):
         if os.path.isdir(self.corr_matrix_path): ##multiple matrices
             for file in os.listdir(self.corr_matrix_path):
                 if file.endswith(".xlsx"):
-                    self.graphCreator(file)
+                    self.graphCreator(self.corr_matrix_path+os.sep+file)
         else:
             self.graphCreator(self.corr_matrix_path)
 
 
     def graphCreator(self,file):
+        print("file : {}".format(file))
         csv_pd = pd.read_excel(file, index_col=0, header=0)
         columns_headers = list(csv_pd)
         i, j = 0, 1
         for _, row in csv_pd.iterrows():
             for i in range(j, len(row)):
+                print("row name {}".format(row.name))
+                # print("i : {} , j {} , row[i] {} , file {}".format(i,j,row[i],file))
                 if abs(row[i]) >= float(self.threshold_weights):
+                    print("in : {} ".format("{} <-> {}".format(row.name,columns_headers[i])))
                     self.main_graph.add_edge(u_of_edge=str(row.name).lower(),
                                              v_of_edge=str(columns_headers[i]).lower(),
                                              weight=row[i])
                 elif row.name not in self.main_graph.nodes():
-                    self.main_graph.add_node(str(row.name).lower())
+                    print("added "+columns_headers[i])
+                    self.main_graph.add_node(str(columns_headers[i]).lower())
             j += 1
 
 
