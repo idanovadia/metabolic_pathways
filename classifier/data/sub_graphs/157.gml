@@ -4,33 +4,26 @@ graph [
   node [
     id 0
     label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 1
     label "l-valine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-alanine"
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
   node [
     id 3
     label "l-cysteine"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "2-oxoglutarate"
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 2
-    target 3
+    label "l-alanine"
+    MyDegree "z"
   ]
 ]

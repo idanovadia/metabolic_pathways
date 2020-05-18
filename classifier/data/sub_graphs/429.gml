@@ -3,474 +3,72 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-asparagine"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-threonine"
+    label "maltose"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-methionine"
+    label "l-isoleucine"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "putrescine"
+    label "l-threonine"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "l-asparagine"
+    label "fructose"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "sucrose"
+    label "glycine"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "fructose"
+    label "d-threo-isocitrate"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "threonate"
+    label "glucose_6_phosphate"
+    MyDegree "z"
   ]
   node [
     id 8
-    label "l-cysteine"
+    label "l-methionine"
+    MyDegree "z"
   ]
   node [
     id 9
-    label "d-threo-isocitrate"
+    label "putrescine"
+    MyDegree "z"
   ]
   node [
     id 10
-    label "maltose"
+    label "l-cysteine"
+    MyDegree "z"
   ]
   node [
     id 11
-    label "glucose_6_phosphate"
+    label "threonate"
+    MyDegree "z"
   ]
   node [
     id 12
     label "glycerate_3_phosphate"
+    MyDegree "z"
   ]
   node [
     id 13
-    label "l-isoleucine"
-  ]
-  node [
-    id 14
-    label "glycine"
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 8
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 0
-    target 11
-  ]
-  edge [
-    source 0
-    target 14
-  ]
-  edge [
-    source 0
-    target 13
-  ]
-  edge [
-    source 0
-    target 10
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 9
-  ]
-  edge [
-    source 0
-    target 12
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 8
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 1
-    target 11
-  ]
-  edge [
-    source 1
-    target 14
-  ]
-  edge [
-    source 1
-    target 13
-  ]
-  edge [
-    source 1
-    target 10
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 1
-    target 7
-  ]
-  edge [
-    source 1
-    target 9
-  ]
-  edge [
-    source 1
-    target 12
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 8
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 2
-    target 11
-  ]
-  edge [
-    source 2
-    target 14
-  ]
-  edge [
-    source 2
-    target 13
-  ]
-  edge [
-    source 2
-    target 10
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 2
-    target 9
-  ]
-  edge [
-    source 2
-    target 12
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 8
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 11
-  ]
-  edge [
-    source 3
-    target 14
-  ]
-  edge [
-    source 3
-    target 13
-  ]
-  edge [
-    source 3
-    target 10
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 9
-  ]
-  edge [
-    source 3
-    target 12
-  ]
-  edge [
-    source 4
-    target 8
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 11
-  ]
-  edge [
-    source 4
-    target 14
-  ]
-  edge [
-    source 4
-    target 13
-  ]
-  edge [
-    source 4
-    target 10
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 9
-  ]
-  edge [
-    source 4
-    target 12
-  ]
-  edge [
-    source 5
-    target 8
-  ]
-  edge [
-    source 5
-    target 6
-  ]
-  edge [
-    source 5
-    target 11
-  ]
-  edge [
-    source 5
-    target 14
-  ]
-  edge [
-    source 5
-    target 13
-  ]
-  edge [
-    source 5
-    target 10
-  ]
-  edge [
-    source 5
-    target 7
-  ]
-  edge [
-    source 5
-    target 12
-  ]
-  edge [
-    source 6
-    target 8
-  ]
-  edge [
-    source 6
-    target 11
-  ]
-  edge [
-    source 6
-    target 14
-  ]
-  edge [
-    source 6
-    target 9
-  ]
-  edge [
-    source 6
-    target 13
-  ]
-  edge [
-    source 6
-    target 10
-  ]
-  edge [
-    source 6
-    target 7
-  ]
-  edge [
-    source 6
-    target 12
-  ]
-  edge [
-    source 7
-    target 8
-  ]
-  edge [
-    source 7
-    target 11
-  ]
-  edge [
-    source 7
-    target 14
-  ]
-  edge [
-    source 7
-    target 13
-  ]
-  edge [
-    source 7
-    target 10
-  ]
-  edge [
-    source 7
-    target 9
-  ]
-  edge [
-    source 7
-    target 12
-  ]
-  edge [
-    source 8
-    target 11
-  ]
-  edge [
-    source 8
-    target 14
-  ]
-  edge [
-    source 8
-    target 13
-  ]
-  edge [
-    source 8
-    target 10
-  ]
-  edge [
-    source 8
-    target 9
-  ]
-  edge [
-    source 8
-    target 12
-  ]
-  edge [
-    source 9
-    target 11
-  ]
-  edge [
-    source 9
-    target 14
-  ]
-  edge [
-    source 9
-    target 13
-  ]
-  edge [
-    source 9
-    target 10
-  ]
-  edge [
-    source 10
-    target 11
-  ]
-  edge [
-    source 10
-    target 14
-  ]
-  edge [
-    source 10
-    target 13
-  ]
-  edge [
-    source 10
-    target 12
-  ]
-  edge [
-    source 11
-    target 12
-  ]
-  edge [
-    source 11
-    target 14
-  ]
-  edge [
-    source 11
-    target 13
-  ]
-  edge [
-    source 12
-    target 14
-  ]
-  edge [
-    source 12
-    target 13
-  ]
-  edge [
-    source 13
-    target 14
+    label "sucrose"
+    MyDegree "z"
   ]
 ]

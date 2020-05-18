@@ -27,6 +27,7 @@ class Sub2Vec(AbstractConfigClass):
 
     def setup(self):
         self.randomWalk_length = self.config_parser.eval(self.__class__.__name__, 'random_walk_length')
+        self.sub2vecMethod = self.config_parser.eval(self.__class__.__name__, 'sub2vecMethod')
         self.random_walk_num = self.config_parser.eval(self.__class__.__name__,
                                                                     'random_walk_number')
         self.subGraphs_directory_path = self.getPath(
@@ -121,7 +122,7 @@ class Sub2Vec(AbstractConfigClass):
 
     def doc2vec(self):
         doc2vec_obj_train = d2v.Doc2Vec(**self.doc2vec_args)
-        doc2vec_obj_train.transform(self.rw_list_of_graphs_train)
+        doc2vec_obj_train.transform(self.rw_list_of_graphs_train,self.sub2vecMethod)
         self.vectors_train = doc2vec_obj_train.fit()
         # doc2vec_obj_test = d2v.Doc2Vec(self.rw_list_of_graphs_test)
         # self.vectors_test = doc2vec_obj_test.fit()

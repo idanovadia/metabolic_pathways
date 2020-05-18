@@ -4,25 +4,16 @@ graph [
   node [
     id 0
     label "l-tyrosine"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-alanine"
+    label "glycine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "glycine"
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 1
-    target 2
+    label "l-alanine"
+    MyDegree "z"
   ]
 ]

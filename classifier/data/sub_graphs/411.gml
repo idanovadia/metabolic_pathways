@@ -3,262 +3,62 @@ graph [
   type "trainset"
   node [
     id 0
-    label "d-gluconate"
+    label "maltose"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "maltitol"
+    label "l-isoleucine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "udp-alpha;-d-galacturonate"
+    label "l-arginine"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "fructose"
+    label "maltitol"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "l-alanine"
+    label "fructose"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "l-arginine"
+    label "d-gluconate"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "d-threo-isocitrate"
+    label "udp-alpha;-d-galacturonate"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "maltose"
+    label "alpha;-tocopherol"
+    MyDegree "z"
   ]
   node [
     id 8
-    label "shikimate"
+    label "gdp-beta;-l-fucose"
+    MyDegree "z"
   ]
   node [
     id 9
-    label "gdp-beta;-l-fucose"
+    label "shikimate"
+    MyDegree "z"
   ]
   node [
     id 10
-    label "alpha;-tocopherol"
+    label "d-threo-isocitrate"
+    MyDegree "z"
   ]
   node [
     id 11
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 10
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 9
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 11
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 0
-    target 8
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 10
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 9
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 2
-    target 11
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 2
-    target 8
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 10
-  ]
-  edge [
-    source 3
-    target 9
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 11
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 3
-    target 8
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 10
-  ]
-  edge [
-    source 4
-    target 9
-  ]
-  edge [
-    source 4
-    target 11
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 8
-  ]
-  edge [
-    source 5
-    target 10
-  ]
-  edge [
-    source 5
-    target 11
-  ]
-  edge [
-    source 5
-    target 9
-  ]
-  edge [
-    source 5
-    target 7
-  ]
-  edge [
-    source 5
-    target 8
-  ]
-  edge [
-    source 6
-    target 10
-  ]
-  edge [
-    source 6
-    target 9
-  ]
-  edge [
-    source 6
-    target 11
-  ]
-  edge [
-    source 6
-    target 7
-  ]
-  edge [
-    source 7
-    target 10
-  ]
-  edge [
-    source 7
-    target 9
-  ]
-  edge [
-    source 7
-    target 11
-  ]
-  edge [
-    source 7
-    target 8
-  ]
-  edge [
-    source 8
-    target 10
-  ]
-  edge [
-    source 8
-    target 9
-  ]
-  edge [
-    source 8
-    target 11
-  ]
-  edge [
-    source 9
-    target 10
-  ]
-  edge [
-    source 9
-    target 11
-  ]
-  edge [
-    source 10
-    target 11
+    label "l-alanine"
+    MyDegree "z"
   ]
 ]

@@ -3,94 +3,42 @@ graph [
   type "trainset"
   node [
     id 0
-    label "citrate"
+    label "l-leucine"
+    MyDegree "z"
   ]
   node [
     id 1
     label "maltitol"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-leucine"
+    label "citrate"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "alpha;,alpha;-trehalose"
+    label "gaba"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "sucrose"
+    label "l-phenylalanine"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "l-phenylalanine"
+    label "alpha;,alpha;-trehalose"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "gaba"
+    label "inositol"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "inositol"
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 5
-    target 6
+    label "sucrose"
+    MyDegree "z"
   ]
 ]

@@ -3,30 +3,22 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "(s)-malate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "dehydroascorbate (bicyclic form)"
+    label "gdp-beta;-l-fucose"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "(s)-malate"
+    label "dehydroascorbate (bicyclic form)"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "gdp-beta;-l-fucose"
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 2
-    target 3
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
 ]

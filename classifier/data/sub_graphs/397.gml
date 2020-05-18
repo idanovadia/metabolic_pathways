@@ -4,153 +4,46 @@ graph [
   node [
     id 0
     label "l-leucine"
+    MyDegree "z"
   ]
   node [
     id 1
     label "udp-alpha;-d-galacturonate"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "gdp-alpha;-d-mannose"
+    label "benzoate"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "benzoate"
+    label "l-glutamine"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "l-cysteine"
+    label "gdp-beta;-l-fucose"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "l-aspartate"
+    label "gdp-alpha;-d-mannose"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "glycerate_3_phosphate"
+    label "l-cysteine"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "gdp-beta;-l-fucose"
+    label "glycerate_3_phosphate"
+    MyDegree "z"
   ]
   node [
     id 8
-    label "l-glutamine"
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 7
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 2
-    target 8
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 5
-    target 7
-  ]
-  edge [
-    source 5
-    target 8
-  ]
-  edge [
-    source 6
-    target 7
+    label "l-aspartate"
+    MyDegree "z"
   ]
 ]

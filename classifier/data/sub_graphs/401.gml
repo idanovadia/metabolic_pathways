@@ -4,161 +4,51 @@ graph [
   node [
     id 0
     label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "erythritol"
+    label "l-serine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "udp-alpha;-d-galacturonate"
+    label "galactose"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "l-serine"
+    label "fructose"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "fructose"
+    label "erythritol"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "l-cysteine"
+    label "udp-alpha;-d-galacturonate"
+    MyDegree "z"
   ]
   node [
     id 6
     label "gaba"
+    MyDegree "z"
   ]
   node [
     id 7
     label "shikimate"
+    MyDegree "z"
   ]
   node [
     id 8
-    label "galactose"
+    label "l-cysteine"
+    MyDegree "z"
   ]
   node [
     id 9
     label "inositol"
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 8
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 1
-    target 8
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 7
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 2
-    target 8
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 8
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 8
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 5
-    target 6
-  ]
-  edge [
-    source 5
-    target 8
-  ]
-  edge [
-    source 5
-    target 7
-  ]
-  edge [
-    source 6
-    target 8
-  ]
-  edge [
-    source 6
-    target 7
+    MyDegree "z"
   ]
 ]

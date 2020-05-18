@@ -3,50 +3,37 @@ graph [
   type "trainset"
   node [
     id 0
-    label "l-threonine"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-leucine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-leucine"
+    label "l-isoleucine"
+    MyDegree "z"
   ]
   node [
     id 3
     label "l-valine"
+    MyDegree "z"
   ]
   node [
     id 4
     label "2-oxoglutarate"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "l-isoleucine"
+    label "l-threonine"
+    MyDegree "z"
   ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 3
-    target 5
+  node [
+    id 6
+    label "2-isopropylmaleate"
+    MyDegree "z"
   ]
 ]

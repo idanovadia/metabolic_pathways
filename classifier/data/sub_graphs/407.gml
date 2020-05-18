@@ -3,166 +3,57 @@ graph [
   type "trainset"
   node [
     id 0
-    label "fumarate"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-leucine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-leucine"
+    label "maltose"
+    MyDegree "z"
   ]
   node [
     id 3
     label "beta;-alanine"
+    MyDegree "z"
   ]
   node [
     id 4
-    label "sucrose"
+    label "galactose"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "l-alanine"
+    label "fumarate"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "maltose"
+    label "glucose_6_phosphate"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "glucose_6_phosphate"
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
   node [
     id 8
-    label "2-oxoglutarate"
+    label "sucrose"
+    MyDegree "z"
   ]
   node [
     id 9
-    label "galactose"
+    label "inositol"
+    MyDegree "z"
   ]
   node [
     id 10
-    label "inositol"
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 0
-    target 9
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 1
-    target 9
-  ]
-  edge [
-    source 1
-    target 7
-  ]
-  edge [
-    source 2
-    target 5
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 9
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 3
-    target 5
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 9
-  ]
-  edge [
-    source 4
-    target 5
-  ]
-  edge [
-    source 4
-    target 9
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 5
-    target 9
-  ]
-  edge [
-    source 5
-    target 7
-  ]
-  edge [
-    source 5
-    target 6
-  ]
-  edge [
-    source 6
-    target 9
-  ]
-  edge [
-    source 6
-    target 7
-  ]
-  edge [
-    source 7
-    target 9
+    label "l-alanine"
+    MyDegree "z"
   ]
 ]

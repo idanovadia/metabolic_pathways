@@ -4,29 +4,21 @@ graph [
   node [
     id 0
     label "beta;-alanine"
+    MyDegree "z"
   ]
   node [
     id 1
     label "benzoate"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-cysteine"
+    label "l-glutamine"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "l-glutamine"
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 1
-    target 2
+    label "l-cysteine"
+    MyDegree "z"
   ]
 ]

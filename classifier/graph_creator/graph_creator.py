@@ -6,9 +6,8 @@ import networkx as nx
 import os
 import json
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
-
+import classifier.graph_creator.structural as structural
 ''' Using to create the main graph from the correlation matrix and the sub graph lists  '''
-
 
 class GraphCreator(AbstractConfigClass):
 
@@ -29,6 +28,7 @@ class GraphCreator(AbstractConfigClass):
     def setup(self):
         self.corr_matrix_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "corr_matrix_path"))
         self.labels_dir_path = self.getPath(self.config_parser.eval(self.__class__.__name__, "labels_dir_path"))
+        self.sub2vecMethod = self.config_parser.eval(self.__class__.__name__, 'sub2vecMethod')
         self.threshold_weights = self.config_parser.eval(self.__class__.__name__, "threshold")
         self.main_graph_output_directory_path = self.getPath(
             self.config_parser.eval(self.__class__.__name__, "main_graph_output_directory"))
@@ -45,8 +45,10 @@ class GraphCreator(AbstractConfigClass):
     def exec(self):
         self.createMainGraph()
         self.run_adj_matrix_extensions()
-        self.writeMainGraph()
         self.subGraphsCreator()
+        if self.sub2vecMethod == 'structural':
+            self.structural()
+        self.writeMainGraph()
         self.run_graph_extensions()
         self.WriteAll()
 
@@ -68,6 +70,11 @@ class GraphCreator(AbstractConfigClass):
             if extension in graph_extensions_dict:
                 graph_extensions_dict[extension]()
                 print(extension)
+
+    def structural(self):
+        self.main_graph.remove_edges_from(self.main_graph.selfloop_edges())
+        self.addToMainGraphDegree()
+        self.subGraphs_list = structural.subGraphsCreator(self.subGraphs_list)
 
     '''
      Object of sub graph.  
@@ -334,6 +341,10 @@ class GraphCreator(AbstractConfigClass):
             node = neighbors.queue[count]
             count += 1
         return node[0] * -1
+
+    def addToMainGraphDegree(self):
+        self.main_graph = structural.subGraphsCreator([self.main_graph])[0]
+
 
 
 

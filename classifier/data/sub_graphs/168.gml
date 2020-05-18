@@ -3,58 +3,27 @@ graph [
   type "trainset"
   node [
     id 0
-    label "phosphate"
+    label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "l-glutamate"
+    label "l-serine"
+    MyDegree "z"
   ]
   node [
     id 2
     label "l-tryptophan"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "l-serine"
+    label "l-glutamine"
+    MyDegree "z"
   ]
   node [
     id 4
     label "shikimate"
-  ]
-  node [
-    id 5
-    label "l-glutamine"
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 5
-  ]
-  edge [
-    source 1
-    target 5
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 3
-    target 4
+    MyDegree "z"
   ]
 ]

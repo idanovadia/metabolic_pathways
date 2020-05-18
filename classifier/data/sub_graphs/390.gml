@@ -4,117 +4,41 @@ graph [
   node [
     id 0
     label "l-leucine"
+    MyDegree "z"
   ]
   node [
     id 1
-    label "beta;-alanine"
+    label "l-isoleucine"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "alpha;,alpha;-trehalose"
+    label "beta;-alanine"
+    MyDegree "z"
   ]
   node [
     id 3
     label "benzoate"
+    MyDegree "z"
   ]
   node [
     id 4
     label "glucose_6_phosphate"
+    MyDegree "z"
   ]
   node [
     id 5
-    label "2-oxoglutarate"
+    label "glycerol"
+    MyDegree "z"
   ]
   node [
     id 6
-    label "glycerol"
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
   node [
     id 7
-    label "l-isoleucine"
-  ]
-  edge [
-    source 0
-    target 3
-  ]
-  edge [
-    source 0
-    target 1
-  ]
-  edge [
-    source 0
-    target 4
-  ]
-  edge [
-    source 0
-    target 7
-  ]
-  edge [
-    source 0
-    target 2
-  ]
-  edge [
-    source 0
-    target 6
-  ]
-  edge [
-    source 1
-    target 3
-  ]
-  edge [
-    source 1
-    target 4
-  ]
-  edge [
-    source 1
-    target 7
-  ]
-  edge [
-    source 1
-    target 2
-  ]
-  edge [
-    source 1
-    target 6
-  ]
-  edge [
-    source 2
-    target 3
-  ]
-  edge [
-    source 2
-    target 4
-  ]
-  edge [
-    source 2
-    target 7
-  ]
-  edge [
-    source 2
-    target 6
-  ]
-  edge [
-    source 3
-    target 4
-  ]
-  edge [
-    source 3
-    target 7
-  ]
-  edge [
-    source 3
-    target 6
-  ]
-  edge [
-    source 4
-    target 6
-  ]
-  edge [
-    source 4
-    target 7
-  ]
-  edge [
-    source 6
-    target 7
+    label "alpha;,alpha;-trehalose"
+    MyDegree "z"
   ]
 ]

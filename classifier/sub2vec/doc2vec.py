@@ -1,6 +1,9 @@
 from gensim.models.doc2vec import Doc2Vec as d2v, TaggedDocument
 
 
+
+
+
 class Doc2Vec:
 
     def __init__(self,**kwargs):
@@ -25,13 +28,22 @@ class Doc2Vec:
                     epochs=self.epochs)
         return model.docvecs
 
-    def transform(self, subGraphsList):
+    def transform(self, subGraphsList,method):
         for rwList in subGraphsList:
             tmp = []
             for graph in rwList:
-                tmp.append(list(graph.nodes))
+                if method == 'neighborhood':
+                    tmp.append(list(graph.nodes))
+                else:
+                    tmp.append(self.structuralNodeList(graph))
             self.list_of_RW.append(tmp)
         self.createTaggedDocuments()
+
+    def structuralNodeList(self,g):
+        l = []
+        for node in g.nodes:
+            l.append(g.nodes[node]["MyDegree"])
+        return l
 
     def createTaggedDocuments(self):
         for i, doc in enumerate(self.list_of_RW):

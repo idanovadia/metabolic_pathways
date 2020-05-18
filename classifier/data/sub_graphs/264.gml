@@ -3,22 +3,22 @@ graph [
   type "trainset"
   node [
     id 0
-    label "2-oxoglutarate"
+    label "l-threonine"
+    MyDegree "z"
   ]
   node [
     id 1
     label "l-glutamate"
+    MyDegree "z"
   ]
   node [
     id 2
-    label "l-threonine"
+    label "l-isoleucine"
+    MyDegree "z"
   ]
   node [
     id 3
-    label "l-isoleucine"
-  ]
-  edge [
-    source 2
-    target 3
+    label "2-oxoglutarate"
+    MyDegree "z"
   ]
 ]
