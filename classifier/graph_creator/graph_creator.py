@@ -153,12 +153,21 @@ class GraphCreator(AbstractConfigClass):
     ''' create the main graph from correlation matrix '''
 
     def createMainGraph(self):
-        csv_pd = pd.read_excel(self.corr_matrix_path, index_col=0, header=0)
+        if os.path.isdir(self.corr_matrix_path): ##multiple matrices
+            for file in os.listdir(self.corr_matrix_path):
+                if file.endswith(".xlsx"):
+                    self.graphCreator(file)
+        else:
+            self.graphCreator(self.corr_matrix_path)
+
+
+    def graphCreator(self,file):
+        csv_pd = pd.read_excel(file, index_col=0, header=0)
         columns_headers = list(csv_pd)
         i, j = 0, 1
         for _, row in csv_pd.iterrows():
             for i in range(j, len(row)):
-                if abs(row[i])>= float(self.threshold_weights):
+                if abs(row[i]) >= float(self.threshold_weights):
                     self.main_graph.add_edge(u_of_edge=str(row.name).lower(),
                                              v_of_edge=str(columns_headers[i]).lower(),
                                              weight=row[i])
@@ -166,9 +175,6 @@ class GraphCreator(AbstractConfigClass):
                     self.main_graph.add_node(str(row.name).lower())
             j += 1
 
-    '''
-    Generate new weight 0 or 1 by threshold
-    '''
 
     # def generateWightsByThreshold(self):
     #     for (u, v, d) in self.main_graph.edges(data=True):
