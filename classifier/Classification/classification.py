@@ -104,13 +104,15 @@ class classifier(AbstractConfigClass):
         return result
 
     def outputResult(self):
-        columns = ['Correlation threshold','RW Length','RW num of times','Classifier', 'Validation','Improvements', 'train accuracy', 'train F1 score','train Precision','train Recall','train FP', ' train FN','train TP','train TN','test accuracy', 'test F1 score','test Precision','test Recall','test FP', ' test FN','test TP','test TN','train size','test size','embedding size','doc2vec hyperparameters']
+        columns = ['Correlation threshold','RW Length','RW num of times','sub2vec mode','Classifier', 'Validation','Improvements', 'train accuracy', 'train F1 score','train Precision','train Recall','train FP', ' train FN','train TP','train TN','test accuracy', 'test F1 score','test Precision','test Recall','test FP', ' test FN','test TP','test TN','train size','test size','embedding size','doc2vec parameters','classifier parameters']
         added_cols = {'correlation_treshold':self.config_parser.eval('GraphCreator', "threshold"),
                       'random_walk_length':self.config_parser.eval('Sub2Vec', 'random_walk_length'),
                       'random walk num of times':self.config_parser.eval('Sub2Vec', 'random_walk_number'),
+                      'sub2vec mode':self.getsub2vecMode(),
                       'improvements':self.getImprovments(),
                       'embedding_size':json.loads(self.config_parser.get('Sub2Vec', 'doc2vec_args'))['vector_size'],
-                      'doc2vec hyper parameters':json.loads(self.config_parser.get('Sub2Vec', 'doc2vec_args'))}
+                      'doc2vec parameters':json.loads(self.config_parser.get('Sub2Vec', 'doc2vec_args')),
+                      'classifier parameters':json.loads(self.config_parser.get('classifier', 'classifiers_args'))}
         if added_cols['improvements']=="":
             added_cols['improvements']="None"
         if os.path.exists(self.csv_output_directory+os.sep+self.output_file_name+'.xlsx'):
@@ -136,6 +138,12 @@ class classifier(AbstractConfigClass):
             else:
                 result+=','+extension
             last=extension
+        return result
+
+    def getsub2vecMode(self):
+        result = self.config_parser.eval('Sub2Vec', 'sub2vecMethod')
+        if result=="":
+            return 'id'
         return result
 
     def outputModel(self):
