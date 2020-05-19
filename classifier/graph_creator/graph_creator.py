@@ -160,22 +160,30 @@ class GraphCreator(AbstractConfigClass):
     ''' create the main graph from correlation matrix '''
 
     def createMainGraph(self):
-        csv_pd = pd.read_excel(self.corr_matrix_path, index_col=0, header=0)
+        if os.path.isdir(self.corr_matrix_path): ##multiple matrices
+            for file in os.listdir(self.corr_matrix_path):
+                if not file.startswith('~$') and file.endswith(".xlsx"):
+                    self.graphCreator(self.corr_matrix_path+os.sep+file)
+        else: #single matrix
+            self.graphCreator(self.corr_matrix_path)
+
+
+    def graphCreator(self,file):
+        csv_pd = pd.read_excel(file, index_col=0, header=0)
         columns_headers = list(csv_pd)
         i, j = 0, 1
         for _, row in csv_pd.iterrows():
             for i in range(j, len(row)):
-                if abs(row[i])>= float(self.threshold_weights):
+                self.main_graph.add_node(str(row.name).lower())
+                # print("i : {} , j {} , row[i] {} , file {}".format(i,j,row[i],file))
+                if abs(row[i]) >= float(self.threshold_weights):
                     self.main_graph.add_edge(u_of_edge=str(row.name).lower(),
                                              v_of_edge=str(columns_headers[i]).lower(),
                                              weight=row[i])
-                elif row.name not in self.main_graph.nodes():
-                    self.main_graph.add_node(str(row.name).lower())
+                elif str(columns_headers[i]).lower() not in self.main_graph.nodes():
+                    self.main_graph.add_node(str(columns_headers[i]).lower())
             j += 1
 
-    '''
-    Generate new weight 0 or 1 by threshold
-    '''
 
     # def generateWightsByThreshold(self):
     #     for (u, v, d) in self.main_graph.edges(data=True):
