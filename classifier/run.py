@@ -6,8 +6,10 @@ from classifier.correlation_matrix_creator.correlation_matrix_creator import Cor
 from classifier.graph_creator.graph_creator import GraphCreator
 from classifier.sub2vec.sub2vec import Sub2Vec
 from classifier.Classification.classification import classifier
+from classifier.Cleaner.Cleaner import Cleaner
 from classifier.Plotter.Plotter import Plotter
 import sys
+from termcolor import colored, cprint
 
 modules_dict = {}
 modules_dict['Preprocessing'] = Preprocessing
@@ -15,6 +17,7 @@ modules_dict['CorrMaxtrix'] = CorrMaxtrix
 modules_dict['GraphCreator'] = GraphCreator
 modules_dict['Sub2Vec'] = Sub2Vec
 modules_dict['classifier'] = classifier
+modules_dict['Cleaner']=Cleaner
 # modules_dict['Plotter'] = Plotter
 
 pipeline = []
@@ -30,6 +33,7 @@ for module in config.sections():
 
 #running test x times
 for i in range(num_of_runs):
+    print(colored("---------------------------------------------------------", 'yellow', attrs=['bold']))
     print("run number {}".format(i))
     for element in pipeline:
         print("Initializing {}".format(element.__class__.__name__))
@@ -41,6 +45,7 @@ for i in range(num_of_runs):
         print("Executing {}".format(element.__class__.__name__))
         element.exec()
         print("\n")
+    print(colored("---------------------------------------------------------", 'yellow', attrs=['bold']))
 
 if __name__ == '__main__':
     pass
