@@ -29,5 +29,4 @@ class Cleaner(AbstractConfigClass):
     def delete_folder_contents(self,path):
         r = glob.glob(path+os.sep+'*')
         for i in r:
-            print(i)
             os.remove(i)
