@@ -569,7 +569,7 @@ class Test():
         model = torch.load(result_processor.get_saving_path() + "\\Saved Models\\" + model_name)
         model.eval()
         result_processor.set_model(model)
-        matrices_num = 2
+        matrices_num = 50
         result_processor.run_model(matrices_num)
         #result_processor.create_semi_random_negative_instances()
         result_processor.convert_from_xlsx_to_cvs(matrices_num)
