@@ -569,13 +569,14 @@ class Test():
         model = torch.load(result_processor.get_saving_path() + "\\Saved Models\\" + model_name)
         model.eval()
         result_processor.set_model(model)
-        result_processor.run_model()
-        result_processor.create_semi_random_negative_instances()
-        result_processor.convert_from_xlsx_to_cvs()
+        matrices_num = 2
+        result_processor.run_model(matrices_num)
+        #result_processor.create_semi_random_negative_instances()
+        result_processor.convert_from_xlsx_to_cvs(matrices_num)
 
 
 if __name__ == "__main__":
     test = Test()
-    test.run_tests()
+    # test.run_tests()
     # test.two_random_matrix_test(100)
-    # test.export_to_classifier("11.pt")
+    test.export_to_classifier("11.pt")
