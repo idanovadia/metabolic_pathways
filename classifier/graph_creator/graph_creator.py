@@ -9,6 +9,10 @@ from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 import classifier.graph_creator.structural as structural
 ''' Using to create the main graph from the correlation matrix and the sub graph lists  '''
 
+
+
+
+
 class GraphCreator(AbstractConfigClass):
 
     def __init__(self):
@@ -43,14 +47,21 @@ class GraphCreator(AbstractConfigClass):
 
 
     def exec(self):
-        self.createMainGraph()
-        self.run_adj_matrix_extensions()
-        self.subGraphsCreator()
+        if os.path.isdir(self.corr_matrix_path):#multiple matrices
+            self.createMainGraph(type='multiple')
+            self.run_adj_matrix_extensions()
+            self.MultipleSubgraphs()
+        else:
+            self.createMainGraph(type='normal')
+            self.run_adj_matrix_extensions()
+            self.subGraphsCreator()
         if self.sub2vecMethod == 'structural':
             self.structural()
         self.writeMainGraph()
         self.run_graph_extensions()
         self.WriteAll()
+
+
 
     def run_adj_matrix_extensions(self):
         # add extensions here
@@ -89,9 +100,12 @@ class GraphCreator(AbstractConfigClass):
         graph - nx graph that has been created
         '''
 
-        def __init__(self, file_path, classify, type_graph, main_graph):
+        def __init__(self, file_path, classify, type_graph, main_graph,nodes_list=None):
             self.file_path = file_path
-            self.nodes_list = self.createNodeList()
+            if nodes_list==None:
+                self.nodes_list = self.createNodeList()
+            else:
+                self.nodes_list=nodes_list
             self.classify = classify
             self.type = type_graph
             self.graph = self.CreateSubGraph(main_graph)
@@ -150,8 +164,28 @@ class GraphCreator(AbstractConfigClass):
                     new_graph = self.sub_graph(os.path.join(dirpath, file), label, type, self.main_graph)
                     self.subGraphs_list.append(new_graph.graph)
 
-    ''' create set on nodes from the lists of sub graphs '''
 
+    def MultipleSubgraphs(self):
+        for sample_folder in os.listdir(self.labels_dir_path):
+            for dirpath, dirnames, filenames in os.walk(self.labels_dir_path+os.sep+sample_folder):
+                if not dirnames:
+                    # for dir in list_of_dirs:
+                    #         dir_path = os.path.join(self.subGraphs_dir_path, dir)
+                    #         sub_graph_dir_list = os.listdir(dir_path)
+                    sub_graph_dir_list = os.listdir(dirpath)
+                    label = dirpath.split(sep=os.sep)[-1]
+                    type = dirpath.split(sep=os.sep)[-2]
+                    if label == "random":
+                        label = "negative"
+                    for file in sub_graph_dir_list:
+                        new_graph = self.sub_graph(os.path.join(dirpath, file), label, type, self.main_graph,
+                                                   nodes_list=self.getNodesTranslation(sample_name=sample_folder,reaction_file=os.path.join(dirpath, file)))
+                        self.subGraphs_list.append(new_graph.graph)
+
+    def getNodesTranslation(self,sample_name,reaction_file):
+        csv_pd = pd.read_csv(reaction_file, index_col=0, header=0)
+        l = [round(float(x)) for x in csv_pd.columns]
+        return [self.subgraphs_translation[sample_name].get(str(key)) for key in l]
     def creteSetNodes(self):
         for list in self.subGraphs_list:
             for l in list.nodes_list:
@@ -159,15 +193,43 @@ class GraphCreator(AbstractConfigClass):
 
     ''' create the main graph from correlation matrix '''
 
-    def createMainGraph(self):
-        if os.path.isdir(self.corr_matrix_path): ##multiple matrices
-            for file in os.listdir(self.corr_matrix_path):
-                if not file.startswith('~$') and file.endswith(".xlsx"):
-                    self.graphCreator(self.corr_matrix_path+os.sep+file)
+    def createMainGraph(self,type='multiple'):
+        if type=='multiple':
+            self.subgraphs_translation={}
+            num=0
+            for sample_folder in os.listdir(self.corr_matrix_path):
+                for matrix in os.listdir(self.corr_matrix_path+os.sep+sample_folder):
+                    self.subgraphs_translation[sample_folder]={}
+                    if not matrix.startswith('~$') and matrix.endswith(".xlsx"):
+                        num=self.multiple_graphCreator(self.corr_matrix_path+os.sep+sample_folder+os.sep+matrix,num)
         else: #single matrix
             self.graphCreator(self.corr_matrix_path)
 
+    def multiple_graphCreator(self,file,num):
+        folder_name=os.path.basename(os.path.abspath(os.path.join(file, os.pardir)))
+        csv_pd = pd.read_excel(file, index_col=0, header=0)
+        columns_headers = list(csv_pd)
+        i, j = 0, 1
+        for _, row in csv_pd.iterrows():
+            # for i in range(j, len(row)):#adding nodes to graph and adding them as a number to the dictionary
+                self.subgraphs_translation[folder_name][str(row.name).lower()]=num
+                self.main_graph.add_node(num)
+                num+=1
+            # j += 1
 
+        i, j = 0, 1
+        for _, row in csv_pd.iterrows():
+            for i in range(j, len(row)):  # adding edges
+                # print("i : {} , j {} , row[i] {} , file {}".format(i,j,row[i],file))
+                if abs(row[i]) >= float(self.threshold_weights):
+                    self.main_graph.add_edge(u_of_edge=self.subgraphs_translation[folder_name][str(row.name).lower()],
+                                             v_of_edge=self.subgraphs_translation[folder_name][str(columns_headers[i]).lower()],
+                                             weight=row[i])
+                elif self.subgraphs_translation[folder_name][str(columns_headers[i]).lower()] not in self.main_graph.nodes():
+                    self.main_graph.add_node(self.subgraphs_translation[folder_name][str(columns_headers[i]).lower()])
+            j += 1
+
+        return num
     def graphCreator(self,file):
         csv_pd = pd.read_excel(file, index_col=0, header=0)
         columns_headers = list(csv_pd)
@@ -352,6 +414,7 @@ class GraphCreator(AbstractConfigClass):
 
     def addToMainGraphDegree(self):
         self.main_graph = structural.subGraphsCreator([self.main_graph])[0]
+
 
 
 
