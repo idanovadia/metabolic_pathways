@@ -7,7 +7,7 @@ import os
 import json
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 import classifier.graph_creator.structural as structural
-''' Using to create the main graph from the correlation matrix and the sub graph lists  '''
+
 
 
 

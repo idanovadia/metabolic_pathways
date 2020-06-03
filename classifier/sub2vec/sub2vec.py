@@ -55,7 +55,7 @@ class Sub2Vec(AbstractConfigClass):
         self.randomWalk()
         # self.chooseBestSubgraphs()
         # self.WriteAll()
-        self.statistics()
+        # self.statistics()
         self.doc2vec()
         self.generateTrain()
         self.generateLabel("train_label.xlsx", self.rw_list_of_graphs_train)
