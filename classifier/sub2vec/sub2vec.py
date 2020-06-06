@@ -8,7 +8,7 @@ import classifier.sub2vec.randonWalk as rw
 import classifier.sub2vec.doc2vec as d2v
 from classifier.code_tools.Abstract_config_class import AbstractConfigClass
 import json
-
+import time
 
 
 class Sub2Vec(AbstractConfigClass):
@@ -51,12 +51,18 @@ class Sub2Vec(AbstractConfigClass):
 
 
     def exec(self):
+        begin = time.time()
         self.generateSubGraphs()
+        print("generateSubGraphs :" + str(time.time()-begin))
+        begin = time.time()
         self.randomWalk()
+        print("randomWalk :" + str(time.time()-begin))
         # self.chooseBestSubgraphs()
         # self.WriteAll()
         # self.statistics()
+        begin = time.time()
         self.doc2vec()
+        print("doc2vec :" + str(time.time()-begin))
         self.generateTrain()
         self.generateLabel("train_label.xlsx", self.rw_list_of_graphs_train)
         # self.generateTest()

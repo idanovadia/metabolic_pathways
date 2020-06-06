@@ -198,8 +198,8 @@ class GraphCreator(AbstractConfigClass):
             self.subgraphs_translation={}
             num=0
             for sample_folder in os.listdir(self.corr_matrix_path):
+                self.subgraphs_translation[sample_folder] = {}
                 for matrix in os.listdir(self.corr_matrix_path+os.sep+sample_folder):
-                    self.subgraphs_translation[sample_folder]={}
                     if not matrix.startswith('~$') and matrix.endswith(".xlsx"):
                         num=self.multiple_graphCreator(self.corr_matrix_path+os.sep+sample_folder+os.sep+matrix,num)
         else: #single matrix
