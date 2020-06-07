@@ -8,8 +8,7 @@ import matplotlib.pyplot as plt
 # from sklearn import cluster
 import networkx as nx
 # from numba import jit, cuda
-
-
+from simulator.NN_correlation_matrix.MatrixReader import MatrixReader
 from simulator.NN_correlation_matrix.Reaction import Reaction
 from simulator.NN_correlation_matrix.Gan_NN_Matrix_simulator import Generator
 from simulator.NN_correlation_matrix.GeneratorStructureFactory import GeneratorStructureFactory
@@ -256,8 +255,8 @@ def compare_tensor_sets(s1,s2):
         rslt+=mses[j]
     return rslt / rcount
 
-m_count = 20#50#200 #8 #size of metabolic profile
-reactions_count = 20#50#2 #50
+m_count = 10#20#50#200 #8 #size of metabolic profile
+reactions_count = 5#20#50#2 #50
 dataset_size = 20#50#10#1
 minibatch_size = 400#10#100 #number of random initial substrates
 sub_min = 2
@@ -306,6 +305,18 @@ def create_non_overlapping_reactions(reactions_count, metabolic_count):
         substrates.append(substrate)
         products.append(product)
     return  substrates, products
+
+
+def create_dataset_from_real_matrix():
+    matrix_reader = MatrixReader()
+    dataset = matrix_reader.read_matrices()
+
+    global m_count
+    m_count = matrix_reader.get_metabolites_count()
+    global dataset_size
+    dataset_size = matrix_reader.get_datasize()
+
+    return dataset
 
 
 def create_dataset(data_size):
@@ -375,11 +386,13 @@ def create_dataset(data_size):
 class Test():
 
     #@jit(target="cuda")
-    def run_tests(self):
+    def run_tests(self, run_with_real_data):
 
         global result_saver
         result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
 
+        if run_with_real_data:
+            dataset = create_dataset_from_real_matrix()
         generator_structure_factory = GeneratorStructureFactory(m_count*2*reactions_count)
         structure_list = generator_structure_factory.get_structure_list()
         for structure in structure_list:
@@ -388,7 +401,10 @@ class Test():
             print("\n****************************************")
             print("Running Test With Structure: " + name)
             print("**************************************** \n ")
-            self.run_one_test(structure)
+            if not run_with_real_data:
+                self.run_one_test(structure)
+            else:
+                self.run_one_real_data_test(structure, dataset)
             print("\n****************************************")
             print("End of Test With Structure: " + name)
             print("**************************************** \n ")
@@ -397,17 +413,18 @@ class Test():
         print("Summary")
         print("**************************************** \n ")
 
-        for structure in structure_list:
-            name = structure.get_name()
-            in_err_dict, out_err_dict = structure.get_score()
-            #gan_model = structure.get_model()
-            str_print = "Model: " + name + " \n"
-            for i in range(reactions_count):
-                str_print += '\t Reaction ' + str(i+1) + " - In Err: " + in_err_dict[i] + "%. Out Err: " + out_err_dict[i] + "% \n"
-            print(str_print)
+        if not run_with_real_data:
+            for structure in structure_list:
+                name = structure.get_name()
+                in_err_dict, out_err_dict = 0,0#structure.get_score()
+                #gan_model = structure.get_model()
+                str_print = "Model: " + name + " \n"
+                for i in range(reactions_count):
+                    str_print += '\t Reaction ' + str(i+1) + " - In Err: " + in_err_dict[i] + "%. Out Err: " + out_err_dict[i] + "% \n"
+                print(str_print)
 
-        #write_data_summary(structure_list)
-        result_saver.write_data_summary(structure_list)
+            #write_data_summary(structure_list)
+            result_saver.write_data_summary(structure_list)
 
     #@jit(target="cuda")
     def run_one_test(self, gan_structure):
@@ -574,9 +591,72 @@ class Test():
         #result_processor.create_semi_random_negative_instances()
         result_processor.convert_from_xlsx_to_cvs(matrices_num)
 
+    def run_one_real_data_test(self, gan_structure, dataset):
+        gan_model = gan_structure.get_model()
+        global gan_model_global
+        gan_model_global = gan_model
+        metabolites = range(m_count)
+
+        model = Process_new(reactions_count, metabolites, scount=m_count, pcount=m_count, step=step, iterations=iterations)
+        model = model.to(device)
+
+        optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
+
+        ploss = 0.0
+        rloss = 0.0
+        T = time.time()
+        loss_list = []
+        dataset_repets = 5
+        for epoch in range(epochs):
+            for i in range(dataset_repets):
+                for y in dataset:
+                    rand_x = torch.Tensor(size=(minibatch_size, m_count))
+                    rand_x.uniform_(sub_min, sub_max)
+                    rand_x = rand_x.to(device)
+
+                    optimizer.zero_grad()
+
+                    #ym, yc = model(x)
+                    ym, yc = model(rand_x)
+                    loss = F.mse_loss(yc, y)
+                    #loss_list.append(loss) moved it down because when we had many datasets it didn't work - only works with one dataset
+                    loss.backward(retain_graph=True)
+                    optimizer.step()
+
+                    with torch.no_grad():
+                        ploss += float(loss.item())
+
+            if epoch % 1 == 0:
+                T = time.time() - T
+                ploss = ploss / 1 / dataset_size
+                rloss = rloss / 1 / dataset_size
+                info_string = "{}\t time:{:2.3g} \t mse:{} \t p-loss:{} \t r-loss :{}".format(epoch, T,loss, ploss, rloss)
+                #write_date_epoch(gan_structure, loss, ploss, rloss,epoch,T)
+                result_saver.write_data_epoch(gan_structure, loss, ploss, rloss, epoch, T)
+                #loss_list.append(loss)
+                loss_list.append(ploss)
+                print(info_string)
+                if ploss < (10 ** (-20)):
+                    print("stop")
+                    break
+                final_ploss = ploss
+                ploss = 0.0
+                rloss = 0.0
+                T = time.time()
+
+            if epoch == epochs-1: #last epoch
+                #gan_structure.set_last_mse_loss(loss)
+                gan_structure.set_last_mse_loss(final_ploss)
+                #write_date_final_epoch(gan_structure, yc, y, loss_list)
+                result_saver.write_date_final_epoch(gan_structure, yc, y, loss_list)
+                result_saver.save_model(model, gan_structure)
+
+        result_saver.save_reactions(gan_structure)
+
 
 if __name__ == "__main__":
     test = Test()
-    # test.run_tests()
+    #test.run_tests(False)
+    test.run_tests(True)
     # test.two_random_matrix_test(100)
-    test.export_to_classifier("11.pt")
+    # test.export_to_classifier("11.pt")
