@@ -35,6 +35,7 @@ class ResultProcessor:
         model.eval()
         self.model = model
 
+
     def run_model(self, matrix_count):
         for i in range(matrix_count):
             reactions = None
@@ -53,6 +54,17 @@ class ResultProcessor:
                     reactions = self.model.get_reactions_tensor()
                 else:
                     reactions = torch.cat([reactions, self.model.get_reactions_tensor()])
+            self.write_reactions_data(reactions, i)
+            self.create_semi_random_negative_instances(i)
+
+            matrix = yc.detach().numpy()
+            self.write_matrix_data(matrix, i)
+
+    def run_model_for_fake(self, matrix_count, reactions, yc):
+        for i in range(matrix_count):
+            self.wb = Workbook()
+            self.draw_matrix(yc, i)
+
             self.write_reactions_data(reactions, i)
             self.create_semi_random_negative_instances(i)
 

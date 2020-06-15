@@ -255,9 +255,9 @@ def compare_tensor_sets(s1,s2):
         rslt+=mses[j]
     return rslt / rcount
 
-m_count = 10#20#50#200 #8 #size of metabolic profile
-reactions_count = 5#20#50#2 #50
-dataset_size = 20#50#10#1
+m_count = 76#10#20#50#200 #8 #size of metabolic profile
+reactions_count = 38#5#20#50#2 #50
+dataset_size = 1#20#50#10#1
 minibatch_size = 400#10#100 #number of random initial substrates
 sub_min = 2
 sub_max = 2.01
@@ -306,6 +306,26 @@ def create_non_overlapping_reactions(reactions_count, metabolic_count):
         products.append(product)
     return  substrates, products
 
+#function will create non overlapping reactions in the way that substrate in place i is 1 and product in the place i+1 is 1
+def create_non_overlapping_reactions_2(reactions_count, metabolic_count):
+    substrates = []
+    products = []
+    for i in range(0,metabolic_count-1, 2):
+        #doing this if so there won't be overlapping in the last pair, so instead will add the same
+        if i == reactions_count - 1:
+            substrate = [0] * metabolic_count
+            substrate[0] = 1
+            product = [0] * metabolic_count
+            product[1] = 1
+        else:
+            substrate = [0] * metabolic_count
+            substrate[i] = 1
+            product = [0] * metabolic_count
+            product[i + 1] = 1
+        substrates.append(substrate)
+        products.append(product)
+    return  substrates, products
+
 
 def create_dataset_from_real_matrix():
     matrix_reader = MatrixReader()
@@ -350,8 +370,9 @@ def create_dataset(data_size):
     #                         ).to(device)
 
     # testing x reactions - random reactions
-    subs, prods = create_random_reactions(reactions_count, m_count)
-    # subs, prods = create_non_overlapping_reactions(reactions_count, m_count)
+    #subs, prods = create_random_reactions(reactions_count, m_count)
+    #subs, prods = create_non_overlapping_reactions(reactions_count, m_count)
+    subs, prods = create_non_overlapping_reactions_2(reactions_count, m_count)
     reactions = Process_new(reactions_count, metabolites,
                             # scount=s_count, pcount=p_count,
                             # low=1.0,high=1.0
@@ -379,6 +400,9 @@ def create_dataset(data_size):
                 show_matrix(yc)
                 show_graph(yc, threshold=0.3)
 
+    # r = ResultProcessor(m_count, 1250, sub_min, sub_max) all three lines beloew are for result proccesing above model
+    # r.run_model_for_fake(1, reactions.get_reactions_tensor(), dataset[0][1])
+    # r.convert_from_xlsx_to_cvs(1)
     return dataset, reactions
 
 #dataset, reactions = create_dataset(dataset_size) #This line will create the *same* dataset for all experiments
@@ -656,7 +680,7 @@ class Test():
 
 if __name__ == "__main__":
     test = Test()
-    #test.run_tests(False)
-    test.run_tests(True)
+    test.run_tests(False)
+    #test.run_tests(True)
     # test.two_random_matrix_test(100)
     # test.export_to_classifier("11.pt")
