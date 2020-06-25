@@ -1,6 +1,21 @@
 # The Simulator #
 The purpose of the Simulator is to simulate data for the classifier. The Simulator passes on to the Classifier the following data: correlation matrices, positive reactions and negative reactions
 
+## Requirements ##
+To use this project you will need a Python run-time environment.
+Packges used and version:
+
+|Package | Version |
+| ------ | ------ |
+| torch | 1.0.1 |
+| networkx | 2.2 | 
+| matplotlib | 3.0.3 |
+| openpyxl | 2.6.1 |
+| unicodecsv | 0.14.1 |
+| xlrd | 1.2.0 |
+
+Also, please notice that in order to use the GPU file, you must have GPU card on your computer
+
 ## How to use ##
 
 **Training the Simulator:**
@@ -42,3 +57,9 @@ Training the Reaction_NN_Matrix_gpu:
     test = Test()
     test.export_to_classifier(model_name) - where model name should be the name of the model as appears in the folder
     You can find the results under the "Outputs" folder that is inside of the "Results" folder.
+    
+**Using different structures for the Gan network:**
+   In order to create a new model your need to create a new def in
+   the class of GeneratorStructureFactory (e.g. structure_1 and create model and name for the structure.
+   return the value in this new function as a GeneratorStructure which gets name and model in init
+   Afterwards add "structure_list.append(self.yourList())" to the function of create_strucute_list
