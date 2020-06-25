@@ -9,6 +9,11 @@ import matplotlib.pyplot as plt
 import networkx as nx
 # from numba import jit, cuda
 
+import sys
+import os
+sys.path.append('/home/dvil/metabolic_pathways')
+os.environ['QT_QPA_PLATFORM'] = 'offscreen'
+
 from simulator.NN_correlation_matrix.Reaction import Reaction
 from simulator.NN_correlation_matrix.Gan_NN_Matrix_simulator import Generator
 from simulator.NN_correlation_matrix.GeneratorStructureFactory import GeneratorStructureFactory
@@ -219,7 +224,7 @@ class Process_new(torch.nn.Module):
             x = y * doit + x * (1 - doit)
 
         c = correlation_matrix(x)
-        c = c - torch.eye(m_count).to(device)
+        #c = c - torch.eye(m_count).to(device)
         return x, c
 
     def get_reactions_tensor(self):
@@ -251,10 +256,10 @@ def compare_tensor_sets(s1,s2):
         rslt+=mses[j]
     return rslt / rcount
 
-m_count = 8#50 #200 #8 #size of metabolic profile
-reactions_count = 2#50 #2 #50
-dataset_size = 20#10#20#50#10#1
-minibatch_size = 400#100#400#10#100 #number of random initial substrates
+m_count = 20 #200 #8 #size of metabolic profile
+reactions_count = 50 #2 #50
+dataset_size = 20#50#10#1
+minibatch_size = 1250#800#400#10#100 #number of random initial substrates
 sub_min = 2
 sub_max = 2.01
 epochs = 50#200
@@ -262,7 +267,7 @@ step = 0.5
 iterations = 100
 s_count=3
 p_count=3
-result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
+result_saver = None#ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 #device = "cpu"
@@ -280,6 +285,27 @@ def create_random_reactions(reactions_count, metabolic_count):
         substrates.append(substrate)
         products.append(product)
     return substrates, products
+    
+#function will create non overlapping reactions in the way that substrate in place i is 1 and product in the place i+1 is 1
+def create_non_overlapping_reactions(reactions_count, metabolic_count):
+    substrates = []
+    products = []
+    for i in range(reactions_count):
+        #doing this if so there won't be overlapping in the last pair, so instead will add the same
+        if i == reactions_count - 1:
+            substrate = [0] * metabolic_count
+            substrate[0] = 1
+            product = [0] * metabolic_count
+            product[1] = 1
+        else:
+            substrate = [0] * metabolic_count
+            substrate[i] = 1
+            product = [0] * metabolic_count
+            product[i + 1] = 1
+
+        substrates.append(substrate)
+        products.append(product)
+    return  substrates, products
 
 
 def create_dataset(data_size):
@@ -314,6 +340,7 @@ def create_dataset(data_size):
 
     # testing x reactions - random reactions
     subs, prods = create_random_reactions(reactions_count, m_count)
+    #subs, prods = create_non_overlapping_reactions(reactions_count, m_count)
     reactions = Process_new(reactions_count, metabolites,
                             # scount=s_count, pcount=p_count,
                             # low=1.0,high=1.0
@@ -349,7 +376,10 @@ class Test():
 
     #@jit(target="cuda")
     def run_tests(self):
-
+        
+        global result_saver
+        result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
+        
         generator_structure_factory = GeneratorStructureFactory(m_count*2*reactions_count)
         structure_list = generator_structure_factory.get_structure_list()
         for structure in structure_list:
@@ -391,11 +421,13 @@ class Test():
         model = model.to(device)
 
         optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
-        ##optimizer = torch.optim.Adadelta(model.parameters(), lr=1.0, rho=0.9, eps=1e-06, weight_decay=1.0)
-        ##optimizer = torch.optim.Adagrad(model.parameters(), lr=0.01, lr_decay=0, weight_decay=0, initial_accumulator_value=0)
-        # optimizer = torch.optim.Adamax(model.parameters(), lr=0.002, betas=(0.9, 0.999), eps=1e-08, weight_decay=0)
-        # optimizer = torch.optim.ASGD(model.parameters(), lr=0.1, lambd=0.0001, alpha=0.75, t0=1000000.0, weight_decay=0.01)
-        # optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9, dampening=0, weight_decay=0, nesterov=False)
+        #optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)
+        #optimizer = torch.optim.Adam(model.parameters(), lr=3e-4)
+        #optimizer = torch.optim.Adadelta(model.parameters(), lr=1.0, rho=0.9, eps=1e-06, weight_decay=1.0)
+        #optimizer = torch.optim.Adagrad(model.parameters(), lr=0.01, lr_decay=0, weight_decay=0, initial_accumulator_value=0)
+        #optimizer = torch.optim.Adamax(model.parameters(), lr=0.002, betas=(0.9, 0.999), eps=1e-08, weight_decay=0)
+        #optimizer = torch.optim.ASGD(model.parameters(), lr=0.1, lambd=0.0001, alpha=0.75, t0=1000000.0, weight_decay=0.01)
+        #optimizer = torch.optim.SGD(model.parameters(), lr=0.1, momentum=0.9, dampening=0, weight_decay=0, nesterov=False)
 
 
         ploss = 0.0
@@ -415,14 +447,19 @@ class Test():
 
                 #ym, yc = model(x)
                 ym, yc = model(rand_x)
+                #print("y:")
+                #print(y)
+                #print("yc:")
+                #print(yc)
                 loss = F.mse_loss(yc, y)
+                #loss = F.l1_loss(yc, y)
                 #loss_list.append(loss) moved it down because when we had many datasets it didn't work - only works with one dataset
                 loss.backward(retain_graph=True)
                 optimizer.step()
 
                 # print(y_pred)
                 # print(y)
-                # print(loss)
+                #print(loss)
 
                 with torch.no_grad():
                     r2 = model.get_reactions_tensor()
@@ -442,7 +479,7 @@ class Test():
                 result_saver.write_data_epoch(gan_structure, loss, ploss, rloss, epoch, T)
                 #loss_list.append(loss)
                 loss_list.append(ploss)
-                print(info_string)
+                print(info_string, flush=True)
                 if ploss < (10 ** (-20)):
                     print("stop")
                     break
@@ -456,7 +493,7 @@ class Test():
                 gan_structure.set_last_mse_loss(final_ploss)
                 #write_date_final_epoch(gan_structure, yc, y, loss_list)
                 result_saver.write_date_final_epoch(gan_structure, yc, y, loss_list)
-                result_saver.save_model(gan_structure)
+                result_saver.save_model(model, gan_structure)
 
         predicted = model.get_reactions_tensor()
         predicted = predicted.round().int()
@@ -509,6 +546,9 @@ class Test():
 
     #create 2 random matrix and check the mse difference between them
     def two_random_matrix_test(self,iterations_num):
+        global result_saver
+        result_saver = ResultSaver(minibatch_size, step, dataset_size, epochs, reactions_count)
+        
         sum = 0
         loss_list = []
         for i in range(iterations_num):
@@ -520,7 +560,7 @@ class Test():
                     loss_item = loss.item()
                     sum += loss_item
                     loss_list.append(loss_item)
-                    print("loss is " + str(loss_item))
+                    print("loss " + str(i) + " is " + str(loss_item), flush=True)
                     result_saver.save_two_random(y1,y2,i, loss_item)
 
         average = sum / iterations_num
@@ -528,11 +568,12 @@ class Test():
         for loss in loss_list:
             sum_squared_diff += (average - loss) ** 2
         st_dev = sum_squared_diff / iterations_num
+        result_saver.save_two_random_final_stats(str(m_count), str(reactions_count), str(average), str(st_dev), loss_list)
         print("Metabolices = " + str(m_count) + ". Reactions = " + str(reactions_count))
         print("Average loss is " + str(average))
         print("Standard deviation loss is " + str(st_dev))
 
 if __name__ == "__main__":
     test = Test()
-    # test.run_tests()
-    # test.two_random_matrix_test(100)
+    test.run_tests()
+    #test.two_random_matrix_test(100) #800
