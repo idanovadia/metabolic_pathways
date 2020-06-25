@@ -1,3 +1,8 @@
+# The Simulator #
+The purpose of the Simulator is to simulate data for the classifier. The Simulator passes on to the Classifier the following data: correlation matrices, positive reactions and negative reactions
+
+## How to use ##
+
 **Training the Simulator:**
 
 There are 2 options to train the Simulator
@@ -32,7 +37,7 @@ Training the Reaction_NN_Matrix_gpu:
     test.run_tests()
     
 **Running the Simulator:**
-    You'll find the model file after training the Simulator in the "Saved Models" folder inside of the "Results" folder.
+    You can find the model file after training the Simulator in the "Saved Models" folder inside of the "Results" folder.
     To run the simulation from the learnt model run the following code:
     test = Test()
     test.export_to_classifier(model_name) - where model name should be the name of the model as appears in the folder
